@@ -1,0 +1,14 @@
+\select@language {serbian}
+\contentsline {section}{\numberline {1}Obrada slike}{1}{section.1}
+\contentsline {subsection}{\numberline {1.1}Uvod}{1}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Onsnovni procesi u obradi digitalne slike}{2}{subsection.1.2}
+\contentsline {subsection}{\numberline {1.3}Pribavljanje slike}{3}{subsection.1.3}
+\contentsline {subsection}{\numberline {1.4}Bitne relacije izme\IeC {\dj }u piksela}{4}{subsection.1.4}
+\contentsline {subsection}{\numberline {1.5}Osnovne operacije nad slikom u prostornom domenu}{5}{subsection.1.5}
+\contentsline {subsection}{\numberline {1.6}Osnovni pojmovi vezani za filtriranje u prostornom domenu}{9}{subsection.1.6}
+\contentsline {subsection}{\numberline {1.7}Smoothing filtri(filtri za uklanjanje \IeC {\v s}uma)}{10}{subsection.1.7}
+\contentsline {subsection}{\numberline {1.8}Sharpening filtri(filtri za odre\IeC {\dj }ivanje ivica)}{10}{subsection.1.8}
+\contentsline {subsection}{\numberline {1.9}Kombinovanje filtara}{10}{subsection.1.9}
+\contentsline {section}{\numberline {2}Guided filter}{10}{section.2}
+\contentsline {section}{\numberline {3}Primena}{10}{section.3}
+\contentsline {section}{Literatura}{11}{section.3}
