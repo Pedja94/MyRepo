@@ -7,8 +7,8 @@
 \contentsline {subsection}{\numberline {1.5}Osnovne operacije nad slikom u prostornom domenu}{5}{subsection.1.5}
 \contentsline {subsection}{\numberline {1.6}Osnovni pojmovi vezani za filtriranje u prostornom domenu}{9}{subsection.1.6}
 \contentsline {subsection}{\numberline {1.7}Smoothing filtri(filtri za uklanjanje \IeC {\v s}uma)}{10}{subsection.1.7}
-\contentsline {subsection}{\numberline {1.8}Sharpening filtri(filtri za odre\IeC {\dj }ivanje ivica)}{10}{subsection.1.8}
-\contentsline {subsection}{\numberline {1.9}Kombinovanje filtara}{10}{subsection.1.9}
-\contentsline {section}{\numberline {2}Guided filter}{10}{section.2}
-\contentsline {section}{\numberline {3}Primena}{10}{section.3}
-\contentsline {section}{Literatura}{11}{section.3}
+\contentsline {subsection}{\numberline {1.8}Sharpening filtri(filtri za odre\IeC {\dj }ivanje ivica)}{13}{subsection.1.8}
+\contentsline {subsection}{\numberline {1.9}Kombinovanje filtara}{13}{subsection.1.9}
+\contentsline {section}{\numberline {2}Guided filter}{13}{section.2}
+\contentsline {section}{\numberline {3}Primena}{13}{section.3}
+\contentsline {section}{Literatura}{14}{section.3}

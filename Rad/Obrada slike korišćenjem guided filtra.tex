@@ -108,7 +108,7 @@ f(x, y)
 \end{bmatrix}
 \]
 
-, gde su N i M respektivno širina i visina slike.
+gde su N i M respektivno širina i visina slike.
 
 Broj piksela slike se računa kao $b = M * N$, ako je slika crno bela, odnosno intenzitet piksela je prikazan kao jedna vrednost. Ako je u pitanju slika u boji onda se vrednost funkcije $f(x, y)$ predsavalja kao vektor vrednosti $[i_{1} i_{2} \dots i_{k}]$, gde je $k$ broj kanala, ondosno broj boja kojima je prikazana slika (najčešće 3 ako je u pitanju slika u boji). Tada se broj piksela računa kao $b = M * N * k$.
 
@@ -178,7 +178,7 @@ Najosnovnija operacija koja može da se izvede nad slikom je negativ. Svaki piks
 \centering
 \includegraphics[width=60mm]{img/img.png}
 \includegraphics[width=60mm]{img/imgNegative.png}
-\caption{Slika i njen negativ}
+\caption{1)slika 2)negativ}
 \label{overflow}
 \end{figure} 
 
@@ -190,7 +190,7 @@ Nad slikom može da se primeni logaritamska operacija. $s = c*\log{1+ r}$. Ova o
 \includegraphics[width=60mm]{img/imgLog.png}
 \includegraphics[width=60mm]{img/imgPow1.png}
 \includegraphics[width=60mm]{img/imgPow2.png}
-\caption{Gore levo: Slika, gore desno: logaritamska transforamcija, dole levo: stepena transforamcija $c = 1 \nu = 0.6$, dole desno:  stepena transforamcija $c = 1 \nu = 0.3$}
+\caption{1)slika 2)logaritamska transforamcija 3)stepena transforamcija $c = 1 \nu = 0.6$ 4)stepena transforamcija $c = 1 \nu = 0.3$}
 \label{overflow}
 \end{figure} 
 
@@ -206,7 +206,7 @@ Jedna od specifičnih obrada je obrada uz pomoć histograma. Histogram digitalne
 \includegraphics[width=60mm]{img/histImgLog.png}
 \includegraphics[width=60mm]{img/imgPow2.png}
 \includegraphics[width=60mm]{img/histImgPow2.png}
-\caption{Histogram}
+\caption{levo: slika desno: njen histogram}
 \label{overflow}
 \end{figure} 
 
@@ -219,7 +219,7 @@ Jedna od operacija koja može da se izvrši uz pomoć histograma je histogramsko
 \includegraphics[width=60mm]{img/histImgPow2.png}
 \includegraphics[width=60mm]{img/histEq.png}
 \includegraphics[width=60mm]{img/histEqhist.png}
-\caption{Histogramsko izjendačavanje}
+\caption{1)slika 2)histogram 3)slika i 4)histogram nakon histogramskog izjednačavanja}
 \label{overflow}
 \end{figure}
 
@@ -281,11 +281,82 @@ Možemo da kažemo da se filtriranje obavlja tako što kernel prolazi kroz celu 
 
 Dva osnovna tipa filtera su filteri za uklanjanje šuma i zamućivanje slike koji se nazivaju smoothing filteri i filteri za izoštravanje slike, odnosno filteri za određivanje ivica ivica koji se nazivaju sharpening filteri. Pošto ne postoji tačan prevod za ove nazive dalje u radu se koriste imena smoothing i sharpening.
 
-\subsection{Smoothing filtri(filtri za uklanjanje šuma)}
+\subsection{Smoothing filtri(filtri za uklanjanje šuma)}%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Sharpening filtri(filtri za određivanje ivica)}
+Ovaj tip filtra se koristi za takozvano zamućivanje (eng. blurring) i za redukciju šuma. Blurring se koristi za uklanjanje malih detalja sa slike, u procesu ekstrakcije objekata sa slike. Takođe može da se koristi za popunjavanje prekida u linijama na slici, koje mogu da se jave zbog šuma na slici. Rezultat ovog filtra je u suštini srednja vrednost piksela koji su sadržani u okolini kernela koji se koristi za filtriranje. Zbog toga se ovi filtri nazivaju i filteri srednje vrednosti (eng. averaging filters). 
 
-\subsection{Kombinovanje filtara}
+Ideja ovog filtriranja je da se vrednost konkretnog piksela zameni sa srednjom vrednošću piksela iz njegove okoline, koji su definisani kernelom. Rezultat ovog filtra biće slika koja ima ublažene prelaze između vrednosti susednih piksela. Dva susedna piksela koja se dosta razilkuju biće sličnija po vrednosti. Pošto se pikseli, koji predstavaljaju šum, dosta razlikuju po vrednost od susednih piksela, na ovaj način će se oni uklopiti u okolinu. Loša strana ovakvog filtriranja se ogleda u tome što će mesta koja predstavalju ivice ili linije na slici početi da gube oštrinu. Naime na mestima na kojima se nalaze ivice imamo veliku razliku u susednim pikselima, pa će primenom ovog filtra ta ralika postati manja što će dovesti do gubljenja oštrine tih ivica.  
+
+\[
+1/9
+*
+\begin{bmatrix}
+     1 & 1 & 1 \\
+     1 & 1 & 1 \\
+     1 & 1 & 1 \\
+\end{bmatrix}
+1/16
+*
+\begin{bmatrix}
+     1 & 2 & 1 \\
+     2 & 4 & 2 \\
+     1 & 2 & 1 \\
+\end{bmatrix}
+\].     
+
+Ovo su tipični primeri smoothing filtra dimenzija $3 x 3$. Levo je najprostiji primer ovog tipa filtara. Primenom ovog kernela svaki piksel će dobiti kao rezultat prosečnu vrednost susednih piksela koji odgovaraju obliku ovog kernela. Koeficijent $1/9$ služi da bi se dobila strdnja vrednost. Rezultat koji će biti upisan u piksel je $R = 1/9 \sum_{i = 1}^{9} z+{i}$. Kao što vidimo na primeru kernela sa desne strane, ne moraju svi susedni pikseli da učestvuju podjednako u sumi. Na ovom primeru vidimo da pikseli različito učestvuju u sumi sa različitim koeficijentima koji su definisani u kernelu. Te vrednosti se nazivaju težine. Vidimo da se i koeficijent koji stoi uz kernel razlikuje u odnosu na primer levo. On je $1/16$, jer je suma brojeva iz kernela $16$. U većini slučajeva se ovaj koeficijent određuje na ovaj način. Na ovom primeru vidimo da se prilikom filtriranja daje prednost samom pikselu, jer uz njega stoji najveći koeficijent 4, zatim se daje prednost horizontalnim i vertikalnim susedima, oni imaju koeficijente 2 i tek na kraju su dijagonalni susedi sa koeficijentom 1. Ovi koeficijenti u nekim slučajevima mogu da budu i 0.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=60mm]{img/img.png}
+\includegraphics[width=60mm]{img/imgAvg3.png}
+\includegraphics[width=60mm]{img/imgAvg5.png}
+\includegraphics[width=60mm]{img/imgAvg9.png}
+\caption{1)slika 2)slika filtrirana kernelom 3x3 3)5x5 i 4)9x9}
+\label{overflow}
+\end{figure}
+
+
+Naravno ova priča važi i za filtre koji koriste kernel bilo koje dimenzije $m x n$ ($m$ i $n$ su neparni). Ako imamo kernel ovih dimenzija opšta formula za izračunavanje vrednosti rezultujećeg piksela igledaće ovako: \\
+
+\begin{center}
+$g(x, y) = \dfrac{\sum_{s = -a}^{a} \sum_{s = -b}^{b} w(s, t)f(x + s, y + t)}{\sum_{s = -a}^{a} \sum_{s = -b}^{b} w(s, t)}$,  \\
+\end{center}
+
+gde su $g$ i $f$ ulazna i rezultujuća slika, $(x, y)$ koordinate piksela za koji se trenutno računa vrednost, $a = (m - 1) / 2$, $b = (n - 1) / 2$, $w$ težine u kernelu. Da bi cela slika bila filtrirana ova funkcija treba da se izvrši za svako $x \epsilon [0, M - 1]$ i za svako $y \epsilon [0, N - 1]$. 
+
+Kao što je navedeno kerneli ovih filtra su proizvoljnih veličina. Za ovaj tip filtra se obično koriste $n x n$ kerneli, jer oni uzimaju simetrične piksele i najbolje određuju koliko se neki piksel razliku je u odnosu na njegovu okolinu. Težine definisane u kernelu određuju kojim susedima se daje prednost pilikom računanja srednje vrednosti. Npr. ako neka slika ima dosta vertikalnih ivica, težina koja će stojati uz piksele, koji su vertikalni susedni u odnosu na piksel za koji se računa vrednost, može da bude 0 da bi se izbeglo gubljenje oštrine. Veličina dimenzija kernela utiče na to koliko se brojčano uzima suseda, što će na krajnjem rezultatu uticati na to u kojoj je količini slika zamućena. Što su veće dimenzije kernela, veća će biti zamućenost na slici. Pošto je svaka slika drugačija, ona će zahtevati određenu kombinaciu težina i dimenzije kernela. Ovo se obično određuje probom različitih kernela da bi se utvrdilo koji je najbolji za konkretnu sliku. 
+
+Kao što je spomenuto ranije jedna od primena ovog tipa filtara je predprocesiranje slike zarad uklanjanja sitnih detalja koji nisu od važnosti. Ovo se primenjuje prilikom ekstrakcije objekata sa slike mogu da se u određenoj meri ukolne sitni objekti da bi se olakšala ekstrakcija bitnih objekata. Veličina kernela će odrediti koja koji će objekti biti uklonjeni sa slike. Ako se koristi kernel veličine $3 x 3$ sa slike će biti uklonjene samo tačke veličine 1 piksela. Povećanjem dimenzija kernela biće uklonjene i veći objekti. Odabir veličine kernela zavisiće od toga šta želimo da odstranimo sa slike.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=60mm]{img/tel.jpg}
+\includegraphics[width=60mm]{img/telAvg.jpg}
+\includegraphics[width=60mm]{img/telTh.jpg}
+\caption{1)slika 2)slika filtrirana kernelom 9x9 3)slika pretvorena u binarnu sliku(samo crna i bela)}
+\label{overflow}
+\end{figure}
+
+Pored navedenih linearnih filtra postoje i nelinearni filtri bazirani na sortiranju vrednosti piksela koji se nalaze u oblasti koja je obuhvaćena filtriranjem, odnosno određena kernelom. Njapoznatiji primer je medina filter. Vrednosti u kernelu ondnosno težine koje se koriste u ovom filtru su 1. Pikseli iz željene oblasti se sortiraju i bira se vrednost koja se u tako sortiranom nizu piksela nalazi na sredini. Ona se dodeljuje pikselu koji se trenutno obrađuje. Ako koristimo kernel veličine $3 x 3$ nakon što sortiramo njihove vrednosti za rezultat ćemo odabrati 5-ti piksel po veličini (nije bitno da li se sortiraju rastuće ili opadajuće). Dakle vrednost piksela se zamenjuje sa pikselom iz njegove okoline koji ima statistički srednju vrednost. Median filter je efikasan za uklanjanje slučajnog šuma, a posebno je efikasan za uklanjanje šuma koji se naziva biber i so, a specifičan je po tome što se iskazuje preko crnih i belih tačaka, koje su minimalna i maksimalna vrednost koju piksel može da uzme, pa se zbog toga naziva i impulsni šum. Za ove primene medina filter je efikasniji od predhodno navedenih filtra, jer bira vrednost koja se najviše javlja u okolini određenog piksela.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=60mm]{img/img.png}
+\includegraphics[width=60mm]{img/imgMed.png}
+\caption{1)slika 2)slika filtrirana median filterom}
+\label{overflow}
+\end{figure}
+
+\subsection{Sharpening filtri(filtri za određivanje ivica)}%%%%%%%%%%%%%%%%%%%%%%%
+
+Glavni cilj ovog tipa filtara je da na slici obeleže fine detalje, kao što su linije i prelazi, ili da poboljša izgled tih detalja, koji mogu biti mutni ili da imaju grešku, koja je posledica određenog metoda pribavljanja slike. Primena ovih filtara je veoma široka i varira od elektronskog štampanja preko medicine do industrijske inspekcije i autonomnih vojnih i sistema nadzora. 
+
+Filteri opisani u predhodnom poglavlju koriste sume i srednje vrednosti da bi filtrirali sliku. Ovaj proces je analogan integraciji, pa možemo da zaključimo da sharpening filtri, koji imaju suprotni cilj u odnosu na smooothing filtre, koriste diferenciranje da bi postigli željeni rezultat. Delovanje funkcije izvoda je porporcionalno stepenu nepovezanosti slike u tački, gde je izvod primenjen. Diferenciranje slika će naglasiti ivice i prelaze, kao i šum i sve delove gde se vrednosti piksela naglo menjaju (prelaz izmedju dve boje na slici koje se dosta razlikuju u nijansi npr crna i bela).
+
+ 
+
+\subsection{Kombinovanje filtara}%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \section{Guided filter}%%%%%%%%%%%%%%%%%%%%%%%%
