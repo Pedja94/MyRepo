@@ -595,6 +595,44 @@ Očuvanje ivica može da se postigne i filterima koji ne koriste srednje vrednos
 
 \subsection{Definicija filtra}%%%%%%%%%%%%%%%%%%%%%%%
 
+Prvo ćemo definisati uopšteni proces linearnog invariantnog filtriranja, koji koristi sliku vodič $I$, sliku koja se filtrira $p$ i sliku koja je rezultat filtriranja $q$. $I$ i $p$ su zadati na početku procesa i oni mogu da budu identični. Rezultat filtriranja piksela $i$ će biti: 
+
+\begin{center}
+	$q_i = \sum_{j} W_{ij}(I)p_j$,
+\end{center}
+
+gde su $i$ i $j$ indeksi piksela, kernel filtera $W_{ij}$ je funkcija slike vodiča $I$ i nezavisna je od $p$. Ovaj filter je linearan u odnosu na $p$. 
+
+Sada ćemo definisati guided filter. Predpostavka je da je guided filter loklano linearan model između slike vodiča $I$ i rezultata filtriranja $q$. Za $q$ predpostavljamo da je linearna transforamcija slike $I$ u prozoru $w_k$ centriranom u pikselu $k$:
+
+\begin{center}
+	$q_i = a_kI_i + b_k, \forall \epsilon w_k$,
+\end{center}
+
+gde su $(a_k, b_k)$ linearni koeficijenti za koje ćemo predpostaviti da su konstantni u $w_k$. Za $w_k$ koristimo kvadratni prozor radiusa $r$. Ovaj lokalni linearni model garantuje da će $q$ imati ivicu samo ako $I$ ima tu istu ivicu, jer je $\Delta q = a\Delta I$. Da bi odredili linearne koeficijente $(a_k, b_k)$, trebaju nam ograničenja slike koja se filtrira $p$. Rezultat filtriranja određeog piksela $q_i$ se dobija tako što se od $p_i$ oduzimaju neke neželjene komponente kao što su razni detalji i šum: $q_i = p_i - n_i$. Mi tražimo rešenje koje će minimizovati razliku između $p$ i $q$, pod sulovom da je ta funkcija linearna. Konkretno za svaki prozor $w_k$ treba da minimizujemo sledeću funkciju greške:
+
+\begin{center}
+	$E(a_k, b_k) = \sum_{i \epsilon w_k} ((a_kI_i + b_k - p_i)^2 + \varepsilon a_k^2)$.
+\end{center}
+
+\varepsilon je regularizacioni parametar koji služi da smanji uticaj $a_k$, ako je njena vrednost velika. Minimizacija ove jednačine predstavlja problem koji se rešava linearnom regresijom. Ovde ne ulazimo u detalje ovog rešenja već dajemo rešenja direktno:
+
+\begin{center}
+	$a_k = \dfrac{\dfrac{1}{|w|} \sum_{i \epsilon w_k} I_ip_i - \mu_k \overline{p_k}}{\sigma_k^2 + \varepsilon}$,
+\end{center}
+
+\begin{center}
+	$b_k = \overline{p_k} - a_k \mu_k$.
+\end{center}
+
+\mu_k i \sigma_k^2 su srednja vrednost i varijansa piksela slike $I$ u prozoru $w_k$, a $|w|$ je broj piksela u $w_k$, $\overline{p_k} = \dfrac{1}{|w|} \sum_{i \epsilon w_k} p_i$ je srednja vrednost piksela slike u $w_k$. Kada smo sračunali linearne koeficijente $(a_k, b_k)$, možemo da nastavimo sa postupkom za izračunavanje rezultata $q_i$. Pošto je će piksel $i$ biti deo različitih prozora $w_k$, prilikom filtriranja, ne možemo da koristimo jedinstvene koeficijente $(a_k, b_k)$ za jedan piksel. Zbog toga ćemo u obzir uzeti sve moguće vrednosti koeficijenata za $q_i$. Kada izračunamo vrednosti $(a_k, b_k)$ za svaki piksel ulazne slike, rezultat filtriranja će biti:
+
+\begin{center}
+	$q_i = \dfrac{1}{|w|} \sum_{k|i \epsilon w_k} (a_kI_i + b_k)$.
+\end{center}    
+
+Pošto su prozori $w_k$ kvadratnog oblika i simetrični su, možemo da primetimo da je 
+
 \subsection{Očuvanje ivica}%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Kernel}%%%%%%%%%%%%%%%%%%%%%%%  
