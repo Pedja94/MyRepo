@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2017.10.4)  7 OCT 2017 01:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2017.10.4)  7 OCT 2017 15:30
 entering extended mode
 **"D:/Pedja/Fakultet/VIII Semestar/Zavrsni rad/MyRepo/Rad/Obrada slike korišć
 enjem guided filtra.tex"
@@ -699,7 +699,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 31--35
 ("Obrada slike korišćenjem guided filtra.toc")
 \tf@toc=\write4
  [2]
-<img/prvaPrenesenaSlika.png, id=88, 197.23688pt x 137.01187pt>
+<img/prvaPrenesenaSlika.png, id=133, 197.23688pt x 137.01187pt>
 File: img/prvaPrenesenaSlika.png Graphic file (type png)
 
 <use img/prvaPrenesenaSlika.png>
@@ -722,7 +722,7 @@ e.1}) has been already used, duplicate ignored
                                                   \fi \fi 
 l.78 
       <./img/prvaPrenesenaSlika.png>]
-<img/spektar.png, id=99, 789.95125pt x 422.57875pt>
+<img/spektar.png, id=144, 789.95125pt x 422.57875pt>
 File: img/spektar.png Graphic file (type png)
  <use img/spektar.png>
 Package pdftex.def Info: img/spektar.png used on input line 89.
@@ -750,27 +750,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 125--126
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 127--128
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 133--134
 
  []
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 135--136
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 149--150
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 151--152
 
  []
 
@@ -779,13 +764,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 165--166
 
  []
 
-[5] <img/img.png, id=121, 256.96pt x 256.96pt>
+[5] <img/img.png, id=166, 256.96pt x 256.96pt>
 File: img/img.png Graphic file (type png)
  <use img/img.png>
 Package pdftex.def Info: img/img.png used on input line 179.
 (pdftex.def)             Requested size: 170.71652pt x 170.7194pt.
 
-<img/imgNegative.png, id=122, 256.96pt x 256.96pt>
+<img/imgNegative.png, id=167, 256.96pt x 256.96pt>
 File: img/imgNegative.png Graphic file (type png)
  <use img/imgNegative.png>
 Package pdftex.def Info: img/imgNegative.png used on input line 180.
@@ -795,19 +780,19 @@ File: img/img.png Graphic file (type png)
 <use img/img.png>
 Package pdftex.def Info: img/img.png used on input line 189.
 (pdftex.def)             Requested size: 170.71652pt x 170.7194pt.
- <img/imgLog.png, id=123, 256.96pt x 256.96pt>
+ <img/imgLog.png, id=168, 256.96pt x 256.96pt>
 File: img/imgLog.png Graphic file (type png)
 
 <use img/imgLog.png>
 Package pdftex.def Info: img/imgLog.png used on input line 190.
 (pdftex.def)             Requested size: 170.71652pt x 170.7194pt.
- <img/imgPow1.png, id=124, 256.96pt x 256.96pt>
+ <img/imgPow1.png, id=169, 256.96pt x 256.96pt>
 File: img/imgPow1.png Graphic file (type png)
 
 <use img/imgPow1.png>
 Package pdftex.def Info: img/imgPow1.png used on input line 191.
 (pdftex.def)             Requested size: 170.71652pt x 170.7194pt.
- <img/imgPow2.png, id=125, 256.96pt x 256.96pt>
+ <img/imgPow2.png, id=170, 256.96pt x 256.96pt>
 File: img/imgPow2.png Graphic file (type png)
 
 <use img/imgPow2.png>
@@ -818,7 +803,7 @@ File: img/img.png Graphic file (type png)
 Package pdftex.def Info: img/img.png used on input line 203.
 (pdftex.def)             Requested size: 170.71652pt x 170.7194pt.
 
-<img/histImg.png, id=126, 421.575pt x 316.18124pt>
+<img/histImg.png, id=171, 421.575pt x 316.18124pt>
 File: img/histImg.png Graphic file (type png)
  <use img/histImg.png>
 Package pdftex.def Info: img/histImg.png used on input line 204.
@@ -828,7 +813,7 @@ File: img/imgLog.png Graphic file (type png)
 <use img/imgLog.png>
 Package pdftex.def Info: img/imgLog.png used on input line 205.
 (pdftex.def)             Requested size: 170.71652pt x 170.7194pt.
- <img/histImgLog.png, id=127, 421.575pt x 316.18124pt>
+ <img/histImgLog.png, id=172, 421.575pt x 316.18124pt>
 File: img/histImgLog.png Graphic file (type png)
 
 <use img/histImgLog.png>
@@ -839,7 +824,7 @@ File: img/imgPow2.png Graphic file (type png)
 Package pdftex.def Info: img/imgPow2.png used on input line 207.
 (pdftex.def)             Requested size: 170.71652pt x 170.7194pt.
 
-<img/histImgPow2.png, id=128, 421.575pt x 316.18124pt>
+<img/histImgPow2.png, id=173, 421.575pt x 316.18124pt>
 File: img/histImgPow2.png Graphic file (type png)
 
 <use img/histImgPow2.png>
@@ -850,11 +835,11 @@ Package pdftex.def Info: img/histImgPow2.png used on input line 208.
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.211 \end{figure}
-                   <./img/img.png (PNG copy)> <./img/imgNegative.png (PNG copy)
->]
+l.215 
+       <./img/img.png (PNG copy)> <./img/imgNegative.png (PNG copy)>]
 File: img/imgPow2.png Graphic file (type png)
- <use img/imgPow2.png>
+
+<use img/imgPow2.png>
 Package pdftex.def Info: img/imgPow2.png used on input line 218.
 (pdftex.def)             Requested size: 170.71652pt x 170.7194pt.
 File: img/histImgPow2.png Graphic file (type png)
@@ -862,13 +847,13 @@ File: img/histImgPow2.png Graphic file (type png)
 Package pdftex.def Info: img/histImgPow2.png used on input line 219.
 (pdftex.def)             Requested size: 170.71652pt x 128.03822pt.
 
-<img/histEq.png, id=134, 256.96pt x 256.96pt>
+<img/histEq.png, id=179, 256.96pt x 256.96pt>
 File: img/histEq.png Graphic file (type png)
  <use img/histEq.png>
 Package pdftex.def Info: img/histEq.png used on input line 220.
 (pdftex.def)             Requested size: 170.71652pt x 170.7194pt.
 
-<img/histEqhist.png, id=135, 421.575pt x 316.18124pt>
+<img/histEqhist.png, id=180, 421.575pt x 316.18124pt>
 File: img/histEqhist.png Graphic file (type png)
  <use img/histEqhist.png>
 Package pdftex.def Info: img/histEqhist.png used on input line 221.
@@ -879,15 +864,10 @@ has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.227 
+l.229 
        <./img/imgLog.png (PNG copy)> <./img/imgPow1.png (PNG copy)> <./img/imgP
-ow2.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 234--235
-
- []
-
-[8pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) 
-has been already used, duplicate ignored
+ow2.png (PNG copy)>] [8pdfTeX warning (ext4): destination with the same identif
+ier (name{figure.5}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
@@ -897,11 +877,6 @@ histImgPow2.png (PNG copy)>]
 Overfull \hbox (2.55063pt too wide) detected at line 254
 \OML/cmm/m/it/12 R \OT1/cmr/m/n/12 = [] \OML/cmm/m/it/12 : \OMS/cmsy/m/n/12  [
 ]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 256--257
-
  []
 
 [9pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) 
@@ -916,49 +891,44 @@ File: img/img.png Graphic file (type png)
  <use img/img.png>
 Package pdftex.def Info: img/img.png used on input line 319.
 (pdftex.def)             Requested size: 170.71652pt x 170.7194pt.
- <img/imgAvg3.png, id=155, 256.96pt x 256.96pt>
+ <img/imgAvg3.png, id=200, 256.96pt x 256.96pt>
 File: img/imgAvg3.png Graphic file (type png)
 
 <use img/imgAvg3.png>
 Package pdftex.def Info: img/imgAvg3.png used on input line 320.
 (pdftex.def)             Requested size: 170.71652pt x 170.7194pt.
- <img/imgAvg5.png, id=156, 256.96pt x 256.96pt>
+ <img/imgAvg5.png, id=201, 256.96pt x 256.96pt>
 File: img/imgAvg5.png Graphic file (type png)
 
 <use img/imgAvg5.png>
 Package pdftex.def Info: img/imgAvg5.png used on input line 321.
 (pdftex.def)             Requested size: 170.71652pt x 170.7194pt.
- <img/imgAvg9.png, id=157, 256.96pt x 256.96pt>
+ <img/imgAvg9.png, id=202, 256.96pt x 256.96pt>
 File: img/imgAvg9.png Graphic file (type png)
 
 <use img/imgAvg9.png>
 Package pdftex.def Info: img/imgAvg9.png used on input line 322.
 (pdftex.def)             Requested size: 170.71652pt x 170.7194pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 328--329
-
- []
-
-[11pdfTeX warning (ext4): destination with the same identifier (name{figure.7})
- has been already used, duplicate ignored
+ [11pdfTeX warning (ext4): destination with the same identifier (name{figure.7}
+) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.329 
-       <./img/imgAvg3.png (PNG copy)> <./img/imgAvg5.png (PNG copy)> <./img/img
-Avg9.png (PNG copy)>] <img/tel.jpg, id=164, 461.725pt x 289.08pt>
+l.332 \end{center}
+                   <./img/imgAvg3.png (PNG copy)> <./img/imgAvg5.png (PNG copy)
+> <./img/imgAvg9.png (PNG copy)>] <img/tel.jpg, id=209, 461.725pt x 289.08pt>
 File: img/tel.jpg Graphic file (type jpg)
 
 <use img/tel.jpg>
 Package pdftex.def Info: img/tel.jpg used on input line 342.
 (pdftex.def)             Requested size: 170.71652pt x 106.88293pt.
- <img/telAvg.jpg, id=165, 461.725pt x 289.08pt>
+ <img/telAvg.jpg, id=210, 461.725pt x 289.08pt>
 File: img/telAvg.jpg Graphic file (type jpg)
 
 <use img/telAvg.jpg>
 Package pdftex.def Info: img/telAvg.jpg used on input line 343.
 (pdftex.def)             Requested size: 170.71652pt x 106.88293pt.
- <img/telTh.jpg, id=166, 461.725pt x 289.08pt>
+ <img/telTh.jpg, id=211, 461.725pt x 289.08pt>
 File: img/telTh.jpg Graphic file (type jpg)
 
 <use img/telTh.jpg>
@@ -976,7 +946,7 @@ File: img/img.png Graphic file (type png)
 Package pdftex.def Info: img/img.png used on input line 353.
 (pdftex.def)             Requested size: 170.71652pt x 170.7194pt.
 
-<img/imgMed.png, id=172, 256.96pt x 256.96pt>
+<img/imgMed.png, id=217, 256.96pt x 256.96pt>
 File: img/imgMed.png Graphic file (type png)
  <use img/imgMed.png>
 Package pdftex.def Info: img/imgMed.png used on input line 354.
@@ -986,11 +956,6 @@ Package pdftex.def Info: img/imgMed.png used on input line 354.
 Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\dj' on input line 359.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 365--366
-
- []
-
 [13pdfTeX warning (ext4): destination with the same identifier (name{figure.9})
  has been already used, duplicate ignored
 
@@ -998,11 +963,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 365--366
                                                   \fi \fi 
 l.366 
        <./img/imgMed.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 373--374
-
- []
-
-<img/izvod.png, id=178, 402.75468pt x 179.92218pt>
+<img/izvod.png, id=223, 402.75468pt x 179.92218pt>
 File: img/izvod.png Graphic file (type png)
  <use img/izvod.png>
 Package pdftex.def Info: img/izvod.png used on input line 383.
@@ -1012,29 +973,8 @@ Package pdftex.def Info: img/izvod.png used on input line 383.
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.390 N
-       ad slikom se primenjuju dvo-dimenzionalni izvodi, jer slika ima dve d...
- <./img/izvod.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 390--391
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 396--397
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 402--403
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 408--409
-
- []
-
-
+l.391 
+       <./img/izvod.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 414--415
 
  []
@@ -1049,25 +989,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 434--435
 
  []
 
-[15] <img/moon.jpg, id=188, 501.875pt x 376.40625pt>
+[15] <img/moon.jpg, id=233, 501.875pt x 376.40625pt>
 File: img/moon.jpg Graphic file (type jpg)
  <use img/moon.jpg>
 Package pdftex.def Info: img/moon.jpg used on input line 453.
 (pdftex.def)             Requested size: 184.9429pt x 138.711pt.
 
-<img/moonLap.jpg, id=189, 501.875pt x 376.40625pt>
+<img/moonLap.jpg, id=234, 501.875pt x 376.40625pt>
 File: img/moonLap.jpg Graphic file (type jpg)
  <use img/moonLap.jpg>
 Package pdftex.def Info: img/moonLap.jpg used on input line 454.
 (pdftex.def)             Requested size: 184.9429pt x 138.711pt.
 
-<img/moonEn.jpg, id=190, 501.875pt x 376.40625pt>
+<img/moonEn.jpg, id=235, 501.875pt x 376.40625pt>
 File: img/moonEn.jpg Graphic file (type jpg)
  <use img/moonEn.jpg>
 Package pdftex.def Info: img/moonEn.jpg used on input line 455.
 (pdftex.def)             Requested size: 184.9429pt x 138.711pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 460--461
+Underfull \hbox (badness 10000) in paragraph at lines 483--484
 
  []
 
@@ -1076,79 +1016,74 @@ Underfull \hbox (badness 10000) in paragraph at lines 460--461
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.481 P
-       ostoji još jedan način za postizanje poboljšanja slike. Naime ivic...
- <./img/moon.jpg> <./img/moonLap.jpg> <./img/moonEn.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 483--484
+l.485 \[
+         <./img/moon.jpg> <./img/moonLap.jpg> <./img/moonEn.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 524--525
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 501--502
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 519--520
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 525--526
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 538--539
-
- []
-
-[17]
-Underfull \hbox (badness 10000) in paragraph at lines 544--545
+Underfull \hbox (badness 10000) in paragraph at lines 543--544
 
  []
 
 File: img/img.png Graphic file (type png)
 <use img/img.png>
-Package pdftex.def Info: img/img.png used on input line 563.
+Package pdftex.def Info: img/img.png used on input line 562.
 (pdftex.def)             Requested size: 170.71652pt x 170.7194pt.
- <img/imgSob.png, id=201, 256.96pt x 256.96pt>
+ <img/imgSob.png, id=241, 256.96pt x 256.96pt>
 File: img/imgSob.png Graphic file (type png)
 
 <use img/imgSob.png>
-Package pdftex.def Info: img/imgSob.png used on input line 564.
+Package pdftex.def Info: img/imgSob.png used on input line 563.
 (pdftex.def)             Requested size: 170.71652pt x 170.7194pt.
- [18pdfTeX warning (ext4): destination with the same identifier (name{figure.12
-}) has been already used, duplicate ignored
+ [17] [18pdfTeX warning (ext4): destination with the same identifier (name{figu
+re.12}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.580 \newpage
-               <./img/imgSob.png (PNG copy)>] [19]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 615.
- [20]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 615.
+l.581 
+       <./img/imgSob.png (PNG copy)>]
 
-("Obrada slike korišćenjem guided filtra.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 615.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 615.
+Package hyperref Warning: Composite letter `\textasciicaron+c'
+(hyperref)                not defined in PD1 encoding,
+(hyperref)                removing `\textasciicaron' on input line 586.
+
+[19]
+
+Package hyperref Warning: Composite letter `\textasciicaron+c'
+(hyperref)                not defined in PD1 encoding,
+(hyperref)                removing `\textasciicaron' on input line 598.
+
+
+Package hyperref Warning: Composite letter `\textasciicaron+c'
+(hyperref)                not defined in PD1 encoding,
+(hyperref)                removing `\textasciicaron' on input line 604.
+
+[20]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 649.
+ [21]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 649.
+ ("Obrada slike korišćenjem guided filtra.aux")
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 649.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 649.
 Package rerunfilecheck Info: File `"Obrada slike korišćenjem guided filtra".o
 ut' has not changed.
-(rerunfilecheck)             Checksum: 6ACF08C5C46978C72C710B50FB141838;947.
+(rerunfilecheck)             Checksum: 5D437C9653E0206E5D98F7879F972402;1525.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 615.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 649.
  ) 
 Here is how much of TeX's memory you used:
- 8604 strings out of 493671
- 122410 string characters out of 3141388
- 225531 words of memory out of 3000000
- 11745 multiletter control sequences out of 15000+200000
+ 8624 strings out of 493671
+ 122695 string characters out of 3141388
+ 227531 words of memory out of 3000000
+ 11755 multiletter control sequences out of 15000+200000
  21140 words of font info for 53 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 29i,9n,32p,2277b,362s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 29i,9n,32p,2291b,392s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/cm-super/cm-super-t1.enc}<
 C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:
 /Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/P
@@ -1164,10 +1099,10 @@ X 2.9/fonts/type1/public/cm-super/sfbx2488.pfb><C:/Program Files (x86)/MiKTeX 2
 .9/fonts/type1/public/cm-super/sfrm1200.pfb><C:/Program Files (x86)/MiKTeX 2.9/
 fonts/type1/public/cm-super/sfrm1440.pfb><C:/Program Files (x86)/MiKTeX 2.9/fon
 ts/type1/public/cm-super/sfti1200.pfb>
-Output written on "Obrada slike korišćenjem guided filtra.pdf" (22 pages, 816
-711 bytes).
+Output written on "Obrada slike korišćenjem guided filtra.pdf" (23 pages, 831
+930 bytes).
 PDF statistics:
- 285 PDF objects out of 1000 (max. 8388607)
- 53 named destinations out of 1000 (max. 500000)
- 233 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 336 PDF objects out of 1000 (max. 8388607)
+ 63 named destinations out of 1000 (max. 500000)
+ 305 words of extra memory for PDF output out of 10000 (max. 10000000)
 

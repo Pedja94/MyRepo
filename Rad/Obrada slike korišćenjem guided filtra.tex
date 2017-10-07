@@ -74,7 +74,7 @@ Bitne komponente sistema za obradu slike su specijalizovan hardver za obradu sli
 
 \subsection{Osnovni procesi u obradi digitalne slike}%%%%%%%%%%%%%%%%%%%%%%%
 
-Neki od osnovnih procesa i primena u obradi digitalne slike su sledeći. \emph{Pribavljanje slike} (eng. Image acquisition) se odnosi na to kako je slika nastala. Slika može da bude data u digitalnom obliku, a može da se zada i u analognom. Akvizicija slike uključuje predprocesiranje kao što je skaliranje i drugo. \emph{Poboljšanje slike} (eng. Image enhancement) je najprostiji ali i najkorišćeniji postupak u obradi slika. Cilj ovog procesa je da se na slici izraze bitni aspekti radi izučavanja parametra neke slike. Primene su različite (npr. izoštravanje ivica radi uočavanja detalja). \emph{Restauracija slike} (eng. Image restoration) je oblast koja se bavi poboljšanjem izgleda slike. Razlika između restauracije i poboljšanja je u tome što se tehnike za restauraciju oslanjaju na matematičke i probabilističke modele degradacije slike, dok se poboljšanje zasniva na subjektivnom osećaju čoveka. \emph{Obrada slika u boji} (eng. Color image processing) je oblast koja se bavi obradom slike u boji i artifaktima koje slike u boji donose u odnosu na obradu crno belih slika. \emph{Kompresija} (eng. Compression) se bavi tehnikama za kompresiju slike, radi smanjenja veličine slika, što je od velikog značaja za prenos i čuvanje podataka. \emph{Morfološka obrada slike} (eng. Morphological processing) se bavi alatima za ekstrakciju komponenti slika koji su pogodni za određenu reprezentaciju podataka koje slika nosi. \emph{Segmentacija} (eng. Segmentation) se bavi podelom slike na koezistentne delove ili objekte. \emph{Reprezentacija i deskripcija} (eng. Representation and description) kao što samo ime kaže se bavi predstavljanjem slike kako na ulazu tako i na izlazu nekog procesa obrade slike. I na kraju \emph{Prepoznavanje} (eng. Recognition) je proces u kojem se objektima dodeljuju labele odnosno imena na osnovu deskriptora, koji se mogu dobiti na osnovu slike. Svi ovi procesi mogu da koriste bazu znanja u kojoj se čuvaju bitne činjenice za svaki od procesa prilikom obrade slika. Postupci i osobine koje se javljaju na određenoj slici mogu da se jave ponovo. pa je čuvanje podataka o obradi veoma bitno.
+Neki od osnovnih procesa i primena u obradi digitalne slike su sledeći. \emph{Pribavljanje slike} \emph{(eng. Image acquisition)} se odnosi na to kako je slika nastala. Slika može da bude data u digitalnom obliku, a može da se zada i u analognom. Akvizicija slike uključuje predprocesiranje kao što je skaliranje i drugo. \emph{Poboljšanje slike} \emph{(eng. Image enhancement)} je najprostiji ali i najkorišćeniji postupak u obradi slika. Cilj ovog procesa je da se na slici izraze bitni aspekti radi izučavanja parametra neke slike. Primene su različite (npr. izoštravanje ivica radi uočavanja detalja). \emph{Restauracija slike (eng. Image restoration)} je oblast koja se bavi poboljšanjem izgleda slike. Razlika između restauracije i poboljšanja je u tome što se tehnike za restauraciju oslanjaju na matematičke i probabilističke modele degradacije slike, dok se poboljšanje zasniva na subjektivnom osećaju čoveka. \emph{Obrada slika u boji (eng. Color image processing)} je oblast koja se bavi obradom slike u boji i artifaktima koje slike u boji donose u odnosu na obradu crno belih slika. \emph{Kompresija (eng. Compression)} se bavi tehnikama za kompresiju slike, radi smanjenja veličine slika, što je od velikog značaja za prenos i čuvanje podataka. \emph{Morfološka obrada slike (eng. Morphological processing)} se bavi alatima za ekstrakciju komponenti slika koji su pogodni za određenu reprezentaciju podataka koje slika nosi. \emph{Segmentacija (eng. Segmentation)} se bavi podelom slike na koezistentne delove ili objekte. \emph{Reprezentacija i deskripcija (eng. Representation and description)} kao što samo ime kaže se bavi predstavljanjem slike kako na ulazu tako i na izlazu nekog procesa obrade slike. I na kraju \emph{Prepoznavanje (eng. Recognition)} je proces u kojem se objektima dodeljuju labele odnosno imena na osnovu deskriptora, koji se mogu dobiti na osnovu slike. Svi ovi procesi mogu da koriste bazu znanja u kojoj se čuvaju bitne činjenice za svaki od procesa prilikom obrade slika. Postupci i osobine koje se javljaju na određenoj slici mogu da se jave ponovo. pa je čuvanje podataka o obradi veoma bitno.
 
 U ovom radu ćemo se fokusirati na pribavljanje slike i poboljšanje slike.
 
@@ -124,7 +124,7 @@ b) $D(p, q) = D(q, p)$,
 
 c) $D(p, z) <= D(p, q) + D(q, z)$.\\
 
-Euklidska distanca: \\
+Euklidska distanca: 
 
 \begin{center}
 $D_{e}(p, q) = [ (x  - s)^{2} + (y - t)^{2} ]^{1/2}.$
@@ -132,7 +132,7 @@ $D_{e}(p, q) = [ (x  - s)^{2} + (y - t)^{2} ]^{1/2}.$
 
 Euklidska distanca nije baš pogodna za sliku koja ima diskretne vrendosti pa se za distancu koriste:\\
 
-$D_{4}$ distanca 4-suseda:\\
+$D_{4}$ distanca 4-suseda:
 
 \begin{center}
 $D_{4}(p, q) = |x - s| + |y + t|.$
@@ -148,7 +148,7 @@ $D_{4}(p, q) = |x - s| + |y + t|.$
 \end{bmatrix}
 \].\\
 
-$D_{8}$ distanca 8-suseda:\\
+$D_{8}$ distanca 8-suseda:
 
 \begin{center}
 $D_{8}(p, q) = max(|x - s|, |y + t|).$
@@ -231,7 +231,7 @@ Nad slikama se često pirmenjuje operacija oduzimanja. Ako želimo da vidimo da 
 
 \subsection{Osnovni pojmovi}%%%%%%%%%%%%%%%%%%%%%%%
 
-Kao što je ranije spomenuto prilikom obrade slike operacije se izvršavaju nad pikselom i njegovim susedima sa jedne strane i ogovarajućom podslikom sa druge. Ta pod slika nosi informacije o koje se koriste za filtriranje slike. Ta podslika (odnosno pravougaonih piksela) se naziva kernel ili prozor. Koncept filtriranja slike je uzet iz matematike ondnosno analize i matematički predstavljen taj proces je ustvari konvolucija $f * w$ gde je $f$ predstavlja sliku koja se filtrira, $w$ predstavlja kernel za filtriranje. Za svaki piksel slike koja se filtrira računa se nova vrednost uz pomoć kernela $w$ i odgovarajućeg piksela i njegovih suseda, iz slike. Ako imamo kernel oblika $3 x 3$ iračunavanje vrednosti piksela $(x, y)$ izgleda ovako\\
+Kao što je ranije spomenuto prilikom obrade slike operacije se izvršavaju nad pikselom i njegovim susedima sa jedne strane i ogovarajućom podslikom sa druge. Ta pod slika nosi informacije o koje se koriste za filtriranje slike. Ta podslika (odnosno pravougaonih piksela) se naziva kernel ili prozor. Koncept filtriranja slike je uzet iz matematike ondnosno analize i matematički predstavljen taj proces je ustvari konvolucija $f * w$ gde je $f$ predstavlja sliku koja se filtrira, $w$ predstavlja kernel za filtriranje. Za svaki piksel slike koja se filtrira računa se nova vrednost uz pomoć kernela $w$ i odgovarajućeg piksela i njegovih suseda, iz slike. Ako imamo kernel oblika $3 x 3$ iračunavanje vrednosti piksela $(x, y)$ izgleda ovako
 
 \begin{center}
 $R = w(-1, -1)f(x - 1, y - 1) + w(-1, 0)f(x - 1, y) + \dots + w(0, 0)f(x, y) + \dots + w(1, 0)f(x + 1, y) + w(1, 1)f(x + 1, y + 1)$.
@@ -253,7 +253,7 @@ R
 \end{bmatrix}
 \].
 
-Koeficijet kernela $w(0, 0)$ odgovara pikselu $f(x, y)$, što ukazuje na to da je maska centrirana oko piksela $(x, y)$. Obzirom da kernel mora da bude centriran oko jednog piksela, za kernel dimenzije $m x n$, važi da je $m = 2a + 1$ i $n = 2b + 1$, gde su $a$ i $b$ pozitivni celi brojevi. Najmanji kernel koji ima smisla je $3 x 3$ , a trivijalni slučaj predstavlja kernel $1 x 1$, koji se primenjuje samo kod osnovnih operacija. Generalno filtriranje slike $f$ dimenzija $M x N$, korišćenjem kernela $w$ veličine $m x n$ izrazom:\\
+Koeficijet kernela $w(0, 0)$ odgovara pikselu $f(x, y)$, što ukazuje na to da je maska centrirana oko piksela $(x, y)$. Obzirom da kernel mora da bude centriran oko jednog piksela, za kernel dimenzije $m x n$, važi da je $m = 2a + 1$ i $n = 2b + 1$, gde su $a$ i $b$ pozitivni celi brojevi. Najmanji kernel koji ima smisla je $3 x 3$ , a trivijalni slučaj predstavlja kernel $1 x 1$, koji se primenjuje samo kod osnovnih operacija. Generalno filtriranje slike $f$ dimenzija $M x N$, korišćenjem kernela $w$ veličine $m x n$ izrazom:
 
 \begin{center}
 $g(x, y)  = \sum_{s = -a}^{a} \sum_{t = -b}^{b} w(s, t) f(x + s, y + t)$,\\
@@ -291,7 +291,7 @@ Dva osnovna tipa filtera su filteri za uklanjanje šuma i zamućivanje slike koj
 
 \subsection{Smoothing filtri(filtri za uklanjanje šuma)}%%%%%%%%%%%%%%%%%%%%%%%
 
-Ovaj tip filtra se koristi za takozvano zamućivanje (eng. blurring) i za redukciju šuma. Blurring se koristi za uklanjanje malih detalja sa slike, u procesu ekstrakcije objekata sa slike. Takođe može da se koristi za popunjavanje prekida u linijama na slici, koje mogu da se jave zbog šuma na slici. Rezultat ovog filtra je u suštini srednja vrednost piksela koji su sadržani u okolini kernela koji se koristi za filtriranje. Zbog toga se ovi filtri nazivaju i filteri srednje vrednosti (eng. averaging filters). 
+Ovaj tip filtra se koristi za takozvano zamućivanje \emph{(eng. blurring)} i za redukciju šuma. Blurring se koristi za uklanjanje malih detalja sa slike, u procesu ekstrakcije objekata sa slike. Takođe može da se koristi za popunjavanje prekida u linijama na slici, koje mogu da se jave zbog šuma na slici. Rezultat ovog filtra je u suštini srednja vrednost piksela koji su sadržani u okolini kernela koji se koristi za filtriranje. Zbog toga se ovi filtri nazivaju i filteri srednje vrednosti \emph{(eng. averaging filters)}. 
 
 Ideja ovog filtriranja je da se vrednost konkretnog piksela zameni sa srednjom vrednošću piksela iz njegove okoline, koji su definisani kernelom. Rezultat ovog filtra biće slika koja ima ublažene prelaze između vrednosti susednih piksela. Dva susedna piksela koja se dosta razilkuju biće sličnija po vrednosti. Pošto se pikseli, koji predstavaljaju šum, dosta razlikuju po vrednost od susednih piksela, na ovaj način će se oni uklopiti u okolinu. Loša strana ovakvog filtriranja se ogleda u tome što će mesta koja predstavalju ivice ili linije na slici početi da gube oštrinu. Naime na mestima na kojima se nalaze ivice imamo veliku razliku u susednim pikselima, pa će primenom ovog filtra ta ralika postati manja što će dovesti do gubljenja oštrine tih ivica.  
 
@@ -325,7 +325,7 @@ Ovo su tipični primeri smoothing filtra dimenzija $3 x 3$. Levo je najprostiji 
 \end{figure}
 
 
-Naravno ova priča važi i za filtre koji koriste kernel bilo koje dimenzije $m x n$ ($m$ i $n$ su neparni). Ako imamo kernel ovih dimenzija opšta formula za izračunavanje vrednosti rezultujećeg piksela igledaće ovako: \\
+Naravno ova priča važi i za filtre koji koriste kernel bilo koje dimenzije $m x n$ ($m$ i $n$ su neparni). Ako imamo kernel ovih dimenzija opšta formula za izračunavanje vrednosti rezultujećeg piksela igledaće ovako: 
 
 \begin{center}
 $g(x, y) = \dfrac{\sum_{s = -a}^{a} \sum_{s = -b}^{b} w(s, t)f(x + s, y + t)}{\sum_{s = -a}^{a} \sum_{s = -b}^{b} w(s, t)}$,  \\
@@ -362,18 +362,18 @@ Glavni cilj ovog tipa filtara je da na slici obeleže fine detalje, kao što su 
 
 Filteri opisani u predhodnom poglavlju koriste sume i srednje vrednosti da bi filtrirali sliku. Ovaj proces je analogan integraciji, pa možemo da zaključimo da sharpening filtri, koji imaju suprotni cilj u odnosu na smooothing filtre, koriste diferenciranje da bi postigli željeni rezultat. Delovanje funkcije izvoda je porporcionalno stepenu nepovezanosti slike u tački, gde je izvod primenjen. Diferenciranje slika će naglasiti ivice i prelaze, kao i šum i sve delove gde se vrednosti piksela naglo menjaju (prelaz izmedju dve boje na slici koje se dosta razlikuju u nijansi npr crna i bela).
 
-Da bi objasnili uticaj izvoda na sliku, objsnićemo osnovne koncepte preko jedno dimenzionalnih izvoda. Izvod diskretne funkcije se definiše kao razlika između dva uzastopna elementa. Postoji više načina za definisanje izvoda nad slikom, ali svi oni zahtevaju da funkcija izvoda ispunjava sledeće: 1) jednaka je nuli u ravnim segmentima (segmenti koji imaju konstantnu vrednost); 2) različita je od nule u segmentima gde postoji nagla ili konstantna promena; 3) različita je od nule duž segmenata gde se javlja konstantna promena; Slično i za funkciju drugog izvoda važi da je: 1)  jednaka je nuli u ravnim segmentima; 2) različita je od nule na mestima gde se završava nagla ili konstantna promena; 3) jednaka je nuli duž segmenata gde se javlja konstantna promena; S obzirom da pikseli slike uzimaju diskretne vrenosti vrednost izvoda se kreće u granicama tih vrednosti. Definicija jednodimenzionalnog izvoda je: \\
+Da bi objasnili uticaj izvoda na sliku, objsnićemo osnovne koncepte preko jedno dimenzionalnih izvoda. Izvod diskretne funkcije se definiše kao razlika između dva uzastopna elementa. Postoji više načina za definisanje izvoda nad slikom, ali svi oni zahtevaju da funkcija izvoda ispunjava sledeće: 1) jednaka je nuli u ravnim segmentima (segmenti koji imaju konstantnu vrednost); 2) različita je od nule u segmentima gde postoji nagla ili konstantna promena; 3) različita je od nule duž segmenata gde se javlja konstantna promena; Slično i za funkciju drugog izvoda važi da je: 1)  jednaka je nuli u ravnim segmentima; 2) različita je od nule na mestima gde se završava nagla ili konstantna promena; 3) jednaka je nuli duž segmenata gde se javlja konstantna promena; S obzirom da pikseli slike uzimaju diskretne vrenosti vrednost izvoda se kreće u granicama tih vrednosti. Definicija jednodimenzionalnog izvoda je: 
 
 \begin{center}
-$\dfrac{\delta f}{\delta x} = f(x + 1) - f(x)$, parcijalni izvod po x osi.\\ 
+$\dfrac{\delta f}{\delta x} = f(x + 1) - f(x)$, parcijalni izvod po x osi.\\
 \emph{} \\
 $\dfrac{\delta f}{\delta y} = f(y + 1) - f(y)$, parcijalni izvod po y osi.\\
 \end{center}
 
-Slično se za drugi izvod definiše:\\
+Slično se za drugi izvod definiše:
 
 \begin{center}
-$\dfrac{\delta^2 f}{\delta x} = f(x + 1) + f(x - 1) - 2f(x)$, drugi parcijalni izvod po x osi.\\ 
+$\dfrac{\delta^2 f}{\delta x} = f(x + 1) + f(x - 1) - 2f(x)$, drugi parcijalni izvod po x osi.\\
 \emph{} \\
 $\dfrac{\delta^2 f}{\delta y} = f(y + 1) + f(y - 1) - 2f(y)$, drugi parcijalni izvod po y osi.\\
 \end{center}
@@ -387,25 +387,25 @@ $\dfrac{\delta^2 f}{\delta y} = f(y + 1) + f(y - 1) - 2f(y)$, drugi parcijalni i
 
 Ako pogledamo sliku 10 možemo da uočimo da je prvi izvod različit od nule u segmentu gde je pad konstantan (svi susedi se razlikuju za 1), dok je drugi izvod različit od nule na početku i kraju tog segmenta. Pošto se ivice na slici iskazuju u ovom tranzicijom, možemo da zaključimo da će prvi izvod da proizvede debele ivice, dok će drugi izvod proizvesti tanke ivice. Npr. ako imamo belu liniju na crnoj pozadini, koja ima određenu debljinu, prvi izvod će izdvojiti celu liniju. Drugi izvod će ,sa druge strane, izdvojiti dve finije linije koje ukazuju na prelaz sa crne na belu boju i sa bele na crnu liniju. Ako pogledamo deo na kome imamo izolovani skok u vrednosti piksela, možemo da primetimo da je drugi izvod izraženiji nego prvi. Ovo je normalno jer je drugi izvod bolji u pronalaženju oštrih promena. Na osnovu ovoga možemo da očekujemo da će drugi izvod bolje da pronalazi finije detalje i šum. Ako je u pitanju manja promena prvi i drugi izvod će se ponašati slično. Na osnovu svega rečenog možemo da zaključimo da primenom prvog izvoda dobijamo debele lvice, dok primenom drugog izvoda dobijamo finije linije i izolirane tačke. Prvi izvod nam ukazuje na mesta gde je promena konstantna. Drugi izvod nam ukazuje na mesta gde je promena velika i izolovana. Ugalvnom se drugi izvod više koriti u konkrentim primenama zbog toga što naglašava finije detalje. Zbog toga ćemo se ovde fokusirati na filtre koje koriste drugi izvod. Bitno je naglasiti da se filteri koji koriste prvi izvod analogno koriste i imaju iste osobine kada se koriste.
 
-Nad slikom se primenjuju dvo-dimenzionalni izvodi, jer slika ima dve dimenzije. Na osnovu ovoga se formiraju kerneli koji se koriste u primeni ovih filtara. Nas interesuju izotropski filteri, tj. filteri koji su invarijantni u odnosu na pravac promena, koje se javljaju na slici. Drugim rečima ovi filteri su nezavisni od rotacije, što znači da će pronaći sve ivice bez obzira na njihov ugao u ravni. Ako sliku rotiramo ovakav filter će pronaći iste ivice kao na originalnoj slici. Najprostija funkcija izvoda koja se koristi je \emph{Laplacian}: \\
+Nad slikom se primenjuju dvo-dimenzionalni izvodi, jer slika ima dve dimenzije. Na osnovu ovoga se formiraju kerneli koji se koriste u primeni ovih filtara. Nas interesuju izotropski filteri, tj. filteri koji su invarijantni u odnosu na pravac promena, koje se javljaju na slici. Drugim rečima ovi filteri su nezavisni od rotacije, što znači da će pronaći sve ivice bez obzira na njihov ugao u ravni. Ako sliku rotiramo ovakav filter će pronaći iste ivice kao na originalnoj slici. Najprostija funkcija izvoda koja se koristi je \emph{Laplacian}: 
 
 \begin{center}
 $\Delta^{2}f = \dfrac{\delta^{2}f}{\delta x^{2}} + \dfrac{\delta^{2}f}{\delta x^{2}}$. \\
 \end{center}
 
-Pošto su izvodi linerane funkcije možemo da zaključimo da je i \emph{Laplacian} linearna funkcija. Da bi smo ovu funkciju mogli da koristimo za obradu slike moramo da je prevedemo u diskretnu formu. Iskoristićemo funkciju koju smo koristili da definišemo jedno-dimenzionalni izvod. Drugi parcijalni izvod po x-osi će izgledati ovako:\\
+Pošto su izvodi linerane funkcije možemo da zaključimo da je i \emph{Laplacian} linearna funkcija. Da bi smo ovu funkciju mogli da koristimo za obradu slike moramo da je prevedemo u diskretnu formu. Iskoristićemo funkciju koju smo koristili da definišemo jedno-dimenzionalni izvod. Drugi parcijalni izvod po x-osi će izgledati ovako:
 
 \begin{center}
 $\dfrac{\delta^{2}f}{\delta x^{2}} = f(x + 1, y) + f(x - 1, y) - 2f(x, y)$.\\
 \end{center}
 
-Slično, drugi parcijani izvod po y-osi će izgledati ovako:\\
+Slično, drugi parcijani izvod po y-osi će izgledati ovako:
 
 \begin{center}
 $\dfrac{\delta^{2}f}{\delta y^{2}} = f(x, y + 1) + f(x, y - 1) - 2f(x, y)$.\\  
 \end{center}
 
-Na osnovu ovoga možemo da zaključimo da će laplacian funkcija izgledati ovako:\\
+Na osnovu ovoga možemo da zaključimo da će laplacian funkcija izgledati ovako:
 
 \begin{center}
 $\Delta^{2}f = f(x + 1, y) + f(x - 1, y) + f(x, y + 1) + f(x, y - 1) - 4f(x, y)$. \\
@@ -457,7 +457,7 @@ Pošto je laplacian funckija izvoda, ona će na slici otkriti promene u nijansam
 \label{overflow}
 \end{figure}
 
-Ova operacija može da se implementira u jednom prolazu tako što će da se modifikuje kernel. Operacija koja je izvršena na predhodonj slici može da se predstavi ovako:\\
+Ova operacija može da se implementira u jednom prolazu tako što će da se modifikuje kernel. Operacija koja je izvršena na predhodonj slici može da se predstavi ovako:
 
 \begin{center}
 $g(x, y) = f(x, y) - \Delta^{2}f(x, y) = 5f(x, y) - [f(x + 1, y) + f(x - 1, y) + f(x, y - 1) + f(x, y + 1)]$.\\
@@ -494,11 +494,10 @@ Kao što je rečeno ranije za filtriranje slike može da se koristi i prvi izvod
      \dfrac{\delta f}{\delta x} \\
      \\
      \dfrac{\delta f}{\delta y} \\
-     \\
 \end{bmatrix}
 \]. 
 
-Dužina vektora se računa kao: \\
+Dužina vektora se računa kao: 
 
 \begin{center}
 	$\Delta \emph{f} = mag(\Delta \textbf{f}) = [G_{x}^{2} + [G_{y}^{2}]^{1/2} = [ (\dfrac{\delta f}{\delta x})^{2} +  (\dfrac{\delta f}{\delta y})^{2} ]^{1/2}$. \\
@@ -516,7 +515,7 @@ Ako je region na slici za kernel veličine 3 x 3 definisan kao
 \end{bmatrix}
 \].
 
-gde $z_{5}$ predstavlja $f(x, y)$, a $z_{1}$ predstavlja $f(x - 1, y - 1)$ onda je $G_{x} = (z_{9} - z_{5})$ i $G_{y} = (z_{8} - z_{6})$. Ovo je prva predložena definicija za računanje prvih izvoda. Sledi da je gradijent:\\
+gde $z_{5}$ predstavlja $f(x, y)$, a $z_{1}$ predstavlja $f(x - 1, y - 1)$ onda je $G_{x} = (z_{9} - z_{5})$ i $G_{y} = (z_{8} - z_{6})$. Ovo je prva predložena definicija za računanje prvih izvoda. Sledi da je gradijent:
 
 \begin{center}
 $\Delta \emph{f} \approx |z_{9} - z_{5}| + |z_{8} - z_{6}|.$\\
@@ -535,7 +534,7 @@ Kernel za ovako definisan gradient se naziva Robertsov kros-gradijent operator i
 \end{bmatrix}
 \].
 
-Pošto za kernele nije uobičajno da imaju parne dimenzije uvodi se ovakva definicija gradijenta. Ako imamo kernel veličine $3 x 3$ funkcija gradijenta izgleda ovako: \\
+Pošto za kernele nije uobičajno da imaju parne dimenzije uvodi se ovakva definicija gradijenta. Ako imamo kernel veličine $3 x 3$ funkcija gradijenta izgleda ovako: 
 
 \begin{center}
 $\Delta \emph{f} \approx |(z_7 + 2z_8 + z_9) - (z_1 + 2z_2 + z_3)| + |(z_3 + 2z_6 + z_9) - (z_1 + 2z_4 + z_7)|$.\\
@@ -572,8 +571,43 @@ Predhodno prikazani filtri za uklanjanje šuma i određivanje ivica imaju veliku
 
 Jasno je da se ovi filtri koriste u kombinaciji sa drugim filtrima i kao deo nekog većeg procesa. Oni mogu međusobno da se kombinuju. Postoje i složeni filtri koji su napravlejni koristeći koncepte ova dva tipa filtara. To je nejmoćniji tip filtara koji kao rezultat daje slike kod kojih se uklanja šum, što je odlika smoothing filtara, ali se pri tome slika ne zamućuje, čuvaju se ivice, što je odlika sharpening filtara. Dva najpoznatija ovakva filtra su \emph{Bilateral filter} i \emph{Guided filter} kojim se ovaj rad detaljnije bavi u nastavku.  
 
-
 \section{Guided filter}%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Uvod}%%%%%%%%%%%%%%%%%%%%%%%
+
+Veliki broj aplikacija u oblastima kompjuterske vizije i računarske grafike sadrže proces zadužen za filtriranje slika, u cilju uklanjanja i/ili izvlačenja podataka sa slike. Linearni filtri invarijantni na tranziciju, kao što su mean, Laplacinan, Gausov i Sobelovi filtri, se široko koriste prilikom obrade slike, za restauraciju, zamućivanje i izoštravanje, detekciju ivica, izvlačenje podataka, dinamičku kompresiju itd. Ovi filteri su prostorno invarijantni i nezavisni od sadržaja slike. 
+
+Pa ipak oni nekad nemogu da zadovolje očekivani odgovor neke obrade. Zbog toga se ovde uvodi pojam slike vodiča \emph{(eng. guide)}, koja sadrži dodatne inforamcije koje mogu da se ikoriste pri filtriranju i poboljšaju rezultat. Ovaj koncept je prvi put upotrebljen u procesu difuzije \emph{(eng. anisotropic diffusion)}, u kojem gradijenti filtrirane slike služe kao vodič za ovaj proces i tako ovaj proces izbegava da uništi oštrinu ivica. Takođe WLS filter \emph{(eng. weighted least squares)} koristi ulaznu sliku kao vodič, optimizuje kvadratnu funkciju, koja je ekvivalentna procesu difuzije, koji je malopre pomenut. U mnogim primenama kao slika vodič može da se koristi različita slika u odnosu na onu koja se filtrira. Npr. kod procesa uklanjanja magle sa slike, kao slika vodič se koristi procena količine smetnji na slici, koja treba da se filtrira. Većina ovih procesa je implementirana, optimizacijom kvaratne funkcije, čiji su parametri uzeti iz slike vodiča. Rešenje je predstavljeno rešenjem velikih retko popunjenih matrica. Ovakve nehomogene matrice predstvaljaju filtere koji su invarijantni u odnosu na tranziciju. Iako su ovakvi filtri efikasni, oni mogu da budu zahtevni za izvršavanje.
+
+Drugi način da se iskoristi slika vodič je da se njene osobine eksplicitno iskažu u kernelu. \emph{Bilateral filter} je najpoznatiji primer takvog filtera. Rezultat koji piksel dobija, kod ovog filtriranja, je težinska prosečna vrednost piksela i njegovih suseda, gde težine zavise od sličnosti piksela u voidč slici. Vodič slika moće i sama da bude ulazna slika u ovom filtru. \emph{Bilateral filter} može da izglača siten fluktuacije, a da pri tome zadrži ivice. Problem ovog filtra je što ima loše artifakte koji se javljaju blizu ivica. Dolazi do promene boje blizu ivica. Takođe problem je implementirati efikasan algoritam, metodi koji ubrzavaju ovaj algoritam sa druge strane utiču na preciznost njegove obrade.
+
+U radovima [3] i [4] se predlaže \emph{Guided filter} ili vođeni filter. Rezultat filtriranja je lokalna linearna transformacija slike vodiča. Sa jedne strane ovaj filter ima dobre osobine, pošto čuva ivice slike, a sa druge strane nema loše artifakte kao \emph{Bilateral filter}. \emph{Guided filter} može da se koristi kao smoothing filter, ali njegova namena prevazilazi samo to. Uz pomoć slike vodiča rezultat ovog filtriranja će biti slika koja je manje zamućena od originalne slike i bolje struktuirana od nje. Ovaj filter se pokazao dobro u raznim primenama kao što su poboljšanje slike, ukljanjanje šuma, HDR kompresija, mating idt. Još jedan prednost \emph{Guided filter}-a je to što ima složenost $O(n)$, gde je $n$ broj piksela slike. Moće da se koristi kako na jednokanalnim slikama tako i na višekanalnim slikama. Prema radovima [3] i [4] ovo je najbrži filter ove namene, koji na CPU implementaciji obrađuje 1 mega piksel(1024 x 1024) za 40ms. 
+
+\subsection{Slične ideje}%%%%%%%%%%%%%%%%%%%%%%%  
+
+\emph{Bilateral filter} je tipičan primer ovog tipa filtara i jedan od prvih koji je zamišljen. To su filtri koji služe za smoothing ali pri tome zadržavaju ivice slike. Rezultat filtriranja svakog piksela slike je težinska srednja vrednost piksela i njegovih suseda. Ima široku primenu. Koristi se za redukciju šuma, HDR kompresiju, dekompoziciju detalja. Generalizovan je u implementaciji \emph{joint bilateral filter}-a, gde se težine računaju u odnosu na sliku vodiča, za koju se koristi posebna slika. Ovaj filter se koristi kada se od filtriranja ne očekuje da pruži inforamcije o ivicama, npr. kada slika ima dosta šuma ili kada je rezultat koji treba dalje da se iskoristi. Iako je \emph{Bilateral filter} veoma popularan i intuitivan za shvatanje, on ima limitacije. 
+
+Predhodno spomenuti loši artifakti koji se javljaju blizu ivica, jer je gausova funkcija nestabilna blizu ivica zbog velikih razlika u vrednostima piksela. Drugi problem se odnosi na složenost algoritma. Brute-force implementacija ima složenost $O(Nr^2)$, gde je $N$ broj piksela na slici, a $r$ je radius kernela (dimenzija kernela je $a = 2r + 1$). Jasno je da složenost zavisi od veličine kernela što može da bude loše ako se koriste veliki kerneli. Postoje rešenja koja koriste razne metode kao što su distribuirani histogrami koji složenost smanjuju na $O(n \log{r})$. Postoji i metod za redukciju složenosti na $O(n)$ korišćenjem integralnih histograma (kao lookup tabela). Međutim konstrukcija histograma je primena filtera u prostornom domenu, pa možemo da zaključimo da ovaj proces zahteba dodatne korake. Postoji još jedan pristup čija je složenost $O(n)$, a koji se oslanja na agresivno smanjenje slike \emph{subsampling}, čime se gube detalji. Važno je naglasiti da sva spomenuta rešenja koja imaju lineranu složenost, sa druge strane utiču na degradaciju preciznosti. Pošto \emph{Bilateral filter} ima svoje limitacije ljudi su krenuli da istražuju nove metode za filtre koji uglačavaju sliku, a pri tome čuvaju ivice. 
+
+Nasuprot lineranim filterima postoje implicitni filteri koji se dobijaju optimizacijom funkcije greške i rešavanjem linearnog sistema jednačina, što je ekvivalentno implicitnom filtriranju slike korišćenjem inverzne matrice. Ovi filtri takođe imaju široku primenu u segmentaciji slike, kolorizaciji slike, itd. Iako su ovakvi filtri efikasni i daju kvalitetan rezultat, međutim računanje linearnih sistema može da bude veoma složeno. Direktna rešenja kao što je gausova eliminacija, nisu praktični, zbog velkog zauzeća memorije. Iterativna rešenja sporo konvergiraju. Uočeno je da su implicitni filteri slični kao eksplicitni. 
+
+Očuvanje ivica može da se postigne i filterima koji ne koriste srednje vrednosti susednih piksela. Najpoznatiji je median filter koji je objašnjen u poglavlju 2.2.           
+
+\subsection{Definicija filtra}%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Očuvanje ivica}%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Kernel}%%%%%%%%%%%%%%%%%%%%%%%  
+
+\subsection{Osobine filtra}%%%%%%%%%%%%%%%%%%%%%%%      
+
+\subsection{Izračunavanje i efikasnost}%%%%%%%%%%%%%%%%%%%%%%% 
+
+\subsection{Poboljšanje}%%%%%%%%%%%%%%%%%%%%%%%   
+
+\subsection{Eksperimenti}%%%%%%%%%%%%%%%%%%%%%%%
+
+ 
 
 \section{Primena}%%%%%%%%%%%%%%%%%%%%%%%%%%
 
