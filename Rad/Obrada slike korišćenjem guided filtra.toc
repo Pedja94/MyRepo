@@ -1,0 +1,24 @@
+\select@language {serbian}
+\contentsline {section}{\numberline {1}Obrada slike}{1}{section.1}
+\contentsline {subsection}{\numberline {1.1}Uvod}{1}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Osnovni procesi u obradi digitalne slike}{2}{subsection.1.2}
+\contentsline {subsection}{\numberline {1.3}Pribavljanje slike}{3}{subsection.1.3}
+\contentsline {subsection}{\numberline {1.4}Bitne relacije izme\IeC {\dj }u piksela}{4}{subsection.1.4}
+\contentsline {subsection}{\numberline {1.5}Osnovne operacije nad slikom}{5}{subsection.1.5}
+\contentsline {section}{\numberline {2}Osnovni tipovi filtara}{9}{section.2}
+\contentsline {subsection}{\numberline {2.1}Osnovni pojmovi}{9}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Smoothing filtri(filtri za uklanjanje \IeC {\v s}uma)}{10}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Sharpening filtri(filtri za odre\IeC {\dj }ivanje ivica)}{13}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}Kombinovanje filtara}{18}{subsection.2.4}
+\contentsline {section}{\numberline {3}Guided filter}{18}{section.3}
+\contentsline {subsection}{\numberline {3.1}Uvod}{18}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Sli\IeC {\v c}ne ideje}{19}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Definicija filtra}{20}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}O\IeC {\v c}uvanje ivica}{22}{subsection.3.4}
+\contentsline {subsection}{\numberline {3.5}Kernel}{22}{subsection.3.5}
+\contentsline {subsection}{\numberline {3.6}Osobine filtra}{22}{subsection.3.6}
+\contentsline {subsection}{\numberline {3.7}Izra\IeC {\v c}unavanje i efikasnost}{22}{subsection.3.7}
+\contentsline {subsection}{\numberline {3.8}Pobolj\IeC {\v s}anje}{22}{subsection.3.8}
+\contentsline {subsection}{\numberline {3.9}Eksperimenti}{22}{subsection.3.9}
+\contentsline {section}{\numberline {4}Primena}{22}{section.4}
+\contentsline {section}{Literatura}{23}{section.4}

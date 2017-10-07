@@ -615,7 +615,7 @@ gde su $(a_k, b_k)$ linearni koeficijenti za koje ćemo predpostaviti da su kons
 	$E(a_k, b_k) = \sum_{i \epsilon w_k} ((a_kI_i + b_k - p_i)^2 + \varepsilon a_k^2)$.
 \end{center}
 
-\varepsilon je regularizacioni parametar koji služi da smanji uticaj $a_k$, ako je njena vrednost velika. Minimizacija ove jednačine predstavlja problem koji se rešava linearnom regresijom. Ovde ne ulazimo u detalje ovog rešenja već dajemo rešenja direktno:
+$\varepsilon$ je regularizacioni parametar koji služi da smanji uticaj $a_k$, ako je njena vrednost velika. Minimizacija ove jednačine predstavlja problem koji se rešava linearnom regresijom. Ovde ne ulazimo u detalje ovog rešenja već dajemo rešenja direktno:
 
 \begin{center}
 	$a_k = \dfrac{\dfrac{1}{|w|} \sum_{i \epsilon w_k} I_ip_i - \mu_k \overline{p_k}}{\sigma_k^2 + \varepsilon}$,
@@ -625,13 +625,53 @@ gde su $(a_k, b_k)$ linearni koeficijenti za koje ćemo predpostaviti da su kons
 	$b_k = \overline{p_k} - a_k \mu_k$.
 \end{center}
 
-\mu_k i \sigma_k^2 su srednja vrednost i varijansa piksela slike $I$ u prozoru $w_k$, a $|w|$ je broj piksela u $w_k$, $\overline{p_k} = \dfrac{1}{|w|} \sum_{i \epsilon w_k} p_i$ je srednja vrednost piksela slike u $w_k$. Kada smo sračunali linearne koeficijente $(a_k, b_k)$, možemo da nastavimo sa postupkom za izračunavanje rezultata $q_i$. Pošto je će piksel $i$ biti deo različitih prozora $w_k$, prilikom filtriranja, ne možemo da koristimo jedinstvene koeficijente $(a_k, b_k)$ za jedan piksel. Zbog toga ćemo u obzir uzeti sve moguće vrednosti koeficijenata za $q_i$. Kada izračunamo vrednosti $(a_k, b_k)$ za svaki piksel ulazne slike, rezultat filtriranja će biti:
+$\mu_k$ i $\sigma_k^2$ su srednja vrednost i varijansa piksela slike $I$ u prozoru $w_k$, a $|w|$ je broj piksela u $w_k$, $\overline{p_k} = \dfrac{1}{|w|} \sum_{i \epsilon w_k} p_i$ je srednja vrednost piksela slike u $w_k$. Kada smo sračunali linearne koeficijente $(a_k, b_k)$, možemo da nastavimo sa postupkom za izračunavanje rezultata $q_i$. Pošto je će piksel $i$ biti deo različitih prozora $w_k$, prilikom filtriranja, ne možemo da koristimo jedinstvene koeficijente $(a_k, b_k)$ za jedan piksel. Zbog toga ćemo u obzir uzeti sve moguće vrednosti koeficijenata za $q_i$. Kada izračunamo vrednosti $(a_k, b_k)$ za svaki piksel ulazne slike, rezultat filtriranja će biti:
 
 \begin{center}
 	$q_i = \dfrac{1}{|w|} \sum_{k|i \epsilon w_k} (a_kI_i + b_k)$.
 \end{center}    
 
-Pošto su prozori $w_k$ kvadratnog oblika i simetrični su, možemo da primetimo da je 
+Pošto su prozori $w_k$ kvadratnog oblika i simetrični su, možemo da primetimo da je $\sum_{k|i \epsilon w_k} a_k = \sum_{k \epsilon w_i} a_k$, pa formula može da se napiše ovako:
+
+\begin{center}
+	$q_i = \overline{a_i}I_i + \overline{b_i}$,
+\end{center}
+
+gde su $\overline{a_i} = \dfrac{1}{|w|}\sum_{k \epsilon w_i} a_k$ i $\overline{b_i} = \dfrac{1}{|w|}\sum_{k \epsilon w_i} b_k$ srednje vrednosti iy svih prozora u kojima je $q_i$ sadržan. Sa promenom koja je uvedena u ovoj jednačini gubimo sličnost između $\Delta q$ i $\Delta I$ na mestima gde su ivice, jer linearni koeficijenti $(\overline{a_i}, \overline{b_i})$ variraju u zavisnosti od prostora. Međutim pošto su oni rezultat filtra srednje vrednosti, možemo da očekujemo da će njihovi graijenti biti mnogo manji nego gradijenti $I$ blizu jakih ivica. U ovoj situaciji možemo da kažemo da je $\Delta q \approx \overline{a} \Delta I$, što znači da će nagle promene intenziteta na $I$ biti sačuvane i na $q$. 
+
+U nastavku je dat pseudo kod algoritma, koji je definisan na osonvu predhodinh jednačina. $f_{mean}$ je filter srednje vrednosti sa radiusom $r$. \emph{corr, var i cov} označavaju redom korelaciju, varijansu i kovarijansu. 
+
+\textbf{Algoritam Guided filter}\\
+
+\textbf{Ulaz:} slika koja se filtrira $p$, slika vodič $I$, radius $r$, parametar regularizacije $\varepsilon$.\\
+
+\textbf{Izlaz:} filtrirana slika $q$.\\
+
+1: $mean_I = f_{mean}(I)$
+
+\hspace{4mm} $mean_p = f_{mean}(p)$
+
+\hspace{4mm} $corr_I = f_{mean}(I .* I)$
+
+\hspace{4mm} $corr_{Ip} = f_{mean}(I .* p)$
+
+2: $var_I = corr_I - mean_I .* mean_I$
+
+\hspace{4mm}  $cov_{Ip} = corr_{Ip} - mean_I .* mean_p$
+
+3: $a = cov_{Ip} ./ (var_I + \varepsilon)$
+
+\hspace{4mm} $b = mean_p - a .*  mean_I$
+
+4: $mean_a = f_{mean}(a)$
+
+\hspace{4mm} $mean_b = f_{mean}(b)$
+
+5: $q = mean_a .* I + mean_b$
+
+$ .*  i  ./ $ su podkompoentno množenje i deljenje matrica.
+
+    
 
 \subsection{Očuvanje ivica}%%%%%%%%%%%%%%%%%%%%%%%
 
