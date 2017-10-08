@@ -637,7 +637,7 @@ Pošto su prozori $w_k$ kvadratnog oblika i simetrični su, možemo da primetimo
 	$q_i = \overline{a_i}I_i + \overline{b_i}$,
 \end{center}
 
-gde su $\overline{a_i} = \dfrac{1}{|w|}\sum_{k \epsilon w_i} a_k$ i $\overline{b_i} = \dfrac{1}{|w|}\sum_{k \epsilon w_i} b_k$ srednje vrednosti iy svih prozora u kojima je $q_i$ sadržan. Sa promenom koja je uvedena u ovoj jednačini gubimo sličnost između $\Delta q$ i $\Delta I$ na mestima gde su ivice, jer linearni koeficijenti $(\overline{a_i}, \overline{b_i})$ variraju u zavisnosti od prostora. Međutim pošto su oni rezultat filtra srednje vrednosti, možemo da očekujemo da će njihovi graijenti biti mnogo manji nego gradijenti $I$ blizu jakih ivica. U ovoj situaciji možemo da kažemo da je $\Delta q \approx \overline{a} \Delta I$, što znači da će nagle promene intenziteta na $I$ biti sačuvane i na $q$. 
+gde su $\overline{a_i} = \dfrac{1}{|w|}\sum_{k \epsilon w_i} a_k$ i $\overline{b_i} = \dfrac{1}{|w|}\sum_{k \epsilon w_i} b_k$ srednje vrednosti iz svih prozora u kojima je $q_i$ sadržan. Sa promenom koja je uvedena u ovoj jednačini gubimo sličnost između $\Delta q$ i $\Delta I$ na mestima gde su ivice, jer linearni koeficijenti $(\overline{a_i}, \overline{b_i})$ variraju u zavisnosti od prostora. Međutim pošto su oni rezultat filtra srednje vrednosti, možemo da očekujemo da će njihovi graijenti biti mnogo manji nego gradijenti $I$ blizu jakih ivica. U ovoj situaciji možemo da kažemo da je $\Delta q \approx \overline{a} \Delta I$, što znači da će nagle promene intenziteta na $I$ biti sačuvane i na $q$. 
 
 U nastavku je dat pseudo kod algoritma, koji je definisan na osonvu predhodinh jednačina. $f_{mean}$ je filter srednje vrednosti sa radiusom $r$. \emph{corr, var i cov} označavaju redom korelaciju, varijansu i kovarijansu. 
 
@@ -671,15 +671,53 @@ U nastavku je dat pseudo kod algoritma, koji je definisan na osonvu predhodinh j
 
 $ .*  i  ./ $ su podkompoentno množenje i deljenje matrica.
 
-    
 
 \subsection{Očuvanje ivica}%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Kernel}%%%%%%%%%%%%%%%%%%%%%%%  
+S obzirom da je jedan od glavnih prednosti ovog filtra očuvanje ivica, ovde ćemo proveriti tu osobinu. Na sledećoj slici su prikazani primeri filtriranja guided filtrom, korišćenjem različitih parametara. Ovo je primer gde se koristi identična slika i kao ulaz i kao slika vodič. Na ovom primeru možemo da vidimo da se guided filter ponaša kao filter koji čuva ivice, iako je njegova namena da uglača sliku. 
+Na primerima koji su prikazani na slici 13 možemo da uočimo ove osobine i možemo da primetimo razliku između guided filtra i filtara prikazanih u poglavlju 2.2 koji tađe služe za uglačavanje slike.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=60mm]{img/img.png}
+\includegraphics[width=60mm]{img/imgGF2_01.png}
+\includegraphics[width=60mm]{img/imgGF4_01.png}
+\includegraphics[width=60mm]{img/imgGF2_16.png}
+\includegraphics[width=60mm]{img/imgGF8_04.png}
+\includegraphics[width=60mm]{img/imgGF4_16.png}
+\caption{1)slika; slika filtrirana guided filtrom sa parametrima 2) $r = 2 \varepsilon = 0.01$; 3) $r = 4 \varepsilon = 0.01$; 2) $r = 2 \varepsilon = 0.16$; 2) $r = 8 \varepsilon = 0.04$; 2) $r = 4 \varepsilon = 0.16$}
+\label{overflow}
+\end{figure}
+
+Sa slike 13 možemo da zaključimo da regularizacioni parametar $\varepsilon$ utiče na to koliko će slika biti zamućena odnosno šta je na slici ivica koja trba da se sačuva, a radius prozora $r$ utiče na to koliko će suseda biti korišćeno pri filtriranju, što će kao kod smoothing filtara uticati na količinu uklonjenog šuma. 
+
+Osobina očuvanja ivice može intuitivno da se objasni ovako, ako uzmemo da je $I \equiv p$. U ovom slučaju će $a_k$ i $b_k$ koji su definisani u predhodnom poglavlju da izgledaju ovako $a_k = \sigma_k^2 / (\sigma_k^2 + \varepsilon)$, $b_k = (1 - a_k)\mu_k$. Jasno je da kada je $\varepsilon = 0$ onda je $a_k = 1$ i $b_k = 0$, pa će $q = I$. Kada je $\varepsilon > 0$ onda treba da razmotrimo dva slučaja. Prvi je slučaj ''visoke varijanse'', kada $I$ ima dosta promena vrednosti unutar prozora $w_k$, tada je $\sigma_k^2 >> \varepsilon$, pa je $a_k \approx 1$ i $b_k \approx 0$. Drugi je slučaj ''ravnog područija'', kada $I$ ima skoro identične vrednosti u prozoru $w_k$, tada je $a_k \approx 0$ i $b_k \approx \mu_k$. 
+
+Kada računamo srednje vrednosti za $a_k$ i $b_k$ da bi dobili $\overline{a_i}$ i $\overline{b_i}$, koje koristimo da bi dobili rezultat (kao što je definisano u predhodom poglavlju), tada će, ako se piksel nalazi u prozoru ''visoke varijanse'', njegova vrednost biti nepromenjena ($a \approx 1, b \approx 0, q \approx p$). U slučaju da se piksel nalazi u oblasti ''ravnog područija'', tada će rezultujuća vredost biti srednja vrednost piksela suseda ($a \approx 0, b \approx \mu, q \approx \overline{\mu}$). Ova dva slučaja su određena parametrom $\varepsilon$. Delovi slike, gde je varijansa $\sigma^2$ mnogo manja od $\varepsilon$, su uglačana odnosno smooth-ovana, a mesta gde je $\sigma^2$ mnogo veća od $\varepsilon$ su očuvana. U suštini parametar regularizacije $\varepsilon$ određuje šta je ivica, odnosno šta treba da ostane nepromenjeno.   
 
 \subsection{Osobine filtra}%%%%%%%%%%%%%%%%%%%%%%%      
 
 \subsection{Izračunavanje i efikasnost}%%%%%%%%%%%%%%%%%%%%%%% 
+
+Glavna prednost guided filtra u odnosu na slične filtre kao što je bilateral filter, koji je spomenut u poglavlju 3.2, se ogleda u tome što ima složenost $O(n)$. Njegova složenost je nezavisna od radiusa prozora (kernel) koji se koristi za filtriranje i od intenziteta fitriranja. Kod bilateral filtra složenost, kao što je pokazano u poglavlju 3.2, zavisi od veličine prozora. Umesto da direktne primene konvolucije, kao kod većine konvolucionih filtara, ovde se vrednost rezultujućeg piksela računa kao linearna funkcija definisana u 3.3. Prvo se računaju koeficijenti $a_k$ i $b_k$.
+
+\begin{center}
+	$a_k = \dfrac{\dfrac{1}{|w|} \sum_{i \epsilon w_k} I_ip_i - \mu_k \overline{p_k}}{\sigma_k^2 + \varepsilon}$,
+\end{center}
+
+\begin{center}
+	$b_k = \overline{p_k} - a_k \mu_k$.
+\end{center}
+
+Ovde možemo da primetimo da postoji nekoliko sumiranja:  $\sum_{i \epsilon w_k} I_ip_i, \mu_k$ je srednja vrednost, $\sigma_k^2$ je varijansa, $\overline{p_k}$ srednja vrednost piksela. Srednja vrednost i varijnsa takođe zahtevaju izračunavanje sume ogovarajućih piksela. Ove sume možemo da izračunamo u $O(1)$ korišćenjem \emph{look-up} tabela takozvanih integralnih slika. Kada se izračunaju koeficijenti $a_k$ i $b_k$, onda se rezultat dobija kao:
+
+ \begin{center}
+	$q_i = \overline{a_i}I_i + \overline{b_i}$,
+\end{center}
+
+gde su $\overline{a_i} = \dfrac{1}{|w|}\sum_{k \epsilon w_i} a_k$ i $\overline{b_i} = \dfrac{1}{|w|}\sum_{k \epsilon w_i} b_k$ srednje vrednosti iz svih prozora u kojima je $q_i$ sadržan. Ove dve sume takođe možemo da izračunamo u $O(1)$ korišćenjem  integralnih slika. Pošto je složenost računanja vrednosti za jedna piksel $O(1)$ možemo da zaključimo da  će složenost algoritma biti $O(n)$, gde je $n$ broj piksela.
+
+Integralna slika je
 
 \subsection{Poboljšanje}%%%%%%%%%%%%%%%%%%%%%%%   
 

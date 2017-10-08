@@ -15,10 +15,9 @@
 \contentsline {subsection}{\numberline {3.2}Sli\IeC {\v c}ne ideje}{19}{subsection.3.2}
 \contentsline {subsection}{\numberline {3.3}Definicija filtra}{20}{subsection.3.3}
 \contentsline {subsection}{\numberline {3.4}O\IeC {\v c}uvanje ivica}{22}{subsection.3.4}
-\contentsline {subsection}{\numberline {3.5}Kernel}{22}{subsection.3.5}
-\contentsline {subsection}{\numberline {3.6}Osobine filtra}{22}{subsection.3.6}
-\contentsline {subsection}{\numberline {3.7}Izra\IeC {\v c}unavanje i efikasnost}{22}{subsection.3.7}
-\contentsline {subsection}{\numberline {3.8}Pobolj\IeC {\v s}anje}{22}{subsection.3.8}
-\contentsline {subsection}{\numberline {3.9}Eksperimenti}{22}{subsection.3.9}
-\contentsline {section}{\numberline {4}Primena}{22}{section.4}
-\contentsline {section}{Literatura}{23}{section.4}
+\contentsline {subsection}{\numberline {3.5}Osobine filtra}{23}{subsection.3.5}
+\contentsline {subsection}{\numberline {3.6}Izra\IeC {\v c}unavanje i efikasnost}{23}{subsection.3.6}
+\contentsline {subsection}{\numberline {3.7}Pobolj\IeC {\v s}anje}{24}{subsection.3.7}
+\contentsline {subsection}{\numberline {3.8}Eksperimenti}{24}{subsection.3.8}
+\contentsline {section}{\numberline {4}Primena}{24}{section.4}
+\contentsline {section}{Literatura}{25}{section.4}
