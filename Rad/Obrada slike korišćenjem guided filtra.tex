@@ -667,7 +667,7 @@ U nastavku je dat pseudo kod algoritma, koji je definisan na osonvu predhodinh j
 
 \hspace{4mm} $mean_b = f_{mean}(b)$
 
-5: $q = mean_a .* I + mean_b$
+5: $q = mean_a .* I + mean_b$\\
 
 $ .*  i  ./ $ su podkompoentno množenje i deljenje matrica.
 
@@ -695,7 +695,31 @@ Osobina očuvanja ivice može intuitivno da se objasni ovako, ako uzmemo da je $
 
 Kada računamo srednje vrednosti za $a_k$ i $b_k$ da bi dobili $\overline{a_i}$ i $\overline{b_i}$, koje koristimo da bi dobili rezultat (kao što je definisano u predhodom poglavlju), tada će, ako se piksel nalazi u prozoru ''visoke varijanse'', njegova vrednost biti nepromenjena ($a \approx 1, b \approx 0, q \approx p$). U slučaju da se piksel nalazi u oblasti ''ravnog područija'', tada će rezultujuća vredost biti srednja vrednost piksela suseda ($a \approx 0, b \approx \mu, q \approx \overline{\mu}$). Ova dva slučaja su određena parametrom $\varepsilon$. Delovi slike, gde je varijansa $\sigma^2$ mnogo manja od $\varepsilon$, su uglačana odnosno smooth-ovana, a mesta gde je $\sigma^2$ mnogo veća od $\varepsilon$ su očuvana. U suštini parametar regularizacije $\varepsilon$ određuje šta je ivica, odnosno šta treba da ostane nepromenjeno.   
 
-\subsection{Osobine filtra}%%%%%%%%%%%%%%%%%%%%%%%      
+\subsection{Filtriranje slike u boji}%%%%%%%%%%%%%%%%%%%%%%%  
+
+Princip primene ovog filtra i definicija može lako da se proširi za pirmenu nad višekanalnim slikama. Za nas su od interesa slike koje su prikazane sa tri kanala  odnosno slike u boji. U zavisnosti od primene ovo može da se reši na više načina. Najprostije rešenje je da se definicija iz 3.3 primeni na sva tri kanala zasebno, a da se pri tome za sliku vodiča koristi gray-scale (jednokanalna) verzija originalne slike. Ovo u većini slučaja može da da zadovoljavajuće rezultate. 
+
+Međutim u nekim slučajevima slika vodič u boji (trokanalna slika) može bolje da sačuva ivice. Naime prilikom konvertovanja u gray-scale sliku dve različite boje predstavljene sa tri vrednosti (najčešće RGB model) mogu da imaju sličnu vrednost u gray-scale slici. U ovom slučaju će doći do pojave takozvanog ''halo'' efekta, tj. ivice će početi da se smooth-uju. Zbog toga je u ovakvim slučajevima koristiti sliku vodič u boji a proširenje modela definisanog u poglavlju 3.3 se postiže ovako:
+
+\begin{center}
+	$q_i = a_k^T I_k + b_k, \forall i \epsilon w_k$,
+\end{center}   
+
+gde je $I_i$ 3 x 1 vektor boja, $a_k$ 3x 1 vektor koeficijenata, a $q_i$ i $b_k$ su skalari. Formule definisane u 3.3 će postati:
+
+\begin{center}
+	$a_k = (\Sigma_k + \varepsilon U)^{-1} (\dfrac{1}{|w|} \sum_{i \epsilon w_k} I_i p_i - \mu_k \overline{p_i})$,
+\end{center}
+
+\begin{center}
+	$b_k = \overline{p_k} - a_k^T \mu_k$,
+\end{center}
+
+\begin{center}
+	$q_i = \overline{a_i^T} I_i + \overline{b_i}$,
+\end{center}
+
+gde je $\Sigma_k$ 3 x 3 matrica kovarijanse slike $I$ u prozoru $w_k$ i $U$ je 3 x 3 matrica idnetiteta.
 
 \subsection{Izračunavanje i efikasnost}%%%%%%%%%%%%%%%%%%%%%%% 
 
@@ -717,13 +741,111 @@ Ovde možemo da primetimo da postoji nekoliko sumiranja:  $\sum_{i \epsilon w_k}
 
 gde su $\overline{a_i} = \dfrac{1}{|w|}\sum_{k \epsilon w_i} a_k$ i $\overline{b_i} = \dfrac{1}{|w|}\sum_{k \epsilon w_i} b_k$ srednje vrednosti iz svih prozora u kojima je $q_i$ sadržan. Ove dve sume takođe možemo da izračunamo u $O(1)$ korišćenjem  integralnih slika. Pošto je složenost računanja vrednosti za jedna piksel $O(1)$ možemo da zaključimo da  će složenost algoritma biti $O(n)$, gde je $n$ broj piksela.
 
-Integralna slika je
+Integralna slika je specijalni slučaj lookup tabele koja se još naziva i tablica suma. Tablica suma je struktura podataka koja služi za efiksno računanje suma pravougaonastog podskupa neke mreže. U slučaju obrade slike ona predstavlja matricu koja je istih dimenzija kao slika. U elementu matrice koji se nalazi u vrsti $x$ i koloni $y$, koji se odnosi na piksel sa koordinatama $(x, y)$, se čuva suma svih elemenata koji imaju manju $x$ i $y$ koordinatu od tog elementa. 
 
-\subsection{Poboljšanje}%%%%%%%%%%%%%%%%%%%%%%%   
+\begin{center}
+$I(x, y) = \sum_{x' <= x, y' <= y} i(x', y')$,
+\end{center}
+
+gde je $I(x, y)$ vrednost u tablici, a $i(x, y)$ je vrednost piksela. Izračunavanje ove tablice je efikasno i može da se izračuna u jednom prolazu korz sliku (O(n)):
+
+\begin{center}
+$I(x, y) = i(x, y) + I(x, y - 1) + I(x - 1, y) - I(x - 1, y - 1)$.
+\end{center}
+
+ \[
+ A
+ =
+\begin{bmatrix}
+     1 & 2 & 3 \\
+     4 & 5 & 6 \\
+     7 & 8 & 9 \\
+\end{bmatrix}
+sat(A)
+=
+\begin{bmatrix}
+     1 & 3 & 6 \\
+     5 & 12 & 21 \\
+     12 & 27 & 45 \\
+\end{bmatrix}
+\].
+
+Kada se tablica $I$  izračuna, suma svake podslike može da se izračuna čitanjem vrednosti u tačkama pravougaonika koji formira ta podslika. Ako su ovo tačke koje formiraju pravougaonik $A = (x_0, y_0), B = (x_1, y_0), C = (x_0, y_1)$ i $D = (x_1, y_1)$ suma te podlike se računa kao:
+
+\begin{center}
+$sum = \sum_{x_0 < x <= x_1, y_0 < y <= y_1} i(x, y) = I(D) + I(A) - I(B) - I(C)$.
+\end{center} 
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=60mm]{img/sat.png}
+\caption{Izračunavanje sume podslike}
+\label{overflow}
+\end{figure}
+
+U radu [4] su vršeni eksperimenti na računaru sa procesorom intel core i7 brzine 3GHz i sa 8GB RAM memorije. Implementacija u C++, bez paralelizacije. Vreme izvršenja ovog algoritma za jednokanalnu sliku je 40 ms/Mp (40 milisekundi po megapikselu), što je mnogo brže od bilo koje druge implementacije sličnih filtera.  
+
+\subsection{Poboljšanje}%%%%%%%%%%%%%%%%%%%%%%% 
+
+U radu [5], istih autora kao i [3] i [4] gde je definisan guided filter, je predloženo ubrzanje algoritma filtera koji je deefinisan u poglavlju 3.3. Autori su primetili strategiju koja bi im koristila da ubrzaju ovaj algoritam, koja je bila vezana za poanšanje koeficijenata prilikom povećanja i smanjnja slike. Pod povećanjem \emph{eng. upsample} i smanjenjem \emph{eng. downsample} se podrayumeju postupci kod kojih se slika transformiše u sliku veće rezoluciije (povećanje broja piksela) ili se transformiše u sliku manje rezolucije (smanjenje boraj piksela). Ideja je da se računanje koeficijenata koji se koriste u izračunavanju vrednosti rezultujećeg piksela ($a_k, b_k$ zatim $\overline{a_i}, \overline{b_i}$) obavi na downsample-ovanoj slici zatim da se ti koeficijenti iskoriste za izračunavanje vrednosti. Takva promena bi smanjila složenost algoritma na $O(N / s^2)$, gde je $s$ faktor smanjenja, a $N$ broj piksela na slici. 
+
+\textbf{Algoritam poboljšanog Guided filter-a}\\
+
+\textbf{Ulaz:} slika koja se filtrira $p$, slika vodič $I$, radius $r$, parametar regularizacije $\varepsilon$, $s$ faktor smanjenja slike.\\
+
+\textbf{Izlaz:} filtrirana slika $q$.\\
+
+1: $I' = f_{subsamlpe}(I, s)$
+
+\hspace{4mm} $p' = f_{subsamlpe}(p, s)$
+
+\hspace{4mm} $r' = r / s$
+
+2: $mean_I = f_{mean}(I', r')$
+
+\hspace{4mm} $mean_p = f_{mean}(p', r')$
+
+\hspace{4mm} $corr_I = f_{mean}(I' .* I', r')$
+
+\hspace{4mm} $corr_{Ip} = f_{mean}(I' .* p'. r')$
+
+3: $var_I = corr_I - mean_I .* mean_I$
+
+\hspace{4mm}  $cov_{Ip} = corr_{Ip} - mean_I .* mean_p$
+
+4: $a = cov_{Ip} ./ (var_I + \varepsilon)$
+
+\hspace{4mm} $b = mean_p - a .*  mean_I$
+
+5: $mean_a = f_{mean}(a, r')$
+
+\hspace{4mm} $mean_b = f_{mean}(b, r')$
+
+6: $mean_a = f_{upsample}(mean_a, s)$
+
+\hspace{4mm} $f_{upsample}(mean_b, s)$
+
+7: $q = mean_a .* I + mean_b$\\
+
+Ulazna slika $p$ i slika vodič $I$ se smanjuju. Zatim se koeficijenti $a_k, b_k$, pa nakon toga i $\overline{a_i}, \overline{b_i}$ računaju na umanjenoj slici. Nakon toga se slike koje sadrže koeficijente $\overline{a_i}, \overline{b_i}$ uvećavaju na veličinu ulazne slike i onda se ti koeficijenti primenjuju na odgovarajuće piksele ulazne slike $p$. Sva izračunavanja i računanje suma, za koje se formiraju tabele suma, računaju se na umanjenoj slici.
+
+Kopmleksnost računanja se smanjuje sa $O(n)$ na $O(n / s^2)$. U radu [5] je eksperimentima utvrđeno da se odabirom odgovarajućeg faktora $s$, dobijaju nepromenjeni rezultati. U ovim eksperimentima je utvrđeno da ako je $s = 4$ ubrzanje može da bude i 10 puta. Odabirom odgovrajućeg faktora može da se dobije zadovoljavajući rezultat.   
 
 \subsection{Eksperimenti}%%%%%%%%%%%%%%%%%%%%%%%
 
- 
+Ovaj filter ima dosta primena. U radovima [3] i [4] su izvršeni razni eksperimenti da bi se utvrdila efikasnost ovog filtera u odnosu na druge filtere ove namene. Ovde su samo navedenei eksperimenti, neke od primena će biti objašnjene u sledećem poglavlju. 
+
+\emph{Poboljšanje detalja i HDR kompresija}: Guided  filter pokazuje dobro ponašanje u ovim primenama, koje su vezane za poboljšanje detalja. Ove primene se oslanjaju na očuvanje ivica slike pa je za njih bitno ponašanje filtra blizu ivice. Guided filter se pokazao bolje od drugi filtra jer nema loše artifake oko ivica. 
+
+\emph{Flash no flash}: ovo je jedna od zanimljivih primena guided filtra. Naime vrši se filtriranje slike koja je slikana u prirodnom ambijentu. Pošto ova slika ima dosta šuma koristi se filtriranje da bi se šum otklonio. Ono što je zanimljivo je da se kao slika vodič koristi slika iste scene, koja je slikana korišćenjem blica. Na ovaj načina se čuvaju ivice originalne slike, jer je slika slikana blicem bez šuma, a pri tome se čuva mabijent slike bez blica.
+
+\emph{Single image haze removal:} se odnosi na uklanjanje magle sa slike. Ovo se postiže računanjem količine magle u svkom pikselu slike. Pošto je ova procena robusna, guided filter se koristi da je filtrira. Kao sliku vodič guided filter će za ovo filtriranje koristiti sliku sa koje treba da se ukloni magla, jer ona iako ima šum sadrži informacije o ivicama, pa će uticati da i slika procene magle bude filtrirana tako da uzima u obzir ivice da bi one bile očuvane u kranjem rezultatu.
+
+Takođe izvršavani su eksperimenti gde je guided filtra primenjen za feathering proces koji služi za suzbijanje ivica. Guided filter može da se koristi i za matting koji služi za odvajne objekata od pozadine na slici (to je jedan od čestih problema u obradi slike).  
+
+Limitacije guided filtra se ogledaju u tome što može da dođe do pojave ''halo'' efekta. ''Halo'' efekat se odnosi na artifakte neželjenog uglačavanja ivica. Ovi efekti su neizbežni za lokalne linearne filtere. Ako slika sadrži jake teksture koje želimo da uglačamo tj da uklopimo u okolinu, moramo da primenimo guided filter sa velikim parametrima. Ovo će rezultovati uglačavanjem ivica koje nisu preterano izražene (promena vrednosti piksela nije velika). U ovom slučaju će se javiti isti artifakti kao kod primene filtera srenje vrednosti.
+
+Ipak i pored ove limitacije guided filter je našao veliku primenu u svetu kompjuterse vizije i grafike, jer daje dobre rezultate kad je u pitanju očuvanje ivica i uklanjanje šuma. A pri tome je efikasan za izvršavanje. Pošto lokalni model, koji se koristi za guided filter, tip nenadgledanog učenja, ostavlja se prostor za primeu poboljšanih modela kako bi se stvorili novi filtri.  
 
 \section{Primena}%%%%%%%%%%%%%%%%%%%%%%%%%%
 
