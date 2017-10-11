@@ -20,7 +20,7 @@
 \renewcommand{\mod}[1]{$mod$ ${#1}$}
 
 \title{\Huge {\textbf{Obrada slike korišćenjem Guided filtra}}}
-\author{\textbf{Autor:} Predrag Nikolić \and \textbf{Mentor:} Dejan Rančić}
+\author{\textbf{Autor:} Predrag Nikolić \\ \textbf{Mentor:} Dejan Rančić}
 \date{\today}
 
 \begin{document}
@@ -29,7 +29,7 @@
 \end{center}
 
 \begin{minipage}{\textwidth}
-   \maketitle
+   \maketitle   
 \end{minipage}
 \thispagestyle{empty}
 \newpage
@@ -39,6 +39,11 @@
 \newpage
 
 \pagenumbering{arabic} 
+
+\section{Uvod}%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Ovaj rad se bavi obradom slike. U radu je objašnjena potreba za ovom oblašću u računarstvu. Primena je velika i prožima se kroz mnoge druge oblasti. Ovde su prikazane osnovne operacije i osnovni tipovi filtara. Fokus ovog rada je na definisanju, ispitivanju i primeni \emph{guided} filtra. \emph{Guided} filter je filter koji ima veliku primenu u oblasti obrade slike. Ovaj filter spada u vrstu filtera koji služe za obradu slike, sa posebnim osobinama koje ga odvajaju od običnih filtara. Postoje i drugi filtri koji imaju istu namenu, ali se ovaj pokazao kao najbrži. Na kraju rada je dat pregled nekoliko konkretnih situacija u kojima ovaj filter može da se primeni.
+
 \section{Obrada slike}%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Uvod}%%%%%%%%%%%%%%%%%%%%%%%
@@ -603,7 +608,7 @@ Prvo ćemo definisati uopšteni proces linearnog invariantnog filtriranja, koji 
 
 gde su $i$ i $j$ indeksi piksela, kernel filtera $W_{ij}$ je funkcija slike vodiča $I$ i nezavisna je od $p$. Ovaj filter je linearan u odnosu na $p$. 
 
-Sada ćemo definisati guided filter. Predpostavka je da je guided filter loklano linearan model između slike vodiča $I$ i rezultata filtriranja $q$. Za $q$ predpostavljamo da je linearna transforamcija slike $I$ u prozoru $w_k$ centriranom u pikselu $k$:
+Sada ćemo definisati \emph{guided} filter. Predpostavka je da je \emph{guided} filter loklano linearan model između slike vodiča $I$ i rezultata filtriranja $q$. Za $q$ predpostavljamo da je linearna transforamcija slike $I$ u prozoru $w_k$ centriranom u pikselu $k$:
 
 \begin{center}
 	$q_i = a_kI_i + b_k, \forall \epsilon w_k$,
@@ -674,8 +679,8 @@ $ .*  i  ./ $ su podkompoentno množenje i deljenje matrica.
 
 \subsection{Očuvanje ivica}%%%%%%%%%%%%%%%%%%%%%%%
 
-S obzirom da je jedan od glavnih prednosti ovog filtra očuvanje ivica, ovde ćemo proveriti tu osobinu. Na sledećoj slici su prikazani primeri filtriranja guided filtrom, korišćenjem različitih parametara. Ovo je primer gde se koristi identična slika i kao ulaz i kao slika vodič. Na ovom primeru možemo da vidimo da se guided filter ponaša kao filter koji čuva ivice, iako je njegova namena da uglača sliku. 
-Na primerima koji su prikazani na slici 13 možemo da uočimo ove osobine i možemo da primetimo razliku između guided filtra i filtara prikazanih u poglavlju 2.2 koji tađe služe za uglačavanje slike.
+S obzirom da je jedan od glavnih prednosti ovog filtra očuvanje ivica, ovde ćemo proveriti tu osobinu. Na sledećoj slici su prikazani primeri filtriranja \emph{guided} filtrom, korišćenjem različitih parametara. Ovo je primer gde se koristi identična slika i kao ulaz i kao slika vodič. Na ovom primeru možemo da vidimo da se \emph{guided} filter ponaša kao filter koji čuva ivice, iako je njegova namena da uglača sliku. 
+Na primerima koji su prikazani na slici 13 možemo da uočimo ove osobine i možemo da primetimo razliku između \emph{guided} filtra i filtara prikazanih u poglavlju 2.2 koji tađe služe za uglačavanje slike.
 
 \begin{figure}[ht!]
 \centering
@@ -685,7 +690,7 @@ Na primerima koji su prikazani na slici 13 možemo da uočimo ove osobine i mož
 \includegraphics[width=60mm]{img/imgGF2_16.png}
 \includegraphics[width=60mm]{img/imgGF8_04.png}
 \includegraphics[width=60mm]{img/imgGF4_16.png}
-\caption{1)slika; slika filtrirana guided filtrom sa parametrima 2) $r = 2 \varepsilon = 0.01$; 3) $r = 4 \varepsilon = 0.01$; 2) $r = 2 \varepsilon = 0.16$; 2) $r = 8 \varepsilon = 0.04$; 2) $r = 4 \varepsilon = 0.16$}
+\caption{1)slika; slika filtrirana \emph{guided} filtrom sa parametrima 2) $r = 2 \varepsilon = 0.01$; 3) $r = 4 \varepsilon = 0.01$; 2) $r = 2 \varepsilon = 0.16$; 2) $r = 8 \varepsilon = 0.04$; 2) $r = 4 \varepsilon = 0.16$}
 \label{overflow}
 \end{figure}
 
@@ -723,7 +728,7 @@ gde je $\Sigma_k$ 3 x 3 matrica kovarijanse slike $I$ u prozoru $w_k$ i $U$ je 3
 
 \subsection{Izračunavanje i efikasnost}%%%%%%%%%%%%%%%%%%%%%%% 
 
-Glavna prednost guided filtra u odnosu na slične filtre kao što je bilateral filter, koji je spomenut u poglavlju 3.2, se ogleda u tome što ima složenost $O(n)$. Njegova složenost je nezavisna od radiusa prozora (kernel) koji se koristi za filtriranje i od intenziteta fitriranja. Kod bilateral filtra složenost, kao što je pokazano u poglavlju 3.2, zavisi od veličine prozora. Umesto da direktne primene konvolucije, kao kod većine konvolucionih filtara, ovde se vrednost rezultujućeg piksela računa kao linearna funkcija definisana u 3.3. Prvo se računaju koeficijenti $a_k$ i $b_k$.
+Glavna prednost \emph{guided} filtra u odnosu na slične filtre kao što je bilateral filter, koji je spomenut u poglavlju 3.2, se ogleda u tome što ima složenost $O(n)$. Njegova složenost je nezavisna od radiusa prozora (kernel) koji se koristi za filtriranje i od intenziteta fitriranja. Kod bilateral filtra složenost, kao što je pokazano u poglavlju 3.2, zavisi od veličine prozora. Umesto da direktne primene konvolucije, kao kod većine konvolucionih filtara, ovde se vrednost rezultujućeg piksela računa kao linearna funkcija definisana u 3.3. Prvo se računaju koeficijenti $a_k$ i $b_k$.
 
 \begin{center}
 	$a_k = \dfrac{\dfrac{1}{|w|} \sum_{i \epsilon w_k} I_ip_i - \mu_k \overline{p_k}}{\sigma_k^2 + \varepsilon}$,
@@ -787,7 +792,7 @@ U radu [4] su vršeni eksperimenti na računaru sa procesorom intel core i7 brzi
 
 \subsection{Poboljšanje}%%%%%%%%%%%%%%%%%%%%%%% 
 
-U radu [5], istih autora kao i [3] i [4] gde je definisan guided filter, je predloženo ubrzanje algoritma filtera koji je deefinisan u poglavlju 3.3. Autori su primetili strategiju koja bi im koristila da ubrzaju ovaj algoritam, koja je bila vezana za poanšanje koeficijenata prilikom povećanja i smanjnja slike. Pod povećanjem \emph{eng. upsample} i smanjenjem \emph{eng. downsample} se podrayumeju postupci kod kojih se slika transformiše u sliku veće rezoluciije (povećanje broja piksela) ili se transformiše u sliku manje rezolucije (smanjenje boraj piksela). Ideja je da se računanje koeficijenata koji se koriste u izračunavanju vrednosti rezultujećeg piksela ($a_k, b_k$ zatim $\overline{a_i}, \overline{b_i}$) obavi na downsample-ovanoj slici zatim da se ti koeficijenti iskoriste za izračunavanje vrednosti. Takva promena bi smanjila složenost algoritma na $O(N / s^2)$, gde je $s$ faktor smanjenja, a $N$ broj piksela na slici. 
+U radu [5], istih autora kao i [3] i [4] gde je definisan \emph{guided} filter, je predloženo ubrzanje algoritma filtera koji je deefinisan u poglavlju 3.3. Autori su primetili strategiju koja bi im koristila da ubrzaju ovaj algoritam, koja je bila vezana za poanšanje koeficijenata prilikom povećanja i smanjnja slike. Pod povećanjem \emph{eng. upsample} i smanjenjem \emph{eng. downsample} se podrayumeju postupci kod kojih se slika transformiše u sliku veće rezoluciije (povećanje broja piksela) ili se transformiše u sliku manje rezolucije (smanjenje boraj piksela). Ideja je da se računanje koeficijenata koji se koriste u izračunavanju vrednosti rezultujećeg piksela ($a_k, b_k$ zatim $\overline{a_i}, \overline{b_i}$) obavi na downsample-ovanoj slici zatim da se ti koeficijenti iskoriste za izračunavanje vrednosti. Takva promena bi smanjila složenost algoritma na $O(N / s^2)$, gde je $s$ faktor smanjenja, a $N$ broj piksela na slici. 
 
 \textbf{Algoritam poboljšanog Guided filter-a}\\
 
@@ -835,19 +840,216 @@ Kopmleksnost računanja se smanjuje sa $O(n)$ na $O(n / s^2)$. U radu [5] je eks
 
 Ovaj filter ima dosta primena. U radovima [3] i [4] su izvršeni razni eksperimenti da bi se utvrdila efikasnost ovog filtera u odnosu na druge filtere ove namene. Ovde su samo navedenei eksperimenti, neke od primena će biti objašnjene u sledećem poglavlju. 
 
-\emph{Poboljšanje detalja i HDR kompresija}: Guided  filter pokazuje dobro ponašanje u ovim primenama, koje su vezane za poboljšanje detalja. Ove primene se oslanjaju na očuvanje ivica slike pa je za njih bitno ponašanje filtra blizu ivice. Guided filter se pokazao bolje od drugi filtra jer nema loše artifake oko ivica. 
+\emph{Poboljšanje detalja i HDR kompresija}: \emph{guided}  filter pokazuje dobro ponašanje u ovim primenama, koje su vezane za poboljšanje detalja. Ove primene se oslanjaju na očuvanje ivica slike pa je za njih bitno ponašanje filtra blizu ivice. \emph{guided} filter se pokazao bolje od drugi filtra jer nema loše artifake oko ivica. 
 
-\emph{Flash no flash}: ovo je jedna od zanimljivih primena guided filtra. Naime vrši se filtriranje slike koja je slikana u prirodnom ambijentu. Pošto ova slika ima dosta šuma koristi se filtriranje da bi se šum otklonio. Ono što je zanimljivo je da se kao slika vodič koristi slika iste scene, koja je slikana korišćenjem blica. Na ovaj načina se čuvaju ivice originalne slike, jer je slika slikana blicem bez šuma, a pri tome se čuva mabijent slike bez blica.
+\emph{Flash no flash}: ovo je jedna od zanimljivih primena \emph{guided} filtra. Naime vrši se filtriranje slike koja je slikana u prirodnom ambijentu. Pošto ova slika ima dosta šuma koristi se filtriranje da bi se šum otklonio. Ono što je zanimljivo je da se kao slika vodič koristi slika iste scene, koja je slikana korišćenjem blica. Na ovaj načina se čuvaju ivice originalne slike, jer je slika slikana blicem bez šuma, a pri tome se čuva mabijent slike bez blica.
 
-\emph{Single image haze removal:} se odnosi na uklanjanje magle sa slike. Ovo se postiže računanjem količine magle u svkom pikselu slike. Pošto je ova procena robusna, guided filter se koristi da je filtrira. Kao sliku vodič guided filter će za ovo filtriranje koristiti sliku sa koje treba da se ukloni magla, jer ona iako ima šum sadrži informacije o ivicama, pa će uticati da i slika procene magle bude filtrirana tako da uzima u obzir ivice da bi one bile očuvane u kranjem rezultatu.
+\emph{Single image haze removal:} se odnosi na uklanjanje magle sa slike. Ovo se postiže računanjem količine magle u svkom pikselu slike. Pošto je ova procena robusna, \emph{guided} filter se koristi da je filtrira. Kao sliku vodič \emph{guided} filter će za ovo filtriranje koristiti sliku sa koje treba da se ukloni magla, jer ona iako ima šum sadrži informacije o ivicama, pa će uticati da i slika procene magle bude filtrirana tako da uzima u obzir ivice da bi one bile očuvane u kranjem rezultatu.
 
-Takođe izvršavani su eksperimenti gde je guided filtra primenjen za feathering proces koji služi za suzbijanje ivica. Guided filter može da se koristi i za matting koji služi za odvajne objekata od pozadine na slici (to je jedan od čestih problema u obradi slike).  
+Takođe izvršavani su eksperimenti gde je \emph{guided} filtra primenjen za feathering proces koji služi za suzbijanje ivica. \emph{Guided} filter može da se koristi i za matting koji služi za odvajne objekata od pozadine na slici (to je jedan od čestih problema u obradi slike).  
 
-Limitacije guided filtra se ogledaju u tome što može da dođe do pojave ''halo'' efekta. ''Halo'' efekat se odnosi na artifakte neželjenog uglačavanja ivica. Ovi efekti su neizbežni za lokalne linearne filtere. Ako slika sadrži jake teksture koje želimo da uglačamo tj da uklopimo u okolinu, moramo da primenimo guided filter sa velikim parametrima. Ovo će rezultovati uglačavanjem ivica koje nisu preterano izražene (promena vrednosti piksela nije velika). U ovom slučaju će se javiti isti artifakti kao kod primene filtera srenje vrednosti.
+Limitacije \emph{guided} filtra se ogledaju u tome što može da dođe do pojave ''halo'' efekta. ''Halo'' efekat se odnosi na artifakte neželjenog uglačavanja ivica. Ovi efekti su neizbežni za lokalne linearne filtere. Ako slika sadrži jake teksture koje želimo da uglačamo tj da uklopimo u okolinu, moramo da primenimo \emph{guided} filter sa velikim parametrima. Ovo će rezultovati uglačavanjem ivica koje nisu preterano izražene (promena vrednosti piksela nije velika). U ovom slučaju će se javiti isti artifakti kao kod primene filtera srenje vrednosti.
 
-Ipak i pored ove limitacije guided filter je našao veliku primenu u svetu kompjuterse vizije i grafike, jer daje dobre rezultate kad je u pitanju očuvanje ivica i uklanjanje šuma. A pri tome je efikasan za izvršavanje. Pošto lokalni model, koji se koristi za guided filter, tip nenadgledanog učenja, ostavlja se prostor za primeu poboljšanih modela kako bi se stvorili novi filtri.  
+Ipak i pored ove limitacije \emph{guided} filter je našao veliku primenu u svetu kompjuterse vizije i grafike, jer daje dobre rezultate kad je u pitanju očuvanje ivica i uklanjanje šuma. A pri tome je efikasan za izvršavanje. Pošto lokalni model, koji se koristi za \emph{guided} filter, tip nenadgledanog učenja, ostavlja se prostor za primeu poboljšanih modela kako bi se stvorili novi filtri.  
 
 \section{Primena}%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Osnovna primena}%%%%%%%%%%%%%%%%%%%%%%%
+
+\emph{Guided} filter može da se koristi isto kao \emph{smoothnig} filtri opisani u 2 poglavlju. Možemo da ga koristimo u svrhu uglačavanja slike ili uklanjanja šuma. Naravno prednost \emph{guided} filtra je što obraća paznju na detalje i ivice na slici. Na sledećoj slici je prikazan rezultat filtriranja slike, kojoj je dodat Gausov šum.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=40mm]{img/flower.png}
+\includegraphics[width=40mm]{img/flowerNoise.png}
+\includegraphics[width=40mm]{img/flowerGF.png}
+\caption{1)slika 2)slika kojoj je dodat Gausov šum 3)\emph{guided} filter $r = 10$, $\varepsilon$ = 0.04 }
+\label{overflow}
+\end{figure}
+
+U primeru na slici se koristi ista slika i kao ulazna i kao slika voidč. Ovde možemo da uočimo dobre strane \emph{guided} filtra. Vidimo da je šum uklonjen, a pri tome su sačuvane ivice odnosno prelazi. Ovde je iskorišćena proširena verzija koja uyima u obzir sva tri kanala, prilikom obrade ivica. Ako se koristi pristup u kome se filtrira svaki kanal zasebno korišćenjem ogovarajućeg kanala slike vodiča može doći do pojave loših ivica. 
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=40mm]{img/zoom1.png}
+\includegraphics[width=40mm]{img/zoom2.png}
+\caption{1)tro-kanalna slika vodič 2)jedno-kanalna slika vodič }
+\label{overflow}
+\end{figure}
+
+Jedna od prostijih, ali veoma korisnih primena je poboljšanje slike dodavanjem detalja na sliku. Ako je $I$ slika koju filtriramo, a $J$ rezultat koji želimo da postignemo, ovaj filter možemo da predstavimo kao:
+
+\begin{center}
+$J(x, y) = I(x, y) + (I(x, y) - guidedFilter(I(x, y)) * A)$,
+\end{center}
+
+gde je A parametar kojim kontrolišemo koliko hoćemo da nam detalj bude izražen.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=40mm]{img/flower.png}
+\includegraphics[width=40mm]{img/flowerEGF.png}
+\includegraphics[width=40mm]{img/flowerER.png}
+\caption{1)slika 2)\emph{guided} filter $r = 16, \varepsilon = 0.01$ 3)result A = 5 }
+\label{overflow}
+\end{figure}
+
+\subsection{Dehazing}%%%%%%%%%%%%%%%%%%%%%%%
+
+Dehzing je metoda koja služi za uklanjanje posebnog tipa šuma (haze) sa slike. \emph{Haze} predstavlja tip smenjti koje se javljaju na slikama, a posledica su atmosferskih prilika. U suštini to je izmaglica koja može da bude rezultat pojave prave magle ili vremnskih prilika. Kada se slika pravi na kišnom vremenu objekti u daljini mogu delovati zamagljeno. Takođe haze može da budu posledica isparavanja, kako u prirodi tako i industriskog, ili dim koji je posledica požara. Cilj ove metode je da ukloni ove smetnje i istakne neke bitne detalje.
+
+U radu [6] je dat predlog za rešavanje ovog problema. Predpostavka je da svaki deo slike ima tamne piksele, odnosno u svakom delu slike može da se pronađe piksel čiji je jedan kanal približno jednak nuli, ako se zanemari \emph{haze}. U takvom piskelu će vrednost predstavljati vrednost količine \emph{haze}-a. Ako se odabere podslika ogovrajuće veličine koičina procenjenog šuma na tom pikselu može da se generalizuje na celu tu pod sliku. Na ovaj način može da se proceni količina šuma celoj slici. Na kraju se od svakog piksela biti oduzeta vrednost \emph{haze}-a procenjenog za taj piksel i na taj način se dobija filtrirana slika.
+
+Model slike koji je dat u [6] izlgeda ovako:
+
+\begin{center}
+$I(x) = J(x)t(x) + A(1 - t(x))$,
+\end{center}
+
+gde je $I$ posmatrana slika, $J$ vektor površinskog odsijavanja na tački preseka scene i zraka iz realnog sveta, koja odgovara pikselu $x = (z, y)$, a $t(x)$ je transmisija duž zraka. $A$ je atmosferska osvetljenost odnosno osvetljenost prostora scene. Ova definicija važi za sva tri RGB kanala. Ovo se drugačije naziva i model degradacije i koristi se za predstvaljanje slike koja sadrži smetnje kao što je magla.   
+
+Ono što mi tražimo je $J$ tj. model tamnog kanala koji predstavlja mračne kanale na slici, da bi odredili količinu magle (\emph{haze}) na njoj. Model za formiranje tamnog kanala je sledeći:
+
+\begin{center}
+$J^{dark}(x) = min_{c \epsilon \{r, g, b \}}( min_{y \epsilon \Omega (x)} (J^c (y)) )$,
+\end{center}
+
+gde je se u ovkviru piksela i njegovih suseda definisanih prozorom $\Omega(x)$ traži piksel koji u nekom od RGB kanala ima minimalnu vrenost. 
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=60mm]{img/haze.png}
+\includegraphics[width=60mm]{img/hazeDC.png}
+\caption{1) slika 2)tamni kanal J}
+\label{overflow}
+\end{figure}   
+
+Ako ovu formulu primenimo u predhodnu formulu modela slike i ako predpostavimo da je $J(x)$ za sliku bez smetnji jednaka nuli, za transmisionu sliku dobijamo da je jednaka:
+
+\begin{center}
+$t(x) = 1 - \omega min_c ( min_{y \epsilon \Omega (x)} (\dfrac{I^c(y)}{A^c}))$,
+\end{center}
+
+gde je $\omega$ regularizacioni parametar koji određuje u kolikoj meri od 0-100 % verujemo proceni, vrednost je minimum u prozoru $\Omega(x)$ i po sva tri kanala. Kada izračunamo sliku transmisije rezultat se dobija kao:
+
+\begin{center}
+$H(x) = \dfrac{I(x) - A}{max(t(x), t_0) + A}$,
+\end{center}
+
+gde je $t_0$ minimalna vrednost transmisione slike pre filtriranja.
+
+Pošto je procena transmisione komponente $t(x)$ robusna, tj procena vrednosti  se vrši u prozoru, dobijeni rezultat može da utiče na ivice. Da bi se dobila finija procena koja obraća pažnju na ivice na slici, transmisiona slika se filtrira. Za ovo filtriranje može da se koristi \emph{guided} filter. 
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=60mm]{img/haze.png}
+\includegraphics[width=60mm]{img/hazeTr.png}
+\caption{1) slika 2)filtrirana transmisiona slika t}
+\label{overflow}
+\end{figure}   
+
+U implementaciji koja čiji su rezultati biti prikazani u ovom radu se koristi sledeći postupak za dobijanje transmisione slike. Predpostavka je da je svetlost prostora $A = (1, 1, 1)$ i da je $t(x) = const.$ u okviru prozora koji se koristi za filtriranje. Postupak je sledeći:
+
+\begin{center}
+$A(x) = guidedFilter(J^{dark}(x))$.
+\end{center}
+
+\begin{center}
+$B(x) = A(x) - guidedFilter(|J^{dark}(x) - A(x)|)$.
+\end{center}
+
+\[   
+V(x) = 
+     \begin{cases}
+       \text{0,} &\quad\text{B(x) <= 0}\\
+       \text{1,} &\quad\text{B(x) > 1} \\
+       \text{B(x),} &\quad\text{u ostalim slučajevima}\\
+     \end{cases}
+\]
+
+\begin{center}
+$t(x) = 1 - w * V(x)$.
+\end{center}
+
+Prvo se filtrira robusna procena $J^{dark}$, uz pomoć \emph{guided} filtra, da bi dobili prvi rezultat $A(x)$. Filtriranje u drugom koraku se vrši sa ciljem da se poboljšaju informacije o ivicam na slici. Ovo se postiže filtriranjem apsolutne razlike $|J^{dark}(x) - A(x)|$ koja će nositi informaciju o ivicama. Primenom ovih transformacija može doći do pojavljivanja vrednosti koje prevazilaze granice domena pa se vrši normalizacija u trećem koraku i dobijamo $V(x)$, gde su sve vrednosti iz domena. Predpostavka je da su vrednosti iz domena $(0, 1)$ (ekvivalentno se primenjuje za bilio koji drugi domen, ali je poželjno da se koriste vrednosti razlomljenih brojeva predstavljenih u pokretnom zarezu \emph{float}). Transmisiona slika se dobija kao inverzna slika od $V(x)$, koja je pomnožena koeficijentom $\omega$, koje predstvalja koeficijent verovanja u procenu.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=60mm]{img/haze.png}
+\includegraphics[width=60mm]{img/hazeRes.png}
+\caption{1) slika 2)rezultat}
+\label{overflow}
+\end{figure}   
+
+Na slici 17 možemo da primetimo da rezultat nije perfektan. Naime možemo da primetimo da se magla zadržala oko ivica, tj. prelaza na slici (izmedju mesta sa raličitim bojama, konkretno cigle i lišće na slici 17). Ovo je posledica ''halo'' efekta koji je limitacija \emph{guided} filtera. Pošto transmisiona slika sadrži prelaze koji nisu izraziti (pikseli sa jedne i druge strane ivice se ne razlikuju drastično), dolazi do ispoljavanja ovog efekta. \emph{Guided} filter nije najbolje rešenje, ako posmatramo vizuelno rezultat. Međutim zbog složenosti \emph{guided} filtra koja je $O(n)$, ovo je najbrža implementacija, koja daje dobre rezultate. U praktičnoj primeni brzina može da bude značajan faktor, dok vizuelna satisfakcija nije bitna ako sa slike mogu da se izvuku bitne informacije. \emph{Guided} filter daje dobre rezultate prilikom otkrivanja detalja koji su bili zamagljeni, što je obično cilj praktičnih primena.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=120mm]{img/aerial.png}
+\includegraphics[width=120mm]{img/aerialDe.png}
+\caption{1) slika 2)rezultat}
+\label{overflow}
+\end{figure}   
+
+Bitno je napomenuti da je svaka slika jednstvena pa se manipulacijom parametara može menjati rezultat, tako da se dobije najpogodniji. Među parametrima koji mogu uticati na rezultat su parametri \emph{guided} filtra radius prozora i $\varepsilon$ normalizujuća konstanta čiji je uticaj opisan u poglavlju vezanom za \emph{guided} filter. Ovi parametri mogu uticati na detalje na transmisionoj slici. Što se veći parametri koriste bolje će biti ivice na rezultujućoj slici, međutim i ''halo'' efekat će se povećati pa treba izabrati optimalne vrednosti. Takođe mogu da se podesi veličina prozora koji se koristi za izračunavanje tamnog kanala. Ovde će vrednost zavisiti od konkretne slike i veličie oblasti u kojima su pikseli slični. Takođe može da se podešava faktor $\omega$, koji nam govori koliko verujemo proceni šuma. Ovaj parametar je bitna jer procena obično nije precizna pa ovime može da se izegne oduzimanje prevelike vrednosti sa piksela slike, što bi dovelo do potamnjivanja slike.
+ 
+\subsection{Flash No-Flash}%%%%%%%%%%%%%%%%%%%%%%%
+
+Zanimljiva primena \emph{guided} filtra predložena je u [7]. U tom radu je korišćen \emph{bilateral} filter, ali se u ovom radu ispituju mogućnosti \emph{guided} filtra. Pošto \emph{guided} filtra ima ekvivalentni rezultat kao \emph{bilateral} filter, ovde jednostavno može da se zameni, efekat će biti isti. Ideja ovog rada je poboljšanje slike, koja je slikana u prostoru u kome nema prirodnog svetla. Problem je u tome što kada se slika fotoaparatom u prostoru gde nema priroden svetlosti, dolazi do pojave šuma. Rešenje je da se koristi blic, ali se onda gubi prorodno svetlo. Ideja je da se slika slikana bez blica, ambijentalna slika, poboljša uz pomoć slike koja je slikana uz pomoć blica. Primarni cilj je uklanjanje šuma, ali se u radu predlažu i tehnike za poboljšanje detalja, izoštravanje, balansiranje svetlosti itd. Mi ćemo se ovde fokusirati na ulanjanje šuma. 
+
+Ako obležimo sa $A$ ambijentalnu sliku (slika za koju nije korišćen blic), a sa $F$ sliku za koju je korišćen blic, onda se rezultujuća slika može dobiti kao rezultat sledećih operacija:
+
+\begin{center}
+$A^{Final} = (1 - M)A^{NR}F^{Detail} + MA^{Base}$.
+\end{center}
+
+$A^{NR}$ je slika koja je rezultat primene \emph{guided} filtra gde je ulaz slika $A$, a kao slika vodič se koristi slika $F$. Ovde koristimo informacije koje nosi slika $F$, jer je ona bez šuma, a filtriramo sliku $A$ i tako zadržavamo ambijentalnu svetlost, što je poenta ove primene. Međutim na slici $F$ će kao posledica korišćenja blica postojati izražene senke. U te delove slike $F$ ne možemo da koristimo kao nosioce informacije, jer na njima ništa ne postoji. Ako bi primenili te delove na slici $A^{Final}$ bi počele da se pojavljuju te senke. Da bi izbegli to za delove na slici $F$ koji predstvaljaju senku, možemo da koristimo $A^{Base}$. $A^{Base}$ je rezultat korišćenja  \emph{guided} filtra, gde su i ulazna i slika vodič slika $A$. Ovo neće postići rezultat kao filtriranje koje koristi dve slike, ali ako predpostavimo da je mali deo slike predstavlja senku, celokupni rezultat će biti zadovoljavajući. Za porcenu mesta na kojima je senka u $F$ koristimo $M$. Maska $M$ se računa na sledeći način:
+
+\[   
+M = 
+     \begin{cases}
+       \text{1,} &\quad\text{$(F - A) <= \tau$}\\
+       \text{0,} &\quad\text{u ostalim slučajevima} \\
+     \end{cases}
+\]
+
+$\tau$ je vrednost koja predstavlja nivo tolerancije pri priceni da li je nešto što na $A$ nije senka, senka na $F$. Pošto je ovo gruba procena preporučuje se da se nad maskom $M$ izvedu morfološke operacije kako bi se dobio finiji rezultat. U našoj implementaciji je korišćena vrednost $\tau$ = 0.01. U detalje tog procesa ovde ne zalazimo.
+
+$F^{Detail}$ predstavlja detalje koje dodajemo na sliku u cilju poboljšanja. On se računa ovako:
+
+\begin{center}
+$F^{Detail} = \dfrac{F + \varepsilon}{F^{base} + \varepsilon}$.
+\end{center}
+
+$F^{Base}$ je rezultat korišćenja  \emph{guided} filtra, gde su i ulazna i slika vodič slika $F$. Ovo princip koji je opisan u predhodnim poglavljima, gde se uz pomoć filtrirane slike pronalaze detalji. Razlika je u tome što se koristi deljenje da bi se oni našli, a u predhodnim primenama smo koristili oduzimanje. Zbog deljenja se kasnije slika detalja $F^{Detail}$ množi podkomponentno da bi se dobio rezultat. Konstanta $\varepsilon$ služi da se izbegne deljenje nulom i u našoj implementaciji je $\varepsilon = 0.02$.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=45mm]{img/flashF.png}
+\includegraphics[width=45mm]{img/flashA.png}
+\includegraphics[width=45mm]{img/flashR.png}
+\caption{1) slika F 2)ambijentalna slika A 3) rezultat}
+\label{overflow}
+\end{figure} 
+
+\subsection{Izvlačenje objekata}%%%%%%%%%%%%%%%%%%%%%%%
+
+Rad [8] se bavi procesom izvlačenja objekata sa slike, tj. odvajanje objekata od pozadine, uz učestvovanje korisnika koji treba da sa par tačaka odredi šta je pozadina, a šta nije. Ovo je veoma važana proces za editovanje slika i video materijala. I perspektive kompjuterse vizije ovo je težak problem. Rešenja pre ovoga su ograničavala prepoznavanje na deo slike. U radu [8] je predstavljeno rešenje.  
+
+Mi se nećemo detaljno baviti rešenjem ovog problema. Ovde će biti prikazan samo deo procesa u kome se koristi \emph{guided} filter. Korisnik zadaje jednu ili više tačaka koje predstavljaju pozadinu, i jednu ili više tačaka koje predstavljaju objekte koji treba da se izdvoje. U [8] je predloženo rešenje koje na osnovu tih tačaka ispituje okolne piksele pokušavajući da odredi boje i osvetljenost kako bi odredio masku koja će odvojiti objekte od pozadine. Ispituju se relacije između piksela kako bi se dobio rezultat. Kao rezultat se dobija maska koja je gruba procena. Da bi se dobio dobar rezultat potrebno je izmeniti granicu izmedju crne i bele boje tako da se ona poklopi sa ivicama slike. Za ovo može da se iskoristi \emph{guided} filter, gde će slika koja se filtrira biti maska, a kao slika vodič će se koristiti slika nad kojom se vrši izvlačenje objekata. Bitno je napomenuti da parametre filtriranja treba pažljivo odabrati da ne bi došlo do pojavljivanja neželjenih tekstura. Dobro je odabrati veliki prozor za filtriranje, jer će na taj način biti izbegnuta pojava nebitnih tekstura.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=45mm]{img/toy.png}
+\includegraphics[width=45mm]{img/toyMask.png}
+\includegraphics[width=45mm]{img/toyMaskGF.png}
+\caption{1) slika F 2)maska A 3) maska filtrirana \emph{guided} filtrom $r = 60, \varepsilon = 10^{-6}$}
+\label{overflow}
+\end{figure}    
+
+\section{Zaključak}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+U ovom radu je bila prezentovana oblast obrade slike, koje je široko primenjena u kompjuterskoj viziji, grafici i u mogog drugih oblasti. Na razim primerima su pokazani metodi za obradu slike, njihove namene, dobre i loše osobine. Fokus je bio na \emph{guided} filtru, zbog pristupa koji je u njemu primenjen, kao i zbog njegove efikasnosti. Ovaj filter je opštiji od \emph{smoothing} filtara i može da se primenu u razne svrhe, što je detaljnije demonstrirano u ovom radu.
 
 \newpage
 \addcontentsline{toc}{section}{Literatura}
@@ -881,6 +1083,25 @@ Kaiming He, Jian Sun
 \emph{\href{https://arxiv.org/pdf/1505.00996.pdf}{Fast Guided Filter}},
 arXiv,
 2015.
+
+\bibitem{Dehaze}
+Raanan Fattal,
+\emph{\href{http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.456.2558&rep=rep1&type=pdf}{Single image dehazing}},
+SIGGRAPH,
+2008.
+
+\bibitem{FlashNoFlash}
+Georg Petschnigg, Maneesh Agrawala, Hugues Hoppe. Richard Szeliski, Michael Cohen, Kentaro Toyama,
+\emph{\href{http://hhoppe.com/proj/flash/}{Digital photography with flash and no-flash image pairs}},
+ACM Trans. Graphics (SIGGRAPH),
+2004.
+
+\bibitem{}
+Anat Levin, Dani Lischinski, Yair Weiss,
+\emph{\href{http://people.csail.mit.edu/alevin/papers/Matting-Levin-Lischinski-Weiss-PAMI.pdf}{A Closed-Form Solution to Natural
+Image Matting}},
+IEEE TPAMI,
+2008.
 
 \end{thebibliography}
 
