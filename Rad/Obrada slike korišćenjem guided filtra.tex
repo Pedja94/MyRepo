@@ -19,20 +19,72 @@
 \renewcommand{\refname}{Literatura}
 \renewcommand{\mod}[1]{$mod$ ${#1}$}
 
-\title{\Huge {\textbf{Obrada slike korišćenjem Guided filtra}}}
-\author{\textbf{Autor:} Predrag Nikolić \\ \textbf{Mentor:} Dejan Rančić}
-\date{\today}
+%\title{\Huge {\textbf{Obrada slike korišćenjem Guided filtra}}}
+%\author{\textbf{Autor:} Predrag Nikolić \\ \textbf{Mentor:} Dejan Rančić}
+%\date{\today}
 
 \begin{document}
-\begin{center}
-\large Univerzitet u Nišu \\ Elektronski fakultet
-\end{center}
+\begin{titlepage}
 
-\begin{minipage}{\textwidth}
-   \maketitle   
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
+
+\center % Center everything on the page
+ 
+%----------------------------------------------------------------------------------------
+%	HEADING SECTIONS
+%----------------------------------------------------------------------------------------
+
+{\LARGE Univerzitet u Nišu}\\[1.5cm] % Name of your university/college
+{\Large Elektronski fakultet}\\[0.5cm] % Major heading such as course name
+{\large Smer računarstvo i inforamtika}\\[0.5cm] % Minor heading such as course title
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\HRule \\[0.4cm]
+{ \huge \bfseries Obrada slike i guided filter}\\[0.4cm] % Title of your document
+\HRule \\[1.5cm]
+ 
+%----------------------------------------------------------------------------------------
+%	AUTHOR SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+\textbf{Autor:}\\
+Predrag Nikolić % Your name
+\end{flushleft}
 \end{minipage}
-\thispagestyle{empty}
-\newpage
+~
+\begin{minipage}{0.4\textwidth}
+\begin{flushright} \large
+\textbf{Mentor:} \\
+Dr. Dejan Rančić % Supervisor's Name
+\end{flushright}
+\end{minipage}\\[2cm]
+
+% If you don't want a supervisor, uncomment the two lines below and remove the section above
+%\Large \emph{Author:}\\
+%John \textsc{Smith}\\[3cm] % Your name
+
+%----------------------------------------------------------------------------------------
+%	DATE SECTION
+%----------------------------------------------------------------------------------------
+
+{\large \today}\\[2cm] % Date, change the \today to a set date if you want to be precise
+
+%----------------------------------------------------------------------------------------
+%	LOGO SECTION
+%----------------------------------------------------------------------------------------
+
+%\includegraphics{}\\[1cm] % Include a department/university logo - this will require the graphicx package
+ 
+%----------------------------------------------------------------------------------------
+
+\vfill % Fill the rest of the page with whitespace
+
+\end{titlepage}
 
 \tableofcontents
 \thispagestyle{empty}
@@ -646,6 +698,8 @@ gde su $\overline{a_i} = \dfrac{1}{|w|}\sum_{k \epsilon w_i} a_k$ i $\overline{b
 
 U nastavku je dat pseudo kod algoritma, koji je definisan na osonvu predhodinh jednačina. $f_{mean}$ je filter srednje vrednosti sa radiusom $r$. \emph{corr, var i cov} označavaju redom korelaciju, varijansu i kovarijansu. 
 
+\newpage
+
 \textbf{Algoritam Guided filter}\\
 
 \textbf{Ulaz:} slika koja se filtrira $p$, slika vodič $I$, radius $r$, parametar regularizacije $\varepsilon$.\\
@@ -986,8 +1040,14 @@ Na slici 17 možemo da primetimo da rezultat nije perfektan. Naime možemo da pr
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=120mm]{img/aerial.png}
+\caption{Snimak sa zamagljenjem}
+\label{overflow}
+\end{figure}   
+
+\begin{figure}[ht!]
+\centering
 \includegraphics[width=120mm]{img/aerialDe.png}
-\caption{1) slika 2)rezultat}
+\caption{Rezultat filtriranja magle na predhodnoj slici}
 \label{overflow}
 \end{figure}   
 
