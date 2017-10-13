@@ -1,4 +1,4 @@
-function Res = dehaze( Img, Rgf, EPSgf, Rdc, DehazingLVL, AdjLVL, Sgn )
+function Res = dehaze( Img, Rgf, EPSgf, Rdc, DehazingLVL)
 
     r = Rdc;
     [n, m, ~] = size(Img);
@@ -13,14 +13,10 @@ function Res = dehaze( Img, Rgf, EPSgf, Rdc, DehazingLVL, AdjLVL, Sgn )
         end
     end
 
-    A = guidedfilter(rgb2gray(Img), Idark, Rgf, EPSgf);
+    A = guidedfilter(rgb2gray(Img), Idark, Rgf, EPSgf);  
     Diff = abs(Idark - A);
     C = guidedfilter(rgb2gray(Img), Diff, Rgf, EPSgf);
-    if (Sgn == 1)
-        B = A - AdjLVL * C;
-    else
-        B = A + AdjLVL * C;
-    end
+    B = A - C;
     V = zeros(n, m);
     V(:, :) = ((B(:, :) >= 0) .* (B(:, :) <= 1) .* B(:, :)) + (B(:, :) > 1);
     w = DehazingLVL;
@@ -29,5 +25,8 @@ function Res = dehaze( Img, Rgf, EPSgf, Rdc, DehazingLVL, AdjLVL, Sgn )
     %A(1, 1, 1)
     Res = Img - (1 - cat(3, Itrans, Itrans, Itrans));
     Res = Res ./ cat(3, Itrans, Itrans, Itrans);
+    
+    figure;
+    imshow(Res);
 end
 

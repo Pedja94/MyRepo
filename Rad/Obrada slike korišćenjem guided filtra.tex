@@ -12,12 +12,19 @@
 \usepackage{currvita}
 \usepackage{hyperref} 
 \usepackage{float}
+\usepackage[letterspace=125]{microtype}
+\usepackage{tabu}
+\usepackage{titlesec}
 
 \newtheorem{definicija}{Definicija}[section]
 \newtheorem{teorema}{Teorema}[section]
 \renewcommand{\contentsname}{Sadr\v zaj}
 \renewcommand{\refname}{Literatura}
 \renewcommand{\mod}[1]{$mod$ ${#1}$}
+\newcommand{\sectionbreak}{\clearpage}
+
+\setlength{\parskip}{\baselineskip}%
+\setlength{\parindent}{0pt}%
 
 %\title{\Huge {\textbf{Obrada slike korišćenjem Guided filtra}}}
 %\author{\textbf{Autor:} Predrag Nikolić \\ \textbf{Mentor:} Dejan Rančić}
@@ -25,65 +32,77 @@
 
 \begin{document}
 \begin{titlepage}
-
-\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
-
-\center % Center everything on the page
- 
-%----------------------------------------------------------------------------------------
-%	HEADING SECTIONS
-%----------------------------------------------------------------------------------------
-
-{\LARGE Univerzitet u Nišu}\\[1.5cm] % Name of your university/college
-{\Large Elektronski fakultet}\\[0.5cm] % Major heading such as course name
-{\large Smer računarstvo i informatika}\\[0.5cm] % Minor heading such as course title
-
-%----------------------------------------------------------------------------------------
-%	TITLE SECTION
-%----------------------------------------------------------------------------------------
-
-\HRule \\[0.4cm]
-{ \huge \bfseries Obrada slike i guided filter}\\[0.4cm] % Title of your document
-\HRule \\[1.5cm]
- 
-%----------------------------------------------------------------------------------------
-%	AUTHOR SECTION
-%----------------------------------------------------------------------------------------
-
-\begin{minipage}{0.4\textwidth}
-\begin{flushleft} \large
-\textbf{Autor:}\\
-Predrag Nikolić % Your name
-\end{flushleft}
-\end{minipage}
-~
-\begin{minipage}{0.4\textwidth}
-\begin{flushright} \large
-\textbf{Mentor:} \\
-Dr. Dejan Rančić % Supervisor's Name
-\end{flushright}
-\end{minipage}\\[2cm]
-
-% If you don't want a supervisor, uncomment the two lines below and remove the section above
-%\Large \emph{Author:}\\
-%John \textsc{Smith}\\[3cm] % Your name
-
-%----------------------------------------------------------------------------------------
-%	DATE SECTION
-%----------------------------------------------------------------------------------------
-
-{\large \today}\\[2cm] % Date, change the \today to a set date if you want to be precise
-
-%----------------------------------------------------------------------------------------
-%	LOGO SECTION
-%----------------------------------------------------------------------------------------
-
-%\includegraphics{}\\[1cm] % Include a department/university logo - this will require the graphicx package
- 
-%----------------------------------------------------------------------------------------
-
-\vfill % Fill the rest of the page with whitespace
-
+    \begin{center}
+    
+        \includegraphics[width=2.6cm]{img/uni.png}%
+        \begin{minipage}[b]{0.7\textwidth}
+            \centering
+            \Large
+            \textbf{UNIVERZITET U NIŠU\\ ELEKTRONSKI FAKULTET}       
+            \large
+            \textbf{Katedra za računarstvo}
+        \end{minipage}%
+        \includegraphics[width=2.6cm]{img/elfak.png}
+        
+              
+      
+        \vspace{5cm}
+        \Large
+        \textbf{Proceduralno generisanje 3D terena}
+        
+        \vspace{0.6cm}
+        \normalsize
+        \textls{-ZAVRŠNI RAD-}     
+    \end{center}
+    
+    \vspace{1cm}
+   
+    \textbf{Zadatak:}
+    
+    \vspace{0.2cm}
+    
+    \setlength{\leftskip}{0.6cm}
+    \noindent
+    Istražiti tehnike proceduralnog generisanja terena.
+    Implementirati tehniku fraktalnog generisanja terena korišćenjem Perlinovog šuma na CPU i GPU i ispitati performanse oba pristupa.
+    
+    \vspace{1cm}
+    
+    \noindent \begin{tabu} to \textwidth{@{}X[l] X[r]@{}}
+        \textbf{Mentor:} prof. dr Dejan Rančić &
+        \textbf{Kandidat:} Mihajlo Ilijić 14665
+    \end{tabu}
+    
+    \vspace{1cm}
+   
+   \noindent
+    Komisija:
+    
+    \vspace{0.1cm}
+    
+    \noindent
+    \begin{tabu} to \textwidth{@{}X[l] X[r]@{}}  
+         \begin{tabular}{@{}ll}
+            1. & \underline{\hspace{6.5cm}}\\
+            2. & \underline{\hspace{6.5cm}}\\
+            3. & \underline{\hspace{6.5cm}}
+        \end{tabular}  
+        
+    &
+   
+        \begin{tabular}{ll@{}}
+            Datum prijave: & \underline{\hspace{3cm}}\\
+            Datum predaje: & \underline{\hspace{3cm}}\\
+            Datum odbrane: & \underline{\hspace{3cm}}
+        \end{tabular}
+  
+    \end{tabu}
+    
+    \vspace{4cm}
+    
+     \begin{center}
+        Niš, \the\year.
+    \end{center}
 \end{titlepage}
 
 \tableofcontents
@@ -952,6 +971,8 @@ gde je A parametar kojim kontrolišemo koliko hoćemo da nam detalj bude izraže
 
 Dehzing je metoda koja služi za uklanjanje posebnog tipa šuma (haze) sa slike. \emph{Haze} predstavlja tip smenjti koje se javljaju na slikama, a posledica su atmosferskih prilika. U suštini to je izmaglica koja može da bude rezultat pojave prave magle ili vremnskih prilika. Kada se slika pravi na kišnom vremenu objekti u daljini mogu delovati zamagljeno. Takođe haze može da budu posledica isparavanja, kako u prirodi tako i industriskog, ili dim koji je posledica požara. Cilj ove metode je da ukloni ove smetnje i istakne neke bitne detalje.
 
+U ovom radu se predlaže implemntacija algoritma za dehazing korišćenjem guided filtra. Prednost guided filtra se ogleda u tome što on ima manju složenost u odnosu na druge filtre, pa možemo da zaključimo da će ta implementacija biti najbrža. Za potrebe ovog rada napravljena je implementacija u programskom jeziku Matlab. Implementacija je napravljena korišćenjem ideja iz rada [6]. 
+
 U radu [6] je dat predlog za rešavanje ovog problema. Predpostavka je da svaki deo slike ima tamne piksele, odnosno u svakom delu slike može da se pronađe piksel čiji je jedan kanal približno jednak nuli, ako se zanemari \emph{haze}. U takvom piskelu će vrednost predstavljati vrednost količine \emph{haze}-a. Ako se odabere podslika ogovrajuće veličine koičina procenjenog šuma na tom pikselu može da se generalizuje na celu tu pod sliku. Na ovaj način može da se proceni količina šuma celoj slici. Na kraju se od svakog piksela biti oduzeta vrednost \emph{haze}-a procenjenog za taj piksel i na taj način se dobija filtrirana slika.
 
 Model slike koji je dat u [6] izlgeda ovako:
@@ -968,14 +989,16 @@ Ono što mi tražimo je $J$ tj. model tamnog kanala koji predstavlja mračne kan
 $J^{dark}(x) = min_{c \epsilon \{r, g, b \}}( min_{y \epsilon \Omega (x)} (J^c (y)) )$,
 \end{center}
 
-gde je se u ovkviru piksela i njegovih suseda definisanih prozorom $\Omega(x)$ traži piksel koji u nekom od RGB kanala ima minimalnu vrenost. 
+gde je se u ovkviru piksela i njegovih suseda definisanih prozorom $\Omega(x)$ traži piksel koji u nekom od RGB kanala ima minimalnu vrenost. Za svaki piksel ulazne slike se računa minimalna vrednost za sve piksele u prozoru veličine $2*r + 1$, po sva tri kanala. Pošto za svaki piksel moramo da obradimo njegove susede u prozoru veličine $2*r + 1$ možemo da zaključimo da će složenost ovog izračunavanja biti $O(Nr^2)$. Na slici ~\ref{TamniKanal} možemo da vidimo rezultate izračunavanja tamnog kanala i uticaj promene veličine $r$ na rezultat. Na slici ~\ref{TamniKanal} možemo da uočimo da veličina prozora koji se koristi u proceni tamnog kanala utiče na robusnost procene. 
 
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=60mm]{img/haze.png}
-\includegraphics[width=60mm]{img/hazeDC.png}
-\caption{1) slika 2)tamni kanal J}
-\label{overflow}
+\includegraphics[width=60mm]{img/hazeDC0.png}
+\includegraphics[width=60mm]{img/hazeDC2.png}
+\includegraphics[width=60mm]{img/hazeDC5.png}
+\caption{Izračunavanje tamnog kanala korišćenjem različitih veličina prozora koji se koriste u porceni vrednosti tamnog kanala a) zamagljena slika zgrade, tamni kanal izračunat sa veličinom prozora b)0 c)2 d)5}
+\label{TamniKanal}
 \end{figure}   
 
 Ako ovu formulu primenimo u predhodnu formulu modela slike i ako predpostavimo da je $J(x)$ za sliku bez smetnji jednaka nuli, za transmisionu sliku dobijamo da je jednaka:
@@ -987,22 +1010,20 @@ $t(x) = 1 - \omega min_c ( min_{y \epsilon \Omega (x)} (\dfrac{I^c(y)}{A^c}))$,
 gde je $\omega$ regularizacioni parametar koji određuje u kolikoj meri od 0-100 % verujemo proceni, vrednost je minimum u prozoru $\Omega(x)$ i po sva tri kanala. Kada izračunamo sliku transmisije rezultat se dobija kao:
 
 \begin{center}
-$H(x) = \dfrac{I(x) - A}{max(t(x), t_0) + A}$,
+$H(x) = \dfrac{I(x) - A}{t(x)} + 1$.
 \end{center}
 
-gde je $t_0$ minimalna vrednost transmisione slike pre filtriranja.
-
-Pošto je procena transmisione komponente $t(x)$ robusna, tj procena vrednosti  se vrši u prozoru, dobijeni rezultat može da utiče na ivice. Da bi se dobila finija procena koja obraća pažnju na ivice na slici, transmisiona slika se filtrira. Za ovo filtriranje može da se koristi \emph{guided} filter. 
+Pošto je procena transmisione komponente $t(x)$ robusna, tj procena vrednosti  se vrši u prozoru, dobijeni rezultat može da utiče na ivice. Da bi se dobila finija procena koja obraća pažnju na ivice na slici, transmisiona slika se filtrira. Za ovo filtriranje može da se koristi \emph{guided} filter. Na slici ~\ref{FiltriraniTamniKanal} možemo na primeru slike zgrade da vidimo kakav će uticaj imati filtriranje slike tamnog kanala. Na ovoj slici se vidi da filtriranje tamnog kanala, koji je procenjen korišćenjem prozora radiusa 5, utiče na robusnost te procene. Filtriranje treba da postigne da se oblasti piksla koji se nalaze na malo razdaljini izjednače, jer je predpostavka da oni imaju jednaku količinu magle. Pri tome \emph{guided} filter će voditi računa o oblastima koje su odvojene ivicama. 
 
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=60mm]{img/haze.png}
-\includegraphics[width=60mm]{img/hazeTr.png}
-\caption{1) slika 2)filtrirana transmisiona slika t}
-\label{overflow}
+\includegraphics[width=60mm]{img/hazeDC5F.png}
+\caption{Uticaj filtriranja slike tamnog kanala na slici zgrade a) tamni kanal sa prozorom dimenzije 5 b)filtrirani tamni kanal sa prozorom dimenzije 5}
+\label{FiltriraniTamniKanal}
 \end{figure}   
 
-U implementaciji koja čiji su rezultati biti prikazani u ovom radu se koristi sledeći postupak za dobijanje transmisione slike. Predpostavka je da je svetlost prostora $A = (1, 1, 1)$ i da je $t(x) = const.$ u okviru prozora koji se koristi za filtriranje. Postupak je sledeći:
+U implementaciji čiji su rezultati biti prikazani u ovom radu se koristi sledeći postupak za dobijanje transmisione slike. Predpostavka je da je svetlost prostora $A = (1, 1, 1)$ i da je $t(x) = const.$ u okviru prozora koji se koristi za filtriranje. Postupak je sledeći:
 
 \begin{center}
 $A(x) = guidedFilter(J^{dark}(x))$.
@@ -1031,81 +1052,86 @@ Prvo se filtrira robusna procena $J^{dark}$, uz pomoć \emph{guided} filtra, da 
 \centering
 \includegraphics[width=60mm]{img/haze.png}
 \includegraphics[width=60mm]{img/hazeRes.png}
-\caption{1) slika 2)rezultat}
+\caption{Rezultat filtriranja slike zgrade u cilju uklanjanja magle1) orginalna slika 2)rezultat}
 \label{overflow}
 \end{figure}   
 
-Na slici 17 možemo da primetimo da rezultat nije perfektan. Naime možemo da primetimo da se magla zadržala oko ivica, tj. prelaza na slici (izmedju mesta sa raličitim bojama, konkretno cigle i lišće na slici 17). Ovo je posledica ''halo'' efekta koji je limitacija \emph{guided} filtera. Pošto transmisiona slika sadrži prelaze koji nisu izraziti (pikseli sa jedne i druge strane ivice se ne razlikuju drastično), dolazi do ispoljavanja ovog efekta. \emph{Guided} filter nije najbolje rešenje, ako posmatramo vizuelno rezultat. Međutim zbog složenosti \emph{guided} filtra koja je $O(n)$, ovo je najbrža implementacija, koja daje dobre rezultate. U praktičnoj primeni brzina može da bude značajan faktor, dok vizuelna satisfakcija nije bitna ako sa slike mogu da se izvuku bitne informacije. \emph{Guided} filter daje dobre rezultate prilikom otkrivanja detalja koji su bili zamagljeni, što je obično cilj praktičnih primena.
+Na slici 17 možemo da primetimo da rezultat nije perfektan. Naime možemo da primetimo da se magla zadržala oko ivica, tj. prelaza na slici (izmedju mesta sa raličitim bojama, konkretno cigle i lišće na slici 17). Ovo je posledica ''halo'' efekta koji je limitacija \emph{guided} filtera. Pošto transmisiona slika sadrži prelaze koji nisu izraziti (pikseli sa jedne i druge strane ivice se ne razlikuju drastično), dolazi do ispoljavanja ovog efekta.
+
+Rezultat implementacije pokazane u ovom radu može da se menja podešavanjem parametara. Dobrim podešavanjem parametara rezultat može promeni u skladu sa različitim očekivanjima. Parametri koji mogu da se menjaju u ovoj implementaciji su:
+
+\begin{itemize}
+\item $r_{dc}$ - radius prozora za izračunavanje tamnog kanala 
+\item $r_{gf}$ - radius prozora za izračunavanje guided filtra
+\item $\varepsilon_{gf}$ - regularizaciona konstanta za guided filter 
+\item $w$ - koeficijent verovanja procene magle
+\end{itemize}
+
+Prvo ćemo ispitati uticaj parametra $r_{dc}$ koji predstavlja radius prozora za izračunavanje tamnog kanala. Na slici ~\ref{UticajRdc} možemo da vidimo rezultate za fiksirane parametre guided filtra. Ovde možemo da utvrdimo da se povećanjem parametra $r_{dc}$ postiže bolji rezultat. Boje na slici sa većim parametrom $r_{dc}$ su približnije realnim bojama, međutim dolazi do povećanja ''halo'' efekta što je posledica korišćenja guided filtera.  
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=120mm]{img/aerial.png}
-\caption{Snimak sa zamagljenjem}
-\label{overflow}
-\end{figure}   
+\includegraphics[width=45mm]{img/hazeResDC0.png}
+\includegraphics[width=45mm]{img/hazeResDC3.png}
+\includegraphics[width=45mm]{img/hazeResDC5.png}
+\caption{Rezultati filtriranja slike zgrade u cilju uklanjanja magle u kojima je menjan parametar radius prozora za izračunavanje tamnog kanala $r$. Parametri guided filtra su $r_{gf} = 2$ i  $\varepsilon_{gf} = 0.01$ a)$r = 0$ b)$r = 3$ c)$r = 5$}
+\label{UticajRdc}
+\end{figure}  
+
+Sada ćemo ispitati uticaj parametara guided filtra $r_{gf}$ koji predstavlja radius prozora i $\varepsilon_{gf}$ koji predstavlja  regularizacionu konstantu za guided filter. Na slici ~\ref{UticajGF} možemo da vidimo rezultate. Ovde kao i u ispitivanju parametra radiusa prozora tamnog kanala, možemo da utvrdimo da se povećanjem parametra guided filtra postiže bolji rezultat. Boje na slici sa većim parametrima guided filtra su približnije realnim bojama, međutim dolazi do povećanja ''halo'' efekta što je posledica korišćenja tog filtera. 
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=120mm]{img/aerialDe.png}
-\caption{Rezultat filtriranja magle na predhodnoj slici}
-\label{overflow}
-\end{figure}   
-
-Bitno je napomenuti da je svaka slika jednstvena pa se manipulacijom parametara može menjati rezultat, tako da se dobije najpogodniji. Među parametrima koji mogu uticati na rezultat su parametri \emph{guided} filtra radius prozora i $\varepsilon$ normalizujuća konstanta čiji je uticaj opisan u poglavlju vezanom za \emph{guided} filter. Ovi parametri mogu uticati na detalje na transmisionoj slici. Što se veći parametri koriste bolje će biti ivice na rezultujućoj slici, međutim i ''halo'' efekat će se povećati pa treba izabrati optimalne vrednosti. Takođe mogu da se podesi veličina prozora koji se koristi za izračunavanje tamnog kanala. Ovde će vrednost zavisiti od konkretne slike i veličie oblasti u kojima su pikseli slični. Takođe može da se podešava faktor $\omega$, koji nam govori koliko verujemo proceni šuma. Ovaj parametar je bitna jer procena obično nije precizna pa ovime može da se izegne oduzimanje prevelike vrednosti sa piksela slike, što bi dovelo do potamnjivanja slike.
- 
-\subsection{Flash No-Flash}%%%%%%%%%%%%%%%%%%%%%%%
-
-Zanimljiva primena \emph{guided} filtra predložena je u [7]. U tom radu je korišćen \emph{bilateral} filter, ali se u ovom radu ispituju mogućnosti \emph{guided} filtra. Pošto \emph{guided} filtra ima ekvivalentni rezultat kao \emph{bilateral} filter, ovde jednostavno može da se zameni, efekat će biti isti. Ideja ovog rada je poboljšanje slike, koja je slikana u prostoru u kome nema prirodnog svetla. Problem je u tome što kada se slika fotoaparatom u prostoru gde nema priroden svetlosti, dolazi do pojave šuma. Rešenje je da se koristi blic, ali se onda gubi prorodno svetlo. Ideja je da se slika slikana bez blica, ambijentalna slika, poboljša uz pomoć slike koja je slikana uz pomoć blica. Primarni cilj je uklanjanje šuma, ali se u radu predlažu i tehnike za poboljšanje detalja, izoštravanje, balansiranje svetlosti itd. Mi ćemo se ovde fokusirati na ulanjanje šuma. 
-
-Ako obležimo sa $A$ ambijentalnu sliku (slika za koju nije korišćen blic), a sa $F$ sliku za koju je korišćen blic, onda se rezultujuća slika može dobiti kao rezultat sledećih operacija:
-
-\begin{center}
-$A^{Final} = (1 - M)A^{NR}F^{Detail} + MA^{Base}$.
-\end{center}
-
-$A^{NR}$ je slika koja je rezultat primene \emph{guided} filtra gde je ulaz slika $A$, a kao slika vodič se koristi slika $F$. Ovde koristimo informacije koje nosi slika $F$, jer je ona bez šuma, a filtriramo sliku $A$ i tako zadržavamo ambijentalnu svetlost, što je poenta ove primene. Međutim na slici $F$ će kao posledica korišćenja blica postojati izražene senke. U te delove slike $F$ ne možemo da koristimo kao nosioce informacije, jer na njima ništa ne postoji. Ako bi primenili te delove na slici $A^{Final}$ bi počele da se pojavljuju te senke. Da bi izbegli to za delove na slici $F$ koji predstvaljaju senku, možemo da koristimo $A^{Base}$. $A^{Base}$ je rezultat korišćenja  \emph{guided} filtra, gde su i ulazna i slika vodič slika $A$. Ovo neće postići rezultat kao filtriranje koje koristi dve slike, ali ako predpostavimo da je mali deo slike predstavlja senku, celokupni rezultat će biti zadovoljavajući. Za porcenu mesta na kojima je senka u $F$ koristimo $M$. Maska $M$ se računa na sledeći način:
-
-\[   
-M = 
-     \begin{cases}
-       \text{1,} &\quad\text{$(F - A) <= \tau$}\\
-       \text{0,} &\quad\text{u ostalim slučajevima} \\
-     \end{cases}
-\]
-
-$\tau$ je vrednost koja predstavlja nivo tolerancije pri priceni da li je nešto što na $A$ nije senka, senka na $F$. Pošto je ovo gruba procena preporučuje se da se nad maskom $M$ izvedu morfološke operacije kako bi se dobio finiji rezultat. U našoj implementaciji je korišćena vrednost $\tau$ = 0.01. U detalje tog procesa ovde ne zalazimo.
-
-$F^{Detail}$ predstavlja detalje koje dodajemo na sliku u cilju poboljšanja. On se računa ovako:
-
-\begin{center}
-$F^{Detail} = \dfrac{F + \varepsilon}{F^{base} + \varepsilon}$.
-\end{center}
-
-$F^{Base}$ je rezultat korišćenja  \emph{guided} filtra, gde su i ulazna i slika vodič slika $F$. Ovo princip koji je opisan u predhodnim poglavljima, gde se uz pomoć filtrirane slike pronalaze detalji. Razlika je u tome što se koristi deljenje da bi se oni našli, a u predhodnim primenama smo koristili oduzimanje. Zbog deljenja se kasnije slika detalja $F^{Detail}$ množi podkomponentno da bi se dobio rezultat. Konstanta $\varepsilon$ služi da se izbegne deljenje nulom i u našoj implementaciji je $\varepsilon = 0.02$.
-
-\begin{figure}[ht!]
-\centering
-\includegraphics[width=45mm]{img/flashF.png}
-\includegraphics[width=45mm]{img/flashA.png}
-\includegraphics[width=45mm]{img/flashR.png}
-\caption{1) slika F 2)ambijentalna slika A 3) rezultat}
-\label{overflow}
+\includegraphics[width=45mm]{img/hazeResGF2_01.png}
+\includegraphics[width=45mm]{img/hazeResGF5_04.png}
+\includegraphics[width=45mm]{img/hazeResGF10_1.png}
+\caption{Rezultati filtriranja slike zgrade u cilju uklanjanja magle u kojima su menjani parametari guided filtra $r$ i $\varepsilon$. Parametar radiusa prozora  za iračunavanje tamnog kanala je $r_{dc} = 0$ a)$r = 2 \varepsilon = 0.01$ b)$r = 5 \varepsilon = 0.04$ c)$r = 10 \varepsilon = 0.1$}
+\label{UticajRdc}
 \end{figure} 
 
-\subsection{Izvlačenje objekata}%%%%%%%%%%%%%%%%%%%%%%%
+Možemo da zaključimo da se povećanjem parametara $r_{dc}$ (radius prozora za izračunavanje tamnog kanala), $r_{gf}$ i $\varepsilon$ (parametri guided filtra), dolazi do povećanja kvaliteta rezultata (u smislu vizuelne precepcije i boja), ali je loša strana pojavljivanje ''halo'' efekta na mestima gde se boje menjaju (ivice slike). Možemo da zaključimo da je pametno birati manje parametre, da bi izbegli loše strane guided filtra.
 
-Rad [8] se bavi procesom izvlačenja objekata sa slike, tj. odvajanje objekata od pozadine, uz učestvovanje korisnika koji treba da sa par tačaka odredi šta je pozadina, a šta nije. Ovo je veoma važana proces za editovanje slika i video materijala. I perspektive kompjuterse vizije ovo je težak problem. Rešenja pre ovoga su ograničavala prepoznavanje na deo slike. U radu [8] je predstavljeno rešenje.  
-
-Mi se nećemo detaljno baviti rešenjem ovog problema. Ovde će biti prikazan samo deo procesa u kome se koristi \emph{guided} filter. Korisnik zadaje jednu ili više tačaka koje predstavljaju pozadinu, i jednu ili više tačaka koje predstavljaju objekte koji treba da se izdvoje. U [8] je predloženo rešenje koje na osnovu tih tačaka ispituje okolne piksele pokušavajući da odredi boje i osvetljenost kako bi odredio masku koja će odvojiti objekte od pozadine. Ispituju se relacije između piksela kako bi se dobio rezultat. Kao rezultat se dobija maska koja je gruba procena. Da bi se dobio dobar rezultat potrebno je izmeniti granicu izmedju crne i bele boje tako da se ona poklopi sa ivicama slike. Za ovo može da se iskoristi \emph{guided} filter, gde će slika koja se filtrira biti maska, a kao slika vodič će se koristiti slika nad kojom se vrši izvlačenje objekata. Bitno je napomenuti da parametre filtriranja treba pažljivo odabrati da ne bi došlo do pojavljivanja neželjenih tekstura. Dobro je odabrati veliki prozor za filtriranje, jer će na taj način biti izbegnuta pojava nebitnih tekstura.
+Kod slika koje predstavljau scenu na kojoj se javlja deo neba koji je beo od posledice zamaglice, može doći do pogrešne procene kanala. Greška će se javiti zbog velike količine svetle boje, koja će biti procenjena kao magla. Ova greška će proizvesti rezultat kao na slici ~\ref{Šuma1}.
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=45mm]{img/toy.png}
-\includegraphics[width=45mm]{img/toyMask.png}
-\includegraphics[width=45mm]{img/toyMaskGF.png}
-\caption{1) slika F 2)maska A 3) maska filtrirana \emph{guided} filtrom $r = 60, \varepsilon = 10^{-6}$}
-\label{overflow}
-\end{figure}    
+\includegraphics[width=60mm]{img/forest.png}
+\includegraphics[width=60mm]{img/forest100.png}
+\caption{Rezultati filtriranja slike šume u cilju uklanjanja magle. a) originalna slika b) filtrirana slika sa parametrom verovanja procene $w = 1$}
+\label{Šuma1}
+\end{figure} 
+
+Na ovu grešku u proceni možemo da utičemo promenom parametra $w$ (koeficijent verovanja procene). Ako samnjimo vrednost parametra, kao na slici ~\ref{Šuma2}.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=60mm]{img/forest.png}
+\includegraphics[width=60mm]{img/forest95.png}
+\caption{Rezultati filtriranja slike šume u cilju uklanjanja magle. a) originalna slika b) filtrirana slika sa parametrom verovanja procene $w = 0.95$}
+\label{Šuma2}
+\end{figure} 
+
+Cilj korišćenja guided filtra u našoj implementaciji je ubrzanje algoritma. Metodi koji se koriste u [6] se oslanjaju na konvolucione filtre i izračunavanja koja su kvadratne složenosti jer zavise od prozora koji se koriste za filtriranje. Složenost guided filtera zavisi samo od broja piksela što ga čini bržim. Pri tome guided filter daje približno dobra rešenja. Na slikama ~\ref{aerial} i ~\ref{grad}. 
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=60mm]{img/aerial.png}
+\includegraphics[width=60mm]{img/aerialFattal.png}
+\includegraphics[width=60mm]{img/aerialDe.png}
+\caption{Poređenje rezultata dehazing-a iz rada [6] i naše implementacije koja koristi guided filter. a) originalna slika b) Fattal c) guided filter}
+\label{aerial}
+\end{figure} 
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=40mm]{img/grad.jpg}
+\includegraphics[width=40mm]{img/gradFattal.jpg}
+\includegraphics[width=40mm]{img/gradDe.png}
+\caption{Poređenje rezultata dehazing-a iz rada [6] i naše implementacije koja koristi guided filter. a) originalna slika b) Fattal c) guided filter}
+\label{grad}
+\end{figure} 
+
+\emph{Guided} filter nije najbolje rešenje, ako posmatramo vizuelno rezultat. Međutim zbog složenosti \emph{guided} filtra koja je $O(n)$, ovo je najbrža implementacija, koja daje dobre rezultate. U praktičnoj primeni brzina može da bude značajan faktor, dok vizuelna satisfakcija nije bitna ako sa slike mogu da se izvuku bitne informacije. \emph{Guided} filter daje dobre rezultate prilikom otkrivanja detalja koji su bili zamagljeni, što je obično cilj praktičnih primena.
 
 \section{Zaključak}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1148,19 +1174,6 @@ arXiv,
 Raanan Fattal,
 \emph{\href{http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.456.2558&rep=rep1&type=pdf}{Single image dehazing}},
 SIGGRAPH,
-2008.
-
-\bibitem{FlashNoFlash}
-Georg Petschnigg, Maneesh Agrawala, Hugues Hoppe. Richard Szeliski, Michael Cohen, Kentaro Toyama,
-\emph{\href{http://hhoppe.com/proj/flash/}{Digital photography with flash and no-flash image pairs}},
-ACM Trans. Graphics (SIGGRAPH),
-2004.
-
-\bibitem{}
-Anat Levin, Dani Lischinski, Yair Weiss,
-\emph{\href{http://people.csail.mit.edu/alevin/papers/Matting-Levin-Lischinski-Weiss-PAMI.pdf}{A Closed-Form Solution to Natural
-Image Matting}},
-IEEE TPAMI,
 2008.
 
 \end{thebibliography}

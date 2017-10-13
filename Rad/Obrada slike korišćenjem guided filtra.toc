@@ -1,29 +1,27 @@
 \select@language {serbian}
 \contentsline {section}{\numberline {1}Uvod}{1}{section.1}
-\contentsline {section}{\numberline {2}Obrada slike}{1}{section.2}
-\contentsline {subsection}{\numberline {2.1}Uvod}{1}{subsection.2.1}
-\contentsline {subsection}{\numberline {2.2}Osnovni procesi u obradi digitalne slike}{2}{subsection.2.2}
-\contentsline {subsection}{\numberline {2.3}Pribavljanje slike}{3}{subsection.2.3}
-\contentsline {subsection}{\numberline {2.4}Bitne relacije izme\IeC {\dj }u piksela}{4}{subsection.2.4}
-\contentsline {subsection}{\numberline {2.5}Osnovne operacije nad slikom}{5}{subsection.2.5}
-\contentsline {section}{\numberline {3}Osnovni tipovi filtara}{9}{section.3}
-\contentsline {subsection}{\numberline {3.1}Osnovni pojmovi}{9}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Smoothing filtri(filtri za uklanjanje \IeC {\v s}uma)}{10}{subsection.3.2}
-\contentsline {subsection}{\numberline {3.3}Sharpening filtri(filtri za odre\IeC {\dj }ivanje ivica)}{13}{subsection.3.3}
-\contentsline {subsection}{\numberline {3.4}Kombinovanje filtara}{18}{subsection.3.4}
-\contentsline {section}{\numberline {4}Guided filter}{19}{section.4}
-\contentsline {subsection}{\numberline {4.1}Uvod}{19}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}Sli\IeC {\v c}ne ideje}{19}{subsection.4.2}
-\contentsline {subsection}{\numberline {4.3}Definicija filtra}{20}{subsection.4.3}
-\contentsline {subsection}{\numberline {4.4}O\IeC {\v c}uvanje ivica}{22}{subsection.4.4}
-\contentsline {subsection}{\numberline {4.5}Filtriranje slike u boji}{23}{subsection.4.5}
-\contentsline {subsection}{\numberline {4.6}Izra\IeC {\v c}unavanje i efikasnost}{24}{subsection.4.6}
-\contentsline {subsection}{\numberline {4.7}Pobolj\IeC {\v s}anje}{25}{subsection.4.7}
-\contentsline {subsection}{\numberline {4.8}Eksperimenti}{26}{subsection.4.8}
-\contentsline {section}{\numberline {5}Primena}{27}{section.5}
-\contentsline {subsection}{\numberline {5.1}Osnovna primena}{27}{subsection.5.1}
-\contentsline {subsection}{\numberline {5.2}Dehazing}{28}{subsection.5.2}
-\contentsline {subsection}{\numberline {5.3}Flash No-Flash}{32}{subsection.5.3}
-\contentsline {subsection}{\numberline {5.4}Izvla\IeC {\v c}enje objekata}{33}{subsection.5.4}
-\contentsline {section}{\numberline {6}Zaklju\IeC {\v c}ak}{34}{section.6}
-\contentsline {section}{Literatura}{35}{section.6}
+\contentsline {section}{\numberline {2}Obrada slike}{2}{section.2}
+\contentsline {subsection}{\numberline {2.1}Uvod}{2}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Osnovni procesi u obradi digitalne slike}{3}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Pribavljanje slike}{4}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}Bitne relacije izme\IeC {\dj }u piksela}{6}{subsection.2.4}
+\contentsline {subsection}{\numberline {2.5}Osnovne operacije nad slikom}{7}{subsection.2.5}
+\contentsline {section}{\numberline {3}Osnovni tipovi filtara}{12}{section.3}
+\contentsline {subsection}{\numberline {3.1}Osnovni pojmovi}{12}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Smoothing filtri(filtri za uklanjanje \IeC {\v s}uma)}{13}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Sharpening filtri(filtri za odre\IeC {\dj }ivanje ivica)}{16}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Kombinovanje filtara}{22}{subsection.3.4}
+\contentsline {section}{\numberline {4}Guided filter}{23}{section.4}
+\contentsline {subsection}{\numberline {4.1}Uvod}{23}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Sli\IeC {\v c}ne ideje}{24}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Definicija filtra}{24}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}O\IeC {\v c}uvanje ivica}{27}{subsection.4.4}
+\contentsline {subsection}{\numberline {4.5}Filtriranje slike u boji}{29}{subsection.4.5}
+\contentsline {subsection}{\numberline {4.6}Izra\IeC {\v c}unavanje i efikasnost}{30}{subsection.4.6}
+\contentsline {subsection}{\numberline {4.7}Pobolj\IeC {\v s}anje}{31}{subsection.4.7}
+\contentsline {subsection}{\numberline {4.8}Eksperimenti}{33}{subsection.4.8}
+\contentsline {section}{\numberline {5}Primena}{34}{section.5}
+\contentsline {subsection}{\numberline {5.1}Osnovna primena}{34}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Dehazing}{35}{subsection.5.2}
+\contentsline {section}{\numberline {6}Zaklju\IeC {\v c}ak}{42}{section.6}
+\contentsline {section}{Literatura}{43}{section.6}
