@@ -15,6 +15,7 @@
 \usepackage[letterspace=125]{microtype}
 \usepackage{tabu}
 \usepackage{titlesec}
+\usepackage{setspace}
 
 \newtheorem{definicija}{Definicija}[section]
 \newtheorem{teorema}{Teorema}[section]
@@ -22,9 +23,6 @@
 \renewcommand{\refname}{Literatura}
 \renewcommand{\mod}[1]{$mod$ ${#1}$}
 \newcommand{\sectionbreak}{\clearpage}
-
-\setlength{\parskip}{\baselineskip}%
-\setlength{\parindent}{0pt}%
 
 %\title{\Huge {\textbf{Obrada slike korišćenjem Guided filtra}}}
 %\author{\textbf{Autor:} Predrag Nikolić \\ \textbf{Mentor:} Dejan Rančić}
@@ -38,7 +36,7 @@
         \begin{minipage}[b]{0.7\textwidth}
             \centering
             \Large
-            \textbf{UNIVERZITET U NIŠU\\ ELEKTRONSKI FAKULTET}       
+            \textbf{UNIVERZITET U NIŠU\\ ELEKTRONSKI FAKULTET\\}       
             \large
             \textbf{Katedra za računarstvo}
         \end{minipage}%
@@ -48,7 +46,7 @@
       
         \vspace{5cm}
         \Large
-        \textbf{Proceduralno generisanje 3D terena}
+        \textbf{Obrada slike i vođeni filter}
         
         \vspace{0.6cm}
         \normalsize
@@ -63,14 +61,13 @@
     
     \setlength{\leftskip}{0.6cm}
     \noindent
-    Istražiti tehnike proceduralnog generisanja terena.
-    Implementirati tehniku fraktalnog generisanja terena korišćenjem Perlinovog šuma na CPU i GPU i ispitati performanse oba pristupa.
+    Istražiti tehnike filtriranja slike. Implementacija vođenog filtera i analiza njegovih osobina u različitim primenama.
     
     \vspace{1cm}
     
     \noindent \begin{tabu} to \textwidth{@{}X[l] X[r]@{}}
         \textbf{Mentor:} prof. dr Dejan Rančić &
-        \textbf{Kandidat:} Mihajlo Ilijić 14665
+        \textbf{Kandidat:} Predrag Nikolić 14826
     \end{tabu}
     
     \vspace{1cm}
@@ -106,6 +103,10 @@
 \end{titlepage}
 
 \tableofcontents
+
+\setlength{\parskip}{\baselineskip}%
+\setlength{\parindent}{15pt}%
+
 \thispagestyle{empty}
 \newpage
 
@@ -113,22 +114,19 @@
 
 \section{Uvod}%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Ovaj rad se bavi obradom slike. U radu je objašnjena potreba za ovom oblašću u računarstvu. Primena je velika i prožima se kroz mnoge druge oblasti. Ovde su prikazane osnovne operacije i osnovni tipovi filtara. Fokus ovog rada je na definisanju, ispitivanju i primeni \emph{guided} filtra. \emph{Guided} filter je filter koji ima veliku primenu u oblasti obrade slike. Ovaj filter spada u vrstu filtera koji služe za obradu slike, sa posebnim osobinama koje ga odvajaju od običnih filtara. Postoje i drugi filtri koji imaju istu namenu, ali se ovaj pokazao kao najbrži. Na kraju rada je dat pregled nekoliko konkretnih situacija u kojima ovaj filter može da se primeni.
+Obrada slike je proces kod kojeg se slika ili video (koji je ustvari niz slika) obrađuju da bi se dobila izmenjena slika (video) ili skup karakteristikaili nekih bitnih parametara. Metodi obrade slike su interesantni iz ugla dve primene. Jedna je vizuelno poboljšanje slike radi bolje ljudske precepcije. Druga je obrada slike u cilju čuvanja, transmisije i reprezentacije precepcije autonomnih mašina. Ova oblast ima primenu u medicini i tehnološkim oblastima, kao što je poboljšanje slika snimljenih digitlnom kamerom, prepoznavanje lica ljudi, detektovanje objekata i obrazaca na osnovu podataka sa slike itd. 
+
+U ovom radu je dat pregled osnovnih filtara za obradu slike. Postoje dva tipa osnovnih filtara, to su filtri za uglačavanje slike i filteri za izvlačenje ivica. Prvi tip filtara se koristi kada želimo da uklonimo šum sa slike ili da zamutimo sliku u cilju uklanjanja malih detalja prilikom ekstrakcije objekata. Cilj filtara za izvlačenje ivica je nagklašavanje finih detalja na slici i označavanje linije koje predstavaljaju prelaze između skupova piksela sa različitim vrednostima. Njihove osobine se proučavaju i koriste za realizaciju složenih filtara. Jedan od takvih filtara je vođeni filter. Vođeni filter kombinuje osobine ova dva tipa filtara u cilju uglačavanja slike, ali tako da vodi računa da ne uglača ivice slike. Glavna prednost ovog filtra u odnosu na filtere koji imaju istu tu osobinu, je složenost koja zavisi samo od broja piksela na slici. 
+
+Ovaj rad se bavi analizom vođenog filtra, njegovom implementacijom i nekim primenama. U radu će biti data definicija ovog filtra i biće objašnejne najbitnije osobine. U ovom radu će biti izloženo ponašanje ovog filtra u nekim primenama, sa posebnim osvrtom na proces uklanjanja izmaglice sa slike. Ponašanje će biti prezentovano kroz razne primere sa raznim setovima parametara. U radu su takođe data i poređenja između vođenog filtra i drugih. Cilj ovih istraživanja je provera mogućnosti vođenog filtra i ispitivanje njegovog ponašanja u raznim situacijama. 
+
+Rad je organizovan na sledeći način:
+
+U drugom poglavlju je dat uvod u oblast obrade slike. U trćem poglavlju su prezentovani osnovni filtri. Četvrto poglavlje se bavi definicijom, osobinama i realizacijom vođenog filtra. U petom poglavlju je data analiza primene vođenog filtra, sa posebnim osvrtom na uklanjanje izmaglice sa slike.
 
 \section{Obrada slike}%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Uvod}%%%%%%%%%%%%%%%%%%%%%%%
-
-Računarska grafika je oblast računarstva koja se bavi obradom, stvaranjem i modeliranjem slika i video materijala, korišćenjem kompjutera. 
-Ovaj izraz se obično odnosi na kompjuterski generisane podatke u vidu slike, koji su kreirani uz pomoć specijalizovanog softvera ili hardvera.
-Ova oblast se odnosi na sve iz sveta kompjutera što nije prikazano tekstom ili zvukom.
-Naučnici su počeli da se bave problemima iz računarske grafike još 60-ih, a danas ona obuhvata mnoge podoblasti i prožima mnoge druge
-obalsti kako računarskih tako i drugih nauka. Neke od tema kojima se bavi računarska grafika su dizajn korisničkog interfejsa, spite grafika, vektorska grafika, 3D modeling itd. Možemo da zaključimo da se proučavanje računarske grafike, kao deo računarskih nauka, bavi metodima
-za digitalnu obradu i manipulaciju visuelnim sadržajem. Iako se računarska grafika obično odnosi na tro-dimenzionalnu kompjutersku grafiku
-takođe obuhvata i dvo-dimenzionalnu grafiku i obradu slike. 
-
-Obrada slike je proces kod kojeg se slika ili video (koji je ustvari niz slika) obrađuju da bi se dobila izmenjena slika (video) ili skup karakteristika
-ili nekih bitnih parametara. Slike se u obradi tretiraju kao signali pa se za njihovu obradu koriste metode iz oblasti obrade signala i razne matematičke operacije. Ova obalst je takođe usko povezana sa kompjuterskom vizijom i naravno kompjuterskom grafikom. Kada se kaže obrada slika obično se misli na digitalne slike, ali je takođe moguća i obrada optičkih i analognih slika. 
 
 Digitalna slika može da se definiše kao funkcija $f(x, y)$, gde su $x$ i $y$ koordinate ravni. $x$ i $y$ predstavljaju koordinate piksela na slici. Pikseli su elementi od kojih je sastavljena slika. Obično $x$ predstavlja vrednost u odnosu na širinu slike, a $y$ u odnosu na visinu slike. Rezolucija slike se obično obeležava kao širina puta visina, izraženo u pikselima. Vrednost funkcije $f$ je intenzitet boje piksela na poziciji $(x, y)$. Intenzitet može da bude izražen kao jedna vrednost, ako je u pitanju crno bela slika, ili preko tri vrednosti ako je slika u boji. Postoje različiti načini za predstavaljanje slike u boji (Npr. RGB, CMYK, HSV itd.). Vrednosti funkcije $f$ kao i $x$ i $y$ su diskretne, jer je reč o digitalnoj slici. 
 
@@ -1135,44 +1133,47 @@ Cilj korišćenja guided filtra u našoj implementaciji je ubrzanje algoritma. M
 
 \section{Zaključak}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-U ovom radu je bila prezentovana oblast obrade slike, koje je široko primenjena u kompjuterskoj viziji, grafici i u mogog drugih oblasti. Na razim primerima su pokazani metodi za obradu slike, njihove namene, dobre i loše osobine. Fokus je bio na \emph{guided} filtru, zbog pristupa koji je u njemu primenjen, kao i zbog njegove efikasnosti. Ovaj filter je opštiji od \emph{smoothing} filtara i može da se primenu u razne svrhe, što je detaljnije demonstrirano u ovom radu.
+U ovom radu je dat pregled osnovnih filtara. Predstavljeni su rezultati filtriranja i osobine koje oni iskazuju prilikom podešavanja parametara filtriranja. Možemo da zaključimo da filteri za uglačavanje slike kao rezultat daju sliku čiji će pikseli imati srednju vrednost piksela iz okoline definisane prozorom filtriranja. Videli smo kako promena veličine prozora utiče na rezultat filtriranja i možemo da zaključimo da se povećanjem prozora dobija slika koja je više zamućena i time se narušavaju detalji slike, ali se postiže i bolje uklanjanje šuma. Predstavljen je i medina filter kod koga se vrednost piksela rezultujuće slike računa kao vrednost koja je u sredini u odnosu na sve ostale. Ovaj filter pokazuje bolje rezultate ali je složeniji za implementaciju. Možemo da zaključimo da filtri za izvlačenje ivica služe za određivanje detalja. Pokazano je kako promenom tipa filtra (odnosno vrednosti prozora koji se koristi za filtriranje), dobijaju različiti rezultati i možemo da utvrdimo da korišćenjem drugog izvoda dobijamo finije ivice, nego korišćenjem prvog.
+
+U radu je prikazan vođeni filter. Ovaj filter ima osobinu da prilikom uglačavanja slike vodi računa o ivicama, tj. ne razmazuje ivice. U odnosu na bilateralni filter, koji ima istu namenu, vođeni filter se pokazao kao bolji jer nema artifakte oko ivica na slikama. Takođe možemo da utvrdimo da je glavna prednost vođenog filtera, u odnosu na filtere koji imaju istu namenu, u tome što mu složenost ne zavisi od veličine prozora koji se koristi za filtriranje.   
+
+Ovde je predstvaljen vođeni filter, njegova definicija i osobine. Predstavljene su metode za izračunavanje vrednosti piksela koje ne zavise od veličine prozora. Na osnovu toga je napravljena referentna implementacija u programskom jeziku matlab, koja je iskorišćena za analizu vođenog filtera. U radu su prikazane dobre strane ovog filtra, koje se ogledaju u tome da čuva ivice, da nema loših artifakta u blizini ivica. Predložena je metoda za uklanjanje izmaglice sa slika korišćenjem vođenog filtra, za filtriranje grube estimacije količine izmaglice na slici. Ovde smo mogli da uvidimo i loše strane vođenog filtra, kao što je pojava ''halo'' efekta u blizini ivica. 
+
+Vođeni filter je upoređen sa drugim filterima, i možemo da zaključimo da za uglačavanje slike i uklanjanje šuma pokazuje bolje rezultate u odnosu na njih. Što se tiče uklanjanja izmaglice možemo da zaključimo da se vođeni filter pokazao kao dobro rešenje koje daje zadovoljavajuće rezultate u odonsu na implementacije koje imaju veću složenost. U radu je pokazano da implementacija za uklanjanje izmaglice, koja koristi vođeni filter, pažljivim odabirom parametara daje dobre rezultate u odnosu na druge implementacije.
+
+Možemo da zaključimo da vođeni filter može da se koristi u svim procesima obrade slike koji zahtevaju uglačavanje slike, a da se pri tome sačuvaju detalji slike. On ima svoje limitacije kada su u pitanju slike kod kojih ivice nisu izražene (mala je razlika između piksela sa jedne i druge strane ivice ili prelaza). Sa druge strane omogućava implementaciju kod koje izračunavanje vrednosti piksela rezultujuće slike ne zavisi od veličine prozora koji se koristi za izračunavanje.  
 
 \newpage
 \addcontentsline{toc}{section}{Literatura}
 \begin{thebibliography}{10}
 
-\bibitem{ComputerGraphic}
-\emph{\href{http://www.graphics.cornell.edu/online/tutorial/}{What is Computer Graphics?}},
-Cornell University Program of Computer Graphics,
-1998.
-
 \bibitem{DigitalImageProcessing}
 Rafael C. Gonzalez, Richard E. Woods,
-\emph{\href{https://books.google.rs/books?id=8uGOnjRGEzoC&redir_esc=y}{Digital Image Processing}},
+\href{https://books.google.rs/books?id=8uGOnjRGEzoC&redir_esc=y}{''Digital Image Processing''},
 Prentice Hall,
 2008.
 
 \bibitem{GuidedFilter1}
 Kaiming He, Jian Sun, Xiaoou Tang,
-\emph{\href{http://kaiminghe.com/publications/eccv10guidedfilter.pdf}{Guided Image Filtering}},
-ECCV,
+\href{http://kaiminghe.com/publications/eccv10guidedfilter.pdf}{''Guided Image Filtering''},
+European Conference on Computer Vision, pp 1-14,
 2010.
 
 \bibitem{GuidedFilter2}
 Kaiming He, Jian Sun, Xiaoou Tang,
-\emph{\href{http://kaiminghe.com/publications/pami12guidedfilter.pdf}{Guided Image Filtering}},
-TPAMI,
+\href{http://kaiminghe.com/publications/pami12guidedfilter.pdf}{''Guided Image Filtering''},
+IEEE Transactions on pattern analisys and machine intelligence,
 2013.
 
 \bibitem{GuidedFilter3}
 Kaiming He, Jian Sun
-\emph{\href{https://arxiv.org/pdf/1505.00996.pdf}{Fast Guided Filter}},
+\href{https://arxiv.org/pdf/1505.00996.pdf}{''Fast Guided Filter''},
 arXiv,
 2015.
 
 \bibitem{Dehaze}
 Raanan Fattal,
-\emph{\href{http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.456.2558&rep=rep1&type=pdf}{Single image dehazing}},
+\href{http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.456.2558&rep=rep1&type=pdf}{''Single image dehazing''},
 SIGGRAPH,
 2008.
 

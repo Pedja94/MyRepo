@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2017.10.4)  13 OCT 2017 05:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2017.10.4)  14 OCT 2017 00:04
 entering extended mode
 **"D:/Pedja/Fakultet/VIII Semestar/Zavrsni rad/MyRepo/Rad/Obrada slike korišć
 enjem guided filtra.tex"
@@ -635,6 +635,9 @@ Package: titlesec 2011/12/15 v2.10.0 Sectioning titles
 \titlewidthlast=\dimen148
 \titlewidthfirst=\dimen149
 )
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\setspace\setspace.sty"
+Package: setspace 2011/12/19 v6.7a set line spacing
+)
 \c@definicija=\count132
 \c@teorema=\count133
 
@@ -694,20 +697,20 @@ LaTeX Warning: Label `overflow' multiply defined.
 LaTeX Warning: Label `UticajRdc' multiply defined.
 
 )
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count134
@@ -758,7 +761,7 @@ LaTeX Font Info:    ... okay on input line 33.
 
 \c@lstlisting=\count140
 \AtBeginShipoutBox=\box40
-Package hyperref Info: Link coloring OFF on input line 33.
+Package hyperref Info: Link coloring OFF on input line 31.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
@@ -767,14 +770,14 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count141
 )
-LaTeX Info: Redefining \ref on input line 33.
-LaTeX Info: Redefining \pageref on input line 33.
-LaTeX Info: Redefining \nameref on input line 33.
+LaTeX Info: Redefining \ref on input line 31.
+LaTeX Info: Redefining \pageref on input line 31.
+LaTeX Info: Redefining \nameref on input line 31.
 
 ("Obrada slike korišćenjem guided filtra.out")
 ("Obrada slike korišćenjem guided filtra.out")
 \@outlinefile=\write3
-LaTeX Info: Redefining \microtypecontext on input line 33.
+LaTeX Info: Redefining \microtypecontext on input line 31.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -792,239 +795,227 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman
 <img/uni.png, id=106, 163.3603pt x 163.3603pt>
 File: img/uni.png Graphic file (type png)
  <use img/uni.png>
-Package pdftex.def Info: img/uni.png used on input line 37.
+Package pdftex.def Info: img/uni.png used on input line 35.
 (pdftex.def)             Requested size: 73.97733pt x 73.97508pt.
 
 <img/elfak.png, id=108, 210.7875pt x 210.7875pt>
 File: img/elfak.png Graphic file (type png)
  <use img/elfak.png>
-Package pdftex.def Info: img/elfak.png used on input line 45.
+Package pdftex.def Info: img/elfak.png used on input line 43.
 (pdftex.def)             Requested size: 73.97733pt x 73.97614pt.
 
-Overfull \hbox (12.0629pt too wide) in paragraph at lines 37--46
+Overfull \hbox (12.0629pt too wide) in paragraph at lines 35--44
  [][][] 
  []
 
-LaTeX Font Info:    Try loading font information for U+lasy on input line 71.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 68.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ulasy.fd"
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-Overfull \hbox (17.07182pt too wide) in paragraph at lines 71--75
+Overfull \hbox (17.07182pt too wide) in paragraph at lines 68--72
  [] 
  []
 
 
-Overfull \hbox (17.07182pt too wide) in paragraph at lines 83--100
+Overfull \hbox (17.07182pt too wide) in paragraph at lines 80--97
  [] 
  []
 
 [1
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <./img/uni.png> <./img/elf
-ak.png (PNG copy)>] [2] ("Obrada slike korišćenjem guided filtra.toc"pdfTeX w
-arning (ext4): destination with the same identifier (name{page.1}) has been alr
-eady used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.24 ... {5.1}Osnovna primena}{34}{subsection.5.1}
-                                                   [1
-
-])
+ak.png (PNG copy)>] ("Obrada slike korišćenjem guided filtra.toc")
 \tf@toc=\write4
-pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.110 \newpage
-               [2]pdfTeX warning (ext4): destination with the same identifier (
-name{page.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.118 \section{Obrada slike}
-                            %%%%%%%%%%%%%%%%%%%%%%%%%% [1
+l.111 \newpage
+               [1
 
-]pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has
+]pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.139 
-       [2
+l.127 \section{Obrada slike}
+                            %%%%%%%%%%%%%%%%%%%%%%%%%% [1
 
-] <img/prvaPrenesenaSlika.png, id=164, 197.23688pt x 137.01187pt>
+]
+<img/prvaPrenesenaSlika.png, id=151, 197.23688pt x 137.01187pt>
 File: img/prvaPrenesenaSlika.png Graphic file (type png)
 
 <use img/prvaPrenesenaSlika.png>
-Package pdftex.def Info: img/prvaPrenesenaSlika.png used on input line 142.
+Package pdftex.def Info: img/prvaPrenesenaSlika.png used on input line 140.
 (pdftex.def)             Requested size: 213.39566pt x 148.23611pt.
- [3pdfTeX warning (ext4): destination with the same identifier (name{figure.1})
- has been already used, duplicate ignored
+ [2
+
+pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) ha
+s been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.154 
-       <./img/prvaPrenesenaSlika.png>]
-<img/spektar.png, id=171, 789.95125pt x 422.57875pt>
+l.146 
+       <./img/prvaPrenesenaSlika.png>] [3]
+<img/spektar.png, id=164, 789.95125pt x 422.57875pt>
 File: img/spektar.png Graphic file (type png)
  <use img/spektar.png>
-Package pdftex.def Info: img/spektar.png used on input line 165.
+Package pdftex.def Info: img/spektar.png used on input line 163.
 (pdftex.def)             Requested size: 341.43306pt x 182.64673pt.
 
-[4]
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\dj' on input line 191.
-
-[5pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) 
+[4pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) 
 has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.194 
+l.171 
        <./img/spektar.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 195--196
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\dj' on input line 189.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 193--194
+
+ []
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 199--200
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 201--202
+Underfull \hbox (badness 10000) in paragraph at lines 207--208
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 209--210
+Underfull \hbox (badness 10000) in paragraph at lines 223--224
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 225--226
+Underfull \hbox (badness 10000) in paragraph at lines 239--240
 
  []
 
-[6]
-Underfull \hbox (badness 10000) in paragraph at lines 241--242
-
- []
-
-<img/img.png, id=191, 256.96pt x 256.96pt>
+[6] <img/img.png, id=185, 256.96pt x 256.96pt>
 File: img/img.png Graphic file (type png)
  <use img/img.png>
-Package pdftex.def Info: img/img.png used on input line 255.
+Package pdftex.def Info: img/img.png used on input line 253.
 (pdftex.def)             Requested size: 170.71652pt x 170.7194pt.
 
-<img/imgNegative.png, id=192, 256.96pt x 256.96pt>
+<img/imgNegative.png, id=186, 256.96pt x 256.96pt>
 File: img/imgNegative.png Graphic file (type png)
  <use img/imgNegative.png>
-Package pdftex.def Info: img/imgNegative.png used on input line 256.
+Package pdftex.def Info: img/imgNegative.png used on input line 254.
 (pdftex.def)             Requested size: 170.71652pt x 170.7194pt.
-
-[7]
 File: img/img.png Graphic file (type png)
- <use img/img.png>
-Package pdftex.def Info: img/img.png used on input line 265.
+
+<use img/img.png>
+Package pdftex.def Info: img/img.png used on input line 263.
 (pdftex.def)             Requested size: 170.71652pt x 170.7194pt.
- <img/imgLog.png, id=197, 256.96pt x 256.96pt>
+ <img/imgLog.png, id=187, 256.96pt x 256.96pt>
 File: img/imgLog.png Graphic file (type png)
 
 <use img/imgLog.png>
-Package pdftex.def Info: img/imgLog.png used on input line 266.
+Package pdftex.def Info: img/imgLog.png used on input line 264.
 (pdftex.def)             Requested size: 170.71652pt x 170.7194pt.
- <img/imgPow1.png, id=198, 256.96pt x 256.96pt>
+ <img/imgPow1.png, id=188, 256.96pt x 256.96pt>
 File: img/imgPow1.png Graphic file (type png)
 
 <use img/imgPow1.png>
-Package pdftex.def Info: img/imgPow1.png used on input line 267.
+Package pdftex.def Info: img/imgPow1.png used on input line 265.
 (pdftex.def)             Requested size: 170.71652pt x 170.7194pt.
- <img/imgPow2.png, id=199, 256.96pt x 256.96pt>
+ <img/imgPow2.png, id=189, 256.96pt x 256.96pt>
 File: img/imgPow2.png Graphic file (type png)
 
 <use img/imgPow2.png>
-Package pdftex.def Info: img/imgPow2.png used on input line 268.
+Package pdftex.def Info: img/imgPow2.png used on input line 266.
 (pdftex.def)             Requested size: 170.71652pt x 170.7194pt.
+ [7] [8pdfTeX warning (ext4): destination with the same identifier (name{figure
+.3}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.274 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+4}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.274 
+       <./img/img.png (PNG copy)> <./img/imgNegative.png (PNG copy)> <./img/img
+Log.png (PNG copy)> <./img/imgPow1.png (PNG copy)> <./img/imgPow2.png (PNG copy
+)>]
 File: img/img.png Graphic file (type png)
  <use img/img.png>
-Package pdftex.def Info: img/img.png used on input line 279.
+Package pdftex.def Info: img/img.png used on input line 277.
 (pdftex.def)             Requested size: 170.71652pt x 170.7194pt.
-
-<img/histImg.png, id=200, 421.575pt x 316.18124pt>
+ <img/histImg.png, id=200, 421.575pt x 316.18124pt>
 File: img/histImg.png Graphic file (type png)
- <use img/histImg.png>
-Package pdftex.def Info: img/histImg.png used on input line 280.
+
+<use img/histImg.png>
+Package pdftex.def Info: img/histImg.png used on input line 278.
 (pdftex.def)             Requested size: 170.71652pt x 128.03822pt.
 File: img/imgLog.png Graphic file (type png)
-
-<use img/imgLog.png>
-Package pdftex.def Info: img/imgLog.png used on input line 281.
+ <use img/imgLog.png>
+Package pdftex.def Info: img/imgLog.png used on input line 279.
 (pdftex.def)             Requested size: 170.71652pt x 170.7194pt.
- <img/histImgLog.png, id=201, 421.575pt x 316.18124pt>
-File: img/histImgLog.png Graphic file (type png)
 
-<use img/histImgLog.png>
-Package pdftex.def Info: img/histImgLog.png used on input line 282.
+<img/histImgLog.png, id=201, 421.575pt x 316.18124pt>
+File: img/histImgLog.png Graphic file (type png)
+ <use img/histImgLog.png>
+Package pdftex.def Info: img/histImgLog.png used on input line 280.
 (pdftex.def)             Requested size: 170.71652pt x 128.03822pt.
 File: img/imgPow2.png Graphic file (type png)
- <use img/imgPow2.png>
-Package pdftex.def Info: img/imgPow2.png used on input line 283.
-(pdftex.def)             Requested size: 170.71652pt x 170.7194pt.
 
-<img/histImgPow2.png, id=202, 421.575pt x 316.18124pt>
+<use img/imgPow2.png>
+Package pdftex.def Info: img/imgPow2.png used on input line 281.
+(pdftex.def)             Requested size: 170.71652pt x 170.7194pt.
+ <img/histImgPow2.png, id=202, 421.575pt x 316.18124pt>
 File: img/histImgPow2.png Graphic file (type png)
 
 <use img/histImgPow2.png>
-Package pdftex.def Info: img/histImgPow2.png used on input line 284.
+Package pdftex.def Info: img/histImgPow2.png used on input line 282.
 (pdftex.def)             Requested size: 170.71652pt x 128.03822pt.
-File: img/imgPow2.png Graphic file (type png)
- <use img/imgPow2.png>
-Package pdftex.def Info: img/imgPow2.png used on input line 294.
-(pdftex.def)             Requested size: 170.71652pt x 170.7194pt.
-File: img/histImgPow2.png Graphic file (type png)
- <use img/histImgPow2.png>
-Package pdftex.def Info: img/histImgPow2.png used on input line 295.
-(pdftex.def)             Requested size: 170.71652pt x 128.03822pt.
-
-<img/histEq.png, id=203, 256.96pt x 256.96pt>
-File: img/histEq.png Graphic file (type png)
- <use img/histEq.png>
-Package pdftex.def Info: img/histEq.png used on input line 296.
-(pdftex.def)             Requested size: 170.71652pt x 170.7194pt.
-
-<img/histEqhist.png, id=204, 421.575pt x 316.18124pt>
-File: img/histEqhist.png Graphic file (type png)
- <use img/histEqhist.png>
-Package pdftex.def Info: img/histEqhist.png used on input line 297.
-(pdftex.def)             Requested size: 170.71652pt x 128.03822pt.
-
-[8pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) 
-has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.303 
-       <./img/img.png (PNG copy)> <./img/imgNegative.png (PNG copy)>] [9pdfTeX 
-warning (ext4): destination with the same identifier (name{figure.4}) has been 
-already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.306 \section{Osnovni tipovi filtara}
-                                      %%%%%%%%%%%%%%%%%%%%%%% <./img/imgLog.png
- (PNG copy)> <./img/imgPow1.png (PNG copy)> <./img/imgPow2.png (PNG copy)>]
-[10pdfTeX warning (ext4): destination with the same identifier (name{figure.5})
+ [9pdfTeX warning (ext4): destination with the same identifier (name{figure.5})
  has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.306 \section{Osnovni tipovi filtara}
-                                      %%%%%%%%%%%%%%%%%%%%%%% <./img/histImg.pn
-g (PNG copy)> <./img/histImgLog.png (PNG copy)> <./img/histImgPow2.png (PNG cop
-y)>] [11pdfTeX warning (ext4): destination with the same identifier (name{figur
-e.6}) has been already used, duplicate ignored
+l.289 
+       <./img/histImg.png (PNG copy)> <./img/histImgLog.png (PNG copy)> <./img/
+histImgPow2.png (PNG copy)>]
+File: img/imgPow2.png Graphic file (type png)
+ <use img/imgPow2.png>
+Package pdftex.def Info: img/imgPow2.png used on input line 292.
+(pdftex.def)             Requested size: 170.71652pt x 170.7194pt.
+File: img/histImgPow2.png Graphic file (type png)
+ <use img/histImgPow2.png>
+Package pdftex.def Info: img/histImgPow2.png used on input line 293.
+(pdftex.def)             Requested size: 170.71652pt x 128.03822pt.
+
+<img/histEq.png, id=208, 256.96pt x 256.96pt>
+File: img/histEq.png Graphic file (type png)
+ <use img/histEq.png>
+Package pdftex.def Info: img/histEq.png used on input line 294.
+(pdftex.def)             Requested size: 170.71652pt x 170.7194pt.
+
+<img/histEqhist.png, id=209, 421.575pt x 316.18124pt>
+File: img/histEqhist.png Graphic file (type png)
+ <use img/histEqhist.png>
+Package pdftex.def Info: img/histEqhist.png used on input line 295.
+(pdftex.def)             Requested size: 170.71652pt x 128.03822pt.
+
+[10pdfTeX warning (ext4): destination with the same identifier (name{figure.6})
+ has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.306 \section{Osnovni tipovi filtara}
+l.304 \section{Osnovni tipovi filtara}
                                       %%%%%%%%%%%%%%%%%%%%%%% <./img/histEq.png
- (PNG copy)> <./img/histEqhist.png (PNG copy)>]
-Overfull \hbox (2.55063pt too wide) detected at line 330
+ (PNG copy)> <./img/histEqhist.png (PNG copy)>] [11]
+Overfull \hbox (2.55063pt too wide) detected at line 328
 \OML/cmm/m/it/12 R \OT1/cmr/m/n/12 = [] \OML/cmm/m/it/12 : \OMS/cmsy/m/n/12  [
 ]
  []
@@ -1034,169 +1025,174 @@ Overfull \hbox (2.55063pt too wide) detected at line 330
 ] [13]
 File: img/img.png Graphic file (type png)
  <use img/img.png>
-Package pdftex.def Info: img/img.png used on input line 395.
+Package pdftex.def Info: img/img.png used on input line 393.
 (pdftex.def)             Requested size: 170.71652pt x 170.7194pt.
- <img/imgAvg3.png, id=234, 256.96pt x 256.96pt>
+ <img/imgAvg3.png, id=228, 256.96pt x 256.96pt>
 File: img/imgAvg3.png Graphic file (type png)
 
 <use img/imgAvg3.png>
-Package pdftex.def Info: img/imgAvg3.png used on input line 396.
+Package pdftex.def Info: img/imgAvg3.png used on input line 394.
 (pdftex.def)             Requested size: 170.71652pt x 170.7194pt.
- <img/imgAvg5.png, id=235, 256.96pt x 256.96pt>
+ <img/imgAvg5.png, id=229, 256.96pt x 256.96pt>
 File: img/imgAvg5.png Graphic file (type png)
 
 <use img/imgAvg5.png>
-Package pdftex.def Info: img/imgAvg5.png used on input line 397.
+Package pdftex.def Info: img/imgAvg5.png used on input line 395.
 (pdftex.def)             Requested size: 170.71652pt x 170.7194pt.
- <img/imgAvg9.png, id=236, 256.96pt x 256.96pt>
+ <img/imgAvg9.png, id=230, 256.96pt x 256.96pt>
 File: img/imgAvg9.png Graphic file (type png)
 
 <use img/imgAvg9.png>
-Package pdftex.def Info: img/imgAvg9.png used on input line 398.
+Package pdftex.def Info: img/imgAvg9.png used on input line 396.
 (pdftex.def)             Requested size: 170.71652pt x 170.7194pt.
  [14pdfTeX warning (ext4): destination with the same identifier (name{figure.7}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.413 
+l.411 
        <./img/imgAvg3.png (PNG copy)> <./img/imgAvg5.png (PNG copy)> <./img/img
-Avg9.png (PNG copy)>] <img/tel.jpg, id=242, 461.725pt x 289.08pt>
+Avg9.png (PNG copy)>] <img/tel.jpg, id=236, 461.725pt x 289.08pt>
 File: img/tel.jpg Graphic file (type jpg)
 
 <use img/tel.jpg>
-Package pdftex.def Info: img/tel.jpg used on input line 418.
+Package pdftex.def Info: img/tel.jpg used on input line 416.
 (pdftex.def)             Requested size: 170.71652pt x 106.88293pt.
- <img/telAvg.jpg, id=243, 461.725pt x 289.08pt>
+ <img/telAvg.jpg, id=237, 461.725pt x 289.08pt>
 File: img/telAvg.jpg Graphic file (type jpg)
 
 <use img/telAvg.jpg>
-Package pdftex.def Info: img/telAvg.jpg used on input line 419.
+Package pdftex.def Info: img/telAvg.jpg used on input line 417.
 (pdftex.def)             Requested size: 170.71652pt x 106.88293pt.
- <img/telTh.jpg, id=244, 461.725pt x 289.08pt>
+ <img/telTh.jpg, id=238, 461.725pt x 289.08pt>
 File: img/telTh.jpg Graphic file (type jpg)
 
 <use img/telTh.jpg>
-Package pdftex.def Info: img/telTh.jpg used on input line 420.
+Package pdftex.def Info: img/telTh.jpg used on input line 418.
 (pdftex.def)             Requested size: 170.71652pt x 106.88293pt.
  [15pdfTeX warning (ext4): destination with the same identifier (name{figure.8}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.426 
+l.424 
        <./img/tel.jpg> <./img/telAvg.jpg> <./img/telTh.jpg>]
 File: img/img.png Graphic file (type png)
  <use img/img.png>
-Package pdftex.def Info: img/img.png used on input line 429.
+Package pdftex.def Info: img/img.png used on input line 427.
 (pdftex.def)             Requested size: 170.71652pt x 170.7194pt.
 
-<img/imgMed.png, id=251, 256.96pt x 256.96pt>
+<img/imgMed.png, id=244, 256.96pt x 256.96pt>
 File: img/imgMed.png Graphic file (type png)
  <use img/imgMed.png>
-Package pdftex.def Info: img/imgMed.png used on input line 430.
+Package pdftex.def Info: img/imgMed.png used on input line 428.
 (pdftex.def)             Requested size: 170.71652pt x 170.7194pt.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\dj' on input line 435.
+(hyperref)                removing `\dj' on input line 433.
 
 [16pdfTeX warning (ext4): destination with the same identifier (name{figure.9})
  has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.445 \emph{}
+l.443 \emph{}
               \\ <./img/imgMed.png (PNG copy)>]
-<img/izvod.png, id=257, 402.75468pt x 179.92218pt>
+<img/izvod.png, id=250, 402.75468pt x 179.92218pt>
 File: img/izvod.png Graphic file (type png)
  <use img/izvod.png>
-Package pdftex.def Info: img/izvod.png used on input line 459.
+Package pdftex.def Info: img/izvod.png used on input line 457.
 (pdftex.def)             Requested size: 341.43306pt x 152.52824pt.
  [17pdfTeX warning (ext4): destination with the same identifier (name{figure.10
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.467 
+l.465 
        <./img/izvod.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 490--491
+Underfull \hbox (badness 10000) in paragraph at lines 488--489
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 500--501
+Underfull \hbox (badness 10000) in paragraph at lines 498--499
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 510--511
+Underfull \hbox (badness 10000) in paragraph at lines 508--509
 
  []
 
-[18] <img/moon.jpg, id=267, 501.875pt x 376.40625pt>
+[18] <img/moon.jpg, id=261, 501.875pt x 376.40625pt>
 File: img/moon.jpg Graphic file (type jpg)
  <use img/moon.jpg>
-Package pdftex.def Info: img/moon.jpg used on input line 529.
+Package pdftex.def Info: img/moon.jpg used on input line 527.
 (pdftex.def)             Requested size: 184.9429pt x 138.711pt.
 
-<img/moonLap.jpg, id=268, 501.875pt x 376.40625pt>
+<img/moonLap.jpg, id=262, 501.875pt x 376.40625pt>
 File: img/moonLap.jpg Graphic file (type jpg)
  <use img/moonLap.jpg>
-Package pdftex.def Info: img/moonLap.jpg used on input line 530.
+Package pdftex.def Info: img/moonLap.jpg used on input line 528.
 (pdftex.def)             Requested size: 184.9429pt x 138.711pt.
 
-<img/moonEn.jpg, id=269, 501.875pt x 376.40625pt>
+<img/moonEn.jpg, id=263, 501.875pt x 376.40625pt>
 File: img/moonEn.jpg Graphic file (type jpg)
  <use img/moonEn.jpg>
-Package pdftex.def Info: img/moonEn.jpg used on input line 531.
+Package pdftex.def Info: img/moonEn.jpg used on input line 529.
 (pdftex.def)             Requested size: 184.9429pt x 138.711pt.
  [19pdfTeX warning (ext4): destination with the same identifier (name{figure.11
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.544 \[
+l.542 \[
          <./img/moon.jpg> <./img/moonLap.jpg> <./img/moonEn.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 559--560
+Underfull \hbox (badness 10000) in paragraph at lines 557--558
 
  []
 
 [20]
-Underfull \hbox (badness 10000) in paragraph at lines 600--601
+Underfull \hbox (badness 10000) in paragraph at lines 598--599
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 619--620
+Underfull \hbox (badness 10000) in paragraph at lines 617--618
 
  []
 
 File: img/img.png Graphic file (type png)
 <use img/img.png>
-Package pdftex.def Info: img/img.png used on input line 638.
+Package pdftex.def Info: img/img.png used on input line 636.
 (pdftex.def)             Requested size: 170.71652pt x 170.7194pt.
- <img/imgSob.png, id=279, 256.96pt x 256.96pt>
+ <img/imgSob.png, id=273, 256.96pt x 256.96pt>
 File: img/imgSob.png Graphic file (type png)
 
 <use img/imgSob.png>
-Package pdftex.def Info: img/imgSob.png used on input line 639.
+Package pdftex.def Info: img/imgSob.png used on input line 637.
 (pdftex.def)             Requested size: 170.71652pt x 170.7194pt.
  [21pdfTeX warning (ext4): destination with the same identifier (name{figure.12
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.647 
+l.645 
        <./img/imgSob.png (PNG copy)>] [22]
 
 Package hyperref Warning: Composite letter `\textasciicaron+c'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textasciicaron' on input line 662.
+(hyperref)                removing `\textasciicaron' on input line 660.
 
 [23
 
 ] [24] [25] [26]
+Underfull \hbox (badness 10000) in paragraph at lines 720--721
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 722--723
 
  []
@@ -1207,80 +1203,75 @@ Underfull \hbox (badness 10000) in paragraph at lines 724--725
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 726--727
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 748--749
+Underfull \hbox (badness 10000) in paragraph at lines 746--747
 
  []
 
 
 Package hyperref Warning: Composite letter `\textasciicaron+c'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textasciicaron' on input line 753.
+(hyperref)                removing `\textasciicaron' on input line 751.
 
 File: img/img.png Graphic file (type png)
 <use img/img.png>
-Package pdftex.def Info: img/img.png used on input line 760.
+Package pdftex.def Info: img/img.png used on input line 758.
 (pdftex.def)             Requested size: 170.71652pt x 170.7194pt.
- <img/imgGF2_01.png, id=307, 256.96pt x 256.96pt>
+ <img/imgGF2_01.png, id=301, 256.96pt x 256.96pt>
 File: img/imgGF2_01.png Graphic file (type png)
 
 <use img/imgGF2_01.png>
-Package pdftex.def Info: img/imgGF2_01.png used on input line 761.
+Package pdftex.def Info: img/imgGF2_01.png used on input line 759.
 (pdftex.def)             Requested size: 170.71652pt x 170.7194pt.
- <img/imgGF4_01.png, id=308, 256.96pt x 256.96pt>
+ <img/imgGF4_01.png, id=302, 256.96pt x 256.96pt>
 File: img/imgGF4_01.png Graphic file (type png)
 
 <use img/imgGF4_01.png>
-Package pdftex.def Info: img/imgGF4_01.png used on input line 762.
+Package pdftex.def Info: img/imgGF4_01.png used on input line 760.
 (pdftex.def)             Requested size: 170.71652pt x 170.7194pt.
- <img/imgGF2_16.png, id=309, 256.96pt x 256.96pt>
+ <img/imgGF2_16.png, id=303, 256.96pt x 256.96pt>
 File: img/imgGF2_16.png Graphic file (type png)
 
 <use img/imgGF2_16.png>
-Package pdftex.def Info: img/imgGF2_16.png used on input line 763.
+Package pdftex.def Info: img/imgGF2_16.png used on input line 761.
 (pdftex.def)             Requested size: 170.71652pt x 170.7194pt.
- <img/imgGF8_04.png, id=310, 256.96pt x 256.96pt>
+ <img/imgGF8_04.png, id=304, 256.96pt x 256.96pt>
 File: img/imgGF8_04.png Graphic file (type png)
 
 <use img/imgGF8_04.png>
-Package pdftex.def Info: img/imgGF8_04.png used on input line 764.
+Package pdftex.def Info: img/imgGF8_04.png used on input line 762.
 (pdftex.def)             Requested size: 170.71652pt x 170.7194pt.
- <img/imgGF4_16.png, id=311, 256.96pt x 256.96pt>
+ <img/imgGF4_16.png, id=305, 256.96pt x 256.96pt>
 File: img/imgGF4_16.png Graphic file (type png)
 
 <use img/imgGF4_16.png>
-Package pdftex.def Info: img/imgGF4_16.png used on input line 765.
+Package pdftex.def Info: img/imgGF4_16.png used on input line 763.
 (pdftex.def)             Requested size: 170.71652pt x 170.7194pt.
  [27] [28pdfTeX warning (ext4): destination with the same identifier (name{figu
 re.13}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.773 
+l.771 
        <./img/imgGF2_01.png (PNG copy)> <./img/imgGF4_01.png (PNG copy)> <./img
 /imgGF2_16.png (PNG copy)> <./img/imgGF8_04.png (PNG copy)> <./img/imgGF4_16.pn
 g (PNG copy)>]
 
 Package hyperref Warning: Composite letter `\textasciicaron+c'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textasciicaron' on input line 802.
+(hyperref)                removing `\textasciicaron' on input line 800.
 
-[29] [30] <img/sat.png, id=331, 401.5pt x 301.125pt>
+[29] [30] <img/sat.png, id=325, 401.5pt x 301.125pt>
 File: img/sat.png Graphic file (type png)
  <use img/sat.png>
-Package pdftex.def Info: img/sat.png used on input line 859.
+Package pdftex.def Info: img/sat.png used on input line 857.
 (pdftex.def)             Requested size: 170.71652pt x 128.03845pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 870--871
+Underfull \hbox (badness 10000) in paragraph at lines 868--869
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 872--873
+Underfull \hbox (badness 10000) in paragraph at lines 870--871
 
  []
 
@@ -1289,62 +1280,62 @@ Underfull \hbox (badness 10000) in paragraph at lines 872--873
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.873 
+l.871 
        <./img/sat.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 874--875
+Underfull \hbox (badness 10000) in paragraph at lines 872--873
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 906--907
+Underfull \hbox (badness 10000) in paragraph at lines 904--905
 
  []
 
-[32] [33] <img/flower.png, id=348, 803.0pt x 1204.5pt>
+[32] [33] <img/flower.png, id=341, 803.0pt x 1204.5pt>
 File: img/flower.png Graphic file (type png)
  <use img/flower.png>
-Package pdftex.def Info: img/flower.png used on input line 936.
+Package pdftex.def Info: img/flower.png used on input line 934.
 (pdftex.def)             Requested size: 113.81102pt x 170.70569pt.
 
-<img/flowerNoise.png, id=349, 803.0pt x 1204.5pt>
+<img/flowerNoise.png, id=342, 803.0pt x 1204.5pt>
 File: img/flowerNoise.png Graphic file (type png)
  <use img/flowerNoise.png>
-Package pdftex.def Info: img/flowerNoise.png used on input line 937.
+Package pdftex.def Info: img/flowerNoise.png used on input line 935.
 (pdftex.def)             Requested size: 113.81102pt x 170.70569pt.
 
-<img/flowerGF.png, id=350, 803.0pt x 1204.5pt>
+<img/flowerGF.png, id=343, 803.0pt x 1204.5pt>
 File: img/flowerGF.png Graphic file (type png)
  <use img/flowerGF.png>
-Package pdftex.def Info: img/flowerGF.png used on input line 938.
+Package pdftex.def Info: img/flowerGF.png used on input line 936.
 (pdftex.def)             Requested size: 113.81102pt x 170.70569pt.
 
-<img/zoom1.png, id=351, 171.64125pt x 141.52875pt>
+<img/zoom1.png, id=344, 171.64125pt x 141.52875pt>
 File: img/zoom1.png Graphic file (type png)
  <use img/zoom1.png>
-Package pdftex.def Info: img/zoom1.png used on input line 947.
+Package pdftex.def Info: img/zoom1.png used on input line 945.
 (pdftex.def)             Requested size: 113.81102pt x 93.84332pt.
 
-<img/zoom2.png, id=352, 171.64125pt x 141.52875pt>
+<img/zoom2.png, id=345, 171.64125pt x 141.52875pt>
 File: img/zoom2.png Graphic file (type png)
  <use img/zoom2.png>
-Package pdftex.def Info: img/zoom2.png used on input line 948.
+Package pdftex.def Info: img/zoom2.png used on input line 946.
 (pdftex.def)             Requested size: 113.81102pt x 93.84332pt.
 File: img/flower.png Graphic file (type png)
 
 <use img/flower.png>
-Package pdftex.def Info: img/flower.png used on input line 963.
+Package pdftex.def Info: img/flower.png used on input line 961.
 (pdftex.def)             Requested size: 113.81102pt x 170.70569pt.
- <img/flowerEGF.png, id=353, 803.0pt x 1204.5pt>
+ <img/flowerEGF.png, id=346, 803.0pt x 1204.5pt>
 File: img/flowerEGF.png Graphic file (type png)
 
 <use img/flowerEGF.png>
-Package pdftex.def Info: img/flowerEGF.png used on input line 964.
+Package pdftex.def Info: img/flowerEGF.png used on input line 962.
 (pdftex.def)             Requested size: 113.81102pt x 170.70569pt.
- <img/flowerER.png, id=354, 803.0pt x 1204.5pt>
+ <img/flowerER.png, id=347, 803.0pt x 1204.5pt>
 File: img/flowerER.png Graphic file (type png)
 
 <use img/flowerER.png>
-Package pdftex.def Info: img/flowerER.png used on input line 965.
+Package pdftex.def Info: img/flowerER.png used on input line 963.
 (pdftex.def)             Requested size: 113.81102pt x 170.70569pt.
  [34
 
@@ -1353,13 +1344,13 @@ as been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.973 
+l.971 
       pdfTeX warning (ext4): destination with the same identifier (name{figure.
 16}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.973 
+l.971 
        <./img/flower.png (PNG copy)> <./img/flowerNoise.png (PNG copy)> <./img/
 flowerGF.png (PNG copy)> <./img/zoom1.png (PNG copy)> <./img/zoom2.png (PNG cop
 y)>] [35pdfTeX warning (ext4): destination with the same identifier (name{figur
@@ -1367,31 +1358,31 @@ e.17}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.986 O
+l.984 O
        no što mi tražimo je $J$ tj. model tamnog kanala koji predstavlja m...
  <./img/flowerEGF.png (PNG copy)> <./img/flowerER.png (PNG copy)>]
-<img/haze.png, id=368, 220.57407pt x 225.09094pt>
+<img/haze.png, id=362, 220.57407pt x 225.09094pt>
 File: img/haze.png Graphic file (type png)
  <use img/haze.png>
-Package pdftex.def Info: img/haze.png used on input line 996.
+Package pdftex.def Info: img/haze.png used on input line 994.
 (pdftex.def)             Requested size: 170.71652pt x 174.22041pt.
 
-<img/hazeDC0.png, id=369, 294.09875pt x 300.12125pt>
+<img/hazeDC0.png, id=363, 294.09875pt x 300.12125pt>
 File: img/hazeDC0.png Graphic file (type png)
  <use img/hazeDC0.png>
-Package pdftex.def Info: img/hazeDC0.png used on input line 997.
+Package pdftex.def Info: img/hazeDC0.png used on input line 995.
 (pdftex.def)             Requested size: 170.71652pt x 174.2124pt.
 
-<img/hazeDC2.png, id=370, 294.09875pt x 300.12125pt>
+<img/hazeDC2.png, id=364, 294.09875pt x 300.12125pt>
 File: img/hazeDC2.png Graphic file (type png)
  <use img/hazeDC2.png>
-Package pdftex.def Info: img/hazeDC2.png used on input line 998.
+Package pdftex.def Info: img/hazeDC2.png used on input line 996.
 (pdftex.def)             Requested size: 170.71652pt x 174.2124pt.
 
-<img/hazeDC5.png, id=371, 294.09875pt x 300.12125pt>
+<img/hazeDC5.png, id=365, 294.09875pt x 300.12125pt>
 File: img/hazeDC5.png Graphic file (type png)
  <use img/hazeDC5.png>
-Package pdftex.def Info: img/hazeDC5.png used on input line 999.
+Package pdftex.def Info: img/hazeDC5.png used on input line 997.
 (pdftex.def)             Requested size: 170.71652pt x 174.2124pt.
 
 [36pdfTeX warning (ext4): destination with the same identifier (name{figure.18}
@@ -1399,18 +1390,18 @@ Package pdftex.def Info: img/hazeDC5.png used on input line 999.
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1008 \end{center}
-                    <./img/haze.png> <./img/hazeDC0.png (PNG copy)> <./img/haze
-DC2.png (PNG copy)> <./img/hazeDC5.png (PNG copy)>]
+l.1004 \begin{center}
+                      <./img/haze.png> <./img/hazeDC0.png (PNG copy)> <./img/ha
+zeDC2.png (PNG copy)> <./img/hazeDC5.png (PNG copy)>]
 File: img/haze.png Graphic file (type png)
  <use img/haze.png>
-Package pdftex.def Info: img/haze.png used on input line 1020.
+Package pdftex.def Info: img/haze.png used on input line 1018.
 (pdftex.def)             Requested size: 170.71652pt x 174.22041pt.
 
-<img/hazeDC5F.png, id=378, 294.09875pt x 300.12125pt>
+<img/hazeDC5F.png, id=372, 294.09875pt x 300.12125pt>
 File: img/hazeDC5F.png Graphic file (type png)
  <use img/hazeDC5F.png>
-Package pdftex.def Info: img/hazeDC5F.png used on input line 1021.
+Package pdftex.def Info: img/hazeDC5F.png used on input line 1019.
 (pdftex.def)             Requested size: 170.71652pt x 174.2124pt.
 
 [37pdfTeX warning (ext4): destination with the same identifier (name{figure.19}
@@ -1418,164 +1409,164 @@ Package pdftex.def Info: img/hazeDC5F.png used on input line 1021.
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1047 \end{center}
-                    <./img/hazeDC5F.png (PNG copy)>]
+l.1041 \]
+          <./img/hazeDC5F.png (PNG copy)>]
 File: img/haze.png Graphic file (type png)
  <use img/haze.png>
-Package pdftex.def Info: img/haze.png used on input line 1053.
+Package pdftex.def Info: img/haze.png used on input line 1051.
 (pdftex.def)             Requested size: 170.71652pt x 174.22041pt.
 
-<img/hazeRes.png, id=384, 237.88875pt x 242.40562pt>
+<img/hazeRes.png, id=378, 237.88875pt x 242.40562pt>
 File: img/hazeRes.png Graphic file (type png)
  <use img/hazeRes.png>
-Package pdftex.def Info: img/hazeRes.png used on input line 1054.
+Package pdftex.def Info: img/hazeRes.png used on input line 1052.
 (pdftex.def)             Requested size: 170.71652pt x 173.96599pt.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 1064
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 1062
 .
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1064.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1062.
 
  [38pdfTeX warning (ext4): destination with the same identifier (name{figure.20
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1071 
-        <./img/hazeRes.png>]
-<img/hazeResDC0.png, id=391, 294.09875pt x 300.12125pt>
+l.1065 \item $
+              w$ - koeficijent verovanja procene magle <./img/hazeRes.png>]
+<img/hazeResDC0.png, id=385, 294.09875pt x 300.12125pt>
 File: img/hazeResDC0.png Graphic file (type png)
 
 <use img/hazeResDC0.png>
-Package pdftex.def Info: img/hazeResDC0.png used on input line 1074.
+Package pdftex.def Info: img/hazeResDC0.png used on input line 1072.
 (pdftex.def)             Requested size: 128.0374pt x 130.65701pt.
 
-<img/hazeResDC3.png, id=392, 294.09875pt x 300.12125pt>
+<img/hazeResDC3.png, id=386, 294.09875pt x 300.12125pt>
 File: img/hazeResDC3.png Graphic file (type png)
 
 <use img/hazeResDC3.png>
-Package pdftex.def Info: img/hazeResDC3.png used on input line 1075.
+Package pdftex.def Info: img/hazeResDC3.png used on input line 1073.
 (pdftex.def)             Requested size: 128.0374pt x 130.65701pt.
 
-<img/hazeResDC5.png, id=393, 294.09875pt x 300.12125pt>
+<img/hazeResDC5.png, id=387, 294.09875pt x 300.12125pt>
 File: img/hazeResDC5.png Graphic file (type png)
 
 <use img/hazeResDC5.png>
-Package pdftex.def Info: img/hazeResDC5.png used on input line 1076.
+Package pdftex.def Info: img/hazeResDC5.png used on input line 1074.
 (pdftex.def)             Requested size: 128.0374pt x 130.65701pt.
 
 
-LaTeX Warning: Reference `UticajGF' on page 39 undefined on input line 1081.
+LaTeX Warning: Reference `UticajGF' on page 39 undefined on input line 1079.
 
-<img/hazeResGF2_01.png, id=394, 294.09875pt x 300.12125pt>
+<img/hazeResGF2_01.png, id=388, 294.09875pt x 300.12125pt>
 File: img/hazeResGF2_01.png Graphic file (type png)
 
 <use img/hazeResGF2_01.png>
-Package pdftex.def Info: img/hazeResGF2_01.png used on input line 1085.
+Package pdftex.def Info: img/hazeResGF2_01.png used on input line 1083.
 (pdftex.def)             Requested size: 128.0374pt x 130.65701pt.
 
-<img/hazeResGF5_04.png, id=395, 294.09875pt x 300.12125pt>
+<img/hazeResGF5_04.png, id=389, 294.09875pt x 300.12125pt>
 File: img/hazeResGF5_04.png Graphic file (type png)
 
 <use img/hazeResGF5_04.png>
-Package pdftex.def Info: img/hazeResGF5_04.png used on input line 1086.
+Package pdftex.def Info: img/hazeResGF5_04.png used on input line 1084.
 (pdftex.def)             Requested size: 128.0374pt x 130.65701pt.
 
-<img/hazeResGF10_1.png, id=396, 294.09875pt x 300.12125pt>
+<img/hazeResGF10_1.png, id=390, 294.09875pt x 300.12125pt>
 File: img/hazeResGF10_1.png Graphic file (type png)
 
 <use img/hazeResGF10_1.png>
-Package pdftex.def Info: img/hazeResGF10_1.png used on input line 1087.
+Package pdftex.def Info: img/hazeResGF10_1.png used on input line 1085.
 (pdftex.def)             Requested size: 128.0374pt x 130.65701pt.
  [39pdfTeX warning (ext4): destination with the same identifier (name{figure.21
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1095 
+l.1091 
        pdfTeX warning (ext4): destination with the same identifier (name{figure
 .22}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1095 
+l.1091 
         <./img/hazeResDC0.png (PNG copy)> <./img/hazeResDC3.png (PNG copy)> <./
 img/hazeResDC5.png (PNG copy)> <./img/hazeResGF2_01.png (PNG copy)> <./img/haze
 ResGF5_04.png (PNG copy)> <./img/hazeResGF10_1.png (PNG copy)>]
-<img/forest.png, id=405, 602.25pt x 426.59375pt>
+<img/forest.png, id=398, 602.25pt x 426.59375pt>
 File: img/forest.png Graphic file (type png)
  <use img/forest.png>
-Package pdftex.def Info: img/forest.png used on input line 1098.
+Package pdftex.def Info: img/forest.png used on input line 1096.
 (pdftex.def)             Requested size: 170.71652pt x 120.92303pt.
 
-<img/forest100.png, id=406, 602.25pt x 426.59375pt>
+<img/forest100.png, id=399, 602.25pt x 426.59375pt>
 File: img/forest100.png Graphic file (type png)
  <use img/forest100.png>
-Package pdftex.def Info: img/forest100.png used on input line 1099.
+Package pdftex.def Info: img/forest100.png used on input line 1097.
 (pdftex.def)             Requested size: 170.71652pt x 120.92303pt.
 File: img/forest.png Graphic file (type png)
 
 <use img/forest.png>
-Package pdftex.def Info: img/forest.png used on input line 1108.
+Package pdftex.def Info: img/forest.png used on input line 1106.
 (pdftex.def)             Requested size: 170.71652pt x 120.92303pt.
- <img/forest95.png, id=408, 602.25pt x 426.59375pt>
+ <img/forest95.png, id=401, 602.25pt x 426.59375pt>
 File: img/forest95.png Graphic file (type png)
 
 <use img/forest95.png>
-Package pdftex.def Info: img/forest95.png used on input line 1109.
+Package pdftex.def Info: img/forest95.png used on input line 1107.
 (pdftex.def)             Requested size: 170.71652pt x 120.92303pt.
- <img/aerial.png, id=411, 353.95229pt x 251.52237pt>
+ <img/aerial.png, id=404, 353.95229pt x 251.52237pt>
 File: img/aerial.png Graphic file (type png)
 
 <use img/aerial.png>
-Package pdftex.def Info: img/aerial.png used on input line 1118.
+Package pdftex.def Info: img/aerial.png used on input line 1116.
 (pdftex.def)             Requested size: 170.71652pt x 121.31656pt.
- <img/aerialFattal.png, id=412, 624.3325pt x 443.6575pt>
+ <img/aerialFattal.png, id=405, 624.3325pt x 443.6575pt>
 File: img/aerialFattal.png Graphic file (type png)
 
 <use img/aerialFattal.png>
-Package pdftex.def Info: img/aerialFattal.png used on input line 1119.
+Package pdftex.def Info: img/aerialFattal.png used on input line 1117.
 (pdftex.def)             Requested size: 170.71652pt x 121.31229pt.
 
-<img/aerialDe.png, id=413, 468.24937pt x 332.74312pt>
+<img/aerialDe.png, id=406, 468.24937pt x 332.74312pt>
 File: img/aerialDe.png Graphic file (type png)
  <use img/aerialDe.png>
-Package pdftex.def Info: img/aerialDe.png used on input line 1120.
+Package pdftex.def Info: img/aerialDe.png used on input line 1118.
 (pdftex.def)             Requested size: 170.71652pt x 121.31567pt.
 
-<img/grad.jpg, id=414, 433.62pt x 578.16pt>
+<img/grad.jpg, id=407, 433.62pt x 578.16pt>
 File: img/grad.jpg Graphic file (type jpg)
  <use img/grad.jpg>
-Package pdftex.def Info: img/grad.jpg used on input line 1127.
+Package pdftex.def Info: img/grad.jpg used on input line 1125.
 (pdftex.def)             Requested size: 113.81102pt x 151.74721pt.
 
-<img/gradFattal.jpg, id=415, 578.16pt x 770.88pt>
+<img/gradFattal.jpg, id=408, 578.16pt x 770.88pt>
 File: img/gradFattal.jpg Graphic file (type jpg)
  <use img/gradFattal.jpg>
-Package pdftex.def Info: img/gradFattal.jpg used on input line 1128.
+Package pdftex.def Info: img/gradFattal.jpg used on input line 1126.
 (pdftex.def)             Requested size: 113.81102pt x 151.73839pt.
 
-<img/gradDe.png, id=416, 578.16pt x 770.88pt>
+<img/gradDe.png, id=409, 578.16pt x 770.88pt>
 File: img/gradDe.png Graphic file (type png)
  <use img/gradDe.png>
-Package pdftex.def Info: img/gradDe.png used on input line 1129.
+Package pdftex.def Info: img/gradDe.png used on input line 1127.
 (pdftex.def)             Requested size: 113.81102pt x 151.73839pt.
  [40pdfTeX warning (ext4): destination with the same identifier (name{figure.23
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1136 \section{Zaključak}
+l.1134 \section{Zaključak}
                            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%pdfTeX warning
  (ext4): destination with the same identifier (name{figure.24}) has been alread
 y used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1136 \section{Zaključak}
+l.1134 \section{Zaključak}
                            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% <./img/forest
 .png (PNG copy)> <./img/forest100.png (PNG copy)> <./img/forest95.png (PNG copy
 )>] [41pdfTeX warning (ext4): destination with the same identifier (name{figure
@@ -1583,33 +1574,33 @@ l.1136 \section{Zaključak}
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1136 \section{Zaključak}
+l.1134 \section{Zaključak}
                            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%pdfTeX warning
  (ext4): destination with the same identifier (name{figure.26}) has been alread
 y used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1136 \section{Zaključak}
+l.1134 \section{Zaključak}
                            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% <./img/aerial
 .png> <./img/aerialFattal.png (PNG copy)> <./img/aerialDe.png> <./img/grad.jpg>
  <./img/gradFattal.jpg> <./img/gradDe.png (PNG copy)>]
 
 Package hyperref Warning: Composite letter `\textasciicaron+c'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textasciicaron' on input line 1136.
+(hyperref)                removing `\textasciicaron' on input line 1134.
 
 [42
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1181.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1182.
  [43
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1181.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1182.
  ("Obrada slike korišćenjem guided filtra.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1181.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1181.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1182.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1182.
 
 Package rerunfilecheck Info: File `"Obrada slike korišćenjem guided filtra".o
 ut' has not changed.
@@ -1621,16 +1612,16 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1181.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1182.
  ) 
 Here is how much of TeX's memory you used:
- 11499 strings out of 493671
- 169289 string characters out of 3141388
- 308532 words of memory out of 3000000
- 14341 multiletter control sequences out of 15000+200000
- 24218 words of font info for 135 fonts, out of 3000000 for 9000
+ 11529 strings out of 493671
+ 169847 string characters out of 3141388
+ 308799 words of memory out of 3000000
+ 14368 multiletter control sequences out of 15000+200000
+ 24354 words of font info for 135 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 30i,23n,35p,2300b,436s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 30i,23n,35p,2318b,440s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/cm-super/cm-super-t1.enc}<
 C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:
 /Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/P
@@ -1647,10 +1638,10 @@ TeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX
 onts/type1/public/cm-super/sfbx1728.pfb><C:/Program Files (x86)/MiKTeX 2.9/font
 s/type1/public/cm-super/sfrm1200.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/t
 ype1/public/cm-super/sfti1200.pfb>
-Output written on "Obrada slike korišćenjem guided filtra.pdf" (47 pages, 138
-79915 bytes).
+Output written on "Obrada slike korišćenjem guided filtra.pdf" (45 pages, 138
+79840 bytes).
 PDF statistics:
- 524 PDF objects out of 1000 (max. 8388607)
- 101 named destinations out of 1000 (max. 500000)
+ 516 PDF objects out of 1000 (max. 8388607)
+ 100 named destinations out of 1000 (max. 500000)
  16893 words of extra memory for PDF output out of 17280 (max. 10000000)
 

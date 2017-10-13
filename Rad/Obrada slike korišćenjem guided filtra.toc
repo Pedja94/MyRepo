@@ -4,7 +4,7 @@
 \contentsline {subsection}{\numberline {2.1}Uvod}{2}{subsection.2.1}
 \contentsline {subsection}{\numberline {2.2}Osnovni procesi u obradi digitalne slike}{3}{subsection.2.2}
 \contentsline {subsection}{\numberline {2.3}Pribavljanje slike}{4}{subsection.2.3}
-\contentsline {subsection}{\numberline {2.4}Bitne relacije izme\IeC {\dj }u piksela}{6}{subsection.2.4}
+\contentsline {subsection}{\numberline {2.4}Bitne relacije izme\IeC {\dj }u piksela}{5}{subsection.2.4}
 \contentsline {subsection}{\numberline {2.5}Osnovne operacije nad slikom}{7}{subsection.2.5}
 \contentsline {section}{\numberline {3}Osnovni tipovi filtara}{12}{section.3}
 \contentsline {subsection}{\numberline {3.1}Osnovni pojmovi}{12}{subsection.3.1}
