@@ -16,6 +16,7 @@
 \usepackage{tabu}
 \usepackage{titlesec}
 \usepackage{setspace}
+\usepackage{chngcntr}
 
 \newtheorem{definicija}{Definicija}[section]
 \newtheorem{teorema}{Teorema}[section]
@@ -106,6 +107,8 @@
 
 \setlength{\parskip}{\baselineskip}%
 \setlength{\parindent}{15pt}%
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
 
 \thispagestyle{empty}
 \newpage
@@ -133,13 +136,13 @@ Digitalna slika može da se definiše kao funkcija $f(x, y)$, gde su $x$ i $y$ k
 Čulo vida je nasloženije čulo čoveka i ima možda i najveću ulogu u čovekovoj precepciji okoline. Međutim no ono nije savršeno. Za razliku od ljudskog vida koji je limitiran vidljivim elektromagnetnim spektrom, u računarstvu imamo mogućnost da predstavimo ceo spektar i da se bavimo talasnim dužinama koje naše oko ne može da vidi. Obrada slika je složena oblast i prožima mnoge druge oblasti. Ne postoje jasne granice između obrade slike i oblasti kompjuterskog vida. Sama obrada slike može da bude deo sistema veštačke inteligencije za prepoznavanje lica ili nešto slično. Za obradu slike možemo da je porces koji na ulazu uzima sliku,   
 vrši obradu i na izlazu se nalazi ponovo slika, ali u toku obrade takođe računa atribute te slike. 
 
-Potreba za korišćenjem digitalnih slika javila se još 1920-tih godina u novinarstvu. Tada je prvi put slika poslana prekookenaski putem analognog kabla. Naravno prvi problemi koji su se javili tada imali su veze sa kvalitetom slike. Prvi sistemi su mogli da prenose crno bele slike, do 15 nijansi sive. Prvi kompjuteri koji su bili dovoljno moći da izvršavaju neku značajniju obradu slika javili su se 60-ih godina. Neke od prvih primena bile su vezane za poboljšanje slika iz svemira. Zatim je obrada slika počela da se koristi u medicini i astronomiji 70-ih godina, a i dan danas je bitna u tim oblastima.
+Potreba za korišćenjem digitalnih slika javila se još 1920-tih godina u novinarstvu. Tada je prvi put slika ~\ref{slika1921} poslana prekookenaski putem analognog kabla. Naravno prvi problemi koji su se javili tada imali su veze sa kvalitetom slike. Prvi sistemi su mogli da prenose crno bele slike, do 15 nijansi sive. Prvi kompjuteri koji su bili dovoljno moći da izvršavaju neku značajniju obradu slika javili su se 60-ih godina. Neke od prvih primena bile su vezane za poboljšanje slika iz svemira. Zatim je obrada slika počela da se koristi u medicini i astronomiji 70-ih godina, a i dan danas je bitna u tim oblastima.
 
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=75mm]{img/prvaPrenesenaSlika.png}
 \caption{Digitalna slika koja je kreirana na osnovu kodirane trake 1921 godine}
-\label{overflow}
+\label{slika1921}
 \end{figure} 
 
 U današnje vreme skoro da ne postoji oblast u kojoj se u nekoj meri ne koristi obrada slika. Jedna od najpoznatijih primena obrade slike je kreiranje i obrada rendgenskih slika (radiografija). Ona se najviše koristi u medicini ali postoje i druge primene. Primena postoji i za slike koje predstavljaju ultravioletnu boju. Ove slike se koriste u mikroskopiji. Postoje mnoge primene u svetu tehnologije kao što su izoštravanje slika, restauracija slika, prepoznavanje lica i objekata, prepoznavanje oblika. Takođe obrada slike se koristi u filmovima i medijima.  
@@ -162,7 +165,7 @@ Svetslost koju mi opažamo ima određeni intenzitet i boju. Ljudsko oko je sposo
 \centering
 \includegraphics[width=120mm]{img/spektar.png}
 \caption{Elektromagnetni spektar}
-\label{overflow}
+\label{spektar}
 \end{figure} 
 
 Slika se u digitalnom svetu generiše kao kombinacija osvetljenja prostora i reflektivne ili apsorbovane energije iz prostora scene za koju se pravi slika. Postoje raličiti tipovi senzora za akviziciju slika, ovde će biti opisan sistem sa senzorom u obliku 2-D niza (matrice). Senzor je sastavljen od elementata koji su raspoređeni u matrici. Svaki element je zadužen za prikupljanje svetlosti iz scene. U svakom elementu se beleži osveteljenje scene i tako se formira signal slike koji se kasnije dodatno obrađuje.
@@ -171,7 +174,7 @@ Pošto svetlost dolazi i kontinulanog prostora, vrednost signala koji nosi sliku
 
 Slika se u digitalnom svetu predstavlja kao $f(x, y)$, gde su $x$ i $y$ koordinate piksela na slici, a $f(x, y)$ je vrednost piksela u koordinatama $(x, y)$. 
 
-\[
+\begin{equation}\label{eq:slika}
 f(x, y)
 =
 \begin{bmatrix}
@@ -180,7 +183,7 @@ f(x, y)
     \vdots & \vdots & \vdots & \ddots & \vdots \\
     f(M - 1, 0) & f(M - 1, 1) & f(M - 1, 2) & \dots  & f(M - 1, N - 1)
 \end{bmatrix}
-\]
+\end{equation}
 
 gde su N i M respektivno širina i visina slike.
 
@@ -190,27 +193,27 @@ Broj piksela slike se računa kao $b = M * N$, ako je slika crno bela, odnosno i
 
 Piksel $p$ sa koordinatama $(x, y)$ ima horizontalne i vertikalne susede $(x + 1, y)$, $(x - 1, y)$, $(x, y + 1)$, $(x, y - 1)$. Ovo se naziva 4-suseda piksela. Ako se dodaju dijagonalni susedi $(x + 1, y + 1)$, $(x - 1, y - 1)$, $(x + 1, y - 1)$, $(x - 1, y + 1)$ onda dobijamo 8-suseda piksela. Povezanost je osobina koja se dosta koristi u obradi slike. Ako su pikseli susedi i ako imaju istu vrednost ili vrednost iz istog podopsega mogućih vrednosti piksela onda su oni povezani. Putanja niz piksela koji su povezani na slici.
 
-Postoje nekoliko načina za računanje distance između piksela. Ako imamo piksele $p$, $q$ i $z$ sa koordinatama $(x, y)$, $(s, t)$ i $(v, w)$, $D$ će biti mera distance ako važi: \\
+Postoje nekoliko načina za računanje distance između piksela. Ako imamo piksele $p$, $q$ i $z$ sa koordinatama $(x, y)$, $(s, t)$ i $(v, w)$, $D$ će biti mera distance ako važi: 
 
 a) $D(p, q) >= 0 (D(p, q) = 0 akko p = q)$,
 
 b) $D(p, q) = D(q, p)$,
 
-c) $D(p, z) <= D(p, q) + D(q, z)$.\\
+c) $D(p, z) <= D(p, q) + D(q, z)$.
 
 Euklidska distanca: 
 
-\begin{center}
-$D_{e}(p, q) = [ (x  - s)^{2} + (y - t)^{2} ]^{1/2}.$
-\end{center} 
+\begin{equation}\label{eq:euclid}
+D_{e}(p, q) = [ (x  - s)^{2} + (y - t)^{2} ]^{1/2}.
+\end{equation} 
 
-Euklidska distanca nije baš pogodna za sliku koja ima diskretne vrendosti pa se za distancu koriste:\\
+Euklidska distanca nije baš pogodna za sliku koja ima diskretne vrendosti pa se za distancu koriste:
 
 $D_{4}$ distanca 4-suseda:
 
-\begin{center}
-$D_{4}(p, q) = |x - s| + |y + t|.$
-\end{center} 
+\begin{equation}\label{eq:4ne}
+D_{4}(p, q) = |x - s| + |y + t|.
+\end{equation} 
 
 \[
 \begin{bmatrix}
@@ -218,15 +221,15 @@ $D_{4}(p, q) = |x - s| + |y + t|.$
      & 2 & 1 & 2  &  \\
      2 & 1 & 0 & 1 & 2 \\
      & 2 & 1 & 2  &  \\
-     &  & 2 &   &  \\
+     &  & 2 &   &  
 \end{bmatrix}
-\].\\
+\].
 
 $D_{8}$ distanca 8-suseda:
 
-\begin{center}
-$D_{8}(p, q) = max(|x - s|, |y + t|).$
-\end{center} 
+\begin{equation}\label{eq:8ne}
+D_{8}(p, q) = max(|x - s|, |y + t|).
+\end{equation} 
 
 \[
 \begin{bmatrix}
@@ -234,9 +237,9 @@ $D_{8}(p, q) = max(|x - s|, |y + t|).$
      2 & 1 & 1 & 1  & 2 \\
      2 & 1 & 0 & 1 & 2 \\
      2 & 1 & 1 & 1  & 2 \\
-     2 & 2 & 2 & 2  & 2 \\
+     2 & 2 & 2 & 2  & 2 
 \end{bmatrix}
-\].\\
+\].
 
 \subsection{Osnovne operacije nad slikom}%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -246,14 +249,14 @@ Kao što je navedeno obrada slike u prostronom domenu znači da se operacije izv
 
 Ako vrednosti funkcija $f(x, y)$ i $g(x, y)$ predstavimo kao $r$ i $s$ respektivno, onda obradu slike možemo da predstavimo kao $s = T(r)$. U nastavku je da pregled nekih osnovnih transformacija nad slikom u prostornom domenu. Ove transformacije će biti predstavljene nad jednokanalnim slikama (slike čiji pikesli uzimaju samo jednu vrednost - nijansu sive boje). Što se tiče slika u boji postupak za ove transformacije je sličan. Transforamcije se ili vrše nad svakim kanalom nezavisno, ili se slika prevodi u sliku sa jednim kanalom (postoji više načina), pa se primenjuje određena transformacija.
 
-Najosnovnija operacija koja može da se izvede nad slikom je negativ. Svaki piksel slike dobija inverznu vrednost u odnosu na svoju. Ako se vrednosti piksela kreću u granicama $[0, L - 1]$, rezultujuća vrednost se dobija kao $s = L - 1 - r$. Ova operacija se koristi na crno belim slikama koje su dominantno crne, a belom bojom su prikazani bitni podaci na slici, jer je lakse uočiti neke detalje.
+Najosnovnija operacija koja može da se izvede nad slikom je negativ. Svaki piksel slike dobija inverznu vrednost u odnosu na svoju. Ako se vrednosti piksela kreću u granicama $[0, L - 1]$, rezultujuća vrednost se dobija kao $s = L - 1 - r$. Ova operacija se koristi na crno belim slikama koje su dominantno crne, a belom bojom su prikazani bitni podaci na slici, jer je lakse uočiti neke detalje. Rezultat primene možemo videti na slici ~\ref{negativ}. 
 
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=60mm]{img/img.png}
 \includegraphics[width=60mm]{img/imgNegative.png}
-\caption{1)slika 2)negativ}
-\label{overflow}
+\caption{a) slika fotografa b) negativ slike fotografa}
+\label{negativ}
 \end{figure} 
 
 Nad slikom može da se primeni logaritamska operacija. $s = c*\log{1+ r}$. Ova operacija se koristi za izračunavanje spektra slike, što može da bude korisno za operacije koje se izvršavaju u kompleksnom domenu. Takođe nad slikom možemo da primenimo i stepene funkcije $s  = c*r^{\nu}$ ili $s = c*(r + \epsilon)^{\nu}$, gde su $c$ i $\nu$ pozitivne konstante i $\epsilon$ je konstanta. Ove opercije se koriste za gama korekciju. Jedna od najpozantijih primena je u tv uređajima koji su koriste katodne cevi. Takođe se koristi i za magnetnu rezonancu kako bi se pojačale boje i time izrazili detalji. 
@@ -264,7 +267,7 @@ Nad slikom može da se primeni logaritamska operacija. $s = c*\log{1+ r}$. Ova o
 \includegraphics[width=60mm]{img/imgLog.png}
 \includegraphics[width=60mm]{img/imgPow1.png}
 \includegraphics[width=60mm]{img/imgPow2.png}
-\caption{1)slika 2)logaritamska transforamcija 3)stepena transforamcija $c = 1 \nu = 0.6$ 4)stepena transforamcija $c = 1 \nu = 0.3$}
+\caption{Primena raznih transformacija: a) slika fotografa b) logaritamska transformacija c) stepena transforamcija $c = 1 \nu = 0.6$ d) stepena transforamcija $c = 1 \nu = 0.3$}
 \label{overflow}
 \end{figure} 
 
@@ -276,11 +279,23 @@ Jedna od specifičnih obrada je obrada uz pomoć histograma. Histogram digitalne
 \centering
 \includegraphics[width=60mm]{img/img.png}
 \includegraphics[width=60mm]{img/histImg.png}
+\caption{Slika fotografa i njen histogram}
+\label{overflow}
+\end{figure} 
+
+\begin{figure}[ht!]
+\centering
 \includegraphics[width=60mm]{img/imgLog.png}
 \includegraphics[width=60mm]{img/histImgLog.png}
+\caption{Slika fotografa nad kojom je primenjena logaritmska transformacija i njen histogram}
+\label{overflow}
+\end{figure} 
+
+\begin{figure}[ht!]
+\centering
 \includegraphics[width=60mm]{img/imgPow2.png}
 \includegraphics[width=60mm]{img/histImgPow2.png}
-\caption{levo: slika desno: njen histogram}
+\caption{Slika fotografa nad kojom je primenjena stepena transformacija i njen histogram}
 \label{overflow}
 \end{figure} 
 
@@ -293,7 +308,7 @@ Jedna od operacija koja može da se izvrši uz pomoć histograma je histogramsko
 \includegraphics[width=60mm]{img/histImgPow2.png}
 \includegraphics[width=60mm]{img/histEq.png}
 \includegraphics[width=60mm]{img/histEqhist.png}
-\caption{1)slika 2)histogram 3)slika i 4)histogram nakon histogramskog izjednačavanja}
+\caption{Primena histogramskog izjednačavanja: a) bleda slika fotografa i b) njen histogram c)slika fotografa i d)njen histogram nakon histogramskog izjednačavanja}
 \label{overflow}
 \end{figure}
 
@@ -307,11 +322,14 @@ Nad slikama se često pirmenjuje operacija oduzimanja. Ako želimo da vidimo da 
 
 Kao što je ranije spomenuto prilikom obrade slike operacije se izvršavaju nad pikselom i njegovim susedima sa jedne strane i ogovarajućom podslikom sa druge. Ta pod slika nosi informacije o koje se koriste za filtriranje slike. Ta podslika (odnosno pravougaonih piksela) se naziva kernel ili prozor. Koncept filtriranja slike je uzet iz matematike ondnosno analize i matematički predstavljen taj proces je ustvari konvolucija $f * w$ gde je $f$ predstavlja sliku koja se filtrira, $w$ predstavlja kernel za filtriranje. Za svaki piksel slike koja se filtrira računa se nova vrednost uz pomoć kernela $w$ i odgovarajućeg piksela i njegovih suseda, iz slike. Ako imamo kernel oblika $3 x 3$ iračunavanje vrednosti piksela $(x, y)$ izgleda ovako
 
-\begin{center}
-$R = w(-1, -1)f(x - 1, y - 1) + w(-1, 0)f(x - 1, y) + \dots + w(0, 0)f(x, y) + \dots + w(1, 0)f(x + 1, y) + w(1, 1)f(x + 1, y + 1)$.
-\end{center}
+\begin{equation}\label{eq:conv1}
+\begin{split}
+R = w(-1, -1)f(x - 1, y - 1) + w(-1, 0)f(x - 1, y) + \dots \\
++ w(0, 0)f(x, y) + \dots + w(1, 0)f(x + 1, y) + w(1, 1)f(x + 1, y + 1).
+\end{split}
+\end{equation}
 
-\[
+\begin{equation}\label{eq:conv2}
 R
 =
 \begin{bmatrix}
@@ -325,19 +343,19 @@ R
      w(-0, - 1) & w(0, 0) & w(0, 1) \\
      w(1, - 1) & w(1, 0) & w(1, 1) \\
 \end{bmatrix}
-\].
+.\end{equation}
 
 Koeficijet kernela $w(0, 0)$ odgovara pikselu $f(x, y)$, što ukazuje na to da je maska centrirana oko piksela $(x, y)$. Obzirom da kernel mora da bude centriran oko jednog piksela, za kernel dimenzije $m x n$, važi da je $m = 2a + 1$ i $n = 2b + 1$, gde su $a$ i $b$ pozitivni celi brojevi. Najmanji kernel koji ima smisla je $3 x 3$ , a trivijalni slučaj predstavlja kernel $1 x 1$, koji se primenjuje samo kod osnovnih operacija. Generalno filtriranje slike $f$ dimenzija $M x N$, korišćenjem kernela $w$ veličine $m x n$ izrazom:
 
-\begin{center}
-$g(x, y)  = \sum_{s = -a}^{a} \sum_{t = -b}^{b} w(s, t) f(x + s, y + t)$,\\
-\end{center}
+\begin{equation}\label{eq:conv3}
+g(x, y)  = \sum_{s = -a}^{a} \sum_{t = -b}^{b} w(s, t) f(x + s, y + t),
+\end{equation}
 
 gde je $a = (m - 1) / 2, b = (n - 1) / 2$. Da bi se filtrirala cela slika potrebno je da se i zračuna vrednost $g(x, y)$ za svako $x \epsilon [0, M - 1]$ i za svako $y \epsilon [0, N - 1]$. 
 
 Matrica kernela može da se obelži i ovako za primer kernela $3 x 3$:
 
-\[
+\begin{equation}\label{eq:conv4}
 R
 =
 \begin{bmatrix}
@@ -351,11 +369,11 @@ R
      w_{4} & w_{5} & w_{6} \\
      w_{7} & w_{8} & w_{9} \\
 \end{bmatrix}
-\].
+.\end{equation}
 
-\begin{center}
-$R = w_{1}z_{1} + w_{2}z_{2} + \dots + w_{mn}f_{mn} = \sum_{i = 1}^{mn} w_{i}z_{i}$.\\
-\end{center}
+\begin{equation}\label{eq:conv5}
+R = w_{1}z_{1} + w_{2}z_{2} + \dots + w_{mn}f_{mn} = \sum_{i = 1}^{mn} w_{i}z_{i}.
+\end{equation}
 
 $w_{i}$ predstavlja vrednosti kernela, $z_{i}$ predstavlja vrednosti odgovarajućih piksela slike, a $m$ i $n$ predstavljaju dimenzije kernela.
 
@@ -394,16 +412,15 @@ Ovo su tipični primeri smoothing filtra dimenzija $3 x 3$. Levo je najprostiji 
 \includegraphics[width=60mm]{img/imgAvg3.png}
 \includegraphics[width=60mm]{img/imgAvg5.png}
 \includegraphics[width=60mm]{img/imgAvg9.png}
-\caption{1)slika 2)slika filtrirana kernelom 3x3 3)5x5 i 4)9x9}
+\caption{Primena filtera srednjih vrednosti: a) slika fotografa b) slika fotogrfa filtrirana kernelom 3x3 c)5x5 i d)9x9}
 \label{overflow}
 \end{figure}
 
-
 Naravno ova priča važi i za filtre koji koriste kernel bilo koje dimenzije $m x n$ ($m$ i $n$ su neparni). Ako imamo kernel ovih dimenzija opšta formula za izračunavanje vrednosti rezultujećeg piksela igledaće ovako: 
 
-\begin{center}
-$g(x, y) = \dfrac{\sum_{s = -a}^{a} \sum_{s = -b}^{b} w(s, t)f(x + s, y + t)}{\sum_{s = -a}^{a} \sum_{s = -b}^{b} w(s, t)}$,  \\
-\end{center}
+\begin{equation}\label{eq:smoot1}
+g(x, y) = \dfrac{\sum_{s = -a}^{a} \sum_{s = -b}^{b} w(s, t)f(x + s, y + t)}{\sum_{s = -a}^{a} \sum_{s = -b}^{b} w(s, t)},  
+\end{equation}
 
 gde su $g$ i $f$ ulazna i rezultujuća slika, $(x, y)$ koordinate piksela za koji se trenutno računa vrednost, $a = (m - 1) / 2$, $b = (n - 1) / 2$, $w$ težine u kernelu. Da bi cela slika bila filtrirana ova funkcija treba da se izvrši za svako $x \epsilon [0, M - 1]$ i za svako $y \epsilon [0, N - 1]$. 
 
@@ -416,7 +433,7 @@ Kao što je spomenuto ranije jedna od primena ovog tipa filtara je predprocesira
 \includegraphics[width=60mm]{img/tel.jpg}
 \includegraphics[width=60mm]{img/telAvg.jpg}
 \includegraphics[width=60mm]{img/telTh.jpg}
-\caption{1)slika 2)slika filtrirana kernelom 9x9 3)slika pretvorena u binarnu sliku(samo crna i bela)}
+\caption{Izdvajanje objekata sa slike a) slika Hubble teleskopa b) slika filtrirana kernelom 9x9 c) slika pretvorena u binarnu sliku(samo crna i bela)}
 \label{overflow}
 \end{figure}
 
@@ -426,7 +443,7 @@ Pored navedenih linearnih filtra postoje i nelinearni filtri bazirani na sortira
 \centering
 \includegraphics[width=60mm]{img/img.png}
 \includegraphics[width=60mm]{img/imgMed.png}
-\caption{1)slika 2)slika filtrirana median filterom}
+\caption{Primena median filtera: a) slika fotografa b) slika fotografa filtrirana median filterom}
 \label{overflow}
 \end{figure}
 
@@ -438,19 +455,23 @@ Filteri opisani u predhodnom poglavlju koriste sume i srednje vrednosti da bi fi
 
 Da bi objasnili uticaj izvoda na sliku, objsnićemo osnovne koncepte preko jedno dimenzionalnih izvoda. Izvod diskretne funkcije se definiše kao razlika između dva uzastopna elementa. Postoji više načina za definisanje izvoda nad slikom, ali svi oni zahtevaju da funkcija izvoda ispunjava sledeće: 1) jednaka je nuli u ravnim segmentima (segmenti koji imaju konstantnu vrednost); 2) različita je od nule u segmentima gde postoji nagla ili konstantna promena; 3) različita je od nule duž segmenata gde se javlja konstantna promena; Slično i za funkciju drugog izvoda važi da je: 1)  jednaka je nuli u ravnim segmentima; 2) različita je od nule na mestima gde se završava nagla ili konstantna promena; 3) jednaka je nuli duž segmenata gde se javlja konstantna promena; S obzirom da pikseli slike uzimaju diskretne vrenosti vrednost izvoda se kreće u granicama tih vrednosti. Definicija jednodimenzionalnog izvoda je: 
 
-\begin{center}
-$\dfrac{\delta f}{\delta x} = f(x + 1) - f(x)$, parcijalni izvod po x osi.\\
-\emph{} \\
-$\dfrac{\delta f}{\delta y} = f(y + 1) - f(y)$, parcijalni izvod po y osi.\\
-\end{center}
+\begin{equation}\label{eq:izvod}
+\dfrac{\delta f}{\delta x} = f(x + 1) - f(x), \text{parcijalni izvod po x osi}.
+\end{equation}
+
+\begin{equation}\label{eq:izvod123}
+\dfrac{\delta f}{\delta y} = f(y + 1) - f(y), \text{parcijalni izvod po y osi}.
+\end{equation}
 
 Slično se za drugi izvod definiše:
 
-\begin{center}
-$\dfrac{\delta^2 f}{\delta x} = f(x + 1) + f(x - 1) - 2f(x)$, drugi parcijalni izvod po x osi.\\
-\emph{} \\
-$\dfrac{\delta^2 f}{\delta y} = f(y + 1) + f(y - 1) - 2f(y)$, drugi parcijalni izvod po y osi.\\
-\end{center}
+\begin{equation}\label{eq:izvod2}
+\dfrac{\delta^2 f}{\delta x} = f(x + 1) + f(x - 1) - 2f(x), \text{drugi parcijalni izvod po x osi}.
+\end{equation}
+
+\begin{equation}\label{eq:izvod1234}
+\dfrac{\delta^2 f}{\delta y} = f(y + 1) + f(y - 1) - 2f(y), \text{drugi parcijalni izvod po y osi}.
+\end{equation}
 
 \begin{figure}[ht!]
 \centering
@@ -463,29 +484,29 @@ Ako pogledamo sliku 10 možemo da uočimo da je prvi izvod različit od nule u s
 
 Nad slikom se primenjuju dvo-dimenzionalni izvodi, jer slika ima dve dimenzije. Na osnovu ovoga se formiraju kerneli koji se koriste u primeni ovih filtara. Nas interesuju izotropski filteri, tj. filteri koji su invarijantni u odnosu na pravac promena, koje se javljaju na slici. Drugim rečima ovi filteri su nezavisni od rotacije, što znači da će pronaći sve ivice bez obzira na njihov ugao u ravni. Ako sliku rotiramo ovakav filter će pronaći iste ivice kao na originalnoj slici. Najprostija funkcija izvoda koja se koristi je \emph{Laplacian}: 
 
-\begin{center}
-$\Delta^{2}f = \dfrac{\delta^{2}f}{\delta x^{2}} + \dfrac{\delta^{2}f}{\delta x^{2}}$. \\
-\end{center}
+\begin{equation}\label{eq:grad}
+\Delta^{2}f = \dfrac{\delta^{2}f}{\delta x^{2}} + \dfrac{\delta^{2}f}{\delta x^{2}}. 
+\end{equation}
 
 Pošto su izvodi linerane funkcije možemo da zaključimo da je i \emph{Laplacian} linearna funkcija. Da bi smo ovu funkciju mogli da koristimo za obradu slike moramo da je prevedemo u diskretnu formu. Iskoristićemo funkciju koju smo koristili da definišemo jedno-dimenzionalni izvod. Drugi parcijalni izvod po x-osi će izgledati ovako:
 
-\begin{center}
-$\dfrac{\delta^{2}f}{\delta x^{2}} = f(x + 1, y) + f(x - 1, y) - 2f(x, y)$.\\
-\end{center}
+\begin{equation}\label{eq:grad2}
+\dfrac{\delta^{2}f}{\delta x^{2}} = f(x + 1, y) + f(x - 1, y) - 2f(x, y).
+\end{equation}
 
 Slično, drugi parcijani izvod po y-osi će izgledati ovako:
 
-\begin{center}
-$\dfrac{\delta^{2}f}{\delta y^{2}} = f(x, y + 1) + f(x, y - 1) - 2f(x, y)$.\\  
-\end{center}
+\begin{equation}\label{eq:grad3}
+\dfrac{\delta^{2}f}{\delta y^{2}} = f(x, y + 1) + f(x, y - 1) - 2f(x, y).
+\end{equation}
 
 Na osnovu ovoga možemo da zaključimo da će laplacian funkcija izgledati ovako:
 
-\begin{center}
-$\Delta^{2}f = f(x + 1, y) + f(x - 1, y) + f(x, y + 1) + f(x, y - 1) - 4f(x, y)$. \\
-\end{center}
+\begin{equation}\label{eq:grad4}
+\Delta^{2}f = f(x + 1, y) + f(x - 1, y) + f(x, y + 1) + f(x, y - 1) - 4f(x, y). 
+\end{equation}
 
-Ovako implementirana funkcija može da se predstavi sledećim kernelom.\\
+Ovako implementirana funkcija može da se predstavi sledećim kernelom.
 
 \[
 \begin{bmatrix}
@@ -495,7 +516,7 @@ Ovako implementirana funkcija može da se predstavi sledećim kernelom.\\
 \end{bmatrix}
 \]. 
 
-Da bi se u obzir uzele i promene koje se javljaju dijagonalno u odnosu na tačku koju posmatramo koristi se modifikovan kernel koji izgleda ovako.\\
+Da bi se u obzir uzele i promene koje se javljaju dijagonalno u odnosu na tačku koju posmatramo koristi se modifikovan kernel koji izgleda ovako.
 
 \[
 \begin{bmatrix}
@@ -505,7 +526,7 @@ Da bi se u obzir uzele i promene koje se javljaju dijagonalno u odnosu na tačku
 \end{bmatrix}
 \].
 
-Ovde se i dijagonalni susedi uzimaju obzir. Ovo je kao da imamo definisana još dva parcijalna izvoda nad dijagonalama, pa se za obe dijagonale dodaju $-2f(x, y)$. Zbog toga je koeficijent koji odgovara pikselu $(x, y)$ jednak -8. Takođe možgu da se koriste i kerneli koji imaju težine koje su obrnutog znaka u odnosu na predhodno navedene. Oni će dati iste rezultate, ali njihov znak treba da se uzme u obzir kada se ovaj pristup kombinuje sa drugim operacijama, jer će rezultati biti drugačijeg znaka. \\
+Ovde se i dijagonalni susedi uzimaju obzir. Ovo je kao da imamo definisana još dva parcijalna izvoda nad dijagonalama, pa se za obe dijagonale dodaju $-2f(x, y)$. Zbog toga je koeficijent koji odgovara pikselu $(x, y)$ jednak -8. Takođe možgu da se koriste i kerneli koji imaju težine koje su obrnutog znaka u odnosu na predhodno navedene. Oni će dati iste rezultate, ali njihov znak treba da se uzme u obzir kada se ovaj pristup kombinuje sa drugim operacijama, jer će rezultati biti drugačijeg znaka. 
 
 \[
 \begin{bmatrix}
@@ -527,15 +548,15 @@ Pošto je laplacian funckija izvoda, ona će na slici otkriti promene u nijansam
 \includegraphics[width=65mm]{img/moon.jpg}
 \includegraphics[width=65mm]{img/moonLap.jpg}
 \includegraphics[width=65mm]{img/moonEn.jpg}
-\caption{1)slika 2)laplacian 3)poboljšana slika dodavanjem laplacian-a}
+\caption{Poboljšanje slike: a) slika meseca b) primena Laplacian filtera c) rezultat sabiranja alike meseca i njenog laplacian-a}
 \label{overflow}
 \end{figure}
 
 Ova operacija može da se implementira u jednom prolazu tako što će da se modifikuje kernel. Operacija koja je izvršena na predhodonj slici može da se predstavi ovako:
 
-\begin{center}
-$g(x, y) = f(x, y) - \Delta^{2}f(x, y) = 5f(x, y) - [f(x + 1, y) + f(x - 1, y) + f(x, y - 1) + f(x, y + 1)]$.\\
-\end{center} 
+\begin{equation}\label{eq:grad10}
+g(x, y) = f(x, y) - \Delta^{2}f(x, y) = 5f(x, y) - [f(x + 1, y) + f(x - 1, y) + f(x, y - 1) + f(x, y + 1)].
+\end{equation} 
 
 Na osnovu ove funkcije možemo da zaključimo da će kernel da izlgeda ovako:
 
@@ -554,9 +575,9 @@ Na osnovu ove funkcije možemo da zaključimo da će kernel da izlgeda ovako:
 
 Postoji još jedan način za postizanje poboljšanja slike. Naime ivice slike mogu da se odrede tako što će od ogriginalne slike oduzeti slika nad kojom je primenjen smoothing filter. Pošto smoothing filter ima suprotno dejstvo od shaprening filtera oduzimanje će dati isti rezultat kao primena sharpening filtera. 
 
-Kao što je rečeno ranije za filtriranje slike može da se koristi i prvi izvod. Prvi izvod se za filtriranje koristi tako što se računa dužina gradijenata po x i y osi. Za funkciju $f(x, y)$ gradijent u koordinatama $(x, y)$ se definiše kao vektor: \\
+Kao što je rečeno ranije za filtriranje slike može da se koristi i prvi izvod. Prvi izvod se za filtriranje koristi tako što se računa dužina gradijenata po x i y osi. Za funkciju $f(x, y)$ gradijent u koordinatama $(x, y)$ se definiše kao vektor: 
 
-\[
+\begin{equation}\label{eq:grad11}
 \Delta \textbf{f}
 =
 \begin{bmatrix}
@@ -569,13 +590,13 @@ Kao što je rečeno ranije za filtriranje slike može da se koristi i prvi izvod
      \\
      \dfrac{\delta f}{\delta y} \\
 \end{bmatrix}
-\]. 
+\end{equation}
 
 Dužina vektora se računa kao: 
 
-\begin{center}
-	$\Delta \emph{f} = mag(\Delta \textbf{f}) = [G_{x}^{2} + [G_{y}^{2}]^{1/2} = [ (\dfrac{\delta f}{\delta x})^{2} +  (\dfrac{\delta f}{\delta y})^{2} ]^{1/2}$. \\
-\end{center}
+\begin{equation}\label{eq:grad12}
+	\Delta \emph{f} = mag(\Delta \textbf{f}) = [G_{x}^{2} + [G_{y}^{2}]^{1/2} = [ (\dfrac{\delta f}{\delta x})^{2} +  (\dfrac{\delta f}{\delta y})^{2} ]^{1/2}. 
+\end{equation}
 
 Gradijenti su linearne funkcije, ali njihova funkcija dužine nije jer sadrži stepene operacije. Sa druge strane gradijenti nisu invarijantni u odnosu na rotaciju dok funkcija njihove dužine jeste, pa se zbog toga ona koristi. Iako nije tačno dužina vektora gradijenta se često naziva gradijent. Pošto nije lako primeniti ovu funkciju nad slikom koja ima diskretne vrednosti za potrebe obrade slike se obično koristi aproksimacija dužine gradijenta $\Delta \approx |G_{x}| + |G_{y}|$. Ova funkcija je lakša za izračunavanje i prepoznaje promene, ali generalno gubi osobinu invarijacije u odnosu na rotaciju. Kao što je slučaj kod laplacian-a izotropska osobina očuvana je zahvaljujući odabiru maske i dodavanju dijagonalnih elemenata. 
 
@@ -591,11 +612,11 @@ Ako je region na slici za kernel veličine 3 x 3 definisan kao
 
 gde $z_{5}$ predstavlja $f(x, y)$, a $z_{1}$ predstavlja $f(x - 1, y - 1)$ onda je $G_{x} = (z_{9} - z_{5})$ i $G_{y} = (z_{8} - z_{6})$. Ovo je prva predložena definicija za računanje prvih izvoda. Sledi da je gradijent:
 
-\begin{center}
-$\Delta \emph{f} \approx |z_{9} - z_{5}| + |z_{8} - z_{6}|.$\\
-\end{center}
+\begin{equation}\label{eq:grad13}
+\Delta \emph{f} \approx |z_{9} - z_{5}| + |z_{8} - z_{6}|.
+\end{equation}
 
-Kernel za ovako definisan gradient se naziva Robertsov kros-gradijent operator i izgleda ovako:\\
+Kernel za ovako definisan gradient se naziva Robertsov kros-gradijent operator i izgleda ovako:
 
  \[
 \begin{bmatrix}
@@ -610,11 +631,11 @@ Kernel za ovako definisan gradient se naziva Robertsov kros-gradijent operator i
 
 Pošto za kernele nije uobičajno da imaju parne dimenzije uvodi se ovakva definicija gradijenta. Ako imamo kernel veličine $3 x 3$ funkcija gradijenta izgleda ovako: 
 
-\begin{center}
-$\Delta \emph{f} \approx |(z_7 + 2z_8 + z_9) - (z_1 + 2z_2 + z_3)| + |(z_3 + 2z_6 + z_9) - (z_1 + 2z_4 + z_7)|$.\\
-\end{center}
+\begin{equation}\label{eq:grad14}
+\Delta \emph{f} \approx |(z_7 + 2z_8 + z_9) - (z_1 + 2z_2 + z_3)| + |(z_3 + 2z_6 + z_9) - (z_1 + 2z_4 + z_7)|.
+\end{equation}
 
-Kerneli za ovu funkciju izgledaju ovako: \\
+Kerneli za ovu funkciju izgledaju ovako: 
 
  \[
 \begin{bmatrix}
@@ -635,7 +656,7 @@ Ovi kerneli su poznatiji kao Sobelovi operatori.
 \centering
 \includegraphics[width=60mm]{img/img.png}
 \includegraphics[width=60mm]{img/imgSob.png}
-\caption{1)slika 2)sobel}
+\caption{a) slika fotografa b) primena sobel filtera nad slikom}
 \label{overflow}
 \end{figure}
 
@@ -671,45 +692,45 @@ Očuvanje ivica može da se postigne i filterima koji ne koriste srednje vrednos
 
 Prvo ćemo definisati uopšteni proces linearnog invariantnog filtriranja, koji koristi sliku vodič $I$, sliku koja se filtrira $p$ i sliku koja je rezultat filtriranja $q$. $I$ i $p$ su zadati na početku procesa i oni mogu da budu identični. Rezultat filtriranja piksela $i$ će biti: 
 
-\begin{center}
-	$q_i = \sum_{j} W_{ij}(I)p_j$,
-\end{center}
+\begin{equation}\label{eq:gf1}
+	q_i = \sum_{j} W_{ij}(I)p_j,
+\end{equation}
 
 gde su $i$ i $j$ indeksi piksela, kernel filtera $W_{ij}$ je funkcija slike vodiča $I$ i nezavisna je od $p$. Ovaj filter je linearan u odnosu na $p$. 
 
 Sada ćemo definisati \emph{guided} filter. Predpostavka je da je \emph{guided} filter loklano linearan model između slike vodiča $I$ i rezultata filtriranja $q$. Za $q$ predpostavljamo da je linearna transforamcija slike $I$ u prozoru $w_k$ centriranom u pikselu $k$:
 
-\begin{center}
-	$q_i = a_kI_i + b_k, \forall \epsilon w_k$,
-\end{center}
+\begin{equation}\label{eq:gf2}
+	q_i = a_kI_i + b_k, \forall \epsilon w_k,
+\end{equation}
 
 gde su $(a_k, b_k)$ linearni koeficijenti za koje ćemo predpostaviti da su konstantni u $w_k$. Za $w_k$ koristimo kvadratni prozor radiusa $r$. Ovaj lokalni linearni model garantuje da će $q$ imati ivicu samo ako $I$ ima tu istu ivicu, jer je $\Delta q = a\Delta I$. Da bi odredili linearne koeficijente $(a_k, b_k)$, trebaju nam ograničenja slike koja se filtrira $p$. Rezultat filtriranja određeog piksela $q_i$ se dobija tako što se od $p_i$ oduzimaju neke neželjene komponente kao što su razni detalji i šum: $q_i = p_i - n_i$. Mi tražimo rešenje koje će minimizovati razliku između $p$ i $q$, pod sulovom da je ta funkcija linearna. Konkretno za svaki prozor $w_k$ treba da minimizujemo sledeću funkciju greške:
 
-\begin{center}
-	$E(a_k, b_k) = \sum_{i \epsilon w_k} ((a_kI_i + b_k - p_i)^2 + \varepsilon a_k^2)$.
-\end{center}
+\begin{equation}\label{eq:gf3}
+	E(a_k, b_k) = \sum_{i \epsilon w_k} ((a_kI_i + b_k - p_i)^2 + \varepsilon a_k^2).
+\end{equation}
 
 $\varepsilon$ je regularizacioni parametar koji služi da smanji uticaj $a_k$, ako je njena vrednost velika. Minimizacija ove jednačine predstavlja problem koji se rešava linearnom regresijom. Ovde ne ulazimo u detalje ovog rešenja već dajemo rešenja direktno:
 
-\begin{center}
-	$a_k = \dfrac{\dfrac{1}{|w|} \sum_{i \epsilon w_k} I_ip_i - \mu_k \overline{p_k}}{\sigma_k^2 + \varepsilon}$,
-\end{center}
+\begin{equation}\label{eq:gf4}
+	a_k = \dfrac{\dfrac{1}{|w|} \sum_{i \epsilon w_k} I_ip_i - \mu_k \overline{p_k}}{\sigma_k^2 + \varepsilon},
+\end{equation}
 
-\begin{center}
-	$b_k = \overline{p_k} - a_k \mu_k$.
-\end{center}
+\begin{equation}\label{eq:gf5}
+	b_k = \overline{p_k} - a_k \mu_k.
+\end{equation}
 
 $\mu_k$ i $\sigma_k^2$ su srednja vrednost i varijansa piksela slike $I$ u prozoru $w_k$, a $|w|$ je broj piksela u $w_k$, $\overline{p_k} = \dfrac{1}{|w|} \sum_{i \epsilon w_k} p_i$ je srednja vrednost piksela slike u $w_k$. Kada smo sračunali linearne koeficijente $(a_k, b_k)$, možemo da nastavimo sa postupkom za izračunavanje rezultata $q_i$. Pošto je će piksel $i$ biti deo različitih prozora $w_k$, prilikom filtriranja, ne možemo da koristimo jedinstvene koeficijente $(a_k, b_k)$ za jedan piksel. Zbog toga ćemo u obzir uzeti sve moguće vrednosti koeficijenata za $q_i$. Kada izračunamo vrednosti $(a_k, b_k)$ za svaki piksel ulazne slike, rezultat filtriranja će biti:
 
-\begin{center}
-	$q_i = \dfrac{1}{|w|} \sum_{k|i \epsilon w_k} (a_kI_i + b_k)$.
-\end{center}    
+\begin{equation}\label{eq:gf6}
+	q_i = \dfrac{1}{|w|} \sum_{k|i \epsilon w_k} (a_kI_i + b_k).
+\end{equation}    
 
 Pošto su prozori $w_k$ kvadratnog oblika i simetrični su, možemo da primetimo da je $\sum_{k|i \epsilon w_k} a_k = \sum_{k \epsilon w_i} a_k$, pa formula može da se napiše ovako:
 
-\begin{center}
-	$q_i = \overline{a_i}I_i + \overline{b_i}$,
-\end{center}
+\begin{equation}\label{eq:gf7}
+	q_i = \overline{a_i}I_i + \overline{b_i},
+\end{equation}
 
 gde su $\overline{a_i} = \dfrac{1}{|w|}\sum_{k \epsilon w_i} a_k$ i $\overline{b_i} = \dfrac{1}{|w|}\sum_{k \epsilon w_i} b_k$ srednje vrednosti iz svih prozora u kojima je $q_i$ sadržan. Sa promenom koja je uvedena u ovoj jednačini gubimo sličnost između $\Delta q$ i $\Delta I$ na mestima gde su ivice, jer linearni koeficijenti $(\overline{a_i}, \overline{b_i})$ variraju u zavisnosti od prostora. Međutim pošto su oni rezultat filtra srednje vrednosti, možemo da očekujemo da će njihovi graijenti biti mnogo manji nego gradijenti $I$ blizu jakih ivica. U ovoj situaciji možemo da kažemo da je $\Delta q \approx \overline{a} \Delta I$, što znači da će nagle promene intenziteta na $I$ biti sačuvane i na $q$. 
 
@@ -717,32 +738,22 @@ U nastavku je dat pseudo kod algoritma, koji je definisan na osonvu predhodinh j
 
 \newpage
 
-\textbf{Algoritam Guided filter}\\
+\textbf{Algoritam Guided filter}
 
-\textbf{Ulaz:} slika koja se filtrira $p$, slika vodič $I$, radius $r$, parametar regularizacije $\varepsilon$.\\
+\textbf{Ulaz:} slika koja se filtrira $p$, slika vodič $I$, radius $r$, parametar regularizacije $\varepsilon$.
 
-\textbf{Izlaz:} filtrirana slika $q$.\\
+\textbf{Izlaz:} filtrirana slika $q$.
 
 1: $mean_I = f_{mean}(I)$
-
 \hspace{4mm} $mean_p = f_{mean}(p)$
-
 \hspace{4mm} $corr_I = f_{mean}(I .* I)$
-
 \hspace{4mm} $corr_{Ip} = f_{mean}(I .* p)$
-
 2: $var_I = corr_I - mean_I .* mean_I$
-
 \hspace{4mm}  $cov_{Ip} = corr_{Ip} - mean_I .* mean_p$
-
 3: $a = cov_{Ip} ./ (var_I + \varepsilon)$
-
 \hspace{4mm} $b = mean_p - a .*  mean_I$
-
 4: $mean_a = f_{mean}(a)$
-
 \hspace{4mm} $mean_b = f_{mean}(b)$
-
 5: $q = mean_a .* I + mean_b$\\
 
 $ .*  i  ./ $ su podkompoentno množenje i deljenje matrica.
@@ -761,11 +772,11 @@ Na primerima koji su prikazani na slici 13 možemo da uočimo ove osobine i mož
 \includegraphics[width=60mm]{img/imgGF2_16.png}
 \includegraphics[width=60mm]{img/imgGF8_04.png}
 \includegraphics[width=60mm]{img/imgGF4_16.png}
-\caption{1)slika; slika filtrirana \emph{guided} filtrom sa parametrima 2) $r = 2 \varepsilon = 0.01$; 3) $r = 4 \varepsilon = 0.01$; 2) $r = 2 \varepsilon = 0.16$; 2) $r = 8 \varepsilon = 0.04$; 2) $r = 4 \varepsilon = 0.16$}
-\label{overflow}
+\caption{Primena vođenog filtra: a) slika fotografa; Slike filtrirane vođenim filtrom sa parametrima b) $r = 2 \varepsilon = 0.01$; c) $r = 4 \varepsilon = 0.01$; d) $r = 2 \varepsilon = 0.16$; e) $r = 8 \varepsilon = 0.04$; f) $r = 4 \varepsilon = 0.16$}
+\label{gfilter}
 \end{figure}
 
-Sa slike 13 možemo da zaključimo da regularizacioni parametar $\varepsilon$ utiče na to koliko će slika biti zamućena odnosno šta je na slici ivica koja trba da se sačuva, a radius prozora $r$ utiče na to koliko će suseda biti korišćeno pri filtriranju, što će kao kod smoothing filtara uticati na količinu uklonjenog šuma. 
+Sa slike ~\ref{gfilter} možemo da zaključimo da regularizacioni parametar $\varepsilon$ utiče na to koliko će slika biti zamućena odnosno šta je na slici ivica koja trba da se sačuva, a radius prozora $r$ utiče na to koliko će suseda biti korišćeno pri filtriranju, što će kao kod smoothing filtara uticati na količinu uklonjenog šuma. 
 
 Osobina očuvanja ivice može intuitivno da se objasni ovako, ako uzmemo da je $I \equiv p$. U ovom slučaju će $a_k$ i $b_k$ koji su definisani u predhodnom poglavlju da izgledaju ovako $a_k = \sigma_k^2 / (\sigma_k^2 + \varepsilon)$, $b_k = (1 - a_k)\mu_k$. Jasno je da kada je $\varepsilon = 0$ onda je $a_k = 1$ i $b_k = 0$, pa će $q = I$. Kada je $\varepsilon > 0$ onda treba da razmotrimo dva slučaja. Prvi je slučaj ''visoke varijanse'', kada $I$ ima dosta promena vrednosti unutar prozora $w_k$, tada je $\sigma_k^2 >> \varepsilon$, pa je $a_k \approx 1$ i $b_k \approx 0$. Drugi je slučaj ''ravnog područija'', kada $I$ ima skoro identične vrednosti u prozoru $w_k$, tada je $a_k \approx 0$ i $b_k \approx \mu_k$. 
 
@@ -777,23 +788,23 @@ Princip primene ovog filtra i definicija može lako da se proširi za pirmenu na
 
 Međutim u nekim slučajevima slika vodič u boji (trokanalna slika) može bolje da sačuva ivice. Naime prilikom konvertovanja u gray-scale sliku dve različite boje predstavljene sa tri vrednosti (najčešće RGB model) mogu da imaju sličnu vrednost u gray-scale slici. U ovom slučaju će doći do pojave takozvanog ''halo'' efekta, tj. ivice će početi da se smooth-uju. Zbog toga je u ovakvim slučajevima koristiti sliku vodič u boji a proširenje modela definisanog u poglavlju 3.3 se postiže ovako:
 
-\begin{center}
-	$q_i = a_k^T I_k + b_k, \forall i \epsilon w_k$,
-\end{center}   
+\begin{equation}\label{gf10}
+	q_i = a_k^T I_k + b_k, \forall i \epsilon w_k,
+\end{equation}   
 
 gde je $I_i$ 3 x 1 vektor boja, $a_k$ 3x 1 vektor koeficijenata, a $q_i$ i $b_k$ su skalari. Formule definisane u 3.3 će postati:
 
-\begin{center}
-	$a_k = (\Sigma_k + \varepsilon U)^{-1} (\dfrac{1}{|w|} \sum_{i \epsilon w_k} I_i p_i - \mu_k \overline{p_i})$,
-\end{center}
+\begin{equation}\label{eq:gf11}
+	a_k = (\Sigma_k + \varepsilon U)^{-1} (\dfrac{1}{|w|} \sum_{i \epsilon w_k} I_i p_i - \mu_k \overline{p_i}),
+\end{equation}
 
-\begin{center}
-	$b_k = \overline{p_k} - a_k^T \mu_k$,
-\end{center}
+\begin{equation}\label{eq:gf12}
+	b_k = \overline{p_k} - a_k^T \mu_k,
+\end{equation}
 
-\begin{center}
-	$q_i = \overline{a_i^T} I_i + \overline{b_i}$,
-\end{center}
+\begin{equation}\label{eq:gf13}
+	q_i = \overline{a_i^T} I_i + \overline{b_i},
+\end{equation}
 
 gde je $\Sigma_k$ 3 x 3 matrica kovarijanse slike $I$ u prozoru $w_k$ i $U$ je 3 x 3 matrica idnetiteta.
 
@@ -801,35 +812,35 @@ gde je $\Sigma_k$ 3 x 3 matrica kovarijanse slike $I$ u prozoru $w_k$ i $U$ je 3
 
 Glavna prednost \emph{guided} filtra u odnosu na slične filtre kao što je bilateral filter, koji je spomenut u poglavlju 3.2, se ogleda u tome što ima složenost $O(n)$. Njegova složenost je nezavisna od radiusa prozora (kernel) koji se koristi za filtriranje i od intenziteta fitriranja. Kod bilateral filtra složenost, kao što je pokazano u poglavlju 3.2, zavisi od veličine prozora. Umesto da direktne primene konvolucije, kao kod većine konvolucionih filtara, ovde se vrednost rezultujućeg piksela računa kao linearna funkcija definisana u 3.3. Prvo se računaju koeficijenti $a_k$ i $b_k$.
 
-\begin{center}
-	$a_k = \dfrac{\dfrac{1}{|w|} \sum_{i \epsilon w_k} I_ip_i - \mu_k \overline{p_k}}{\sigma_k^2 + \varepsilon}$,
-\end{center}
+\begin{equation}\label{eq:gf14}
+	a_k = \dfrac{\dfrac{1}{|w|} \sum_{i \epsilon w_k} I_ip_i - \mu_k \overline{p_k}}{\sigma_k^2 + \varepsilon},
+\end{equation}
 
-\begin{center}
-	$b_k = \overline{p_k} - a_k \mu_k$.
-\end{center}
+\begin{equation}\label{eq:gf15}
+	b_k = \overline{p_k} - a_k \mu_k.
+\end{equation}
 
 Ovde možemo da primetimo da postoji nekoliko sumiranja:  $\sum_{i \epsilon w_k} I_ip_i, \mu_k$ je srednja vrednost, $\sigma_k^2$ je varijansa, $\overline{p_k}$ srednja vrednost piksela. Srednja vrednost i varijnsa takođe zahtevaju izračunavanje sume ogovarajućih piksela. Ove sume možemo da izračunamo u $O(1)$ korišćenjem \emph{look-up} tabela takozvanih integralnih slika. Kada se izračunaju koeficijenti $a_k$ i $b_k$, onda se rezultat dobija kao:
 
- \begin{center}
-	$q_i = \overline{a_i}I_i + \overline{b_i}$,
-\end{center}
+\begin{equation}\label{eq:gf16}
+	q_i = \overline{a_i}I_i + \overline{b_i},
+\end{equation}
 
 gde su $\overline{a_i} = \dfrac{1}{|w|}\sum_{k \epsilon w_i} a_k$ i $\overline{b_i} = \dfrac{1}{|w|}\sum_{k \epsilon w_i} b_k$ srednje vrednosti iz svih prozora u kojima je $q_i$ sadržan. Ove dve sume takođe možemo da izračunamo u $O(1)$ korišćenjem  integralnih slika. Pošto je složenost računanja vrednosti za jedna piksel $O(1)$ možemo da zaključimo da  će složenost algoritma biti $O(n)$, gde je $n$ broj piksela.
 
 Integralna slika je specijalni slučaj lookup tabele koja se još naziva i tablica suma. Tablica suma je struktura podataka koja služi za efiksno računanje suma pravougaonastog podskupa neke mreže. U slučaju obrade slike ona predstavlja matricu koja je istih dimenzija kao slika. U elementu matrice koji se nalazi u vrsti $x$ i koloni $y$, koji se odnosi na piksel sa koordinatama $(x, y)$, se čuva suma svih elemenata koji imaju manju $x$ i $y$ koordinatu od tog elementa. 
 
-\begin{center}
-$I(x, y) = \sum_{x' <= x, y' <= y} i(x', y')$,
-\end{center}
+\begin{equation}\label{eq:gf17}
+I(x, y) = \sum_{x' <= x, y' <= y} i(x', y'),
+\end{equation}
 
 gde je $I(x, y)$ vrednost u tablici, a $i(x, y)$ je vrednost piksela. Izračunavanje ove tablice je efikasno i može da se izračuna u jednom prolazu korz sliku (O(n)):
 
-\begin{center}
-$I(x, y) = i(x, y) + I(x, y - 1) + I(x - 1, y) - I(x - 1, y - 1)$.
-\end{center}
+\begin{equation}\label{eq:gf18}
+I(x, y) = i(x, y) + I(x, y - 1) + I(x - 1, y) - I(x - 1, y - 1).
+\end{equation}
 
- \[
+\begin{equation}\label{eq:gf18}
  A
  =
 \begin{bmatrix}
@@ -844,13 +855,13 @@ sat(A)
      5 & 12 & 21 \\
      12 & 27 & 45 \\
 \end{bmatrix}
-\].
+.\end{equation}
 
 Kada se tablica $I$  izračuna, suma svake podslike može da se izračuna čitanjem vrednosti u tačkama pravougaonika koji formira ta podslika. Ako su ovo tačke koje formiraju pravougaonik $A = (x_0, y_0), B = (x_1, y_0), C = (x_0, y_1)$ i $D = (x_1, y_1)$ suma te podlike se računa kao:
 
-\begin{center}
-$sum = \sum_{x_0 < x <= x_1, y_0 < y <= y_1} i(x, y) = I(D) + I(A) - I(B) - I(C)$.
-\end{center} 
+\begin{equation}\label{eq:gf19}
+sum = \sum_{x_0 < x <= x_1, y_0 < y <= y_1} i(x, y) = I(D) + I(A) - I(B) - I(C).
+\end{equation} 
 
 \begin{figure}[ht!]
 \centering
@@ -865,42 +876,27 @@ U radu [4] su vršeni eksperimenti na računaru sa procesorom intel core i7 brzi
 
 U radu [5], istih autora kao i [3] i [4] gde je definisan \emph{guided} filter, je predloženo ubrzanje algoritma filtera koji je deefinisan u poglavlju 3.3. Autori su primetili strategiju koja bi im koristila da ubrzaju ovaj algoritam, koja je bila vezana za poanšanje koeficijenata prilikom povećanja i smanjnja slike. Pod povećanjem \emph{eng. upsample} i smanjenjem \emph{eng. downsample} se podrayumeju postupci kod kojih se slika transformiše u sliku veće rezoluciije (povećanje broja piksela) ili se transformiše u sliku manje rezolucije (smanjenje boraj piksela). Ideja je da se računanje koeficijenata koji se koriste u izračunavanju vrednosti rezultujećeg piksela ($a_k, b_k$ zatim $\overline{a_i}, \overline{b_i}$) obavi na downsample-ovanoj slici zatim da se ti koeficijenti iskoriste za izračunavanje vrednosti. Takva promena bi smanjila složenost algoritma na $O(N / s^2)$, gde je $s$ faktor smanjenja, a $N$ broj piksela na slici. 
 
-\textbf{Algoritam poboljšanog Guided filter-a}\\
+\textbf{Algoritam poboljšanog Guided filter-a}
 
-\textbf{Ulaz:} slika koja se filtrira $p$, slika vodič $I$, radius $r$, parametar regularizacije $\varepsilon$, $s$ faktor smanjenja slike.\\
+\textbf{Ulaz:} slika koja se filtrira $p$, slika vodič $I$, radius $r$, parametar regularizacije $\varepsilon$, $s$ faktor smanjenja slike.
 
-\textbf{Izlaz:} filtrirana slika $q$.\\
+\textbf{Izlaz:} filtrirana slika $q$.
 
 1: $I' = f_{subsamlpe}(I, s)$
-
 \hspace{4mm} $p' = f_{subsamlpe}(p, s)$
-
 \hspace{4mm} $r' = r / s$
-
 2: $mean_I = f_{mean}(I', r')$
-
 \hspace{4mm} $mean_p = f_{mean}(p', r')$
-
 \hspace{4mm} $corr_I = f_{mean}(I' .* I', r')$
-
 \hspace{4mm} $corr_{Ip} = f_{mean}(I' .* p'. r')$
-
 3: $var_I = corr_I - mean_I .* mean_I$
-
 \hspace{4mm}  $cov_{Ip} = corr_{Ip} - mean_I .* mean_p$
-
 4: $a = cov_{Ip} ./ (var_I + \varepsilon)$
-
 \hspace{4mm} $b = mean_p - a .*  mean_I$
-
 5: $mean_a = f_{mean}(a, r')$
-
 \hspace{4mm} $mean_b = f_{mean}(b, r')$
-
 6: $mean_a = f_{upsample}(mean_a, s)$
-
 \hspace{4mm} $f_{upsample}(mean_b, s)$
-
 7: $q = mean_a .* I + mean_b$\\
 
 Ulazna slika $p$ i slika vodič $I$ se smanjuju. Zatim se koeficijenti $a_k, b_k$, pa nakon toga i $\overline{a_i}, \overline{b_i}$ računaju na umanjenoj slici. Nakon toga se slike koje sadrže koeficijente $\overline{a_i}, \overline{b_i}$ uvećavaju na veličinu ulazne slike i onda se ti koeficijenti primenjuju na odgovarajuće piksele ulazne slike $p$. Sva izračunavanja i računanje suma, za koje se formiraju tabele suma, računaju se na umanjenoj slici.
@@ -927,32 +923,32 @@ Ipak i pored ove limitacije \emph{guided} filter je našao veliku primenu u svet
 
 \subsection{Osnovna primena}%%%%%%%%%%%%%%%%%%%%%%%
 
-\emph{Guided} filter može da se koristi isto kao \emph{smoothnig} filtri opisani u 2 poglavlju. Možemo da ga koristimo u svrhu uglačavanja slike ili uklanjanja šuma. Naravno prednost \emph{guided} filtra je što obraća paznju na detalje i ivice na slici. Na sledećoj slici je prikazan rezultat filtriranja slike, kojoj je dodat Gausov šum.
+\emph{Guided} filter može da se koristi isto kao \emph{smoothnig} filtri opisani u 2 poglavlju. Možemo da ga koristimo u svrhu uglačavanja slike ili uklanjanja šuma. Naravno prednost \emph{guided} filtra je što obraća paznju na detalje i ivice na slici. Na slici je ~\ref{flowerGF} prikazan rezultat filtriranja slike, kojoj je dodat Gausov šum.
 
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=40mm]{img/flower.png}
 \includegraphics[width=40mm]{img/flowerNoise.png}
 \includegraphics[width=40mm]{img/flowerGF.png}
-\caption{1)slika 2)slika kojoj je dodat Gausov šum 3)\emph{guided} filter $r = 10$, $\varepsilon$ = 0.04 }
-\label{overflow}
+\caption{Primena vođenog filtera za uklanjanje Gausovog šuma: a) originalna slika b)slika kojoj je dodat Gausov šum c)vođeni filter $r = 10$, $\varepsilon$ = 0.04 }
+\label{flowerGF}
 \end{figure}
 
-U primeru na slici se koristi ista slika i kao ulazna i kao slika voidč. Ovde možemo da uočimo dobre strane \emph{guided} filtra. Vidimo da je šum uklonjen, a pri tome su sačuvane ivice odnosno prelazi. Ovde je iskorišćena proširena verzija koja uyima u obzir sva tri kanala, prilikom obrade ivica. Ako se koristi pristup u kome se filtrira svaki kanal zasebno korišćenjem ogovarajućeg kanala slike vodiča može doći do pojave loših ivica. 
+U primeru na slici ~\ref{flowerGF} se koristi ista slika i kao ulazna i kao slika voidč. Ovde možemo da uočimo dobre strane \emph{guided} filtra. Vidimo da je šum uklonjen, a pri tome su sačuvane ivice odnosno prelazi. Ovde je iskorišćena proširena verzija koja uyima u obzir sva tri kanala, prilikom obrade ivica. Ako se koristi pristup u kome se filtrira svaki kanal zasebno korišćenjem ogovarajućeg kanala slike vodiča može doći do pojave loših ivica. 
 
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=40mm]{img/zoom1.png}
 \includegraphics[width=40mm]{img/zoom2.png}
-\caption{1)tro-kanalna slika vodič 2)jedno-kanalna slika vodič }
+\caption{Razlika između slike koja koristi jedno-kanalnu sliku kao vodič i slike koja koristi tro-kanalnu sliku kao vodič a) tro-kanalna slika vodič b) jedno-kanalna slika vodič }
 \label{overflow}
 \end{figure}
 
 Jedna od prostijih, ali veoma korisnih primena je poboljšanje slike dodavanjem detalja na sliku. Ako je $I$ slika koju filtriramo, a $J$ rezultat koji želimo da postignemo, ovaj filter možemo da predstavimo kao:
 
-\begin{center}
-$J(x, y) = I(x, y) + (I(x, y) - guidedFilter(I(x, y)) * A)$,
-\end{center}
+\begin{equation}\label{eq:enh}
+(x, y) = I(x, y) + (I(x, y) - guidedFilter(I(x, y)) * A),
+\end{equation}
 
 gde je A parametar kojim kontrolišemo koliko hoćemo da nam detalj bude izražen.
 
@@ -961,7 +957,7 @@ gde je A parametar kojim kontrolišemo koliko hoćemo da nam detalj bude izraže
 \includegraphics[width=40mm]{img/flower.png}
 \includegraphics[width=40mm]{img/flowerEGF.png}
 \includegraphics[width=40mm]{img/flowerER.png}
-\caption{1)slika 2)\emph{guided} filter $r = 16, \varepsilon = 0.01$ 3)result A = 5 }
+\caption{Poboljšanje slike uz pomoć vođenog filtra: a) originalna slika b) primenjen vođen filter $r = 16, \varepsilon = 0.01$ c) rezultat za parametar iz jednačine ~\ref{eq:enh} A = 5 }
 \label{overflow}
 \end{figure}
 
@@ -975,17 +971,17 @@ U radu [6] je dat predlog za rešavanje ovog problema. Predpostavka je da svaki 
 
 Model slike koji je dat u [6] izlgeda ovako:
 
-\begin{center}
-$I(x) = J(x)t(x) + A(1 - t(x))$,
-\end{center}
+\begin{equation}\label{eq:haze1}
+I(x) = J(x)t(x) + A(1 - t(x)),
+\end{equation}
 
 gde je $I$ posmatrana slika, $J$ vektor površinskog odsijavanja na tački preseka scene i zraka iz realnog sveta, koja odgovara pikselu $x = (z, y)$, a $t(x)$ je transmisija duž zraka. $A$ je atmosferska osvetljenost odnosno osvetljenost prostora scene. Ova definicija važi za sva tri RGB kanala. Ovo se drugačije naziva i model degradacije i koristi se za predstvaljanje slike koja sadrži smetnje kao što je magla.   
 
 Ono što mi tražimo je $J$ tj. model tamnog kanala koji predstavlja mračne kanale na slici, da bi odredili količinu magle (\emph{haze}) na njoj. Model za formiranje tamnog kanala je sledeći:
 
-\begin{center}
-$J^{dark}(x) = min_{c \epsilon \{r, g, b \}}( min_{y \epsilon \Omega (x)} (J^c (y)) )$,
-\end{center}
+\begin{equation}\label{eq:haze2}
+J^{dark}(x) = min_{c \epsilon \{r, g, b \}}( min_{y \epsilon \Omega (x)} (J^c (y)) ),
+\end{equation}
 
 gde je se u ovkviru piksela i njegovih suseda definisanih prozorom $\Omega(x)$ traži piksel koji u nekom od RGB kanala ima minimalnu vrenost. Za svaki piksel ulazne slike se računa minimalna vrednost za sve piksele u prozoru veličine $2*r + 1$, po sva tri kanala. Pošto za svaki piksel moramo da obradimo njegove susede u prozoru veličine $2*r + 1$ možemo da zaključimo da će složenost ovog izračunavanja biti $O(Nr^2)$. Na slici ~\ref{TamniKanal} možemo da vidimo rezultate izračunavanja tamnog kanala i uticaj promene veličine $r$ na rezultat. Na slici ~\ref{TamniKanal} možemo da uočimo da veličina prozora koji se koristi u proceni tamnog kanala utiče na robusnost procene. 
 
@@ -1001,15 +997,15 @@ gde je se u ovkviru piksela i njegovih suseda definisanih prozorom $\Omega(x)$ t
 
 Ako ovu formulu primenimo u predhodnu formulu modela slike i ako predpostavimo da je $J(x)$ za sliku bez smetnji jednaka nuli, za transmisionu sliku dobijamo da je jednaka:
 
-\begin{center}
-$t(x) = 1 - \omega min_c ( min_{y \epsilon \Omega (x)} (\dfrac{I^c(y)}{A^c}))$,
-\end{center}
+\begin{equation}\label{eq:haze3}
+t(x) = 1 - \omega min_c ( min_{y \epsilon \Omega (x)} (\dfrac{I^c(y)}{A^c})),
+\end{equation}
 
 gde je $\omega$ regularizacioni parametar koji određuje u kolikoj meri od 0-100 % verujemo proceni, vrednost je minimum u prozoru $\Omega(x)$ i po sva tri kanala. Kada izračunamo sliku transmisije rezultat se dobija kao:
 
-\begin{center}
-$H(x) = \dfrac{I(x) - A}{t(x)} + 1$.
-\end{center}
+\begin{equation}\label{eq:haze3}
+H(x) = \dfrac{I(x) - A}{t(x)} + 1.
+\end{equation}
 
 Pošto je procena transmisione komponente $t(x)$ robusna, tj procena vrednosti  se vrši u prozoru, dobijeni rezultat može da utiče na ivice. Da bi se dobila finija procena koja obraća pažnju na ivice na slici, transmisiona slika se filtrira. Za ovo filtriranje može da se koristi \emph{guided} filter. Na slici ~\ref{FiltriraniTamniKanal} možemo na primeru slike zgrade da vidimo kakav će uticaj imati filtriranje slike tamnog kanala. Na ovoj slici se vidi da filtriranje tamnog kanala, koji je procenjen korišćenjem prozora radiusa 5, utiče na robusnost te procene. Filtriranje treba da postigne da se oblasti piksla koji se nalaze na malo razdaljini izjednače, jer je predpostavka da oni imaju jednaku količinu magle. Pri tome \emph{guided} filter će voditi računa o oblastima koje su odvojene ivicama. 
 
@@ -1023,26 +1019,26 @@ Pošto je procena transmisione komponente $t(x)$ robusna, tj procena vrednosti  
 
 U implementaciji čiji su rezultati biti prikazani u ovom radu se koristi sledeći postupak za dobijanje transmisione slike. Predpostavka je da je svetlost prostora $A = (1, 1, 1)$ i da je $t(x) = const.$ u okviru prozora koji se koristi za filtriranje. Postupak je sledeći:
 
-\begin{center}
-$A(x) = guidedFilter(J^{dark}(x))$.
-\end{center}
+\begin{equation}\label{eq:haze4}
+A(x) = guidedFilter(J^{dark}(x)).
+\end{equation}
 
-\begin{center}
-$B(x) = A(x) - guidedFilter(|J^{dark}(x) - A(x)|)$.
-\end{center}
+\begin{equation}\label{eq:haze5}
+B(x) = A(x) - guidedFilter(|J^{dark}(x) - A(x)|).
+\end{equation}
 
-\[   
+\begin{equation}\label{eq:haze6}
 V(x) = 
      \begin{cases}
        \text{0,} &\quad\text{B(x) <= 0}\\
        \text{1,} &\quad\text{B(x) > 1} \\
        \text{B(x),} &\quad\text{u ostalim slučajevima}\\
      \end{cases}
-\]
+. \end{equation}
 
-\begin{center}
-$t(x) = 1 - w * V(x)$.
-\end{center}
+\begin{equation}\label{eq:haze7}
+t(x) = 1 - w * V(x).
+\end{equation}
 
 Prvo se filtrira robusna procena $J^{dark}$, uz pomoć \emph{guided} filtra, da bi dobili prvi rezultat $A(x)$. Filtriranje u drugom koraku se vrši sa ciljem da se poboljšaju informacije o ivicam na slici. Ovo se postiže filtriranjem apsolutne razlike $|J^{dark}(x) - A(x)|$ koja će nositi informaciju o ivicama. Primenom ovih transformacija može doći do pojavljivanja vrednosti koje prevazilaze granice domena pa se vrši normalizacija u trećem koraku i dobijamo $V(x)$, gde su sve vrednosti iz domena. Predpostavka je da su vrednosti iz domena $(0, 1)$ (ekvivalentno se primenjuje za bilio koji drugi domen, ali je poželjno da se koriste vrednosti razlomljenih brojeva predstavljenih u pokretnom zarezu \emph{float}). Transmisiona slika se dobija kao inverzna slika od $V(x)$, koja je pomnožena koeficijentom $\omega$, koje predstvalja koeficijent verovanja u procenu.
 
@@ -1051,10 +1047,10 @@ Prvo se filtrira robusna procena $J^{dark}$, uz pomoć \emph{guided} filtra, da 
 \includegraphics[width=60mm]{img/haze.png}
 \includegraphics[width=60mm]{img/hazeRes.png}
 \caption{Rezultat filtriranja slike zgrade u cilju uklanjanja magle1) orginalna slika 2)rezultat}
-\label{overflow}
+\label{dehaze}
 \end{figure}   
 
-Na slici 17 možemo da primetimo da rezultat nije perfektan. Naime možemo da primetimo da se magla zadržala oko ivica, tj. prelaza na slici (izmedju mesta sa raličitim bojama, konkretno cigle i lišće na slici 17). Ovo je posledica ''halo'' efekta koji je limitacija \emph{guided} filtera. Pošto transmisiona slika sadrži prelaze koji nisu izraziti (pikseli sa jedne i druge strane ivice se ne razlikuju drastično), dolazi do ispoljavanja ovog efekta.
+Na slici ~\ref{dehaze} možemo da primetimo da rezultat nije perfektan. Naime možemo da primetimo da se magla zadržala oko ivica, tj. prelaza na slici (izmedju mesta sa raličitim bojama, konkretno cigle i lišće na slici 17). Ovo je posledica ''halo'' efekta koji je limitacija \emph{guided} filtera. Pošto transmisiona slika sadrži prelaze koji nisu izraziti (pikseli sa jedne i druge strane ivice se ne razlikuju drastično), dolazi do ispoljavanja ovog efekta.
 
 Rezultat implementacije pokazane u ovom radu može da se menja podešavanjem parametara. Dobrim podešavanjem parametara rezultat može promeni u skladu sa različitim očekivanjima. Parametri koji mogu da se menjaju u ovoj implementaciji su:
 
