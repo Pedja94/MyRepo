@@ -56,15 +56,15 @@
     
     \vspace{1cm}
    
-    \textbf{Zadatak:}
+    %\textbf{Zadatak:}
     
-    \vspace{0.2cm}
+   % \vspace{0.2cm}
     
-    \setlength{\leftskip}{0.6cm}
-    \noindent
-    Istražiti tehnike filtriranja slike. Implementacija vođenog filtera i analiza njegovih osobina u različitim primenama.
+    %\setlength{\leftskip}{0.6cm}
+   % \noindent
+   % Istražiti tehnike filtriranja slike. Implementacija vođenog filtera i analiza njegovih osobina u različitim primenama.
     
-    \vspace{1cm}
+    \vspace{10cm}
     
     \noindent \begin{tabu} to \textwidth{@{}X[l] X[r]@{}}
         \textbf{Mentor:} prof. dr Dejan Rančić &
@@ -73,6 +73,52 @@
     
     \vspace{1cm}
    
+  % \noindent
+   % Komisija:
+    
+   % \vspace{0.1cm}
+    
+   % \noindent
+    %\begin{tabu} to \textwidth{@{}X[l] X[r]@{}}  
+   %      \begin{tabular}{@{}ll}
+     %       1. & \underline{\hspace{6.5cm}}\\
+      %      2. & \underline{\hspace{6.5cm}}\\
+     %       3. & \underline{\hspace{6.5cm}}
+     %   \end{tabular}  
+        
+   % &
+   
+      %  \begin{tabular}{ll@{}}
+       %     Datum prijave: & \underline{\hspace{3cm}}\\
+    %        Datum predaje: & \underline{\hspace{3cm}}\\
+     %       Datum odbrane: & \underline{\hspace{3cm}}
+    %    \end{tabular}
+  
+  %  \end{tabu}
+    
+   % \vspace{4cm}
+    
+     \begin{center}
+        Niš, \the\year.
+    \end{center}
+\end{titlepage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Prva strana%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\vspace{2cm}
+
+   \noindent
+    \textbf{Zadatak:}
+    
+   \vspace{0.2cm}
+
+ %\setlength{\leftskip}{0.6cm}
+ \noindent
+  Istražiti tehnike filtriranja slike. Implementacija vođenog filtera i analiza njegovih osobina u različitim primenama.
+  
+\vspace{20cm}
+
    \noindent
     Komisija:
     
@@ -96,12 +142,12 @@
   
     \end{tabu}
     
-    \vspace{4cm}
-    
-     \begin{center}
-        Niš, \the\year.
-    \end{center}
-\end{titlepage}
+    \thispagestyle{empty}
+    \newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Kraj prve strane%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \tableofcontents
 
@@ -134,7 +180,7 @@ U drugom poglavlju je dat uvod u oblast obrade slike. U trećem poglavlju su pre
 
 Digitalna slika može da se definiše kao funkcija $f(x, y)$, gde su $x$ i $y$ koordinate ravni. $x$ i $y$ predstavljaju koordinate piksela na slici. Pikseli su elementi od kojih je sastavljena slika. Obično $x$ predstavlja vrednost u odnosu na širinu slike, a $y$ u odnosu na visinu slike. Rezolucija slike se obično obeležava kao širina puta visina, izraženo u pikselima. Vrednost funkcije $f$ je intenzitet boje piksela na poziciji $(x, y)$. Intenzitet može da bude izražen kao jedna vrednost, ako je u pitanju crno bela slika, ili preko tri vrednosti ako je slika u boji. Postoje različiti načini za predstavaljanje slike u boji (Npr. RGB, CMYK, HSV itd.). Vrednosti funkcije $f$ kao i $x$ i $y$ su diskretne, jer je reč o digitalnoj slici. 
  
-Potreba za korišćenjem digitalnih slika javila se još 1920-tih godina u novinarstvu. Tada je prvi put slika ~ref{slika1921} poslana preko-okenaski putem analognog kabla. Naravno prvi problemi koji su se javili tada imali su veze sa kvalitetom slike. Prvi sistemi su mogli da prenose crno bele slike, do 15 nijansi sive. Prvi kompjuteri koji su bili dovoljno moći da izvršavaju neku značajniju obradu slika javili su se 60-ih godina. Neke od prvih primena bile su vezane za poboljšanje slika iz svemira. Zatim je obrada slika počela da se koristi u medicini i astronomiji 70-ih godina, a i dan danas je bitna u tim oblastima.
+Potreba za korišćenjem digitalnih slika javila se još 1920-tih godina u novinarstvu. Tada je prvi put slika ~\ref{slika1921} poslana preko-okenaski putem analognog kabla. Naravno prvi problemi koji su se javili tada imali su veze sa kvalitetom slike. Prvi sistemi su mogli da prenose crno bele slike, do 15 nijansi sive. Prvi kompjuteri koji su bili dovoljno moći da izvršavaju neku značajniju obradu slika javili su se 60-ih godina. Neke od prvih primena bile su vezane za poboljšanje slika iz svemira. Zatim je obrada slika počela da se koristi u medicini i astronomiji 70-ih godina, a i dan danas je bitna u tim oblastima.
 
 \begin{figure}[ht!]
 \centering
@@ -167,7 +213,7 @@ Svi ovi procesi mogu da koriste bazu znanja u kojoj se čuvaju bitne činjenice 
 
 Iako je oblast digitalne obrade slika izgrađena na osnovu matematičkih i formulacija u verovatnoći, pribavljanje slike je proces koji je određen na osnovu ljudskog čula vida. Slika se u digitalnom svetu pribavlja nasličan nači na koji čovek vidi, ondnosno kreira sliku u mozgu. Ljudski receptor za vid je oko. Prozirni prednji delovi oka lome zrake svetlosti projektujući umanjenu i obrnutu sliku na fotosenzitivnu mrežnjaču gde se u specijalizovanim nervnim ćelijama obavlja pretvaranje slike u električne nervne impulse. Zrak se prelama u očnom sočivu, a deo oka odgovoran za prikupljanje slike je žuta mrlja, gde su nervene ćelije najgušće raspoređene. Pored žute mrlje se nalazi početag vidnog živca koji je neosetljiv na svetlo, pa se njegova projektcija u vidom polju naziva crna mrlja. Nervni impulsi kreirani u ćelijama se prenosu u mozak koji spaja slike iz oba oka i okreće obrnutu sliku čime se stvara osećaj vida u ljudskom mozgu.
 
-Svetlost koju mi opažamo ima određeni intenzitet i boju. Ljudsko oko je sposobno da vidi samo deo elektromagnetnog spektra. Ono može da detektuje svetlost koja se u spektru nalazi izmedju ultavioletne i infracrvene boje. Posto se svetlost tretira kao talas, boju odnosno deo spektra određuje talasna dužina. Talasna dužina se predstavalja kao odnos brzine svetlosti i frekvencije svetla $lambda = c / nu$. Energija koju nosi talas se računa se kao $E = h nu$, gde je $h$ Plankova konstanta, a $nu$ je frekvencija talasa. Ljudsko oko vidi svetlost talasne dužine između $0.4 * 10^{-6}m$ i $0.7 * 10^{-6}m$.
+Svetlost koju mi opažamo ima određeni intenzitet i boju. Ljudsko oko je sposobno da vidi samo deo elektromagnetnog spektra. Ono može da detektuje svetlost koja se u spektru nalazi izmedju ultavioletne i infracrvene boje. Posto se svetlost tretira kao talas, boju odnosno deo spektra određuje talasna dužina. Talasna dužina se predstavalja kao odnos brzine svetlosti i frekvencije svetla $\lambda = c / \nu$. Energija koju nosi talas se računa se kao $E = h \nu$, gde je $h$ Plankova konstanta, a $\nu$ je frekvencija talasa. Ljudsko oko vidi svetlost talasne dužine između $0.4 * 10^{-6}m$ i $0.7 * 10^{-6}m$.
 
 \begin{figure}[ht!]
 \centering
@@ -180,7 +226,7 @@ Slika se u digitalnom svetu generiše kao kombinacija osvetljenja prostora i ref
 
 Pošto svetlost dolazi iz kontinulanog prostora, vrednost signala koji nosi sliku će biti kontinualna. Da bi takav signal mogao da se obradi u računaru potrebno je da se taj signal digitalizuje. Digitalizaciju signala omogućuju semplovanje i kvantizacija. Semplovanje se odnosi na digitalizaciju koordinata piksela, odnosno određivanja mesta u prostoru. Kvantizacija se odnosi na digitalizaciju vrednosti amplitude signala. Pošto je slika skup određenog broja piksela od kojih svaki ima tačno određene koordinate u prostoru $(x, y)$, signal treba da se sampluje tako da svaki piksel bude popunjen jedinstvenom vrednošću. Vrednost amplitude signala je kontinualna, pa je kao takvu nemoguće sačuvati u računaru, zbog toga se uvodi kvantizacija gde se ta vrednost prevodi u diskretan prostor. Taj proces se naziva kvantizacija. Vrednost intenziteta piksela se obično predstavlja kao ceo broj izmedju 0 i 255. Postupak semplovanja i kvantizacije je bitan, jer od njega zavisi kvalitet i veličina podataka koje nosi signal slike. Ako je broj semplova ili kvantizacionih nivoa mali doći će do smanjenja kvaliteta slike, tj. slika neće biti verno prikazana. Međutim ako je broj  semplova ili kvantizacionih nivoa veliki broj podataka za čuvanje u memoriji će biti preveliki. U ovom postupku je bitno da se pronađe balans između ove dve stvari. U zavisnosti od potrebe će biti definisan broj semplova i kvantizacionih nivoa. Npr. nekada je bitnije da se sačuva što više slika, nego da slika bude precizna. 
 
-Slika se u digitalnom svetu predstavlja kao $f(x, y)$, gde su $x$ i $y$ koordinate piksela na slici, a $f(x, y)$ je vrednost piksela u koordinatama $(x, y)$.
+Slika se u digitalnom svetu predstavlja kao $f(x, y)$, gde su $x$ i $y$ koordinate piksela na slici, a $f(x, y)$ je vrednost piksela u koordinatama $(x, y)$:
 
 \begin{equation}\label{eq:slika}
 f(x, y)
@@ -195,18 +241,17 @@ f(x, y)
 
 gde su N i M respektivno širina i visina slike.
 
-Broj piksela slike se računa kao $b = M * N$, ako je slika crno bela, odnosno intenzitet piksela je prikazan kao jedna vrednost. Ako je u pitanju slika u boji onda se vrednost funkcije $f(x, y)$ predstavalja kao vektor vrednosti $[i_{1} i_{2} dots i_{k}]$, gde je $k$ broj kanala, odnosno broj boja kojima je prikazana slika (najčešće 3 ako je u pitanju slika u boji). Tada se broj piksela računa kao $b = M * N * k$.
+Broj piksela slike se računa kao $b = M * N$, ako je slika crno bela, odnosno intenzitet piksela je prikazan kao jedna vrednost. Ako je u pitanju slika u boji onda se vrednost funkcije $f(x, y)$ predstavalja kao vektor vrednosti $[i_{1} i_{2} \dots i_{k}]$, gde je $k$ broj kanala, odnosno broj boja kojima je prikazana slika (najčešće 3 ako je u pitanju slika u boji). Tada se broj piksela računa kao $b = M * N * k$.
 
 \subsection{Bitne relacije između piksela}%%%%%%%%%%%%%%%%%%%%%%%
 
 Piksel $p$ sa koordinatama $(x, y)$ ima horizontalne i vertikalne susede $(x + 1, y)$, $(x - 1, y)$, $(x, y + 1)$, $(x, y - 1)$. Ovo se naziva 4-suseda piksela. Ako se dodaju dijagonalni susedi $(x + 1, y + 1)$, $(x - 1, y - 1)$, $(x + 1, y - 1)$, $(x - 1, y + 1)$ onda dobijamo 8-suseda piksela. Povezanost je osobina koja se dosta koristi u obradi slike. Ako su pikseli susedi i ako imaju istu vrednost ili vrednost iz istog podopsega mogućih vrednosti piksela onda su oni povezani. Putanja niz piksela koji su povezani na slici.
 
-Postoje nekoliko načina za računanje distance između piksela. Ako imamo piksele $p$, $q$ i $z$ sa koordinatama $(x, y)$, $(s, t)$ i $(v, w)$, $D$ će biti mera distance ako važi: 
+Postoje nekoliko načina za računanje distance između piksela. Ako imamo piksele $p$, $q$ i $z$ sa koordinatama $(x, y)$, $(s, t)$ i $(v, w)$, $D$ će biti mera distance ako važi:\\
 
-a) $D(p, q) >= 0 (D(p, q) = 0 akko p = q)$,
-
-b) $D(p, q) = D(q, p)$,
-
+\noindent
+a) $D(p, q) >= 0 (D(p, q) = 0  \text{ akko } p = q)$,\\
+b) $D(p, q) = D(q, p)$,\\
 c) $D(p, z) <= D(p, q) + D(q, z)$.
 
 Euklidska distanca: 
@@ -257,7 +302,7 @@ Kao što je navedeno obrada slike u prostronom domenu znači da se operacije izv
 
 Ako vrednosti funkcija $f(x, y)$ i $g(x, y)$ predstavimo kao $r$ i $s$ respektivno, onda obradu slike možemo da predstavimo kao $s = T(r)$. U nastavku je da pregled nekih osnovnih transformacija nad slikom u prostornom domenu. Ove transformacije će biti predstavljene nad jedno-kanalnim slikama (slike čiji pikesli uzimaju samo jednu vrednost - nijansu sive boje). Što se tiče slika u boji postupak za ove transformacije je sličan. Transforamcije se ili vrše nad svakim kanalom nezavisno, ili se slika prevodi u sliku sa jednim kanalom (postoji više načina), pa se primenjuje određena transformacija.
 
-Najosnovnija operacija koja može da se izvede nad slikom je negativ. Svaki piksel slike dobija inverznu vrednost u odnosu na svoju. Ako se vrednosti piksela kreću u granicama $[0, L - 1]$, rezultujuća vrednost se dobija kao $s = L - 1 - r$. Ova operacija se koristi na crno belim slikama koje su dominantno crne, a belom bojom su prikazani bitni podaci na slici, jer je lakše uočiti neke detalje. Rezultat primene možemo videti na slici ~ref{negativ}. 
+Najosnovnija operacija koja može da se izvede nad slikom je negativ. Svaki piksel slike dobija inverznu vrednost u odnosu na svoju. Ako se vrednosti piksela kreću u granicama $[0, L - 1]$, rezultujuća vrednost se dobija kao $s = L - 1 - r$. Ova operacija se koristi na crno belim slikama koje su dominantno crne, a belom bojom su prikazani bitni podaci na slici, jer je lakše uočiti neke detalje. Rezultat primene možemo videti na slici ~\ref{negativ}. 
 
 \begin{figure}[ht!]
 \centering
@@ -267,7 +312,7 @@ Najosnovnija operacija koja može da se izvede nad slikom je negativ. Svaki piks
 \label{negativ}
 \end{figure}
 
-Nad slikom može da se primeni logaritamska operacija. $s = c*log{1+ r}$. Ova operacija se koristi za izračunavanje spektra slike, što može da bude korisno za operacije koje se izvršavaju u kompleksnom domenu. Takođe nad slikom možemo da primenimo i stepene funkcije $s = c*r^{nu}$ ili $s = c*(r + epsilon)^{nu}$, gde su $c$ i $nu$ pozitivne konstante i $epsilon$ je konstanta. Ove operacije se koriste za gama korekciju. Jedna od najpozantijih primena je u tv uređajima koji su koriste katodne cevi. Takođe se koristi i za magnetnu rezonancu kako bi se pojačale boje i time izrazili detalji. 
+Nad slikom može da se primeni logaritamska operacija. $s = c*log{1+ r}$. Ova operacija se koristi za izračunavanje spektra slike, što može da bude korisno za operacije koje se izvršavaju u kompleksnom domenu. Takođe nad slikom možemo da primenimo i stepene funkcije $s = c*r^{\nu}$ ili $s = c*(r + \epsilon)^{\nu}$, gde su $c$ i $\nu$ pozitivne konstante i $\epsilon$ je konstanta. Ove operacije se koriste za gama korekciju. Jedna od najpozantijih primena je u tv uređajima koji su koriste katodne cevi. Takođe se koristi i za magnetnu rezonancu kako bi se pojačale boje i time izrazili detalji. Na slici ~\ref{transf} vidomo rezultate primena ovih operacija.
 
 \begin{figure}[ht!]
 \centering
@@ -275,20 +320,20 @@ Nad slikom može da se primeni logaritamska operacija. $s = c*log{1+ r}$. Ova op
 \includegraphics[width=60mm]{img/imgLog.png}
 \includegraphics[width=60mm]{img/imgPow1.png}
 \includegraphics[width=60mm]{img/imgPow2.png}
-\caption{Primena raznih transformacija: a) slika fotografa b) logaritamska transformacija c) stepena transformacija $c = 1 \nu = 0.6$ d) stepena transformacija $c = 1 nu = 0.3$}
-\label{overflow}
+\caption{Primena raznih transformacija: a) slika fotografa b) logaritamska transformacija c) stepena transformacija $c = 1$ $\nu = 0.6$ d) stepena transformacija $c = 1$ $\nu = 0.3$}
+\label{transf}
 \end{figure} 
 
 Nasuprot predhodno navedena dva pristupa postoje i linearne transformacije. Nad slikom mogu da se izvode razne linearne funkcije. Neke od najkorićenijih su povećavanje kontrasta ili povećanje osvetljenja. Sve ove operacije imaju isti oblik $s = T(r)$, gde je T linearna transformacija, npr. menjanje osvetljenja slike može da se izrazi kao $s = r + c$ odnosno $s = r - c$, gde je $c$ konstanta u opsegu vrednosti koje uzimaju $s$ i $r$. 
 
-Jedna od specifičnih obrada je obrada uz pomoć histograma. Histogram digitalne slike čiji pikseli uzimaju vrednosti iz $[0, L - 1]$ je diskretna funkcija $h(r_{k}) = n_{k}$, gde je $r_{k}$ k-ta vrednost u opsegu vrednosti koje uzimaju pikseli, a $n_{k}$ je broj piksela koji imaju tu vrednost. Obično se koristi noramlizovana f-ja $h(r_{k}) = n_{k}/n$, gde je n $max(n_{0}, n_{1}, ... , n_{L - 1})$, pa će sve vrednosti funkcije $h$ biti u opsegu $[0, 1]$. Histogrami mogu da se prikažu i grafički i oni nam ukazuju na to koje su nijanse zastupljene i kojoj meri na slici. 
+Jedna od specifičnih obrada je obrada uz pomoć histograma. Histogram digitalne slike čiji pikseli uzimaju vrednosti iz $[0, L - 1]$ je diskretna funkcija $h(r_{k}) = n_{k}$, gde je $r_{k}$ k-ta vrednost u opsegu vrednosti koje uzimaju pikseli, a $n_{k}$ je broj piksela koji imaju tu vrednost. Obično se koristi noramlizovana f-ja $h(r_{k}) = n_{k}/n$, gde je n $max(n_{0}, n_{1}, ... , n_{L - 1})$, pa će sve vrednosti funkcije $h$ biti u opsegu $[0, 1]$. Histogrami mogu da se prikažu i grafički i oni nam ukazuju na to koje su nijanse zastupljene i kojoj meri na slici. Primeri su dati na slikama ~\ref{hist1},  ~\ref{hist2} i ~\ref{hist3}.
 
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=60mm]{img/img.png}
 \includegraphics[width=60mm]{img/histImg.png}
 \caption{Slika fotografa i njen histogram}
-\label{overflow}
+\label{hist1}
 \end{figure} 
 
 \begin{figure}[ht!]
@@ -296,7 +341,7 @@ Jedna od specifičnih obrada je obrada uz pomoć histograma. Histogram digitalne
 \includegraphics[width=60mm]{img/imgLog.png}
 \includegraphics[width=60mm]{img/histImgLog.png}
 \caption{Slika fotografa nad kojom je primenjena logaritmska transformacija i njen histogram}
-\label{overflow}
+\label{hist2}
 \end{figure} 
 
 \begin{figure}[ht!]
@@ -304,11 +349,11 @@ Jedna od specifičnih obrada je obrada uz pomoć histograma. Histogram digitalne
 \includegraphics[width=60mm]{img/imgPow2.png}
 \includegraphics[width=60mm]{img/histImgPow2.png}
 \caption{Slika fotografa nad kojom je primenjena stepena transformacija i njen histogram}
-\label{overflow}
+\label{hist3}
 \end{figure}
 
 Obrada slike uz pomoć histograma se vrši tako što se izračuna histogram slike, nad njim se izvrši transformacija, a zatim pikseli na slici dobiju odgovarajuće vrednosti na osnovu transformisanog histograma. Nad histogramom mogu da se izvrše razne operacije u cilju poboljšanja slike. 
-Jedna od operacija koja može da se izvrši uz pomoć histograma je histogramsko izjednačavanje. Cilj ovog postupka je da napravi uniformi histogram, tj. da na slici sve nijanse budu jednako zastupljene. Ovo je korisna transformacija ako je na slici dominiraju iste nijanse. Ako na slici dominiraju određeni broj nijansi slika može da bude nejasna, izjednačavanjem odnosno uniformisanjem histograma dobijamo sliku koja ima zastupljene sve nijanse, što će dovesti do vizuelnog poboljšanja slike. Ovde ne zalazimo detaljno u aspekte obrade slike pomoću histograma, jer ona nije od važnosti za ovaj rad.
+Jedna od operacija koja može da se izvrši uz pomoć histograma je histogramsko izjednačavanje. Cilj ovog postupka je da napravi uniformi histogram, tj. da na slici sve nijanse budu jednako zastupljene, što možemo da vidimo na primeru slike ~\ref{histeq}. Ovo je korisna transformacija ako je na slici dominiraju iste nijanse. Ako na slici dominiraju određeni broj nijansi slika može da bude nejasna, izjednačavanjem odnosno uniformisanjem histograma dobijamo sliku koja ima zastupljene sve nijanse, što će dovesti do vizuelnog poboljšanja slike. Ovde ne zalazimo detaljno u aspekte obrade slike pomoću histograma, jer ona nije od važnosti za ovaj rad.
 
 \begin{figure}[ht!]
 \centering
@@ -317,14 +362,12 @@ Jedna od operacija koja može da se izvrši uz pomoć histograma je histogramsko
 \includegraphics[width=60mm]{img/histEq.png}
 \includegraphics[width=60mm]{img/histEqhist.png}
 \caption{Primena histogramskog izjednačavanja: a) bleda slika fotografa i b) njen histogram c) slika fotografa i d) njen histogram nakon histogramskog izjednačavanja}
-\label{overflow}
+\label{histeq}
 \end{figure}
 
-Nad slikama možemo da primenimo i aritmetičke i logičke operacije. Logičke operacije AND, OR i NOT mogu da se primene nad slikama. AND operacija može da se koristi da bi se sa slike izvukao određeni region od značaja. Region može da se izvuče tako što će se primeniti AND operacija nad slikom i maskom. Maska je slika koja sadrži informaciju koji deo slike želimo da ostavimo. Maska se formira tako što se na mestima koje želimo da sadržimo stavljamo maksimalnu vrednost koju uzimaju pikseli. Ako je opseg nijansi $[0, 1]$ onda je to 1, na svim ostalim mestima stavlja se 0. Rezultat ove operacije biće deo slike određen maskom. Na isti način se primenjuju i OR i NOT operacije. Logičke operacije su značajne za morfološku obradu slike koja je spomenuta kao jedna od oblasti kojima se bavi obrada slike. 
+Nad slikama možemo da primenimo i aritmetičke i logičke operacije. Logičke operacije AND, OR i NOT mogu da se primene nad slikama. AND operacija može da se koristi da bi se sa slike izvukao određeni region od značaja. Region može da se izvuče tako što će se primeniti AND operacija nad slikom i maskom. Maska je slika koja sadrži informaciju koji deo slike želimo da ostavimo. Maska se formira tako što se na mestima koje želimo da sadržimo stavljamo maksimalnu vrednost koju uzimaju pikseli. Ako je opseg nijansi $[0, 1]$ onda je to 1, na svim ostalim mestima stavlja se 0. Rezultat ove operacije biće deo slike određen maskom. Na isti način se primenjuju i OR i NOT operacije. Logičke operacije su značajne za morfološku obradu slike koja je spomenuta kao jedna od oblasti kojima se bavi obrada slike. Nad slikama se često primenjuje operacija oduzimanja. Ako želimo da vidimo da li se dve slike razlikuju možemo da ih oduzmemo jednu od druge, što će da nam ukaze na razlike, jer će mesta gde su pikseli isti biti 0 tj crna a mesta gde ima razlike će biti predstavljena određenom nijansom. U ovu svrhu može da se koristi i deljenje. Sabiranje i množenje može da se koristi u svrhu dodavanja detalja na slici.
 
-Nad slikama se često primenjuje operacija oduzimanja. Ako želimo da vidimo da li se dve slike razlikuju možemo da ih oduzmemo jednu od druge, što će da nam ukaze na razlike, jer će mesta gde su pikseli isti biti 0 tj crna a mesta gde ima razlike će biti predstavljena određenom nijansom. U ovu svrhu može da se koristi i deljenje. Sabiranje i množenje može da se koristi u svrhu dodavanja detalja na slici.
-
-\section{Osnovni tipovi filtara}%%%%%%%%%%%%%%%%%%%%%%%
+\section{Osnovni tipovi filtara}\label{3}%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Osnovni pojmovi}%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -389,9 +432,9 @@ Možemo da kažemo da se filtriranje obavlja tako što kernel prolazi kroz celu 
 
 Dva osnovna tipa filtera su filteri za uklanjanje šuma i zamućivanje slike koji se nazivaju filteri za uglačavanje i filteri za izoštravanje slike, odnosno filteri za određivanje ivica ivica.
 
-\subsection{Filteri za uglačavanje (Eng. \emph{Smoothing filers})}%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Filteri za uglačavanje (''Smoothing filers'')}\label{3.2}%%%%%%%%%%%%%%%%%%%%%%%
 
-Ovaj tip filtra se koristi za takozvano zamućivanje emph{(eng. blurring)} i za redukciju šuma. Blurring se koristi za uklanjanje malih detalja sa slike, u procesu ekstrakcije objekata sa slike. Takođe može da se koristi za popunjavanje prekida u linijama na slici, koje mogu da se jave zbog šuma na slici. Rezultat ovog filtra je u suštini srednja vrednost piksela koji su sadržani u okolini kernela koji se koristi za filtriranje. Zbog toga se ovi filtri nazivaju i filteri srednje vrednosti emph{(eng. averaging filters)}. 
+Ovaj tip filtra se koristi za takozvano zamućivanje \emph{(eng. blurring)} i za redukciju šuma. Blurring se koristi za uklanjanje malih detalja sa slike, u procesu ekstrakcije objekata sa slike. Takođe može da se koristi za popunjavanje prekida u linijama na slici, koje mogu da se jave zbog šuma na slici. Rezultat ovog filtra je u suštini srednja vrednost piksela koji su sadržani u okolini kernela koji se koristi za filtriranje. Zbog toga se ovi filtri nazivaju i filteri srednje vrednosti \emph{(eng. averaging filters)}. 
 
 Ideja ovog filtriranja je da se vrednost konkretnog piksela zameni sa srednjom vrednošću piksela iz njegove okoline, koji su definisani kernelom. Rezultat ovog filtra biće slika koja ima ublažene prelaze između vrednosti susednih piksela. Dva susedna piksela koja se dosta razlikuju biće sličnija po vrednosti. Pošto se pikseli, koji predstavaljaju šum, dosta razlikuju po vrednost od susednih piksela, na ovaj način će se oni uklopiti u okolinu. Loša strana ovakvog filtriranja se ogleda u tome što će mesta koja predstavalju ivice ili linije na slici početi da gube oštrinu. Naime na mestima na kojima se nalaze ivice imamo veliku razliku u susednim pikselima, pa će primenom ovog filtra ta razlika postati manja što će dovesti do gubljenja oštrine tih ivica.
 
@@ -412,7 +455,7 @@ Ideja ovog filtriranja je da se vrednost konkretnog piksela zameni sa srednjom v
 \end{bmatrix}
 \].   
   
-Ovo su tipični primeri filtera za uglačavanje dimenzija $3 x 3$. Levo je najprostiji primer ovog tipa filtara. Primenom ovog kernela svaki piksel će dobiti kao rezultat prosečnu vrednost susednih piksela koji odgovaraju obliku ovog kernela. Koeficijent $1/9$ služi da bi se dobila srednja vrednost. Rezultat koji će biti upisan u piksel je $R = 1/9 sum_{i = 1}^{9} z+{i}$. Kao što vidimo na primeru kernela sa desne strane, ne moraju svi susedni pikseli da učestvuju podjednako u sumi. Na ovom primeru vidimo da pikseli različito učestvuju u sumi sa različitim koeficijentima koji su definisani u kernelu. Te vrednosti se nazivaju težine. Vidimo da se i koeficijent koji stoji uz kernel razlikuje u odnosu na primer levo. On je $1/16$, jer je suma brojeva iz kernela $16$. U većini slučajeva se ovaj koeficijent određuje na ovaj način. Na ovom primeru vidimo da se prilikom filtriranja daje prednost samom pikselu, jer uz njega stoji najveći koeficijent 4, zatim se daje prednost horizontalnim i vertikalnim susedima, oni imaju koeficijente 2 i tek na kraju su dijagonalni susedi sa koeficijentom 1. Ovi koeficijenti u nekim slučajevima mogu da budu i 0.
+Ovo su tipični primeri filtera za uglačavanje dimenzija $3 x 3$. Levo je najprostiji primer ovog tipa filtara. Primenom ovog kernela svaki piksel će dobiti kao rezultat prosečnu vrednost susednih piksela koji odgovaraju obliku ovog kernela. Koeficijent $1/9$ služi da bi se dobila srednja vrednost. Rezultat koji će biti upisan u piksel je $R = 1/9 \sum_{i = 1}^{9} z+{i}$. Kao što vidimo na primeru kernela sa desne strane, ne moraju svi susedni pikseli da učestvuju podjednako u sumi. Na ovom primeru vidimo da pikseli različito učestvuju u sumi sa različitim koeficijentima koji su definisani u kernelu. Te vrednosti se nazivaju težine. Vidimo da se i koeficijent koji stoji uz kernel razlikuje u odnosu na primer levo. On je $1/16$, jer je suma brojeva iz kernela $16$. U većini slučajeva se ovaj koeficijent određuje na ovaj način. Na ovom primeru vidimo da se prilikom filtriranja daje prednost samom pikselu, jer uz njega stoji najveći koeficijent 4, zatim se daje prednost horizontalnim i vertikalnim susedima, oni imaju koeficijente 2 i tek na kraju su dijagonalni susedi sa koeficijentom 1. Ovi koeficijenti u nekim slučajevima mogu da budu i 0. Primer filtriranja je dat na slici ~\ref{averageFilter}.
 
 \begin{figure}[ht!]
 \centering
@@ -420,8 +463,8 @@ Ovo su tipični primeri filtera za uglačavanje dimenzija $3 x 3$. Levo je najpr
 \includegraphics[width=60mm]{img/imgAvg3.png}
 \includegraphics[width=60mm]{img/imgAvg5.png}
 \includegraphics[width=60mm]{img/imgAvg9.png}
-\caption{Primena filtera srednjih vrednosti: a) slika fotografa b) slika fotogrfa filtrirana kernelom 3x3 c)5x5 i d)9x9}
-\label{overflow}
+\caption{Primena filtera srednjih vrednosti: a) slika fotografa b) slika fotogrfa filtrirana kernelom 3x3 c) 5x5 i d) 9x9}
+\label{averageFilter}
 \end{figure}
 
 Naravno ova priča važi i za filtre koji koriste kernel bilo koje dimenzije $m x n$ ($m$ i $n$ su neparni). Ako imamo kernel ovih dimenzija opšta formula za izračunavanje vrednosti rezultujećeg piksela igledaće ovako: 
@@ -434,7 +477,7 @@ gde su $g$ i $f$ ulazna i rezultujuća slika, $(x, y)$ koordinate piksela za koj
 
 Kao što je navedeno kerneli ovih filtra su proizvoljnih veličina. Za ovaj tip filtra se obično koriste $n x n$ kerneli, jer oni uzimaju simetrične piksele i najbolje određuju koliko se neki piksel razliku je u odnosu na njegovu okolinu. Težine definisane u kernelu određuju kojim susedima se daje prednost pilikom računanja srednje vrednosti. Npr. ako neka slika ima dosta vertikalnih ivica, težina koja će stojati uz piksele, koji su vertikalni susedni u odnosu na piksel za koji se računa vrednost, može da bude 0 da bi se izbeglo gubljenje oštrine. Veličina dimenzija kernela utiče na to koliko se brojčano uzima suseda, što će na krajnjem rezultatu uticati na to u kojoj je količini slika zamućena. Što su veće dimenzije kernela, veća će biti zamućenost na slici. Pošto je svaka slika drugačija, ona će zahtevati određenu kombinaciju težina i dimenzije kernela. Ovo se obično određuje probom različitih kernela da bi se utvrdilo koji je najbolji za konkretnu sliku. 
 
-Kao što je spomenuto ranije jedna od primena ovog tipa filtara je predprocesiranje slike zarad uklanjanja sitnih detalja koji nisu od važnosti. Ovo se primenjuje prilikom ekstrakcije objekata sa slike mogu da se u određenoj meri ukolne sitni objekti da bi se olakšala ekstrakcija bitnih objekata. Veličina kernela će odrediti koja koji će objekti biti uklonjeni sa slike. Ako se koristi kernel veličine $3 x 3$ sa slike će biti uklonjene samo tačke veličine jedan piksela. Povećanjem dimenzija kernela biće uklonjene i veći objekti. Odabir veličine kernela zavisiće od toga šta želimo da odstranimo sa slike.
+Kao što je spomenuto ranije jedna od primena ovog tipa filtara je predprocesiranje slike zarad uklanjanja sitnih detalja koji nisu od važnosti (slika ~\ref{zvezde}). Ovo se primenjuje prilikom ekstrakcije objekata sa slike mogu da se u određenoj meri ukolne sitni objekti da bi se olakšala ekstrakcija bitnih objekata. Veličina kernela će odrediti koja koji će objekti biti uklonjeni sa slike. Ako se koristi kernel veličine $3 x 3$ sa slike će biti uklonjene samo tačke veličine jedan piksela. Povećanjem dimenzija kernela biće uklonjene i veći objekti. Odabir veličine kernela zavisiće od toga šta želimo da odstranimo sa slike.
 
 \begin{figure}[ht!]
 \centering
@@ -442,24 +485,24 @@ Kao što je spomenuto ranije jedna od primena ovog tipa filtara je predprocesira
 \includegraphics[width=60mm]{img/telAvg.jpg}
 \includegraphics[width=60mm]{img/telTh.jpg}
 \caption{Izdvajanje objekata sa slike a) slika ''Hubble'' teleskopa b) slika filtrirana kernelom 9x9 c) slika pretvorena u binarnu sliku(samo crna i bela)}
-\label{overflow}
+\label{zvezde}
 \end{figure}
 
-Pored navedenih linearnih filtra postoje i nelinearni filtri bazirani na sortiranju vrednosti piksela koji se nalaze u oblasti koja je obuhvaćena filtriranjem, odnosno određena kernelom. Njapoznatiji primer je medina filter. Vrednosti u kernelu ondnosno težine koje se koriste u ovom filtru su 1. Pikseli iz željene oblasti se sortiraju i bira se vrednost koja se u tako sortiranom nizu piksela nalazi na sredini. Ona se dodeljuje pikselu koji se trenutno obrađuje. Ako koristimo kernel veličine $3 x 3$ nakon što sortiramo njihove vrednosti za rezultat ćemo odabrati 5-ti piksel po veličini (nije bitno da li se sortiraju rastuće ili opadajuće). Dakle vrednost piksela se zamenjuje sa pikselom iz njegove okoline koji ima statistički srednju vrednost. Median filter je efikasan za uklanjanje slučajnog šuma, a posebno je efikasan za uklanjanje šuma koji se naziva biber i so, a specifičan je po tome što se iskazuje preko crnih i belih tačaka, koje su minimalna i maksimalna vrednost koju piksel može da uzme, pa se zbog toga naziva i impulsni šum. Za ove primene medina filter je efikasniji od predhodno navedenih filtra, jer bira vrednost koja se najviše javlja u okolini određenog piksela.
+Pored navedenih linearnih filtra postoje i nelinearni filtri bazirani na sortiranju vrednosti piksela koji se nalaze u oblasti koja je obuhvaćena filtriranjem, odnosno određena kernelom. Njapoznatiji primer je medijan filter. Vrednosti u kernelu ondnosno težine koje se koriste u ovom filtru su 1. Pikseli iz željene oblasti se sortiraju i bira se vrednost koja se u tako sortiranom nizu piksela nalazi na sredini. Ona se dodeljuje pikselu koji se trenutno obrađuje. Ako koristimo kernel veličine $3 x 3$ nakon što sortiramo njihove vrednosti za rezultat ćemo odabrati 5-ti piksel po veličini (nije bitno da li se sortiraju rastuće ili opadajuće). Dakle vrednost piksela se zamenjuje sa pikselom iz njegove okoline koji ima statistički srednju vrednost. medijan filter je efikasan za uklanjanje slučajnog šuma, a posebno je efikasan za uklanjanje šuma koji se naziva biber i so, a specifičan je po tome što se iskazuje preko crnih i belih tačaka, koje su minimalna i maksimalna vrednost koju piksel može da uzme, pa se zbog toga naziva i impulsni šum. Za ove primene medijan filter je efikasniji od predhodno navedenih filtra, jer bira vrednost koja se najviše javlja u okolini određenog piksela (slika ~\ref{medijan}).
 
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=60mm]{img/img.png}
 \includegraphics[width=60mm]{img/imgMed.png}
-\caption{Primena median filtera: a) slika fotografa b) slika fotografa filtrirana median filterom}
-\label{overflow}
+\caption{Primena medijan filtera: a) slika fotografa b) slika fotografa filtrirana medijan filterom}
+\label{medijan}
 \end{figure}
 
-\subsection{Filteri za određivanje ivica (Eng. \emph{Sharpening filtri})}%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Filteri za određivanje ivica (''Sharpening filtri'')}%%%%%%%%%%%%%%%%%%%%%%%
 
 Glavni cilj ovog tipa filtara je da na slici obeleže fine detalje, kao što su linije i prelazi, ili da poboljša izgled tih detalja, koji mogu biti mutni ili da imaju grešku, koja je posledica određenog metoda pribavljanja slike. Primena ovih filtara je veoma široka i varira od elektronskog štampanja preko medicine do industrijske inspekcije i autonomnih vojnih i sistema nadzora. 
 
-Filteri opisani u predhodnom poglavlju koriste sume i srednje vrednosti da bi filtrirali sliku. Ovaj proces je analogan integraciji, pa možemo da zaključimo da filtri za određivanje ivica, koji imaju suprotni cilj u odnosu na smooothing filtre, koriste diferenciranje da bi postigli željeni rezultat. Delovanje funkcije izvoda je porporcionalno stepenu nepovezanosti slike u tački, gde je izvod primenjen. Diferenciranje slika će naglasiti ivice i prelaze, kao i šum i sve delove gde se vrednosti piksela naglo menjaju (prelaz izmedju dve boje na slici koje se dosta razlikuju u nijansi npr crna i bela).
+Filteri opisani u potpoglavlju ~\ref{3.2} koriste sume i srednje vrednosti da bi filtrirali sliku. Ovaj proces je analogan integraciji, pa možemo da zaključimo da filtri za određivanje ivica, koji imaju suprotni cilj u odnosu na smooothing filtre, koriste diferenciranje da bi postigli željeni rezultat. Delovanje funkcije izvoda je porporcionalno stepenu nepovezanosti slike u tački, gde je izvod primenjen. Diferenciranje slika će naglasiti ivice i prelaze, kao i šum i sve delove gde se vrednosti piksela naglo menjaju (prelaz izmedju dve boje na slici koje se dosta razlikuju u nijansi npr crna i bela).
 
 Da bi objasnili uticaj izvoda na sliku, objasnićemo osnovne koncepte preko jedno dimenzionalnih izvoda. Izvod diskretne funkcije se definiše kao razlika između dva uzastopna elementa. Postoji više načina za definisanje izvoda nad slikom, ali svi oni zahtevaju da funkcija izvoda ispunjava sledeće:
  
@@ -506,7 +549,7 @@ Slično se za drugi izvod definiše:
 
 Ako pogledamo sliku 10 možemo da uočimo da je prvi izvod različit od nule u segmentu gde je pad konstantan (svi susedi se razlikuju za 1), dok je drugi izvod različit od nule na početku i kraju tog segmenta. Pošto se ivice na slici iskazuju u ovom tranzicijom, možemo da zaključimo da će prvi izvod da proizvede debele ivice, dok će drugi izvod proizvesti tanke ivice. Npr. ako imamo belu liniju na crnoj pozadini, koja ima određenu debljinu, prvi izvod će izdvojiti celu liniju. Drugi izvod će ,sa druge strane, izdvojiti dve finije linije koje ukazuju na prelaz sa crne na belu boju i sa bele na crnu liniju. Ako pogledamo deo na kome imamo izolovani skok u vrednosti piksela, možemo da primetimo da je drugi izvod izraženiji nego prvi. Ovo je normalno jer je drugi izvod bolji u pronalaženju oštrih promena. Na osnovu ovoga možemo da očekujemo da će drugi izvod bolje da pronalazi finije detalje i šum. Ako je u pitanju manja promena prvi i drugi izvod će se ponašati slično. Na osnovu svega rečenog možemo da zaključimo da primenom prvog izvoda dobijamo debele ivice, dok primenom drugog izvoda dobijamo finije linije i izolirane tačke. Prvi izvod nam ukazuje na mesta gde je promena konstantna. Drugi izvod nam ukazuje na mesta gde je promena velika i izolovana. Uglavnom se drugi izvod više koriti u konkretnim primenama zbog toga što naglašava finije detalje. Zbog toga ćemo se ovde fokusirati na filtre koje koriste drugi izvod. Bitno je naglasiti da se filteri koji koriste prvi izvod analogno koriste i imaju iste osobine kada se koriste.
 
-Nad slikom se primenjuju dvo-dimenzionalni izvodi, jer slika ima dve dimenzije. Na osnovu ovoga se formiraju kerneli koji se koriste u primeni ovih filtara. Nas interesuju izotropski filteri, tj. filteri koji su invarijantni u odnosu na pravac promena, koje se javljaju na slici. Drugim rečima ovi filteri su nezavisni od rotacije, što znači da će pronaći sve ivice bez obzira na njihov ugao u ravni. Ako sliku rotiramo ovakav filter će pronaći iste ivice kao na originalnoj slici. Najprostija funkcija izvoda koja se koristi je emph{Laplacian}:
+Nad slikom se primenjuju dvo-dimenzionalni izvodi, jer slika ima dve dimenzije. Na osnovu ovoga se formiraju kerneli koji se koriste u primeni ovih filtara. Nas interesuju izotropski filteri, tj. filteri koji su invarijantni u odnosu na pravac promena, koje se javljaju na slici. Drugim rečima ovi filteri su nezavisni od rotacije, što znači da će pronaći sve ivice bez obzira na njihov ugao u ravni. Ako sliku rotiramo ovakav filter će pronaći iste ivice kao na originalnoj slici. Najprostija funkcija izvoda koja se koristi je \emph{Laplacian}:
 
 \begin{equation}\label{eq:grad}
 \Delta^{2}f = \dfrac{\delta^{2}f}{\delta x^{2}} + \dfrac{\delta^{2}f}{\delta x^{2}}. 
@@ -524,7 +567,7 @@ Slično, drugi parcijani izvod po y-osi će izgledati ovako:
 \dfrac{\delta^{2}f}{\delta y^{2}} = f(x, y + 1) + f(x, y - 1) - 2f(x, y).
 \end{equation}
 
-Na osnovu ovoga možemo da zaključimo da će emph{Laplacian} funkcija izgledati ovako:
+Na osnovu ovoga možemo da zaključimo da će, ako ova dva pracialna izvoda zmenimo u formuli ~\ref{eq:grad}, \emph{Laplacian} funkcija izgledati ovako:
 
 \begin{equation}\label{eq:grad4}
 \Delta^{2}f = f(x + 1, y) + f(x - 1, y) + f(x, y + 1) + f(x, y - 1) - 4f(x, y). 
@@ -565,15 +608,15 @@ Ovde se i dijagonalni susedi uzimaju obzir. Ovo je kao da imamo definisana još 
 \end{bmatrix}
 \]. 
 
-Pošto je \emph{Laplacian} funkcija izvoda, ona će na slici otkriti promene u nijansama, kao što su tačke, ivice i linije. Možemo da zaključimo da će rezultat primene \emph{Laplacian}-a biti slika gde će promene biti označene nekim nijansama bele i sive, a delovi u kojima nema promena biće crni. Ako želimo da na orignilanoj slici naglasimo ivice mi možemo da dodamo vrednosti rezultata primene \emph{Laplacian}-a odgovarajućim pikselima. Pošto \emph{Laplacian} može da da i negativne, moramo da obratimo pažnju na to koji oblik kernela koristimo pozitivni ili negativni. Ako je središnji element kernela pozitivan onda ćemo rezultat dodati, a u suprotnom oduzeti od slike.
+Pošto je \emph{Laplacian} funkcija izvoda, ona će na slici otkriti promene u nijansama, kao što su tačke, ivice i linije (slika ~\ref{mesec}). Možemo da zaključimo da će rezultat primene \emph{Laplacian}-a biti slika gde će promene biti označene nekim nijansama bele i sive, a delovi u kojima nema promena biće crni. Ako želimo da na orignilanoj slici naglasimo ivice mi možemo da dodamo vrednosti rezultata primene \emph{Laplacian}-a odgovarajućim pikselima. Pošto \emph{Laplacian} može da da i negativne, moramo da obratimo pažnju na to koji oblik kernela koristimo pozitivni ili negativni. Ako je središnji element kernela pozitivan onda ćemo rezultat dodati, a u suprotnom oduzeti od slike.
 
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=65mm]{img/moon.jpg}
 \includegraphics[width=65mm]{img/moonLap.jpg}
 \includegraphics[width=65mm]{img/moonEn.jpg}
-\caption{Poboljšanje slike: a) slika meseca b) primena Laplacian filtera c) rezultat sabiranja alike meseca i njenog laplacian-a}
-\label{overflow}
+\caption{Pojačavanje detalja na slici: a) slika meseca b) primena Laplacian filtera c) rezultat sabiranja alike meseca i njenog laplacian-a}
+\label{mesec}
 \end{figure}
 
 Ova operacija može da se implementira u jednom prolazu tako što će da se modifikuje kernel. Operacija koja je izvršena na predhodonoj slici može da se predstavi ovako:
@@ -582,7 +625,8 @@ Ova operacija može da se implementira u jednom prolazu tako što će da se modi
 g(x, y) = f(x, y) - \Delta^{2}f(x, y) = 5f(x, y) - [f(x + 1, y) + f(x - 1, y) + f(x, y - 1) + f(x, y + 1)].
 \end{equation} 
 
-Na osnovu ove funkcije možemo da zaključimo da će kernel da izlgeda ovako:
+\newpage
+Na osnovu funkcije ~\ref{eq:grad10} možemo da zaključimo da će kernel da izlgeda ovako:
 
 \[
 \begin{bmatrix}
@@ -614,12 +658,12 @@ Kao što je rečeno ranije za filtriranje slike može da se koristi i prvi izvod
      \\
      \dfrac{\delta f}{\delta y} \\
 \end{bmatrix}
-\end{equation}
+\end{equation}\\
 
 Dužina vektora se računa kao: 
 
 \begin{equation}\label{eq:grad12}
-	\Delta \emph{f} = mag(\Delta \textbf{f}) = [G_{x}^{2} + [G_{y}^{2}]^{1/2} = [ (\dfrac{\delta f}{\delta x})^{2} +  (\dfrac{\delta f}{\delta y})^{2} ]^{1/2}. 
+	\Delta \emph{f} = mag(\Delta \textbf{f}) = [G_{x}^{2} + G_{y}^{2}]^{1/2} = [ (\dfrac{\delta f}{\delta x})^{2} +  (\dfrac{\delta f}{\delta y})^{2} ]^{1/2}. 
 \end{equation}
 
 Gradijenti su linearne funkcije, ali njihova funkcija dužine nije jer sadrži stepene operacije. Sa druge strane gradijenti nisu invarijantni u odnosu na rotaciju dok funkcija njihove dužine jeste, pa se zbog toga ona koristi. Iako nije tačno dužina vektora gradijenta se često naziva gradijent. Pošto nije lako primeniti ovu funkciju nad slikom koja ima diskretne vrednosti za potrebe obrade slike se obično koristi aproksimacija dužine gradijenta $\Delta \approx |G_{x}| + |G_{y}|$. Ova funkcija je lakša za izračunavanje i prepoznaje promene, ali generalno gubi osobinu invarijacije u odnosu na rotaciju. Kao što je slučaj kod \emph{Laplacian}-a izotropska osobina očuvana je zahvaljujući odabiru maske i dodavanju dijagonalnih elemenata. 
@@ -659,6 +703,7 @@ Pošto za kernele nije uobičajno da imaju parne dimenzije uvodi se ovakva defin
 \Delta \emph{f} \approx |(z_7 + 2z_8 + z_9) - (z_1 + 2z_2 + z_3)| + |(z_3 + 2z_6 + z_9) - (z_1 + 2z_4 + z_7)|.
 \end{equation}
 
+\newpage
 Kerneli za ovu funkciju izgledaju ovako: 
 
  \[
@@ -673,15 +718,15 @@ Kerneli za ovu funkciju izgledaju ovako:
      -1 & 0 & 1 \\
 \end{bmatrix}
 \].
-
-Ovi kerneli su poznatiji kao Sobelovi operatori. 
+.
+Ovi kerneli su poznatiji kao Sobelovi operatori. Rezultat filtriranja Sobelovim operatorima je prikazan na slici ~\ref{sobel}.
 
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=60mm]{img/img.png}
 \includegraphics[width=60mm]{img/imgSob.png}
 \caption{a) slika fotografa b) primena sobel filtera nad slikom}
-\label{overflow}
+\label{sobel}
 \end{figure}
 
 \subsection{Kombinovanje filtara}%%%%%%%%%%%%%%%%%%%%%%%
@@ -690,29 +735,29 @@ Predhodno prikazani filtri za uklanjanje šuma i određivanje ivica imaju veliku
 
 Jasno je da se ovi filtri koriste u kombinaciji sa drugim filtrima i kao deo nekog većeg procesa. Oni mogu međusobno da se kombinuju. Postoje i složeni filtri koji su napravljeni koristeći koncepte ova dva tipa filtara. To je nejmoćniji tip filtara koji kao rezultat daje slike kod kojih se uklanja šum, što je odlika filtara za uglačavanje, ali se pri tome slika ne zamućuje, čuvaju se ivice, što je odlika filtara za određivanje ivica. Dva najpoznatija ovakva filtra su bilateralni filter (eng. \emph{Bilateral filter}) i vođeni filter (eng. \emph{Guided filter}) kojim se ovaj rad detaljnije bavi u nastavku. 
 
-\section{Vođeni filter}%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Vođeni filter}\label{4}%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Uvod}%%%%%%%%%%%%%%%%%%%%%%%
 
-Veliki broj aplikacija u oblastima kompjuterske vizije i računarske grafike sadrže proces zadužen za filtriranje slika, u cilju uklanjanja i/ili izvlačenja podataka sa slike. Linearni filtri invarijantni na tranziciju, kao što su mean, Laplacinan, Gausov i Sobelovi filtri, se široko koriste prilikom obrade slike, za restauraciju, zamućivanje i izoštravanje, detekciju ivica, izvlačenje podataka, dinamičku kompresiju itd. Ovi filteri su prostorno invarijantni i nezavisni od sadržaja slike. 
+Veliki broj aplikacija u oblastima kompjuterske vizije i računarske grafike sadrže proces zadužen za filtriranje slika, u cilju uklanjanja i/ili izvlačenja podataka sa slike. Linearni filtri invarijantni na tranziciju, kao što su filter srednje vrednosti, \emph{Laplacinan}, Gausov i Sobelovi filtri, se široko koriste prilikom obrade slike, za restauraciju, zamućivanje i izoštravanje, detekciju ivica, izvlačenje podataka, dinamičku kompresiju itd. Ovi filteri su prostorno invarijantni i nezavisni od sadržaja slike. 
 
-Pa ipak oni nekad nemogu da zadovolje očekivani odgovor neke obrade. Zbog toga se ovde uvodi pojam slike vodiča \emph{(eng. guide)}, koja sadrži dodatne inforamcije koje mogu da se ikoriste pri filtriranju i poboljšaju rezultat. Ovaj koncept je prvi put upotrebljen u procesu difuzije \emph{(eng. anisotropic diffusion)}, u kojem gradijenti filtrirane slike služe kao vodič za ovaj proces i tako ovaj proces izbegava da uništi oštrinu ivica. Takođe WLS filter \emph{(eng. weighted least squares)} koristi ulaznu sliku kao vodič, optimizuje kvadratnu funkciju, koja je ekvivalentna procesu difuzije, koji je malopre pomenut. U mnogim primenama kao slika vodič može da se koristi različita slika u odnosu na onu koja se filtrira. Npr. kod procesa uklanjanja magle sa slike, kao slika vodič se koristi procena količine smetnji na slici, koja treba da se filtrira. Većina ovih procesa je implementirana, optimizacijom kvaratne funkcije, čiji su parametri uzeti iz slike vodiča. Rešenje je predstavljeno rešenjem velikih retko popunjenih matrica. Ovakve nehomogene matrice predstvaljaju filtere koji su invarijantni u odnosu na tranziciju. Iako su ovakvi filtri efikasni, oni mogu da budu zahtevni za izvršavanje.
+Pa ipak oni nekad nemogu da zadovolje očekivani odgovor neke obrade. Zbog toga se ovde uvodi pojam slike vodiča \emph{(eng. guide)}, koja sadrži dodatne informacije koje mogu da se ikoriste pri filtriranju i poboljšaju rezultat. Ovaj koncept je prvi put upotrebljen u procesu difuzije \emph{(eng. anisotropic diffusion)}, u kojem gradijenti filtrirane slike služe kao vodič za ovaj proces i tako ovaj proces izbegava da uništi oštrinu ivica. Takođe WLS filter \emph{(eng. weighted least squares)} koristi ulaznu sliku kao vodič, optimizuje kvadratnu funkciju, koja je ekvivakentna procesu difuzije, koji je malopre pomenut. U mnogim primenama kao slika vodič može da se koristi različita slika u odnosu na onu koja se filtrira. Npr. kod procesa uklanjanja magle sa slike, kao slika vodič se koristi procena količine smetnji na slici, koja treba da se filtrira. Većina ovih procesa je implementirana, optimizacijom kvaratne funkcije, čiji su parametri uzeti iz slike vodiča. Rešenje je predstavljeno rešenjem velikih retko popunjenih matrica. Ovakve nehomogene matrice predstavljaju filtere koji su invarijantni u odnosu na tranziciju. Iako su ovakvi filtri efikasni, oni mogu da budu zahtevni za izvršavanje.
 
-Drugi način da se iskoristi slika vodič je da se njene osobine eksplicitno iskažu u kernelu. \emph{Bilateral filter} je najpoznatiji primer takvog filtera. Rezultat koji piksel dobija, kod ovog filtriranja, je težinska prosečna vrednost piksela i njegovih suseda, gde težine zavise od sličnosti piksela u voidč slici. Vodič slika moće i sama da bude ulazna slika u ovom filtru. \emph{Bilateral filter} može da izglača siten fluktuacije, a da pri tome zadrži ivice. Problem ovog filtra je što ima loše artifakte koji se javljaju blizu ivica. Dolazi do promene boje blizu ivica. Takođe problem je implementirati efikasan algoritam, metodi koji ubrzavaju ovaj algoritam sa druge strane utiču na preciznost njegove obrade.
+Drugi način da se iskoristi slika vodič je da se njene osobine eksplicitno iskažu u kernelu. \emph{Bilateral filter} je najpoznatiji primer takvog filtera. Rezultat koji piksel dobija, kod ovog filtriranja, je težinska prosečna vrednost piksela i njegovih suseda, gde težine zavise od sličnosti piksela u vodič slici. Vodič slika može i sama da bude ulazna slika u ovom filtru. \emph{Bilateral filter} može da izglača sitne fluktuacije, a da pri tome zadrži ivice. Problem ovog filtra je što ima loše artifakte koji se javljaju blizu ivica. Dolazi do promene boje blizu ivica. Takođe problem je implementirati efikasan algoritam, metodi koji ubrzavaju ovaj algoritam sa druge strane utiču na preciznost njegove obrade.
 
-U radovima [2] i [3] se predlaže \emph{Guided filter} ili vođeni filter. Rezultat filtriranja je lokalna linearna transformacija slike vodiča. Sa jedne strane ovaj filter ima dobre osobine, pošto čuva ivice slike, a sa druge strane nema loše artifakte kao \emph{Bilateral filter}. vođeni filter može da se koristi kao filter za uglačavanje, ali njegova namena prevazilazi samo to. Uz pomoć slike vodiča rezultat ovog filtriranja će biti slika koja je manje zamućena od originalne slike i bolje struktuirana od nje. Ovaj filter se pokazao dobro u raznim primenama kao što su poboljšanje slike, ukljanjanje šuma, HDR kompresija, mating idt. Još jedan prednost vođenog filtra je to što ima složenost $O(n)$, gde je $n$ broj piksela slike. Moće da se koristi kako na jednokanalnim slikama tako i na višekanalnim slikama. Prema radovima [2] i [3] ovo je najbrži filter ove namene, koji na CPU implementaciji obrađuje 1 mega piksel(1024 x 1024) za 40ms. 
+U radovima [2] i [3] se predlaže \emph{Guided filter} ili vođeni filter. Rezultat filtriranja je lokalna linearna transformacija slike vodiča. Sa jedne strane ovaj filter ima dobre osobine, pošto čuva ivice slike, a sa druge strane nema loše artifakte kao \emph{Bilateral filter}. vođeni filter može da se koristi kao filter za uglačavanje, ali njegova namena prevazilazi samo to. Uz pomoć slike vodiča rezultat ovog filtriranja će biti slika koja je manje zamućena od originalne slike i bolje struktuirana od nje. Ovaj filter se pokazao dobro u raznim primenama kao što su poboljšanje slike, uklanjanje šuma, HDR kompresija, mating idt. Još jedan prednost vođenog filtra je to što ima složenost $O(n)$, gde je $n$ broj piksela slike. Može da se koristi kako na jednokanalnim slikama tako i na višekanalnim slikama. Prema radovima [2] i [3] ovo je najbrži filter ove namene, koji na CPU implementaciji obrađuje 1 mega piksel(1024 x 1024) za 40ms. 
 
-\subsection{Slične ideje}%%%%%%%%%%%%%%%%%%%%%%%  
+\subsection{Slične ideje}\label{4.2}%%%%%%%%%%%%%%%%%%%%%%%  
 
-\emph{Bilateral filter} je tipičan primer ovog tipa filtara i jedan od prvih koji je zamišljen. To su filtri koji služe za uglačavanje ali pri tome zadržavaju ivice slike. Rezultat filtriranja svakog piksela slike je težinska srednja vrednost piksela i njegovih suseda. Ima široku primenu. Koristi se za redukciju šuma, HDR kompresiju, dekompoziciju detalja. Generalizovan je u implementaciji \emph{joint bilateral filter}-a, gde se težine računaju u odnosu na sliku vodiča, za koju se koristi posebna slika. Ovaj filter se koristi kada se od filtriranja ne očekuje da pruži inforamcije o ivicama, npr. kada slika ima dosta šuma ili kada je rezultat koji treba dalje da se iskoristi. Iako je \emph{Bilateral filter} veoma popularan i intuitivan za shvatanje, on ima limitacije. 
+\emph{Bilateral filter} je tipičan primer ovog tipa filtara i jedan od prvih koji je zamišljen. To su filtri koji služe za uglačavanje ali pri tome zadržavaju ivice slike. Rezultat filtriranja svakog piksela slike je težinska srednja vrednost piksela i njegovih suseda. Ima široku primenu. Koristi se za redukciju šuma, HDR kompresiju, dekompoziciju detalja. Generalizovan je u implementaciji \emph{joint bilateral filter}-a, gde se težine računaju u odnosu na sliku vodiča, za koju se koristi posebna slika. Ovaj filter se koristi kada se od filtriranja ne očekuje da pruži informacije o ivicama, npr. kada slika ima dosta šuma ili kada je rezultat koji treba dalje da se iskoristi. Iako je \emph{Bilateral filter} veoma popularan i intuitivan za shvatanje, on ima limitacije. 
 
-Predhodno spomenuti loši artifakti koji se javljaju blizu ivica, jer je gausova funkcija nestabilna blizu ivica zbog velikih razlika u vrednostima piksela. Drugi problem se odnosi na složenost algoritma. Brute-force implementacija ima složenost $O(Nr^2)$, gde je $N$ broj piksela na slici, a $r$ je radius kernela (dimenzija kernela je $a = 2r + 1$). Jasno je da složenost zavisi od veličine kernela što može da bude loše ako se koriste veliki kerneli. Postoje rešenja koja koriste razne metode kao što su distribuirani histogrami koji složenost smanjuju na $O(n \log{r})$. Postoji i metod za redukciju složenosti na $O(n)$ korišćenjem integralnih histograma (kao lookup tabela). Međutim konstrukcija histograma je primena filtera u prostornom domenu, pa možemo da zaključimo da ovaj proces zahteba dodatne korake. Postoji još jedan pristup čija je složenost $O(n)$, a koji se oslanja na agresivno smanjenje slike \emph{subsampling}, čime se gube detalji. Važno je naglasiti da sva spomenuta rešenja koja imaju lineranu složenost, sa druge strane utiču na degradaciju preciznosti. Pošto \emph{Bilateral filter} ima svoje limitacije ljudi su krenuli da istražuju nove metode za filtre koji uglačavaju sliku, a pri tome čuvaju ivice. 
+Predhodno spomenuti loši artifakti koji se javljaju blizu ivica, jer je gausova funkcija nestabilna blizu ivica zbog velikih razlika u vrednostima piksela. Drugi problem se odnosi na složenost algoritma. Brute-force implementacija ima složenost $O(Nr^2)$, gde je $N$ broj piksela na slici, a $r$ je radijus kernela (dimenzija kernela je $a = 2r + 1$). Jasno je da složenost zavisi od veličine kernela što može da bude loše ako se koriste veliki kerneli. Postoje rešenja koja koriste razne metode kao što su distribuirani histogrami koji složenost smanjuju na $O(n \log{r})$. Postoji i metod za redukciju složenosti na $O(n)$ korišćenjem integralnih histograma (kao lookup tabela). Međutim konstrukcija histograma je primena filtera u prostornom domenu, pa možemo da zaključimo da ovaj proces zahteba dodatne korake. Postoji još jedan pristup čija je složenost $O(n)$, a koji se oslanja na agresivno smanjenje slike \emph{subsampling}, čime se gube detalji. Važno je naglasiti da sva spomenuta rešenja koja imaju lineranu složenost, sa druge strane utiču na degradaciju preciznosti. Pošto \emph{Bilateral filter} ima svoje limitacije ljudi su krenuli da istražuju nove metode za filtre koji uglačavaju sliku, a pri tome čuvaju ivice. 
 
 Nasuprot lineranim filterima postoje implicitni filteri koji se dobijaju optimizacijom funkcije greške i rešavanjem linearnog sistema jednačina, što je ekvivalentno implicitnom filtriranju slike korišćenjem inverzne matrice. Ovi filtri takođe imaju široku primenu u segmentaciji slike, kolorizaciji slike, itd. Iako su ovakvi filtri efikasni i daju kvalitetan rezultat, međutim računanje linearnih sistema može da bude veoma složeno. Direktna rešenja kao što je gausova eliminacija, nisu praktični, zbog velkog zauzeća memorije. Iterativna rešenja sporo konvergiraju. Uočeno je da su implicitni filteri slični kao eksplicitni. 
 
-Očuvanje ivica može da se postigne i filterima koji ne koriste srednje vrednosti susednih piksela. Najpoznatiji je median filter koji je objašnjen u poglavlju 2.2.           
+Očuvanje ivica može da se postigne i filterima koji ne koriste srednje vrednosti susednih piksela. Najpoznatiji je medijan filter koji je objašnjen u potpoglavlju ~\ref{3.2}.           
 
-\subsection{Definicija filtra}%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Definicija filtra}\label{4.3}%%%%%%%%%%%%%%%%%%%%%%%
 
 Prvo ćemo definisati uopšteni proces linearnog invariantnog filtriranja, koji koristi sliku vodič $I$, sliku koja se filtrira $p$ i sliku koja je rezultat filtriranja $q$. $I$ i $p$ su zadati na početku procesa i oni mogu da budu identični. Rezultat filtriranja piksela $i$ će biti: 
 
@@ -722,19 +767,19 @@ Prvo ćemo definisati uopšteni proces linearnog invariantnog filtriranja, koji 
 
 gde su $i$ i $j$ indeksi piksela, kernel filtera $W_{ij}$ je funkcija slike vodiča $I$ i nezavisna je od $p$. Ovaj filter je linearan u odnosu na $p$. 
 
-Sada ćemo definisati vođeni filter. Predpostavka je da je vođeni filter loklano linearan model između slike vodiča $I$ i rezultata filtriranja $q$. Za $q$ predpostavljamo da je linearna transformacija slike $I$ u prozoru $w_k$ centriranom u pikselu $k$:
+Sada ćemo definisati vođeni filter. Predpostavka je da je vođeni filter lokalno linearan model između slike vodiča $I$ i rezultata filtriranja $q$. Za $q$ predpostavljamo da je linearna transformacija slike $I$ u prozoru $w_k$ centriranom u pikselu $k$:
 
 \begin{equation}\label{eq:gf2}
 	q_i = a_kI_i + b_k, \forall \epsilon w_k,
 \end{equation}
 
-gde su $(a_k, b_k)$ linearni koeficijenti za koje ćemo predpostaviti da su konstantni u $w_k$. Za $w_k$ koristimo kvadratni prozor radiusa $r$. Ovaj lokalni linearni model garantuje da će $q$ imati ivicu samo ako $I$ ima tu istu ivicu, jer je $\Delta q = a\Delta I$. Da bi odredili linearne koeficijente $(a_k, b_k)$, trebaju nam ograničenja slike koja se filtrira $p$. Rezultat filtriranja određeog piksela $q_i$ se dobija tako što se od $p_i$ oduzimaju neke neželjene komponente kao što su razni detalji i šum: $q_i = p_i - n_i$. Mi tražimo rešenje koje će minimizovati razliku između $p$ i $q$, pod sulovom da je ta funkcija linearna. Konkretno za svaki prozor $w_k$ treba da minimizujemo sledeću funkciju greške:
+gde su $(a_k, b_k)$ linearni koeficijenti za koje ćemo predpostaviti da su konstantni u $w_k$. Za $w_k$ koristimo kvadratni prozor radijusa $r$. Ovaj lokalni linearni model garantuje da će $q$ imati ivicu samo ako $I$ ima tu istu ivicu, jer je $\Delta q = a\Delta I$. Da bi odredili linearne koeficijente $(a_k, b_k)$, trebaju nam ograničenja slike koja se filtrira $p$. Rezultat filtriranja određenog piksela $q_i$ se dobija tako što se od $p_i$ oduzimaju neke neželjene komponente kao što su razni detalji i šum: $q_i = p_i - n_i$. Mi tražimo rešenje koje će dati minimalnu razliku između $p$ i $q$, pod sulovom da je ta funkcija linearna. Konkretno za svaki prozor $w_k$ treba da minimizujemo sledeću funkciju greške za ~\ref{eq:gf2}:
 
 \begin{equation}\label{eq:gf3}
 	E(a_k, b_k) = \sum_{i \epsilon w_k} ((a_kI_i + b_k - p_i)^2 + \varepsilon a_k^2).
 \end{equation}
 
-$\varepsilon$ je regularizacioni parametar koji služi da smanji uticaj $a_k$, ako je njena vrednost velika. Minimizacija ove jednačine predstavlja problem koji se rešava linearnom regresijom. Ovde ne ulazimo u detalje ovog rešenja već dajemo rešenja direktno:
+$\varepsilon$ je regularizacioni parametar koji služi da smanji uticaj $a_k$, ako je njena vrednost velika. Minimizacija jednačine ~\ref{eq:gf3}  predstavlja problem koji se rešava linearnom regresijom. Ovde ne ulazimo u detalje ovog rešenja već dajemo rešenja direktno:
 
 \begin{equation}\label{eq:gf4}
 	a_k = \dfrac{\dfrac{1}{|w|} \sum_{i \epsilon w_k} I_ip_i - \mu_k \overline{p_k}}{\sigma_k^2 + \varepsilon},
@@ -750,7 +795,7 @@ $\mu_k$ i $\sigma_k^2$ su srednja vrednost i varijansa piksela slike $I$ u prozo
 	q_i = \dfrac{1}{|w|} \sum_{k|i \epsilon w_k} (a_kI_i + b_k).
 \end{equation}    
 
-Pošto su prozori $w_k$ kvadratnog oblika i simetrični su, možemo da primetimo da je $\sum_{k|i \epsilon w_k} a_k = \sum_{k \epsilon w_i} a_k$, pa formula može da se napiše ovako:
+Pošto su prozori $w_k$ kvadratnog oblika i simetrični su, možemo da primetimo da je $\sum_{k|i \epsilon w_k} a_k = \sum_{k \epsilon w_i} a_k$, pa formula ~\ref{eq:gf6} može da se napiše ovako:
 
 \begin{equation}\label{eq:gf7}
 	q_i = \overline{a_i}I_i + \overline{b_i},
@@ -762,7 +807,7 @@ gde su $\overline{a_i} = \dfrac{1}{|w|}\sum_{k \epsilon w_i} a_k$ i $\overline{b
 \subsection{Očuvanje ivica}%%%%%%%%%%%%%%%%%%%%%%%
 
 S obzirom da je jedan od glavnih prednosti ovog filtra očuvanje ivica, ovde ćemo proveriti tu osobinu. Na sledećoj slici su prikazani primeri filtriranja vođenim filtrom, korišćenjem različitih parametara. Ovo je primer gde se koristi identična slika i kao ulaz i kao slika vodič. Na ovom primeru možemo da vidimo da se vođeni filter ponaša kao filter koji čuva ivice, iako je njegova namena da uglača sliku. 
-Na primerima koji su prikazani na slici 13 možemo da uočimo ove osobine i možemo da primetimo razliku između vođenog filtra i filtara prikazanih u poglavlju 2.2 koji tađe služe za uglačavanje slike.
+Na primerima koji su prikazani na slici 13 možemo da uočimo ove osobine i možemo da primetimo razliku između vođenog filtra i filtara prikazanih u potpoglavlju ~\ref{3.2} koji služe za uglačavanje slike.
 
 \begin{figure}[ht!]
 \centering
@@ -772,27 +817,27 @@ Na primerima koji su prikazani na slici 13 možemo da uočimo ove osobine i mož
 \includegraphics[width=60mm]{img/imgGF2_16.png}
 \includegraphics[width=60mm]{img/imgGF8_04.png}
 \includegraphics[width=60mm]{img/imgGF4_16.png}
-\caption{Primena vođenog filtra: a) slika fotografa; Slike filtrirane vođenim filtrom sa parametrima b) $r = 2 \varepsilon = 0.01$; c) $r = 4 \varepsilon = 0.01$; d) $r = 2 \varepsilon = 0.16$; e) $r = 8 \varepsilon = 0.04$; f) $r = 4 \varepsilon = 0.16$}
+\caption{Primena vođenog filtra: a) slika fotografa; Slike filtrirane vođenim filtrom sa parametrima b) $r = 2$ $\varepsilon = 0.01$; c) $r = 4$ $\varepsilon = 0.01$; d) $r = 2$ $\varepsilon = 0.16$; e) $r = 8$ $\varepsilon = 0.04$; f) $r = 4$ $\varepsilon = 0.16$}
 \label{gfilter}
 \end{figure}
 
-Sa slike ~\ref{gfilter} možemo da zaključimo da regularizacioni parametar $\varepsilon$ utiče na to koliko će slika biti zamućena odnosno šta je na slici ivica koja trba da se sačuva, a radius prozora $r$ utiče na to koliko će suseda biti korišćeno pri filtriranju, što će kao kod filtara za uglačavanje uticati na količinu uklonjenog šuma. 
+Sa slike ~\ref{gfilter} možemo da zaključimo da regularizacioni parametar $\varepsilon$ utiče na to koliko će slika biti zamućena odnosno šta je na slici ivica koja trba da se sačuva, a radijus prozora $r$ utiče na to koliko će suseda biti korišćeno pri filtriranju, što će kao kod filtara za uglačavanje uticati na količinu uklonjenog šuma. 
 
-Osobina očuvanja ivice može intuitivno da se objasni ovako, ako uzmemo da je $I \equiv p$. U ovom slučaju će $a_k$ i $b_k$ koji su definisani u predhodnom poglavlju da izgledaju ovako $a_k = \sigma_k^2 / (\sigma_k^2 + \varepsilon)$, $b_k = (1 - a_k)\mu_k$. Jasno je da kada je $\varepsilon = 0$ onda je $a_k = 1$ i $b_k = 0$, pa će $q = I$. Kada je $\varepsilon > 0$ onda treba da razmotrimo dva slučaja. Prvi je slučaj ''visoke varijanse'', kada $I$ ima dosta promena vrednosti unutar prozora $w_k$, tada je $\sigma_k^2 >> \varepsilon$, pa je $a_k \approx 1$ i $b_k \approx 0$. Drugi je slučaj ''ravnog područija'', kada $I$ ima skoro identične vrednosti u prozoru $w_k$, tada je $a_k \approx 0$ i $b_k \approx \mu_k$. 
+Osobina očuvanja ivice može intuitivno da se objasni ovako, ako uzmemo da je $I \equiv p$. U ovom slučaju će $a_k$ i $b_k$, koji su definisani u potpoglavlju ~\ref{4.3}, da izgledaju ovako $a_k = \sigma_k^2 / (\sigma_k^2 + \varepsilon)$, $b_k = (1 - a_k)\mu_k$. Jasno je da kada je $\varepsilon = 0$ onda je $a_k = 1$ i $b_k = 0$, pa će $q = I$. Kada je $\varepsilon > 0$ onda treba da razmotrimo dva slučaja. Prvi je slučaj ''visoke varijanse'', kada $I$ ima dosta promena vrednosti unutar prozora $w_k$, tada je $\sigma_k^2 >> \varepsilon$, pa je $a_k \approx 1$ i $b_k \approx 0$. Drugi je slučaj ''ravnog područija'', kada $I$ ima skoro identične vrednosti u prozoru $w_k$, tada je $a_k \approx 0$ i $b_k \approx \mu_k$. 
 
-Kada računamo srednje vrednosti za $a_k$ i $b_k$ da bi dobili $\overline{a_i}$ i $\overline{b_i}$, koje koristimo da bi dobili rezultat (kao što je definisano u predhodom poglavlju), tada će, ako se piksel nalazi u prozoru ''visoke varijanse'', njegova vrednost biti nepromenjena ($a \approx 1, b \approx 0, q \approx p$). U slučaju da se piksel nalazi u oblasti ''ravnog područija'', tada će rezultujuća vredost biti srednja vrednost piksela suseda ($a \approx 0, b \approx \mu, q \approx \overline{\mu}$). Ova dva slučaja su određena parametrom $\varepsilon$. Delovi slike, gde je varijansa $\sigma^2$ mnogo manja od $\varepsilon$, su uglačana odnosno smooth-ovana, a mesta gde je $\sigma^2$ mnogo veća od $\varepsilon$ su očuvana. U suštini parametar regularizacije $\varepsilon$ određuje šta je ivica, odnosno šta treba da ostane nepromenjeno.   
+Kada računamo srednje vrednosti za $a_k$ i $b_k$ da bi dobili $\overline{a_i}$ i $\overline{b_i}$, koje koristimo da bi dobili rezultat (kao što je definisano u potpoglavlju ~\ref{4.3}), tada će, ako se piksel nalazi u prozoru ''visoke varijanse'', njegova vrednost biti nepromenjena ($a \approx 1, b \approx 0, q \approx p$). U slučaju da se piksel nalazi u oblasti ''ravnog područija'', tada će rezultujuća vredost biti srednja vrednost piksela suseda ($a \approx 0, b \approx \mu, q \approx \overline{\mu}$). Ova dva slučaja su određena parametrom $\varepsilon$. Delovi slike, gde je varijansa $\sigma^2$ mnogo manja od $\varepsilon$, su uglačana odnosno smooth-ovana, a mesta gde je $\sigma^2$ mnogo veća od $\varepsilon$ su očuvana. U suštini parametar regularizacije $\varepsilon$ određuje šta je ivica, odnosno šta treba da ostane nepromenjeno.   
 
 \subsection{Filtriranje slike u boji}%%%%%%%%%%%%%%%%%%%%%%%  
 
 Princip primene ovog filtra i definicija može lako da se proširi za pirmenu nad višekanalnim slikama. Za nas su od interesa slike koje su prikazane sa tri kanala  odnosno slike u boji. U zavisnosti od primene ovo može da se reši na više načina. Najprostije rešenje je da se definicija iz 3.3 primeni na sva tri kanala zasebno, a da se pri tome za sliku vodiča koristi gray-scale (jednokanalna) verzija originalne slike. Ovo u većini slučaja može da da zadovoljavajuće rezultate. 
 
-Međutim u nekim slučajevima slika vodič u boji (trokanalna slika) može bolje da sačuva ivice. Naime prilikom konvertovanja u gray-scale sliku dve različite boje predstavljene sa tri vrednosti (najčešće RGB model) mogu da imaju sličnu vrednost u gray-scale slici. U ovom slučaju će doći do pojave takozvanog ''halo'' efekta, tj. ivice će početi da se smooth-uju. Zbog toga je u ovakvim slučajevima koristiti sliku vodič u boji a proširenje modela definisanog u poglavlju 3.3 se postiže ovako:
+Međutim u nekim slučajevima slika vodič u boji (trokanalna slika) može bolje da sačuva ivice. Naime prilikom konvertovanja u gray-scale sliku dve različite boje predstavljene sa tri vrednosti (najčešće RGB model) mogu da imaju sličnu vrednost u gray-scale slici. U ovom slučaju će doći do pojave takozvanog ''halo'' efekta, tj. ivice će početi da se smooth-uju. Zbog toga je u ovakvim slučajevima koristiti sliku vodič u boji a proširenje modela ~\ref{eq:gf2} definisanog u potpoglavlju ~\ref{4.3} se postiže ovako:
 
 \begin{equation}\label{gf10}
 	q_i = a_k^T I_k + b_k, \forall i \epsilon w_k,
 \end{equation}   
 
-gde je $I_i$ 3 x 1 vektor boja, $a_k$ 3x 1 vektor koeficijenata, a $q_i$ i $b_k$ su skalari. Formule definisane u 3.3 će postati:
+gde je $I_i$ 3 x 1 vektor boja, $a_k$ 3x 1 vektor koeficijenata, a $q_i$ i $b_k$ su skalari. Formule ~\ref{eq:gf4}, ~\ref{eq:gf5}, ~\ref{eq:gf7} definisane u 3.3 će postati:
 
 \begin{equation}\label{eq:gf11}
 	a_k = (\Sigma_k + \varepsilon U)^{-1} (\dfrac{1}{|w|} \sum_{i \epsilon w_k} I_i p_i - \mu_k \overline{p_i}),
@@ -810,25 +855,10 @@ gde je $\Sigma_k$ 3 x 3 matrica kovarijanse slike $I$ u prozoru $w_k$ i $U$ je 3
 
 \subsection{Izračunavanje i efikasnost}%%%%%%%%%%%%%%%%%%%%%%% 
 
-Glavna prednost vođenog filtra u odnosu na slične filtre kao što je bilateral filter, koji je spomenut u poglavlju 3.2, se ogleda u tome što ima složenost $O(n)$. Njegova složenost je nezavisna od radiusa prozora (kernel) koji se koristi za filtriranje i od intenziteta fitriranja. Kod bilateral filtra složenost, kao što je pokazano u poglavlju 3.2, zavisi od veličine prozora. Umesto da direktne primene konvolucije, kao kod većine konvolucionih filtara, ovde se vrednost rezultujućeg piksela računa kao linearna funkcija definisana u 3.3. Prvo se računaju koeficijenti $a_k$ i $b_k$.
+Glavna prednost vođenog filtra u odnosu na slične filtre kao što je bilateralni filter, koji je spomenut u potpoglavlju ~\ref{4.2}, se ogleda u tome što ima složenost $O(n)$. Njegova složenost je nezavisna od radijusa prozora (kernel) koji se koristi za filtriranje i od intenziteta filtriranja. Kod bilateral filtra složenost, kao što je pokazano u potpoglavlju ~\ref{4.2}, zavisi od veličine prozora. Umesto da direktne primene konvolucije, kao kod većine konvolucionih filtara, ovde se vrednost rezultujućeg piksela računa kao linearna funkcija definisana u 3.3. Prvo se računaju koeficijenti $a_k$ i $b_k$ u formulama ~\ref{eq:gf4} i ~\ref{eq:gf5}. U tim formulama možemo da primetimo da postoji nekoliko sumiranja:  $\sum_{i \epsilon w_k} I_ip_i, \mu_k$ je srednja vrednost, $\sigma_k^2$ je varijansa, $\overline{p_k}$ srednja vrednost piksela. Srednja vrednost i varijansa takođe zahtevaju izračunavanje sume ogovarajućih piksela. Ove sume možemo da izračunamo u $O(1)$ korišćenjem \emph{look-up} tabela takozvanih integralnih slika. Kada se izračunaju koeficijenti $a_k$ i $b_k$, onda se rezultat dobija iz formule ~\ref{eq:gf7}, 
+gde su $\overline{a_i} = (1 / |w|) \sum_{k \epsilon w_i} a_k$ i $\overline{b_i} = (1 / |w|) \sum_{k \epsilon w_i} b_k$ srednje vrednosti iz svih prozora u kojima je $q_i$ sadržan. Ove dve sume takođe možemo da izračunamo u $O(1)$ korišćenjem  integralnih slika. Pošto je složenost računanja vrednosti za jedna piksel $O(1)$ možemo da zaključimo da  će složenost algoritma biti $O(n)$, gde je $n$ broj piksela.
 
-\begin{equation}\label{eq:gf14}
-	a_k = \dfrac{\dfrac{1}{|w|} \sum_{i \epsilon w_k} I_ip_i - \mu_k \overline{p_k}}{\sigma_k^2 + \varepsilon},
-\end{equation}
-
-\begin{equation}\label{eq:gf15}
-	b_k = \overline{p_k} - a_k \mu_k.
-\end{equation}
-
-Ovde možemo da primetimo da postoji nekoliko sumiranja:  $\sum_{i \epsilon w_k} I_ip_i, \mu_k$ je srednja vrednost, $\sigma_k^2$ je varijansa, $\overline{p_k}$ srednja vrednost piksela. Srednja vrednost i varijnsa takođe zahtevaju izračunavanje sume ogovarajućih piksela. Ove sume možemo da izračunamo u $O(1)$ korišćenjem \emph{look-up} tabela takozvanih integralnih slika. Kada se izračunaju koeficijenti $a_k$ i $b_k$, onda se rezultat dobija kao:
-
-\begin{equation}\label{eq:gf16}
-	q_i = \overline{a_i}I_i + \overline{b_i},
-\end{equation}
-
-gde su $\overline{a_i} = \dfrac{1}{|w|}\sum_{k \epsilon w_i} a_k$ i $\overline{b_i} = \dfrac{1}{|w|}\sum_{k \epsilon w_i} b_k$ srednje vrednosti iz svih prozora u kojima je $q_i$ sadržan. Ove dve sume takođe možemo da izračunamo u $O(1)$ korišćenjem  integralnih slika. Pošto je složenost računanja vrednosti za jedna piksel $O(1)$ možemo da zaključimo da  će složenost algoritma biti $O(n)$, gde je $n$ broj piksela.
-
-Integralna slika je specijalni slučaj lookup tabele koja se još naziva i tablica suma. Tablica suma je struktura podataka koja služi za efiksno računanje suma pravougaonastog podskupa neke mreže. U slučaju obrade slike ona predstavlja matricu koja je istih dimenzija kao slika. U elementu matrice koji se nalazi u vrsti $x$ i koloni $y$, koji se odnosi na piksel sa koordinatama $(x, y)$, se čuva suma svih elemenata koji imaju manju $x$ i $y$ koordinatu od tog elementa. 
+Integralna slika je specijalni slučaj ''lookup'' tabele koja se još naziva i tablica suma. Tablica suma je struktura podataka koja služi za efikasno računanje suma pravougaonastog podskupa neke mreže. U slučaju obrade slike ona predstavlja matricu koja je istih dimenzija kao slika. U elementu matrice koji se nalazi u vrsti $x$ i koloni $y$, koji se odnosi na piksel sa koordinatama $(x, y)$, se čuva suma svih elemenata koji imaju manju $x$ i $y$ koordinatu od tog elementa. 
 
 \begin{equation}\label{eq:gf17}
 I(x, y) = \sum_{x' <= x, y' <= y} i(x', y'),
@@ -874,7 +904,7 @@ U radu [3] su vršeni eksperimenti na računaru sa procesorom intel core i7 brzi
 
 \subsection{Poboljšanje}%%%%%%%%%%%%%%%%%%%%%%% 
 
-U radu [3], istih autora kao i [2] i [3] gde je definisan vođeni filter, je predloženo ubrzanje algoritma filtera koji je deefinisan u poglavlju 3.3. Autori su primetili strategiju koja bi im koristila da ubrzaju ovaj algoritam, koja je bila vezana za poanšanje koeficijenata prilikom povećanja i smanjnja slike. Pod povećanjem \emph{eng. upsample} i smanjenjem \emph{eng. downsample} se podrayumeju postupci kod kojih se slika transformiše u sliku veće rezoluciije (povećanje broja piksela) ili se transformiše u sliku manje rezolucije (smanjenje boraj piksela). Ideja je da se računanje koeficijenata koji se koriste u izračunavanju vrednosti rezultujećeg piksela ($a_k, b_k$ zatim $\overline{a_i}, \overline{b_i}$) obavi na downsample-ovanoj slici zatim da se ti koeficijenti iskoriste za izračunavanje vrednosti. Takva promena bi smanjila složenost algoritma na $O(N / s^2)$, gde je $s$ faktor smanjenja, a $N$ broj piksela na slici. 
+U radu [3], istih autora kao i [2] i [3] gde je definisan vođeni filter, je predloženo ubrzanje algoritma filtera koji je definisan u ppotpoglavlju ~\ref{4.3}. Autori su primetili strategiju koja bi im koristila da ubrzaju ovaj algoritam, koja je bila vezana za ponašanje koeficijenata prilikom povećanja i smanjenja slike. Pod povećanjem \emph{eng. upsample} i smanjenjem \emph{eng. downsample} se podrazumevaju postupci kod kojih se slika transformiše u sliku veće rezoluciije (povećanje broja piksela) ili se transformiše u sliku manje rezolucije (smanjenje broja piksela). Ideja je da se računanje koeficijenata koji se koriste u izračunavanju vrednosti rezultujećeg piksela ($a_k, b_k$ zatim $\overline{a_i}, \overline{b_i}$) obavi na downsample-ovanoj slici zatim da se ti koeficijenti iskoriste za izračunavanje vrednosti. Takva promena bi smanjila složenost algoritma na $O(N / s^2)$, gde je $s$ faktor smanjenja, a $N$ broj piksela na slici. 
 
 Ulazna slika $p$ i slika vodič $I$ se smanjuju. Zatim se koeficijenti $a_k, b_k$, pa nakon toga i $\overline{a_i}, \overline{b_i}$ računaju na umanjenoj slici. Nakon toga se slike koje sadrže koeficijente $\overline{a_i}, \overline{b_i}$ uvećavaju na veličinu ulazne slike i onda se ti koeficijenti primenjuju na odgovarajuće piksele ulazne slike $p$. Sva izračunavanja i računanje suma, za koje se formiraju tabele suma, računaju se na umanjenoj slici.
 
@@ -882,15 +912,15 @@ Kopmleksnost računanja se smanjuje sa $O(n)$ na $O(n / s^2)$. U radu [5] je eks
 
 \subsection{Limitacije}%%%%%%%%%%%%%%%%%%%%%%%
 
-Limitacije vođenog filtra se ogledaju u tome što može da dođe do pojave ''halo'' efekta. ''Halo'' efekat se odnosi na artifakte neželjenog uglačavanja ivica. Ovi efekti su neizbežni za lokalne linearne filtere. Ako slika sadrži jake teksture koje želimo da uglačamo tj da uklopimo u okolinu, moramo da primenimo vođeni filter sa velikim parametrima. Ovo će rezultovati uglačavanjem ivica koje nisu preterano izražene (promena vrednosti piksela nije velika). U ovom slučaju će se javiti isti artifakti kao kod primene filtera srenje vrednosti. O ovoj limitaciji će biti reči poglavlju 5.
+Limitacije vođenog filtra se ogledaju u tome što može da dođe do pojave ''halo'' efekta. ''Halo'' efekat se odnosi na artifakte neželjenog uglačavanja ivica. Ovi efekti su neizbežni za lokalne linearne filtere. Ako slika sadrži jake teksture koje želimo da uglačamo tj da uklopimo u okolinu, moramo da primenimo vođeni filter sa velikim parametrima. Ovo će rezultovati uglačavanjem ivica koje nisu preterano izražene (promena vrednosti piksela nije velika). U ovom slučaju će se javiti isti artifakti kao kod primene filtera srenje vrednosti. O ovoj limitaciji će biti reči poglavlju ~\ref{5}.
 
-Ipak i pored ove limitacije vođenog filter je našao veliku primenu u svetu kompjuterse vizije i grafike, jer daje dobre rezultate kad je u pitanju očuvanje ivica i uklanjanje šuma. A pri tome je efikasan za izvršavanje. Pošto lokalni model, koji se koristi za vođeni filter, tip nenadgledanog učenja, ostavlja se prostor za primeu poboljšanih modela kako bi se stvorili novi filtri.  
+Ipak i pored ove limitacije vođenog filter je našao veliku primenu u svetu kompjuterskog vida i grafike, jer daje dobre rezultate kad je u pitanju očuvanje ivica i uklanjanje šuma. A pri tome je efikasan za izvršavanje. Pošto lokalni model, koji se koristi za vođeni filter, tip nenadgledanog učenja, ostavlja se prostor za primenu poboljšanih modela kako bi se stvorili novi filtri.  
 
-\section{Primena}%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Primena}\label{5}%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Osnovna primena}%%%%%%%%%%%%%%%%%%%%%%%
 
-Vođeni filter može da se koristi isto kao \emph{smoothnig} filtri opisani u 2 poglavlju. Možemo da ga koristimo u svrhu uglačavanja slike ili uklanjanja šuma. Naravno prednost vođenog filtra je što obraća paznju na detalje i ivice na slici. Na slici je ~\ref{flowerGF} prikazan rezultat filtriranja slike, sa tri različita filtra. Korišćeni su vođeni filter i fltri koji su prikazani u poglavlju 3, filter srednje vrednosti i median filter. 
+Vođeni filter može da se koristi isto kao \emph{smoothnig} filtri opisani u  poglavlju ~\ref{3}. Možemo da ga koristimo u svrhu uglačavanja slike ili uklanjanja šuma. Naravno prednost vođenog filtra je što obraća paznju na detalje i ivice na slici. Na slici je ~\ref{flowerGF} prikazan rezultat filtriranja slike, sa tri različita filtra. Korišćeni su vođeni filter i filtri koji su prikazani u poglavlju ~\ref{4}, filter srednje vrednosti i medijan filter. 
 
 \begin{figure}[ht!]
 \centering
@@ -898,36 +928,36 @@ Vođeni filter može da se koristi isto kao \emph{smoothnig} filtri opisani u 2 
 \includegraphics[width=35mm]{img/flowerGF30_01.png}
 \includegraphics[width=35mm]{img/flowerAvg30.png}
 \includegraphics[width=35mm]{img/flowerMed30.png}
-\caption{Primer uglačavanja slike korišćenjem raznih filtara: a) originalna slika b) vođeni filter $r = 30$, $\varepsilon$ = 0.01 c) filter srednje vrednosti veličina prozora 30 d) median filter veličina prozora 30 }
+\caption{Primer uglačavanja slike korišćenjem raznih filtara: a) originalna slika b) vođeni filter $r = 30$ $\varepsilon$ = 0.01 c) filter srednje vrednosti veličina prozora 30 d) medijan filter veličina prozora 30 }
 \label{flowerGF}
 \end{figure}
 
-Na slici ~\ref{flowerGF} možemo da vidimo prednost vođenog filtra u odnosu na filter srednjih vrednosti koji ne vodi računa o ivicama, koje su u ovom primeru uglačane. Možemo da vidimo i da median filter daje malo bolje rezultate od vođenog filtra. Problem je što median filter ima veliku složenost, jer za svaki piksel rezultujuće slike sortiraju svi pikseli koji pripadaju prozoru filtriranja.
+Na slici ~\ref{flowerGF} možemo da vidimo prednost vođenog filtra u odnosu na filter srednjih vrednosti koji ne vodi računa o ivicama, koje su u ovom primeru uglačane. Možemo da vidimo i da medijan filter daje malo bolje rezultate od vođenog filtra. Problem je što medijan filter ima veliku složenost, jer za svaki piksel rezultujuće slike sortiraju svi pikseli koji pripadaju prozoru filtriranja.
 
-U tabeli ~\ref{tabela} je dato poređenje vremena izvršenja ova tri filtera za slike različitih dimenzija, sa različitim dimenzijama prozora koji se koriste za filtriranje. Vremena u ovoj tabeli su vremena izmerena na izvršenju matlab skripti. Vreme izvršenja je sigurno manje, ako koristimo c++ implementaciju, vremena koja su prikazana u tabeli ~\ref{tabela} služe da pokažu odnos u izvršenju ovih filtara. Na osnovu vremena iz tabele ~\ref{tabela} možemo da zaključimo da vođeni filter ima manje vreme izvršenja od median filtera i takođe možemo da se vreme izvršenja vođenog filtra ne menja, kada se menja radius prozora za filtriranje, što nije slučaj za druga dva filtera. 
+U tabeli ~\ref{tabela} je dato poređenje vremena izvršenja ova tri filtera za slike različitih dimenzija, sa različitim dimenzijama prozora koji se koriste za filtriranje. Vremena u ovoj tabeli su vremena izmerena na izvršenju matlab skripti. Vreme izvršenja je sigurno manje, ako koristimo c++ implementaciju, vremena koja su prikazana u tabeli ~\ref{tabela} služe da pokažu odnos u izvršenju ovih filtara. Na osnovu vremena iz tabele ~\ref{tabela} možemo da zaključimo da vođeni filter ima manje vreme izvršenja od medijan filtera i takođe možemo da se vreme izvršenja vođenog filtra ne menja, kada se menja radijus prozora za filtriranje, što nije slučaj za druga dva filtera. 
 
 \begin{table}[h!]
 \centering
 \begin{tabular}{| c | c c c|} 
  \hline
- Dimenzije slike i radiusa prozora & Vođeni filter & Filter srednjih vrednosti & Median filter \\ [0.5ex] 
+ Dimenzije slike i radijusa prozora [r] & Vođeni filter & Filter srednjih vrednosti & medijan filter\\ [0.5ex] 
  \hline
-  276x276 r = 10 & 13.4 & 1.8 & 173.7  \\ 
-  276x276 r = 20 & 13.5 & 3.1 & 573.2  \\
-  276x276 r = 30 & 13.3 & 3.9 & 1211.5 \\
-  512x512 r = 10 & 95.6 & 7.9 & 598.4 \\
-  512x512 r = 20 & 97.7 & 9.9 & 1864  \\
-  512x512 r = 30 & 95.7 & 12.2 & 3790.7 \\
-  1200x800 r = 10 & 361.9 & 27 & 1856 \\
-  1200x800 r = 20 & 381.9 & 35.5 & 5990.3 \\
-  1200x800 r = 30 & 389 & 44.3 & 12664 \\ [1ex] 
+  276x276p r = 10 & 13.4 & 1.8 & 173.7  \\ 
+  276x276p r = 20 & 13.5 & 3.1 & 573.2  \\
+  276x276p r = 30 & 13.3 & 3.9 & 1211.5 \\
+  512x512p r = 10 & 95.6 & 7.9 & 598.4 \\
+  512x512p r = 20 & 97.7 & 9.9 & 1864  \\
+  512x512p r = 30 & 95.7 & 12.2 & 3790.7 \\
+  1200x800p r = 10 & 361.9 & 27 & 1856 \\
+  1200x800p r = 20 & 381.9 & 35.5 & 5990.3 \\
+  1200x800p r = 30 & 389 & 44.3 & 12664 \\ [1ex] 
  \hline
 \end{tabular}
-\caption{Poređenje vremena izvršenja vođenog filtra, filtera strednjih vrednosti i median filtera. Vremena su izražena u milisekundama. U tabeli su prikazana prosečna vremena izvršenja ovih filtera na slikama različitih rezolucija, a za svaku rezoluciju su ispitivana vremena izvršenja  filtera ako se koriste različite vrednosti radiusa prozora koji se koristi za filtriranje. }
+\caption{Poređenje vremena izvršenja vođenog filtra, filtera srednjih vrednosti i medijan filtera. Vremena su izražena u milisekundama [ms]. U tabeli su prikazana prosečna vremena izvršenja ovih filtera na slikama različitih rezolucija, a za svaku rezoluciju su ispitivana vremena izvršenja  filtera ako se koriste različite vrednosti radijusa prozora koji se koristi za filtriranje. }
 \label{tabela}
 \end{table}
 
-U primeru na slici ~\ref{flowerGF} se koristi ista slika i kao ulazna i kao slika voidč. Ovde možemo da uočimo dobre strane vođenog filtra. Vidimo da je šum uklonjen, a pri tome su sačuvane ivice odnosno prelazi. Ovde je iskorišćena proširena verzija koja uyima u obzir sva tri kanala, prilikom obrade ivica. Ako se koristi pristup u kome se filtrira svaki kanal zasebno korišćenjem ogovarajućeg kanala slike vodiča može doći do pojave loših ivica. 
+U primeru na slici ~\ref{flowerGF} se koristi ista slika i kao ulazna i kao slika vodič. Ovde možemo da uočimo dobre strane vođenog filtra. Vidimo da je šum uklonjen, a pri tome su sačuvane ivice odnosno prelazi. Ovde je iskorišćena proširena verzija koja uzima u obzir sva tri kanala, prilikom obrade ivica. Ako se koristi pristup u kome se filtrira svaki kanal zasebno korišćenjem ogovarajućeg kanala slike vodiča može doći do pojave loših ivica. 
 
 \begin{figure}[ht!]
 \centering
@@ -950,28 +980,28 @@ gde je A parametar kojim kontrolišemo koliko hoćemo da nam detalj bude izraže
 \includegraphics[width=40mm]{img/flower.png}
 \includegraphics[width=40mm]{img/flowerEGF.png}
 \includegraphics[width=40mm]{img/flowerER.png}
-\caption{Poboljšanje slike uz pomoć vođenog filtra: a) originalna slika b) primenjen vođen filter $r = 16, \varepsilon = 0.01$ c) rezultat za parametar iz jednačine ~\ref{eq:enh} A = 5 }
+\caption{Poboljšanje slike uz pomoć vođenog filtra: a) originalna slika b) primenjen vođen filter $r = 16$ $\varepsilon = 0.01$ c) rezultat za parametar iz jednačine ~\ref{eq:enh} A = 5 }
 \label{enha}
 \end{figure}
 
-Na slici ~\ref{enha1} možemo da vidimo razlike između korišćenja različitih filtara za spomenuto poboljšanje slike. Možemo da zaključimo da je primer gde je korišćen vođeni filter pokazao bolje rezultate u naglašavanju detalja.
+Na slici ~\ref{enha1} možemo da vidimo razlike između korišćenja različitih filtara za  poboljšanje slike definisano formulom ~\ref{eq:enh}. Možemo da zaključimo da je primer gde je korišćen vođeni filter pokazao bolje rezultate u naglašavanju detalja.
 
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=40mm]{img/flowerER.png}
 \includegraphics[width=40mm]{img/flowerERAvg.png}
-\caption{Razlika u poboljšanju slike vođenog filtra i filtera srednjih vrednosti: a) primenjen vođen filter $r = 16, \varepsilon = 0.01$ b) primenjen fliter srednjih vrednosti $r = 16$  }
+\caption{Razlika u poboljšanju slike vođenog filtra i filtera srednjih vrednosti: a) primenjen vođen filter $r = 16$ $\varepsilon = 0.01$ b) primenjen filter srednjih vrednosti $r = 16$  }
 \label{enha1}
 \end{figure}
 
 \newpage
-\subsection{Dehazing}%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Uklanjanje izmaglice sa slike (''Dehazing'')}%%%%%%%%%%%%%%%%%%%%%%%
 
-Dehzing je metoda koja služi za uklanjanje posebnog tipa šuma (haze) sa slike. \emph{Haze} predstavlja tip smenjti koje se javljaju na slikama, a posledica su atmosferskih prilika. U suštini to je izmaglica koja može da bude rezultat pojave prave magle ili vremnskih prilika. Kada se slika pravi na kišnom vremenu objekti u daljini mogu delovati zamagljeno. Takođe haze može da budu posledica isparavanja, kako u prirodi tako i industriskog, ili dim koji je posledica požara. Cilj ove metode je da ukloni ove smetnje i istakne neke bitne detalje.
+\emph{Dehzing} je metoda koja služi za uklanjanje posebnog tipa šuma (haze) sa slike. \emph{Haze} predstavlja tip smetnji koje se javljaju na slikama, a posledica su atmosferskih prilika. U suštini to je izmaglica koja može da bude rezultat pojave prave magle ili vremenskih prilika. Kada se slika pravi na kišnom vremenu objekti u daljini mogu delovati zamagljeno. Takođe haze može da budu posledica isparavanja, kako u prirodi tako i industrijskog, ili dim koji je posledica požara. Cilj ove metode je da ukloni ove smetnje i istakne neke bitne detalje.
 
 U ovom radu se predlaže implemntacija algoritma za dehazing korišćenjem vođenog filtra. Prednost vođenog filtra se ogleda u tome što on ima manju složenost u odnosu na druge filtre, pa možemo da zaključimo da će ta implementacija biti najbrža. Za potrebe ovog rada napravljena je implementacija u programskom jeziku Matlab. Implementacija je napravljena korišćenjem ideja iz rada [6]. 
 
-U radu [6] je dat predlog za rešavanje ovog problema. Predpostavka je da svaki deo slike ima tamne piksele, odnosno u svakom delu slike može da se pronađe piksel čiji je jedan kanal približno jednak nuli, ako se zanemari \emph{haze}. U takvom piskelu će vrednost predstavljati vrednost količine \emph{haze}-a. Ako se odabere podslika ogovrajuće veličine koičina procenjenog šuma na tom pikselu može da se generalizuje na celu tu pod sliku. Na ovaj način može da se proceni količina šuma celoj slici. Na kraju se od svakog piksela biti oduzeta vrednost \emph{haze}-a procenjenog za taj piksel i na taj način se dobija filtrirana slika.
+U radu [6] je dat predlog za rešavanje ovog problema. Predpostavka je da svaki deo slike ima tamne piksele, odnosno u svakom delu slike može da se pronađe piksel čiji je jedan kanal približno jednak nuli, ako se zanemari \emph{haze}. U takvom pikselu će vrednost predstavljati vrednost količine \emph{haze}-a. Ako se odabere podslika odgovrajuće veličine koičina procenjenog šuma na tom pikselu može da se generalizuje na celu tu pod sliku. Na ovaj način može da se proceni količina šuma celoj slici. Na kraju se od svakog piksela biti oduzeta vrednost \emph{haze}-a procenjenog za taj piksel i na taj način se dobija filtrirana slika.
 
 Model slike koji je dat u [6] izlgeda ovako:
 
@@ -991,37 +1021,37 @@ gde je se u ovkviru piksela i njegovih suseda definisanih prozorom $\Omega(x)$ t
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=60mm]{img/haze.png}
-\includegraphics[width=60mm]{img/hazeDC0.png}
-\includegraphics[width=60mm]{img/hazeDC2.png}
-\includegraphics[width=60mm]{img/hazeDC5.png}
-\caption{Izračunavanje tamnog kanala korišćenjem različitih veličina prozora koji se koriste u porceni vrednosti tamnog kanala a) zamagljena slika zgrade, tamni kanal izračunat sa veličinom prozora b)0 c)2 d)5}
+\includegraphics[width=45mm]{img/hazeDC0.png}
+\includegraphics[width=45mm]{img/hazeDC2.png}
+\includegraphics[width=45mm]{img/hazeDC5.png}
+\includegraphics[width=45mm]{img/haze.png}
+\caption{Izračunavanje tamnog kanala na primeru zamagljene slike zgrade korišćenjem različitih veličina prozora koji se koriste u porceni vrednosti tamnog kanala; tamni kanal izračunat sa veličinom prozora a) 0 b) 2 c) 5 d) zamgljena slika zgrade}
 \label{TamniKanal}
 \end{figure}   
 
-Ako ovu formulu primenimo u predhodnu formulu modela slike i ako predpostavimo da je $J(x)$ za sliku bez smetnji jednaka nuli, za transmisionu sliku dobijamo da je jednaka:
+Ako formulu  ~\ref{eq:haze2} primenimo u formulu ~\ref{eq:haze1} modela slike i ako predpostavimo da je $J(x)$ za sliku bez smetnji jednaka nuli, za transmisionu sliku dobijamo da je jednaka:
 
 \begin{equation}\label{eq:haze3}
 t(x) = 1 - \omega min_c ( min_{y \epsilon \Omega (x)} (\dfrac{I^c(y)}{A^c})),
 \end{equation}
 
-gde je $\omega$ regularizacioni parametar koji određuje u kolikoj meri od 0-100 % verujemo proceni, vrednost je minimum u prozoru $\Omega(x)$ i po sva tri kanala. Kada izračunamo sliku transmisije rezultat se dobija kao:
+gde je $\omega$ regularizacioni parametar koji određuje u kolikoj meri od 0-100 \% verujemo proceni, vrednost je minimum u prozoru $\Omega(x)$ i po sva tri kanala. Kada izračunamo sliku transmisije rezultat se na osnovu formule ~\ref{eq:haze1} dobija kao:
 
 \begin{equation}\label{eq:haze3}
 H(x) = \dfrac{I(x) - A}{t(x)} + 1.
 \end{equation}
 
-Pošto je procena transmisione komponente $t(x)$ robusna, tj procena vrednosti  se vrši u prozoru, dobijeni rezultat može da utiče na ivice. Da bi se dobila finija procena koja obraća pažnju na ivice na slici, transmisiona slika se filtrira. Za ovo filtriranje može da se koristi vođeni filter. Na slici ~\ref{FiltriraniTamniKanal} možemo na primeru slike zgrade da vidimo kakav će uticaj imati filtriranje slike tamnog kanala. Na ovoj slici se vidi da filtriranje tamnog kanala, koji je procenjen korišćenjem prozora radiusa 5, utiče na robusnost te procene. Filtriranje treba da postigne da se oblasti piksla koji se nalaze na malo razdaljini izjednače, jer je predpostavka da oni imaju jednaku količinu magle. Pri tome vođeni filter će voditi računa o oblastima koje su odvojene ivicama. 
+Pošto je procena transmisione komponente $t(x)$ robusna, tj procena vrednosti  se vrši u prozoru, dobijeni rezultat može da utiče na ivice. Da bi se dobila finija procena koja obraća pažnju na ivice na slici, transmisiona slika se filtrira. Za ovo filtriranje može da se koristi vođeni filter. Na slici ~\ref{FiltriraniTamniKanal} možemo na primeru slike zgrade da vidimo kakav će uticaj imati filtriranje slike tamnog kanala. Na ovoj slici se vidi da filtriranje tamnog kanala, koji je procenjen korišćenjem prozora radijusa 5, utiče na robusnost te procene. Filtriranje treba da postigne da se oblasti piksla koji se nalaze na malo razdaljini izjednače, jer je predpostavka da oni imaju jednaku količinu magle. Pri tome vođeni filter će voditi računa o oblastima koje su odvojene ivicama. 
 
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=60mm]{img/haze.png}
 \includegraphics[width=60mm]{img/hazeDC5F.png}
-\caption{Uticaj filtriranja slike tamnog kanala na slici zgrade a) tamni kanal sa prozorom dimenzije 5 b)filtrirani tamni kanal sa prozorom dimenzije 5}
+\caption{Uticaj filtriranja slike tamnog kanala na slici zgrade a) tamni kanal sa prozorom dimenzije 5 b) filtrirani tamni kanal sa prozorom dimenzije 5}
 \label{FiltriraniTamniKanal}
 \end{figure}   
 
-U implementaciji čiji su rezultati biti prikazani u ovom radu se koristi sledeći postupak za dobijanje transmisione slike. Predpostavka je da je svetlost prostora $A = (1, 1, 1)$ i da je $t(x) = const.$ u okviru prozora koji se koristi za filtriranje. Postupak je sledeći:
+U implementaciji čiji su rezultati biti prikazani u ovom radu se koristi sledeći postupak za dobijanje transmisione slike. Predpostavka je da je svetlost prostora $A = (1, 1, 1)$ i da je $t(x) = const.$ u okviru prozora koji se koristi za filtriranje. Postupak je opisan redom formulama ~\ref{eq:haze4}, ~\ref{eq:haze5}, ~\ref{eq:haze6} i ~\ref{eq:haze7}:
 
 \begin{equation}\label{eq:haze4}
 A(x) = guidedFilter(J^{dark}(x)).
@@ -1044,52 +1074,53 @@ V(x) =
 t(x) = 1 - w * V(x).
 \end{equation}
 
-Prvo se filtrira robusna procena $J^{dark}$, uz pomoć vođenog filtra, da bi dobili prvi rezultat $A(x)$. Filtriranje u drugom koraku se vrši sa ciljem da se poboljšaju informacije o ivicam na slici. Ovo se postiže filtriranjem apsolutne razlike $|J^{dark}(x) - A(x)|$ koja će nositi informaciju o ivicama. Primenom ovih transformacija može doći do pojavljivanja vrednosti koje prevazilaze granice domena pa se vrši normalizacija u trećem koraku i dobijamo $V(x)$, gde su sve vrednosti iz domena. Predpostavka je da su vrednosti iz domena $(0, 1)$ (ekvivalentno se primenjuje za bilio koji drugi domen, ali je poželjno da se koriste vrednosti razlomljenih brojeva predstavljenih u pokretnom zarezu \emph{float}). Transmisiona slika se dobija kao inverzna slika od $V(x)$, koja je pomnožena koeficijentom $\omega$, koje predstvalja koeficijent verovanja u procenu.
+Prvo se filtrira robusna procena $J^{dark}$, uz pomoć vođenog filtra, da bi dobili prvi rezultat $A(x)$. Filtriranje u drugom koraku se vrši sa ciljem da se poboljšaju informacije o ivicam na slici. Ovo se postiže filtriranjem apsolutne razlike $|J^{dark}(x) - A(x)|$ koja će nositi informaciju o ivicama. Primenom ovih transformacija može doći do pojavljivanja vrednosti koje prevazilaze granice domena pa se vrši normalizacija u trećem koraku i dobijamo $V(x)$, gde su sve vrednosti iz domena. Predpostavka je da su vrednosti iz domena $(0, 1)$ (ekvivalentno se primenjuje za bilo koji drugi domen, ali je poželjno da se koriste vrednosti razlomljenih brojeva predstavljenih u pokretnom zarezu \emph{float}). Transmisiona slika se dobija kao inverzna slika od $V(x)$, koja je pomnožena koeficijentom $\omega$, koje predstavlja koeficijent verovanja u procenu.
 
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=60mm]{img/haze.png}
 \includegraphics[width=60mm]{img/hazeRes.png}
-\caption{Rezultat filtriranja slike zgrade u cilju uklanjanja magle1) orginalna slika 2)rezultat}
+\caption{Rezultat filtriranja slike zgrade u cilju uklanjanja magle 1) orginalna slika 2) rezultat filtriranja}
 \label{dehaze}
 \end{figure}   
 
-Na slici ~\ref{dehaze} možemo da primetimo da rezultat nije perfektan. Naime možemo da primetimo da se magla zadržala oko ivica, tj. prelaza na slici (izmedju mesta sa raličitim bojama, konkretno cigle i lišće na slici 17). Ovo je posledica ''halo'' efekta koji je limitacija vođenog filtera. Pošto transmisiona slika sadrži prelaze koji nisu izraziti (pikseli sa jedne i druge strane ivice se ne razlikuju drastično), dolazi do ispoljavanja ovog efekta.
+Na slici ~\ref{dehaze} možemo da primetimo da rezultat nije perfektan. Naime možemo da primetimo da se magla zadržala oko ivica, tj. prelaza na slici (izmedju mesta sa različitim bojama, konkretno cigle i lišće na slici 17). Ovo je posledica ''halo'' efekta koji je limitacija vođenog filtera. Pošto transmisiona slika sadrži prelaze koji nisu izraziti (pikseli sa jedne i druge strane ivice se ne razlikuju drastično), dolazi do ispoljavanja ovog efekta.
 
 Rezultat implementacije pokazane u ovom radu može da se menja podešavanjem parametara. Dobrim podešavanjem parametara rezultat može promeni u skladu sa različitim očekivanjima. Parametri koji mogu da se menjaju u ovoj implementaciji su:
 
+\newpage
 \begin{itemize}
-\item $r_{dc}$ - radius prozora za izračunavanje tamnog kanala 
-\item $r_{gf}$ - radius prozora za izračunavanje vođenog filtra
+\item $r_{dc}$ - radijus prozora za izračunavanje tamnog kanala 
+\item $r_{gf}$ - radijus prozora za izračunavanje vođenog filtra
 \item $\varepsilon_{gf}$ - regularizaciona konstanta za vođeni filter 
 \item $w$ - koeficijent verovanja procene magle
 \end{itemize}
 
-Prvo ćemo ispitati uticaj parametra $r_{dc}$ koji predstavlja radius prozora za izračunavanje tamnog kanala. Na slici ~\ref{UticajRdc} možemo da vidimo rezultate za fiksirane parametre vođenog filtra. Ovde možemo da utvrdimo da se povećanjem parametra $r_{dc}$ postiže bolji rezultat. Boje na slici sa većim parametrom $r_{dc}$ su približnije realnim bojama, međutim dolazi do povećanja ''halo'' efekta što je posledica korišćenja vođenog filtera.  
+Prvo ćemo ispitati uticaj parametra $r_{dc}$ koji predstavlja radijus prozora za izračunavanje tamnog kanala. Na slici ~\ref{UticajRdc} možemo da vidimo rezultate za fiksirane parametre vođenog filtra. Ovde možemo da utvrdimo da se povećanjem parametra $r_{dc}$ postiže bolji rezultat. Boje na slici sa većim parametrom $r_{dc}$ su približnije realnim bojama, međutim dolazi do povećanja ''halo'' efekta što je posledica korišćenja vođenog filtera.  
 
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=45mm]{img/hazeResDC0.png}
 \includegraphics[width=45mm]{img/hazeResDC3.png}
 \includegraphics[width=45mm]{img/hazeResDC5.png}
-\caption{Rezultati filtriranja slike zgrade u cilju uklanjanja magle u kojima je menjan parametar radius prozora za izračunavanje tamnog kanala $r$. Parametri vođenog filtra su $r_{gf} = 2$ i  $\varepsilon_{gf} = 0.01$ a)$r = 0$ b)$r = 3$ c)$r = 5$}
+\caption{Rezultati filtriranja slike zgrade u cilju uklanjanja magle u kojima je menjan parametar radijus prozora za izračunavanje tamnog kanala $r$. Parametri vođenog filtra su $r_{gf} = 2$ i  $\varepsilon_{gf} = 0.01$ a) $r = 0$ b) $r = 3$ c) $r = 5$}
 \label{UticajRdc}
 \end{figure}  
 
-Sada ćemo ispitati uticaj parametara vođenog filtra $r_{gf}$ koji predstavlja radius prozora i $\varepsilon_{gf}$ koji predstavlja  regularizacionu konstantu za vođeni filter. Na slici ~\ref{UticajGF} možemo da vidimo rezultate. Ovde kao i u ispitivanju parametra radiusa prozora tamnog kanala, možemo da utvrdimo da se povećanjem parametra vođenog filtra postiže bolji rezultat. Boje na slici sa većim parametrima vođenog filtra su približnije realnim bojama, međutim dolazi do povećanja ''halo'' efekta što je posledica korišćenja tog filtera. 
+Sada ćemo ispitati uticaj parametara vođenog filtra $r_{gf}$ koji predstavlja radijus prozora i $\varepsilon_{gf}$ koji predstavlja  regularizacionu konstantu za vođeni filter. Na slici ~\ref{UticajGF} možemo da vidimo rezultate. Ovde kao i u ispitivanju parametra radijusa prozora tamnog kanala, možemo da utvrdimo da se povećanjem parametra vođenog filtra postiže bolji rezultat. Boje na slici sa većim parametrima vođenog filtra su približnije realnim bojama, međutim dolazi do povećanja ''halo'' efekta što je posledica korišćenja tog filtera. 
 
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=45mm]{img/hazeResGF2_01.png}
 \includegraphics[width=45mm]{img/hazeResGF5_04.png}
 \includegraphics[width=45mm]{img/hazeResGF10_1.png}
-\caption{Rezultati filtriranja slike zgrade u cilju uklanjanja magle u kojima su menjani parametari vođenog filtra $r$ i $\varepsilon$. Parametar radiusa prozora  za iračunavanje tamnog kanala je $r_{dc} = 0$ a)$r = 2 \varepsilon = 0.01$ b)$r = 5 \varepsilon = 0.04$ c)$r = 10 \varepsilon = 0.1$}
+\caption{Rezultati filtriranja slike zgrade u cilju uklanjanja magle u kojima su menjani parametri vođenog filtra $r$ i $\varepsilon$. Parametar radijusa prozora  za izračunavanje tamnog kanala je $r_{dc} = 0$ a)$r = 2$ $\varepsilon = 0.01$ b)$r = 5$ $\varepsilon = 0.04$ c)$r = 10$ $\varepsilon = 0.1$}
 \label{UticajRdc}
 \end{figure} 
 
-Možemo da zaključimo da se povećanjem parametara $r_{dc}$ (radius prozora za izračunavanje tamnog kanala), $r_{gf}$ i $\varepsilon$ (parametri vođenog filtra), dolazi do povećanja kvaliteta rezultata (u smislu vizuelne precepcije i boja), ali je loša strana pojavljivanje ''halo'' efekta na mestima gde se boje menjaju (ivice slike). Možemo da zaključimo da je pametno birati manje parametre, da bi izbegli loše strane vođenog filtra.
+Možemo da zaključimo da se povećanjem parametara $r_{dc}$ (radijus prozora za izračunavanje tamnog kanala), $r_{gf}$ i $\varepsilon$ (parametri vođenog filtra), dolazi do povećanja kvaliteta rezultata (u smislu vizuelne precepcije i boja), ali je loša strana pojavljivanje ''halo'' efekta na mestima gde se boje menjaju (ivice slike). Možemo da zaključimo da je pametno birati manje parametre, da bi izbegli loše strane vođenog filtra.
 
-Kod slika koje predstavljau scenu na kojoj se javlja deo neba koji je beo od posledice zamaglice, može doći do pogrešne procene kanala. Greška će se javiti zbog velike količine svetle boje, koja će biti procenjena kao magla. Ova greška će proizvesti rezultat kao na slici ~\ref{Šuma1}.
+Kod slika koje predstavljau scenu na kojoj se javlja deo neba koji je beo od posledice izmaglice, može doći do pogrešne procene kanala. Greška će se javiti zbog velike količine svetle boje, koja će biti procenjena kao magla. Ova greška će proizvesti rezultat kao na slici ~\ref{Šuma1}.
 
 \begin{figure}[ht!]
 \centering
@@ -1099,7 +1130,7 @@ Kod slika koje predstavljau scenu na kojoj se javlja deo neba koji je beo od pos
 \label{Šuma1}
 \end{figure} 
 
-Na ovu grešku u proceni možemo da utičemo promenom parametra $w$ (koeficijent verovanja procene). Ako samnjimo vrednost parametra, kao na slici ~\ref{Šuma2}.
+Na ovu grešku u proceni možemo da utičemo promenom parametra $w$ (koeficijent verovanja procene). Ako smanjimo vrednost parametra, kao na slici ~\ref{Šuma2}.
 
 \begin{figure}[ht!]
 \centering
@@ -1133,7 +1164,7 @@ Vođeni filter nije najbolje rešenje, ako posmatramo vizuelno rezultat. Međuti
 
 \section{Zaključak}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-U ovom radu je dat pregled osnovnih filtara. Predstavljeni su rezultati filtriranja i osobine koje oni iskazuju prilikom podešavanja parametara filtriranja. Možemo da zaključimo da filteri za uglačavanje slike kao rezultat daju sliku čiji će pikseli imati srednju vrednost piksela iz okoline definisane prozorom filtriranja. Videli smo kako promena veličine prozora utiče na rezultat filtriranja i možemo da zaključimo da se povećanjem prozora dobija slika koja je više zamućena i time se narušavaju detalji slike, ali se postiže i bolje uklanjanje šuma. Predstavljen je i medina filter kod koga se vrednost piksela rezultujuće slike računa kao vrednost koja je u sredini u odnosu na sve ostale. Ovaj filter pokazuje bolje rezultate ali je složeniji za implementaciju. Možemo da zaključimo da filtri za izvlačenje ivica služe za određivanje detalja. Pokazano je kako promenom tipa filtra (odnosno vrednosti prozora koji se koristi za filtriranje), dobijaju različiti rezultati i možemo da utvrdimo da korišćenjem drugog izvoda dobijamo finije ivice, nego korišćenjem prvog.
+U ovom radu je dat pregled osnovnih filtara. Predstavljeni su rezultati filtriranja i osobine koje oni iskazuju prilikom podešavanja parametara filtriranja. Možemo da zaključimo da filteri za uglačavanje slike kao rezultat daju sliku čiji će pikseli imati srednju vrednost piksela iz okoline definisane prozorom filtriranja. Videli smo kako promena veličine prozora utiče na rezultat filtriranja i možemo da zaključimo da se povećanjem prozora dobija slika koja je više zamućena i time se narušavaju detalji slike, ali se postiže i bolje uklanjanje šuma. Predstavljen je i medijan filter kod koga se vrednost piksela rezultujuće slike računa kao vrednost koja je u sredini u odnosu na sve ostale. Ovaj filter pokazuje bolje rezultate ali je složeniji za implementaciju. Možemo da zaključimo da filtri za izvlačenje ivica služe za određivanje detalja. Pokazano je kako promenom tipa filtra (odnosno vrednosti prozora koji se koristi za filtriranje), dobijaju različiti rezultati i možemo da utvrdimo da korišćenjem drugog izvoda dobijamo finije ivice, nego korišćenjem prvog.
 
 U radu je prikazan vođeni filter. Ovaj filter ima osobinu da prilikom uglačavanja slike vodi računa o ivicama, tj. ne razmazuje ivice. U odnosu na bilateralni filter, koji ima istu namenu, vođeni filter se pokazao kao bolji jer nema artifakte oko ivica na slikama. Takođe možemo da utvrdimo da je glavna prednost vođenog filtera, u odnosu na filtere koji imaju istu namenu, u tome što mu složenost ne zavisi od veličine prozora koji se koristi za filtriranje. 
 

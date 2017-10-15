@@ -8,8 +8,8 @@
 \contentsline {subsection}{\numberline {2.5}Osnovne operacije nad slikom}{6}{subsection.2.5}
 \contentsline {section}{\numberline {3}Osnovni tipovi filtara}{11}{section.3}
 \contentsline {subsection}{\numberline {3.1}Osnovni pojmovi}{11}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Filteri za ugla\IeC {\v c}avanje (Eng. \emph {Smoothing filers})}{12}{subsection.3.2}
-\contentsline {subsection}{\numberline {3.3}Filteri za odre\IeC {\dj }ivanje ivica (Eng. \emph {Sharpening filtri})}{15}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.2}Filteri za ugla\IeC {\v c}avanje (''Smoothing filers'')}{12}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Filteri za odre\IeC {\dj }ivanje ivica (''Sharpening filtri'')}{15}{subsection.3.3}
 \contentsline {subsection}{\numberline {3.4}Kombinovanje filtara}{21}{subsection.3.4}
 \contentsline {section}{\numberline {4}Vo\IeC {\dj }eni filter}{22}{section.4}
 \contentsline {subsection}{\numberline {4.1}Uvod}{22}{subsection.4.1}
@@ -19,9 +19,9 @@
 \contentsline {subsection}{\numberline {4.5}Filtriranje slike u boji}{27}{subsection.4.5}
 \contentsline {subsection}{\numberline {4.6}Izra\IeC {\v c}unavanje i efikasnost}{27}{subsection.4.6}
 \contentsline {subsection}{\numberline {4.7}Pobolj\IeC {\v s}anje}{29}{subsection.4.7}
-\contentsline {subsection}{\numberline {4.8}Limitacije}{30}{subsection.4.8}
+\contentsline {subsection}{\numberline {4.8}Limitacije}{29}{subsection.4.8}
 \contentsline {section}{\numberline {5}Primena}{31}{section.5}
 \contentsline {subsection}{\numberline {5.1}Osnovna primena}{31}{subsection.5.1}
-\contentsline {subsection}{\numberline {5.2}Dehazing}{33}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.2}Uklanjanje izmaglice sa slike (''Dehazing'')}{33}{subsection.5.2}
 \contentsline {section}{\numberline {6}Zaklju\IeC {\v c}ak}{41}{section.6}
 \contentsline {section}{Literatura}{42}{section.6}
