@@ -115,9 +115,9 @@
 
  %\setlength{\leftskip}{0.6cm}
  \noindent
-  Istražiti tehnike filtriranja slike. Implementacija vođenog filtera i analiza njegovih osobina u različitim primenama.
+Istražiti tehnike filtriranja slike. Upoznati se sa vođenim filterom i analizirati njegove prednosti i nedostatke u odnosu na druge. Implementirati vođeni filter i uporediti njegove mogućnosti za uglačavanje i pojačavanje detalja u odnosu na osnovne filtere. Analizirati kvalitet rezultata primene vođenog filtera na uklanjanju izmaglice sa slike. 
   
-\vspace{20cm}
+\vspace{19cm}
 
    \noindent
     Komisija:
@@ -164,21 +164,19 @@
 
 \section{Uvod}%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Obrada slike je proces kod kojeg se slika ili video (koji je ustvari niz slika) obrađuju da bi se dobila izmenjena slika (video) ili skup karakteristika ili nekih bitnih parametara. Metodi obrade slike su interesantni iz ugla dve primene. Jedna je vizuelno poboljšanje slike radi bolje ljudske percepcije. Druga je obrada slike u cilju čuvanja, transmisije i reprezentacije percepcije autonomnih mašina. Ova oblast ima primenu u medicini i tehnološkim oblastima, kao što je poboljšanje slika snimljenih digitalnom kamerom, prepoznavanje lica ljudi, detektovanje objekata i obrazaca na osnovu podataka sa slike itd. 
+Obrada slike je proces kod kojeg se slika ili video (koji je predstavljen niz slika) obrađuju da bi se dobila izmenjena slika (video) ili skup karakteristika ili nekih bitnih parametara. Metodi obrade slike su interesantni iz ugla dve primene. Jedna je vizuelno poboljšanje slike radi bolje ljudske percepcije. Druga je obrada slike u cilju čuvanja, transmisije i reprezentacije percepcije autonomnih mašina. Ova oblast ima primenu u medicini i tehnološkim oblastima, kao što je poboljšanje slika snimljenih digitalnom kamerom, prepoznavanje lica ljudi, detektovanje objekata i obrazaca na osnovu podataka sa slike itd. 
 
-U ovom radu je dat pregled osnovnih filtara za obradu slike. Postoje dva tipa osnovnih filtara, to su filtri za uglačavanje slike i filteri za izvlačenje ivica. Prvi tip filtara se koristi kada želimo da uklonimo šum sa slike ili da zamutimo sliku u cilju uklanjanja malih detalja prilikom ekstrakcije objekata. Cilj filtara za izvlačenje ivica je naglašavanje finih detalja na slici i označavanje linije koje predstavaljaju prelaze između skupova piksela sa različitim vrednostima. Njihove osobine se proučavaju i koriste za realizaciju složenih filtara. Jedan od takvih filtara je vođeni filter. Vođeni filter kombinuje osobine ova dva tipa filtara u cilju uglačavanja slike, ali tako da vodi računa da ne uglača ivice slike. Glavna prednost ovog filtra u odnosu na filtere koji imaju istu tu osobinu, je složenost koja zavisi samo od broja piksela na slici. 
+U ovom radu je dat pregled osnovnih filtara za obradu slike. Postoje dva tipa osnovnih filtara, to su filteri za uglačavanje slike i filteri za izvlačenje ivica. Prvi tip filtara se koristi kada želimo da uklonimo šum sa slike ili da zamutimo sliku u cilju uklanjanja malih detalja prilikom ekstrakcije objekata. Cilj filtara za izvlačenje ivica je naglašavanje finih detalja na slici i označavanje linije koje predstavljaju prelaze između skupova piksela sa različitim vrednostima. Njihove osobine se proučavaju i koriste za realizaciju složenih filtara. Jedan od takvih filtara je vođeni filter. Vođeni filter kombinuje osobine ova dva tipa filtara u cilju uglačavanja slike, ali tako da vodi računa da ne uglača ivice slike. Glavna prednost ovog filtera u odnosu na filtere koji imaju istu tu osobinu, je složenost koja zavisi samo od broja piksela na slici. 
 
-Ovaj rad se bavi analizom vođenog filtra, njegovom implementacijom i nekim primenama. U radu će biti data definicija ovog filtra i biće objašnjenje najbitnije osobine. U ovom radu će biti izloženo ponašanje ovog filtra u nekim primenama, sa posebnim osvrtom na proces uklanjanja izmaglice sa slike. Ponašanje će biti prezentovano kroz razne primere sa raznim skupovima parametara. U radu su takođe data i poređenja između vođenog filtra i drugih. Cilj ovih istraživanja je provera mogućnosti vođenog filtra i ispitivanje njegovog ponašanja u raznim situacijama. 
+Ovaj rad se bavi analizom vođenog filtera, njegovom implementacijom i nekim primenama. U radu će biti data definicija ovog filtera i biće objašnjenje najbitnije osobine. U ovom radu će biti izloženo ponašanje ovog filtera u primenama, sa posebnim osvrtom na proces uklanjanja izmaglice sa slike. Ponašanje će biti prezentovano kroz neke primere sa raznim skupovima parametara. U radu su takođe data i poređenja između vođenog filtera i drugih. Cilj ovih istraživanja je provera mogućnosti vođenog filtera i ispitivanje njegovog ponašanja u raznim situacijama. 
 
-Rad je organizovan na sledeći način:
-
-U drugom poglavlju je dat uvod u oblast obrade slike. U trećem poglavlju su prezentovani osnovni filtri. Četvrto poglavlje se bavi definicijom, osobinama i realizacijom vođenog filtra. U petom poglavlju je data analiza primene vođenog filtra, sa posebnim osvrtom na uklanjanje izmaglice sa slike.
+U drugom poglavlju je dat uvod u oblast obrade slike. U trećem poglavlju su prezentovani osnovni filteri. Četvrto poglavlje se bavi definicijom, osobinama i realizacijom vođenog filtera. U petom poglavlju je data analiza primene vođenog filtera, sa posebnim osvrtom na uklanjanje izmaglice sa slike.
 
 \section{Obrada slike}%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Uvod}%%%%%%%%%%%%%%%%%%%%%%%
 
-Digitalna slika može da se definiše kao funkcija $f(x, y)$, gde su $x$ i $y$ koordinate ravni. $x$ i $y$ predstavljaju koordinate piksela na slici. Pikseli su elementi od kojih je sastavljena slika. Obično $x$ predstavlja vrednost u odnosu na širinu slike, a $y$ u odnosu na visinu slike. Rezolucija slike se obično obeležava kao širina puta visina, izraženo u pikselima. Vrednost funkcije $f$ je intenzitet boje piksela na poziciji $(x, y)$. Intenzitet može da bude izražen kao jedna vrednost, ako je u pitanju crno bela slika, ili preko tri vrednosti ako je slika u boji. Postoje različiti načini za predstavaljanje slike u boji (Npr. RGB, CMYK, HSV itd.). Vrednosti funkcije $f$ kao i $x$ i $y$ su diskretne, jer je reč o digitalnoj slici. 
+Digitalna slika može da se definiše kao funkcija $f(x, y)$, gde su $x$ i $y$ koordinate ravni. $x$ i $y$ predstavljaju koordinate piksela na slici. Pikseli su elementi od kojih je sastavljena slika. Obično $x$ predstavlja vrednost u odnosu na širinu slike, a $y$ u odnosu na visinu slike. Rezolucija slike se obično obeležava kao širina puta visina, izraženo u pikselima. Vrednost funkcije $f$ je intenzitet boje piksela na poziciji $(x, y)$. Intenzitet može da bude izražen kao jedna vrednost, ako je u pitanju crno bela slika, ili preko tri vrednosti ako je slika u boji. Postoje različiti načini za predstavljanje slike u boji (Npr. RGB, CMYK, HSV itd.). Vrednosti funkcije $f$ kao i $x$ i $y$ su diskretne, jer je reč o digitalnoj slici. 
  
 Potreba za korišćenjem digitalnih slika javila se još 1920-tih godina u novinarstvu. Tada je prvi put slika ~\ref{slika1921} poslana preko-okenaski putem analognog kabla. Naravno prvi problemi koji su se javili tada imali su veze sa kvalitetom slike. Prvi sistemi su mogli da prenose crno bele slike, do 15 nijansi sive. Prvi kompjuteri koji su bili dovoljno moći da izvršavaju neku značajniju obradu slika javili su se 60-ih godina. Neke od prvih primena bile su vezane za poboljšanje slika iz svemira. Zatim je obrada slika počela da se koristi u medicini i astronomiji 70-ih godina, a i dan danas je bitna u tim oblastima.
 
@@ -211,9 +209,9 @@ Svi ovi procesi mogu da koriste bazu znanja u kojoj se čuvaju bitne činjenice 
 
 \subsection{Pribavljanje slike}%%%%%%%%%%%%%%%%%%%%%%%
 
-Iako je oblast digitalne obrade slika izgrađena na osnovu matematičkih i formulacija u verovatnoći, pribavljanje slike je proces koji je određen na osnovu ljudskog čula vida. Slika se u digitalnom svetu pribavlja nasličan nači na koji čovek vidi, ondnosno kreira sliku u mozgu. Ljudski receptor za vid je oko. Prozirni prednji delovi oka lome zrake svetlosti projektujući umanjenu i obrnutu sliku na fotosenzitivnu mrežnjaču gde se u specijalizovanim nervnim ćelijama obavlja pretvaranje slike u električne nervne impulse. Zrak se prelama u očnom sočivu, a deo oka odgovoran za prikupljanje slike je žuta mrlja, gde su nervene ćelije najgušće raspoređene. Pored žute mrlje se nalazi početag vidnog živca koji je neosetljiv na svetlo, pa se njegova projektcija u vidom polju naziva crna mrlja. Nervni impulsi kreirani u ćelijama se prenosu u mozak koji spaja slike iz oba oka i okreće obrnutu sliku čime se stvara osećaj vida u ljudskom mozgu.
+Iako je oblast digitalne obrade slika izgrađena na osnovu matematičkih i formulacija u verovatnoći, pribavljanje slike je proces koji je određen na osnovu ljudskog čula vida. Slika se u digitalnom svetu pribavlja na sličan način na koji čovek vidi, odnosno kreira sliku u mozgu. Ljudski receptor za vid je oko. Prozirni prednji delovi oka lome zrake svetlosti projektujući umanjenu i obrnutu sliku na fotosenzitivnu mrežnjaču gde se u specijalizovanim nervnim ćelijama obavlja pretvaranje slike u električne nervne impulse. Zrak se prelama u očnom sočivu, a deo oka odgovoran za prikupljanje slike je žuta mrlja, gde su nervne ćelije najgušće raspoređene. Pored žute mrlje se nalazi početak vidnog živca koji je neosetljiv na svetlo, pa se njegova projekcija u vidom polju naziva crna mrlja. Nervni impulsi kreirani u ćelijama se prenosu u mozak koji spaja slike iz oba oka i okreće obrnutu sliku čime se stvara osećaj vida u ljudskom mozgu.
 
-Svetlost koju mi opažamo ima određeni intenzitet i boju. Ljudsko oko je sposobno da vidi samo deo elektromagnetnog spektra. Ono može da detektuje svetlost koja se u spektru nalazi izmedju ultavioletne i infracrvene boje. Posto se svetlost tretira kao talas, boju odnosno deo spektra određuje talasna dužina. Talasna dužina se predstavalja kao odnos brzine svetlosti i frekvencije svetla $\lambda = c / \nu$. Energija koju nosi talas se računa se kao $E = h \nu$, gde je $h$ Plankova konstanta, a $\nu$ je frekvencija talasa. Ljudsko oko vidi svetlost talasne dužine između $0.4 * 10^{-6}m$ i $0.7 * 10^{-6}m$.
+Svetlost koju mi opažamo ima određeni intenzitet i boju. Ljudsko oko je sposobno da vidi samo deo elektromagnetnog spektra. Ono može da detektuje svetlost koja se u spektru nalazi između ultavioletne i infracrvene boje. Posto se svetlost tretira kao talas, boju odnosno deo spektra određuje talasna dužina. Talasna dužina se predstavlja kao odnos brzine svetlosti i frekvencije svetla $\lambda = c / \nu$. Energija koju nosi talas se računa se kao $E = h \nu$, gde je $h$ Plankova konstanta, a $\nu$ je frekvencija talasa. Ljudsko oko vidi svetlost talasne dužine između $0.4 * 10^{-6}m$ i $0.7 * 10^{-6}m$.
 
 \begin{figure}[ht!]
 \centering
@@ -222,9 +220,9 @@ Svetlost koju mi opažamo ima određeni intenzitet i boju. Ljudsko oko je sposob
 \label{spektar}
 \end{figure} 
 
-Slika se u digitalnom svetu generiše kao kombinacija osvetljenja prostora i reflektivne ili apsorbovane energije iz prostora scene za koju se pravi slika. Postoje različiti tipovi senzora za akviziciju slika, ovde će biti opisan sistem sa senzorom u obliku 2-D niza (matrice). Senzor je sastavljen od elementata koji su raspoređeni u matrici. Svaki element je zadužen za prikupljanje svetlosti iz scene. U svakom elementu se beleži osveteljenje scene i tako se formira signal slike koji se kasnije dodatno obrađuje.
+Slika se u digitalnom svetu generiše kao kombinacija osvetljenja prostora i reflektivne ili apsorbovane energije iz prostora scene za koju se pravi slika. Postoje različiti tipovi senzora za akviziciju slika, ovde će biti opisan sistem sa senzorom u obliku 2-D niza (matrice). Senzor je sastavljen od elemenata koji su raspoređeni u matrici. Svaki element je zadužen za prikupljanje svetlosti iz scene. U svakom elementu se beleži osvetljenje scene i tako se formira signal slike koji se kasnije dodatno obrađuje.
 
-Pošto svetlost dolazi iz kontinulanog prostora, vrednost signala koji nosi sliku će biti kontinualna. Da bi takav signal mogao da se obradi u računaru potrebno je da se taj signal digitalizuje. Digitalizaciju signala omogućuju semplovanje i kvantizacija. Semplovanje se odnosi na digitalizaciju koordinata piksela, odnosno određivanja mesta u prostoru. Kvantizacija se odnosi na digitalizaciju vrednosti amplitude signala. Pošto je slika skup određenog broja piksela od kojih svaki ima tačno određene koordinate u prostoru $(x, y)$, signal treba da se sampluje tako da svaki piksel bude popunjen jedinstvenom vrednošću. Vrednost amplitude signala je kontinualna, pa je kao takvu nemoguće sačuvati u računaru, zbog toga se uvodi kvantizacija gde se ta vrednost prevodi u diskretan prostor. Taj proces se naziva kvantizacija. Vrednost intenziteta piksela se obično predstavlja kao ceo broj izmedju 0 i 255. Postupak semplovanja i kvantizacije je bitan, jer od njega zavisi kvalitet i veličina podataka koje nosi signal slike. Ako je broj semplova ili kvantizacionih nivoa mali doći će do smanjenja kvaliteta slike, tj. slika neće biti verno prikazana. Međutim ako je broj  semplova ili kvantizacionih nivoa veliki broj podataka za čuvanje u memoriji će biti preveliki. U ovom postupku je bitno da se pronađe balans između ove dve stvari. U zavisnosti od potrebe će biti definisan broj semplova i kvantizacionih nivoa. Npr. nekada je bitnije da se sačuva što više slika, nego da slika bude precizna. 
+Pošto svetlost dolazi iz kontinulanog prostora, vrednost signala koji nosi sliku će biti kontinualna. Da bi takav signal mogao da se obradi u računaru potrebno je da se taj signal digitalizuje. Digitalizaciju signala omogućuju semplovanje i kvantizacija. Semplovanje se odnosi na digitalizaciju koordinata piksela, odnosno određivanja mesta u prostoru. Kvantizacija se odnosi na digitalizaciju vrednosti amplitude signala. Pošto je slika skup određenog broja piksela od kojih svaki ima tačno određene koordinate u prostoru $(x, y)$, signal treba da se sampluje tako da svaki piksel bude popunjen jedinstvenom vrednošću. Vrednost amplitude signala je kontinualna, pa je kao takvu nemoguće sačuvati u računaru, zbog toga se uvodi kvantizacija gde se ta vrednost prevodi u diskretan prostor. Taj proces se naziva kvantizacija. Vrednost intenziteta piksela se obično predstavlja kao ceo broj između 0 i 255. Postupak semplovanja i kvantizacije je bitan, jer od njega zavisi kvalitet i veličina podataka koje nosi signal slike. Ako je broj semplova ili kvantizacionih nivoa mali doći će do smanjenja kvaliteta slike, tj. slika neće biti verno prikazana. Međutim ako je broj semplova ili kvantizacionih nivoa veliki broj podataka za čuvanje u memoriji će biti preveliki. U ovom postupku je bitno da se pronađe balans između ove dve stvari. U zavisnosti od potrebe će biti definisan broj semplova i kvantizacionih nivoa. Npr. nekada je bitnije da se sačuva što više slika, nego da slika bude precizna. 
 
 Slika se u digitalnom svetu predstavlja kao $f(x, y)$, gde su $x$ i $y$ koordinate piksela na slici, a $f(x, y)$ je vrednost piksela u koordinatama $(x, y)$:
 
@@ -232,35 +230,35 @@ Slika se u digitalnom svetu predstavlja kao $f(x, y)$, gde su $x$ i $y$ koordina
 f(x, y)
 =
 \begin{bmatrix}
-    f(0, 0) & f(0, 1) & f(0, 2) & \dots  & f(0, N - 1) \\
-    f(1, 0) & f(0, 1) & f(1, 2) & \dots  & f(1, N - 1) \\
-    \vdots & \vdots & \vdots & \ddots & \vdots \\
-    f(M - 1, 0) & f(M - 1, 1) & f(M - 1, 2) & \dots  & f(M - 1, N - 1)
+f(0, 0) & f(0, 1) & f(0, 2) & \dots & f(0, N - 1) \\
+f(1, 0) & f(0, 1) & f(1, 2) & \dots & f(1, N - 1) \\
+\vdots & \vdots & \vdots & \ddots & \vdots \\
+f(M - 1, 0) & f(M - 1, 1) & f(M - 1, 2) & \dots & f(M - 1, N - 1)
 \end{bmatrix}
 \end{equation}
 
 gde su N i M respektivno širina i visina slike.
 
-Broj piksela slike se računa kao $b = M * N$, ako je slika crno bela, odnosno intenzitet piksela je prikazan kao jedna vrednost. Ako je u pitanju slika u boji onda se vrednost funkcije $f(x, y)$ predstavalja kao vektor vrednosti $[i_{1} i_{2} \dots i_{k}]$, gde je $k$ broj kanala, odnosno broj boja kojima je prikazana slika (najčešće 3 ako je u pitanju slika u boji). Tada se broj piksela računa kao $b = M * N * k$.
+Broj piksela slike se računa kao $b = M * N$, ako je slika crno bela, odnosno intenzitet piksela je prikazan kao jedna vrednost. Ako je u pitanju slika u boji onda se vrednost funkcije $f(x, y)$ predstavlja kao vektor vrednosti $[i_{1} i_{2} \dots i_{k}]$, gde je $k$ broj kanala, odnosno broj boja kojima je prikazana slika (najčešće 3 ako je u pitanju slika u boji). Tada se broj piksela računa kao $b = M * N * k$.
 
 \subsection{Bitne relacije između piksela}%%%%%%%%%%%%%%%%%%%%%%%
 
-Piksel $p$ sa koordinatama $(x, y)$ ima horizontalne i vertikalne susede $(x + 1, y)$, $(x - 1, y)$, $(x, y + 1)$, $(x, y - 1)$. Ovo se naziva 4-suseda piksela. Ako se dodaju dijagonalni susedi $(x + 1, y + 1)$, $(x - 1, y - 1)$, $(x + 1, y - 1)$, $(x - 1, y + 1)$ onda dobijamo 8-suseda piksela. Povezanost je osobina koja se dosta koristi u obradi slike. Ako su pikseli susedi i ako imaju istu vrednost ili vrednost iz istog podopsega mogućih vrednosti piksela onda su oni povezani. Putanja niz piksela koji su povezani na slici.
+Piksel $p$ sa koordinatama $(x, y)$ ima horizontalne i vertikalne susede $(x + 1, y)$, $(x - 1, y)$, $(x, y + 1)$, $(x, y - 1)$. Ovo se naziva 4-suseda piksela. Ako se dodaju dijagonalni susedi $(x + 1, y + 1)$, $(x - 1, y - 1)$, $(x + 1, y - 1)$, $(x - 1, y + 1)$ onda dobijamo 8-suseda piksela. Povezanost je osobina koja se dosta koristi u obradi slike. Ako su pikseli susedi i ako imaju istu vrednost ili vrednost iz istog pod-opsega mogućih vrednosti piksela onda su oni povezani. Putanja niz piksela koji su povezani na slici.
 
 Postoje nekoliko načina za računanje distance između piksela. Ako imamo piksele $p$, $q$ i $z$ sa koordinatama $(x, y)$, $(s, t)$ i $(v, w)$, $D$ će biti mera distance ako važi:\\
 
 \noindent
-a) $D(p, q) >= 0 (D(p, q) = 0  \text{ akko } p = q)$,\\
+a) $D(p, q) >= 0 (D(p, q) = 0 \text{ akko } p = q)$,\\
 b) $D(p, q) = D(q, p)$,\\
 c) $D(p, z) <= D(p, q) + D(q, z)$.
 
 Euklidska distanca: 
 
 \begin{equation}\label{eq:euclid}
-D_{e}(p, q) = [ (x  - s)^{2} + (y - t)^{2} ]^{1/2}.
+D_{e}(p, q) = [ (x - s)^{2} + (y - t)^{2} ]^{1/2}.
 \end{equation} 
 
-Euklidska distanca nije baš pogodna za sliku koja ima diskretne vrendosti pa se za distancu koriste:
+Euklidska distanca nije baš pogodna za sliku koja ima diskretne vrednosti pa se za distancu koriste:
 
 $D_{4}$ distanca 4-suseda:
 
@@ -270,11 +268,11 @@ D_{4}(p, q) = |x - s| + |y + t|.
 
 \[
 \begin{bmatrix}
-     &  & 2 &   &  \\
-     & 2 & 1 & 2  &  \\
-     2 & 1 & 0 & 1 & 2 \\
-     & 2 & 1 & 2  &  \\
-     &  & 2 &   &  
+& & 2 & & \\
+& 2 & 1 & 2 & \\
+2 & 1 & 0 & 1 & 2 \\
+& 2 & 1 & 2 & \\
+& & 2 & & 
 \end{bmatrix}
 \].
 
@@ -286,11 +284,11 @@ D_{8}(p, q) = max(|x - s|, |y + t|).
 
 \[
 \begin{bmatrix}
-     2 & 2 & 2 & 2  & 2 \\
-     2 & 1 & 1 & 1  & 2 \\
-     2 & 1 & 0 & 1 & 2 \\
-     2 & 1 & 1 & 1  & 2 \\
-     2 & 2 & 2 & 2  & 2 
+2 & 2 & 2 & 2 & 2 \\
+2 & 1 & 1 & 1 & 2 \\
+2 & 1 & 0 & 1 & 2 \\
+2 & 1 & 1 & 1 & 2 \\
+2 & 2 & 2 & 2 & 2 
 \end{bmatrix}
 \].
 
@@ -749,9 +747,9 @@ U radovima [2] i [3] se predlaže \emph{Guided filter} ili vođeni filter. Rezul
 
 \subsection{Slične ideje}\label{4.2}%%%%%%%%%%%%%%%%%%%%%%%  
 
-\emph{Bilateral filter} je tipičan primer ovog tipa filtara i jedan od prvih koji je zamišljen. To su filtri koji služe za uglačavanje ali pri tome zadržavaju ivice slike. Rezultat filtriranja svakog piksela slike je težinska srednja vrednost piksela i njegovih suseda. Ima široku primenu. Koristi se za redukciju šuma, HDR kompresiju, dekompoziciju detalja. Generalizovan je u implementaciji \emph{joint bilateral filter}-a, gde se težine računaju u odnosu na sliku vodiča, za koju se koristi posebna slika. Ovaj filter se koristi kada se od filtriranja ne očekuje da pruži informacije o ivicama, npr. kada slika ima dosta šuma ili kada je rezultat koji treba dalje da se iskoristi. Iako je \emph{Bilateral filter} veoma popularan i intuitivan za shvatanje, on ima limitacije. 
+\emph{Bilateral filter} je tipičan primer ovog tipa filtara i jedan od prvih koji je zamišljen. To su filtri koji služe za uglačavanje ali pri tome zadržavaju ivice slike. Rezultat filtriranja svakog piksela slike je težinska srednja vrednost piksela i njegovih suseda. Ima široku primenu. Koristi se za redukciju šuma, HDR kompresiju, dekompoziciju detalja. Generalizovan je u implementaciji \emph{joint bilateral filter}-a, gde se težine računaju u odnosu na sliku vodiča, za koju se koristi posebna slika. Ovaj filter se koristi kada se od filtriranja ne očekuje da pruži informacije o ivicama, npr. kada slika ima dosta šuma ili kada je rezultat koji treba dalje da se iskoristi. Iako je \emph{Bilateral filter} veoma popularan i intuitivan za shvatanje, on ima ograničenja. 
 
-Predhodno spomenuti loši artifakti koji se javljaju blizu ivica, jer je gausova funkcija nestabilna blizu ivica zbog velikih razlika u vrednostima piksela. Drugi problem se odnosi na složenost algoritma. Brute-force implementacija ima složenost $O(Nr^2)$, gde je $N$ broj piksela na slici, a $r$ je radijus kernela (dimenzija kernela je $a = 2r + 1$). Jasno je da složenost zavisi od veličine kernela što može da bude loše ako se koriste veliki kerneli. Postoje rešenja koja koriste razne metode kao što su distribuirani histogrami koji složenost smanjuju na $O(n \log{r})$. Postoji i metod za redukciju složenosti na $O(n)$ korišćenjem integralnih histograma (kao lookup tabela). Međutim konstrukcija histograma je primena filtera u prostornom domenu, pa možemo da zaključimo da ovaj proces zahteba dodatne korake. Postoji još jedan pristup čija je složenost $O(n)$, a koji se oslanja na agresivno smanjenje slike \emph{subsampling}, čime se gube detalji. Važno je naglasiti da sva spomenuta rešenja koja imaju lineranu složenost, sa druge strane utiču na degradaciju preciznosti. Pošto \emph{Bilateral filter} ima svoje limitacije ljudi su krenuli da istražuju nove metode za filtre koji uglačavaju sliku, a pri tome čuvaju ivice. 
+Predhodno spomenuti loši artifakti koji se javljaju blizu ivica, jer je gausova funkcija nestabilna blizu ivica zbog velikih razlika u vrednostima piksela. Drugi problem se odnosi na složenost algoritma. Brute-force implementacija ima složenost $O(Nr^2)$, gde je $N$ broj piksela na slici, a $r$ je radijus kernela (dimenzija kernela je $a = 2r + 1$). Jasno je da složenost zavisi od veličine kernela što može da bude loše ako se koriste veliki kerneli. Postoje rešenja koja koriste razne metode kao što su distribuirani histogrami koji složenost smanjuju na $O(n \log{r})$. Postoji i metod za redukciju složenosti na $O(n)$ korišćenjem integralnih histograma (kao lookup tabela). Međutim konstrukcija histograma je primena filtera u prostornom domenu, pa možemo da zaključimo da ovaj proces zahteba dodatne korake. Postoji još jedan pristup čija je složenost $O(n)$, a koji se oslanja na agresivno smanjenje slike \emph{subsampling}, čime se gube detalji. Važno je naglasiti da sva spomenuta rešenja koja imaju lineranu složenost, sa druge strane utiču na degradaciju preciznosti. Pošto \emph{Bilateral filter} ima svoja ograničenja ljudi su krenuli da istražuju nove metode za filtre koji uglačavaju sliku, a pri tome čuvaju ivice. 
 
 Nasuprot lineranim filterima postoje implicitni filteri koji se dobijaju optimizacijom funkcije greške i rešavanjem linearnog sistema jednačina, što je ekvivalentno implicitnom filtriranju slike korišćenjem inverzne matrice. Ovi filtri takođe imaju široku primenu u segmentaciji slike, kolorizaciji slike, itd. Iako su ovakvi filtri efikasni i daju kvalitetan rezultat, međutim računanje linearnih sistema može da bude veoma složeno. Direktna rešenja kao što je gausova eliminacija, nisu praktični, zbog velkog zauzeća memorije. Iterativna rešenja sporo konvergiraju. Uočeno je da su implicitni filteri slični kao eksplicitni. 
 
@@ -910,11 +908,11 @@ Ulazna slika $p$ i slika vodič $I$ se smanjuju. Zatim se koeficijenti $a_k, b_k
 
 Kopmleksnost računanja se smanjuje sa $O(n)$ na $O(n / s^2)$. U radu [5] je eksperimentima utvrđeno da se odabirom odgovarajućeg faktora $s$, dobijaju nepromenjeni rezultati. U ovim eksperimentima je utvrđeno da ako je $s = 4$ ubrzanje može da bude i 10 puta. Odabirom odgovrajućeg faktora može da se dobije zadovoljavajući rezultat.   
 
-\subsection{Limitacije}%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Ograničenja}%%%%%%%%%%%%%%%%%%%%%%%
 
-Limitacije vođenog filtra se ogledaju u tome što može da dođe do pojave ''halo'' efekta. ''Halo'' efekat se odnosi na artifakte neželjenog uglačavanja ivica. Ovi efekti su neizbežni za lokalne linearne filtere. Ako slika sadrži jake teksture koje želimo da uglačamo tj da uklopimo u okolinu, moramo da primenimo vođeni filter sa velikim parametrima. Ovo će rezultovati uglačavanjem ivica koje nisu preterano izražene (promena vrednosti piksela nije velika). U ovom slučaju će se javiti isti artifakti kao kod primene filtera srenje vrednosti. O ovoj limitaciji će biti reči poglavlju ~\ref{5}.
+Ograničenja vođenog filtra se ogledaju u tome što može da dođe do pojave ''halo'' efekta. ''Halo'' efekat se odnosi na artifakte neželjenog uglačavanja ivica. Ovi efekti su neizbežni za lokalne linearne filtere. Ako slika sadrži jake teksture koje želimo da uglačamo tj da uklopimo u okolinu, moramo da primenimo vođeni filter sa velikim parametrima. Ovo će rezultovati uglačavanjem ivica koje nisu preterano izražene (promena vrednosti piksela nije velika). U ovom slučaju će se javiti isti artifakti kao kod primene filtera srenje vrednosti. O ovom ograničenju će biti reči poglavlju ~\ref{5}.
 
-Ipak i pored ove limitacije vođenog filter je našao veliku primenu u svetu kompjuterskog vida i grafike, jer daje dobre rezultate kad je u pitanju očuvanje ivica i uklanjanje šuma. A pri tome je efikasan za izvršavanje. Pošto lokalni model, koji se koristi za vođeni filter, tip nenadgledanog učenja, ostavlja se prostor za primenu poboljšanih modela kako bi se stvorili novi filtri.  
+Ipak i pored ovog ograničenja vođenog filter je našao veliku primenu u svetu kompjuterskog vida i grafike, jer daje dobre rezultate kad je u pitanju očuvanje ivica i uklanjanje šuma. A pri tome je efikasan za izvršavanje. Pošto lokalni model, koji se koristi za vođeni filter, tip nenadgledanog učenja, ostavlja se prostor za primenu poboljšanih modela kako bi se stvorili novi filtri.  
 
 \section{Primena}\label{5}%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1084,7 +1082,7 @@ Prvo se filtrira robusna procena $J^{dark}$, uz pomoć vođenog filtra, da bi do
 \label{dehaze}
 \end{figure}   
 
-Na slici ~\ref{dehaze} možemo da primetimo da rezultat nije perfektan. Naime možemo da primetimo da se magla zadržala oko ivica, tj. prelaza na slici (izmedju mesta sa različitim bojama, konkretno cigle i lišće na slici 17). Ovo je posledica ''halo'' efekta koji je limitacija vođenog filtera. Pošto transmisiona slika sadrži prelaze koji nisu izraziti (pikseli sa jedne i druge strane ivice se ne razlikuju drastično), dolazi do ispoljavanja ovog efekta.
+Na slici ~\ref{dehaze} možemo da primetimo da rezultat nije perfektan. Naime možemo da primetimo da se magla zadržala oko ivica, tj. prelaza na slici (izmedju mesta sa različitim bojama, konkretno cigle i lišće na slici 17). Ovo je posledica ''halo'' efekta koji je jedno od loših strana vođenog filtera. Pošto transmisiona slika sadrži prelaze koji nisu izraziti (pikseli sa jedne i druge strane ivice se ne razlikuju drastično), dolazi do ispoljavanja ovog efekta.
 
 Rezultat implementacije pokazane u ovom radu može da se menja podešavanjem parametara. Dobrim podešavanjem parametara rezultat može promeni u skladu sa različitim očekivanjima. Parametri koji mogu da se menjaju u ovoj implementaciji su:
 
@@ -1147,7 +1145,7 @@ Cilj korišćenja vođenog filtra u našoj implementaciji je ubrzanje algoritma.
 \includegraphics[width=60mm]{img/aerial.png}
 \includegraphics[width=60mm]{img/aerialFattal.png}
 \includegraphics[width=60mm]{img/aerialDe.png}
-\caption{Poređenje rezultata dehazing-a iz rada [5] i naše implementacije koja koristi vođeni filter. a) originalna slika b) Fattal c) vođeni filter}
+\caption{Poređenje rezultata dehazing-a iz rada [5] (''Fattal'') i naše implementacije koja koristi vođeni filter. a) originalna slika b) ''Fattal'' c) vođeni filter}
 \label{aerial}
 \end{figure} 
 
@@ -1156,7 +1154,7 @@ Cilj korišćenja vođenog filtra u našoj implementaciji je ubrzanje algoritma.
 \includegraphics[width=40mm]{img/grad.jpg}
 \includegraphics[width=40mm]{img/gradFattal.jpg}
 \includegraphics[width=40mm]{img/gradDe.png}
-\caption{Poređenje rezultata dehazing-a iz rada [5] i naše implementacije koja koristi vođeni filter. a) originalna slika b) Fattal c) vođeni filter}
+\caption{Poređenje rezultata dehazing-a iz rada [5] (''Fattal'') i naše implementacije koja koristi vođeni filter. a) originalna slika b) ''Fattal'' c) vođeni filter}
 \label{grad}
 \end{figure} 
 
@@ -1164,15 +1162,15 @@ Vođeni filter nije najbolje rešenje, ako posmatramo vizuelno rezultat. Međuti
 
 \section{Zaključak}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-U ovom radu je dat pregled osnovnih filtara. Predstavljeni su rezultati filtriranja i osobine koje oni iskazuju prilikom podešavanja parametara filtriranja. Možemo da zaključimo da filteri za uglačavanje slike kao rezultat daju sliku čiji će pikseli imati srednju vrednost piksela iz okoline definisane prozorom filtriranja. Videli smo kako promena veličine prozora utiče na rezultat filtriranja i možemo da zaključimo da se povećanjem prozora dobija slika koja je više zamućena i time se narušavaju detalji slike, ali se postiže i bolje uklanjanje šuma. Predstavljen je i medijan filter kod koga se vrednost piksela rezultujuće slike računa kao vrednost koja je u sredini u odnosu na sve ostale. Ovaj filter pokazuje bolje rezultate ali je složeniji za implementaciju. Možemo da zaključimo da filtri za izvlačenje ivica služe za određivanje detalja. Pokazano je kako promenom tipa filtra (odnosno vrednosti prozora koji se koristi za filtriranje), dobijaju različiti rezultati i možemo da utvrdimo da korišćenjem drugog izvoda dobijamo finije ivice, nego korišćenjem prvog.
+U ovom radu je dat pregled osnovnih filtara. Predstavljeni su rezultati filtriranja i osobine koje oni iskazuju prilikom podešavanja parametara filtriranja. Možemo da zaključimo da filteri za uglačavanje slike kao rezultat daju sliku čiji će pikseli imati srednju vrednost piksela iz okoline definisane prozorom filtriranja. Videli smo kako promena veličine prozora utiče na rezultat filtriranja i možemo da zaključimo da se povećanjem prozora dobija slika koja je više zamućena i time se narušavaju detalji slike, ali se postiže i bolje uklanjanje šuma. Predstavljen je i medijan filter kod koga se vrednost piksela rezultujuće slike računa kao vrednost koja je u sredini u odnosu na sve ostale. Ovaj filter pokazuje bolje rezultate ali je složeniji za implementaciju. Možemo da zaključimo da filteri za izvlačenje ivica služe za određivanje detalja. Pokazano je kako promenom tipa filtera (odnosno vrednosti prozora koji se koristi za filtriranje), dobijaju različiti rezultati i možemo da utvrdimo da korišćenjem drugog izvoda dobijamo finije ivice, nego korišćenjem prvog.
 
-U radu je prikazan vođeni filter. Ovaj filter ima osobinu da prilikom uglačavanja slike vodi računa o ivicama, tj. ne razmazuje ivice. U odnosu na bilateralni filter, koji ima istu namenu, vođeni filter se pokazao kao bolji jer nema artifakte oko ivica na slikama. Takođe možemo da utvrdimo da je glavna prednost vođenog filtera, u odnosu na filtere koji imaju istu namenu, u tome što mu složenost ne zavisi od veličine prozora koji se koristi za filtriranje. 
+U radu je prikazan vođeni filter. Ovaj filter ima osobinu da prilikom uglačavanja slike vodi računa o ivicama, tj. ne narušava ivice. U odnosu na bilateralni filter, koji ima istu namenu, vođeni filter se pokazao kao bolji jer nema artifakte oko ivica na slikama. Takođe možemo da utvrdimo da je glavna prednost vođenog filtera, u odnosu na filtere koji imaju istu namenu, u tome što mu složenost ne zavisi od veličine prozora koji se koristi za filtriranje. 
 
-Ovde je predstvaljen vođeni filter, njegova definicija i osobine. Predstavljene su metode za izračunavanje vrednosti piksela koje ne zavise od veličine prozora. Na osnovu toga je napravljena referentna implementacija u programskom jeziku matlab, koja je iskorišćena za analizu vođenog filtera. U radu su prikazane dobre strane ovog filtra, koje se ogledaju u tome da čuva ivice, da nema loših artifakta u blizini ivica. Predložena je metoda za uklanjanje izmaglice sa slika korišćenjem vođenog filtra, za filtriranje grube estimacije količine izmaglice na slici. Ovde smo mogli da uvidimo i loše strane vođenog filtra, kao što je pojava ''halo'' efekta u blizini ivica. 
+Ovde je predstavljen vođeni filter, njegova definicija i osobine. Predstavljene su metode za izračunavanje vrednosti piksela koje ne zavise od veličine prozora. Na osnovu toga je napravljena referentna implementacija u programskom jeziku ''matlab'', koja je iskorišćena za analizu vođenog filtera. U radu su prikazane dobre strane ovog filtera, koje se ogledaju u tome da čuva ivice, da nema loših artifakta u blizini ivica. Predložena je metoda za uklanjanje izmaglice sa slika korišćenjem vođenog filtera, za filtriranje grube procene količine izmaglice na slici. Ovde smo mogli da uvidimo i loše strane vođenog filtera, kao što je pojava ''halo'' efekta u blizini ivica. 
 
-Vođeni filter je upoređen sa drugim filterima, i možemo da zaključimo da za uglačavanje slike i uklanjanje šuma pokazuje bolje rezultate u odnosu na njih. Što se tiče uklanjanja izmaglice možemo da zaključimo da se vođeni filter pokazao kao dobro rešenje koje daje zadovoljavajuće rezultate u odnosu na implementacije koje imaju veću složenost. U radu je pokazano da implementacija za uklanjanje izmaglice, koja koristi vođeni filter, pažljivim odabirom parametara daje dobre rezultate u odnosu na druge implementacije.
+Vođeni filter je upoređen sa drugim filterima, i možemo da zaključimo da za uglačavanje slike i uklanjanje šuma pokazuje vizuelno bolje rezultate u odnosu na njih. Što se tiče uklanjanja izmaglice možemo da zaključimo da se vođeni filter pokazao kao dobro rešenje koje daje zadovoljavajuće rezultate u odnosu na implementacije koje imaju veću složenost. U radu je pokazano da implementacija za uklanjanje izmaglice, koja koristi vođeni filter, pažljivim odabirom parametara daje dobre rezultate u odnosu na druge implementacije.
 
-Možemo da zaključimo da vođeni filter može da se koristi u svim procesima obrade slike koji zahtevaju uglačavanje slike, a da se pri tome sačuvaju detalji slike. On ima svoje limitacije kada su u pitanju slike kod kojih ivice nisu izražene (mala je razlika između piksela sa jedne i druge strane ivice ili prelaza). Sa druge strane omogućava implementaciju kod koje izračunavanje vrednosti piksela rezultujuće slike ne zavisi od veličine prozora koji se koristi za izračunavanje.
+Možemo da zaključimo da vođeni filter može da se koristi u svim procesima obrade slike koji zahtevaju uglačavanje slike, a da se pri tome sačuvaju detalji slike. On ima svoja ograničenja kada su u pitanju slike kod kojih ivice nisu izražene (mala je razlika između piksela sa jedne i druge strane ivice ili prelaza). Sa druge strane omogućava implementaciju kod koje izračunavanje vrednosti piksela rezultujuće slike ne zavisi od veličine prozora koji se koristi za izračunavanje.
 
 \newpage
 \addcontentsline{toc}{section}{Literatura}

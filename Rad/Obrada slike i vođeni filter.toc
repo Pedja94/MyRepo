@@ -19,7 +19,7 @@
 \contentsline {subsection}{\numberline {4.5}Filtriranje slike u boji}{27}{subsection.4.5}
 \contentsline {subsection}{\numberline {4.6}Izra\IeC {\v c}unavanje i efikasnost}{27}{subsection.4.6}
 \contentsline {subsection}{\numberline {4.7}Pobolj\IeC {\v s}anje}{29}{subsection.4.7}
-\contentsline {subsection}{\numberline {4.8}Limitacije}{29}{subsection.4.8}
+\contentsline {subsection}{\numberline {4.8}Ograni\IeC {\v c}enja}{29}{subsection.4.8}
 \contentsline {section}{\numberline {5}Primena}{31}{section.5}
 \contentsline {subsection}{\numberline {5.1}Osnovna primena}{31}{subsection.5.1}
 \contentsline {subsection}{\numberline {5.2}Uklanjanje izmaglice sa slike (''Dehazing'')}{33}{subsection.5.2}
