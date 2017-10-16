@@ -9,7 +9,7 @@
 \contentsline {section}{\numberline {3}Osnovni tipovi filtara}{11}{section.3}
 \contentsline {subsection}{\numberline {3.1}Osnovni pojmovi}{11}{subsection.3.1}
 \contentsline {subsection}{\numberline {3.2}Filteri za ugla\IeC {\v c}avanje (''Smoothing filers'')}{12}{subsection.3.2}
-\contentsline {subsection}{\numberline {3.3}Filteri za odre\IeC {\dj }ivanje ivica (''Sharpening filtri'')}{15}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.3}Filteri za odre\IeC {\dj }ivanje ivica (''Sharpening filteri'')}{15}{subsection.3.3}
 \contentsline {subsection}{\numberline {3.4}Kombinovanje filtara}{21}{subsection.3.4}
 \contentsline {section}{\numberline {4}Vo\IeC {\dj }eni filter}{22}{section.4}
 \contentsline {subsection}{\numberline {4.1}Uvod}{22}{subsection.4.1}
